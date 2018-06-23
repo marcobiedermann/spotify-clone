@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.production.config.js",
-    "develop": "webpack-dev-server --config webpack.development.config.js"
+    "develop": "webpack-dev-server --config webpack.development.config.js",
+    "lint:js": "eslint '**/*.{js,jsx}'",
+    "lint": "npm run lint:js",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,11 @@
     "@babel/core": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.0.0-beta.51",
     "babel-loader": "^8.0.0-beta.4",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
