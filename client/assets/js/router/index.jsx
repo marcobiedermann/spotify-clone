@@ -9,7 +9,7 @@ const Router = () => (
   <ConnectedRouter history={history}>
     <div>
       <Route path="/" exact component={IndexPage} />
-      <Route path="/browse" exact component={BrowsePage} />
+      <Route path="/browse" component={BrowsePage} />
     </div>
   </ConnectedRouter>
 );
