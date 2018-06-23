@@ -8,7 +8,7 @@ import NewReleasesPage from './NewReleases';
 const BrowsePage = ({ match }) => (
   <div>
     Browse
-    <Route path={`${match.url}/categories`} exact component={CategoriesPage} />
+    <Route path={`${match.url}/categories`} component={CategoriesPage} />
     <Route path={`${match.url}/featured-playlists`} exact component={FeaturedPlaylistsPage} />
     <Route path={`${match.url}/new-releases`} exact component={NewReleasesPage} />
   </div>
