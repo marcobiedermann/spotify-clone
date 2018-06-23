@@ -7,6 +7,7 @@ import ArtistsPage from '../pages/Artists';
 import BrowsePage from '../pages/Browse';
 import IndexPage from '../pages/Index';
 import MePage from '../pages/Me';
+import UsersPage from '../pages/Users';
 
 const Router = () => (
   <ConnectedRouter history={history}>
@@ -16,6 +17,7 @@ const Router = () => (
       <Route path="/artists" component={ArtistsPage} />
       <Route path="/browse" component={BrowsePage} />
       <Route path="/me" component={MePage} />
+      <Route path="/users" component={UsersPage} />
     </div>
   </ConnectedRouter>
 );
