@@ -6,7 +6,7 @@ import CategoryPage from './Category';
 const CategoriesPage = ({ match }) => (
   <div>
     Categories
-    <Route path={`${match.url}/:category_id`} exact component={CategoryPage} />
+    <Route path={`${match.url}/:category_id`} component={CategoryPage} />
   </div>
 );
 
