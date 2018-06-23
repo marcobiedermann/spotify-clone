@@ -6,7 +6,7 @@ import ArtistPage from './Artist';
 const ArtistsPage = ({ match }) => (
   <div>
     Artists
-    <Route path={`${match.url}/:id`} exact component={ArtistPage} />
+    <Route path={`${match.url}/:id`} component={ArtistPage} />
   </div>
 );
 
