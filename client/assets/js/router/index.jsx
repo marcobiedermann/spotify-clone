@@ -1,13 +1,15 @@
+import { ConnectedRouter } from 'connected-react-router';
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import history from './history';
 import IndexPage from '../pages/Index';
 
 const Router = () => (
-  <BrowserRouter>
+  <ConnectedRouter history={history}>
     <div>
       <Route path="/" exact component={IndexPage} />
     </div>
-  </BrowserRouter>
+  </ConnectedRouter>
 );
 
 export default Router;
