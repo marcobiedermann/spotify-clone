@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Category from '../Category';
+import './style.css';
 
 const Categories = ({ categories }) => (
   <ul className="categories">

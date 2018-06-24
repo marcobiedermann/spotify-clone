@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import './style.css';
 
 const Category = ({ name, icons }) => (
   <figure className="category">
