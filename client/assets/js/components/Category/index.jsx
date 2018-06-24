@@ -3,7 +3,9 @@ import React from 'react';
 
 const Category = ({ name, icons }) => (
   <figure className="category">
-    <img src={icons[0].url} alt={name} />
+    {icons[0] && (
+      <img src={icons[0].url} alt={name} />
+    )}
     <figcaption>
       {name}
     </figcaption>
