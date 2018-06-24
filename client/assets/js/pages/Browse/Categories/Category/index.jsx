@@ -6,13 +6,14 @@ import { bindActionCreators } from 'redux';
 import PlaylistsPage from './Playlists';
 import { fetchCategory } from '../../../../actions/browse';
 import Category from '../../../../components/Category';
+import { ACCESS_TOKEN } from '../../../../constants/config';
 
 class CategoryPage extends Component {
   componentDidMount() {
     const { fetchCategory } = this.props;
 
     fetchCategory(
-      'BQB1tia0pKzLBFfI97THyRAQVACkn869_YwunNv18AlClEcAtNYZ9mHug8zGuOC-HquvGRwM6pBmszxEIqLVozpxkM-lqnDRN53aXJ-meePIDt6Qcj43PKpSNY9cRVjWU2rm0o7nWL72nipBwwXJ3L9DQ_wKziHDV1CmniDjXSJHWo7XI-209dmUG8ONh867TJUfFmKELtGAVI8FPfYzqtwdZC7cN_n29A_nRIz4MEcNELzyLwcILC4i9mot4qhcfHKPkFUxG0BrWw',
+      ACCESS_TOKEN,
       'dinner',
     );
   }
