@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import {
+  Route,
+  Switch,
+} from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import PlaylistsPage from './Playlists';
 import { fetchCategory } from '../../../../actions/browse';
@@ -22,10 +25,16 @@ class CategoryPage extends Component {
     const { category, match } = this.props;
 
     return (
-      <div>
-        <Category {...category} />
-        <Route path={`${match.url}/playlists`} exact component={PlaylistsPage} />
-      </div>
+      <Switch>
+        <Route
+          path={`${match.url}/playlists`}
+          component={PlaylistsPage}
+        />
+        <Route
+          path={`${match.url}`}
+          component={() => <Category {...category} />}
+        />
+      </Switch>
     );
   }
 }

@@ -1,13 +1,26 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Route } from 'react-router-dom';
+import {
+  Route,
+  Switch,
+} from 'react-router-dom';
 import AlbumPage from './Album';
 
 const AlbumsPage = ({ match }) => (
-  <div>
-    Albums
-    <Route path={`${match.url}/:album_id`} component={AlbumPage} />
-  </div>
+  <Switch>
+    <Route
+      path={`${match.url}/:album_id`}
+      component={AlbumPage}
+    />
+    <Route
+      path={`${match.url}`}
+      component={() => (
+        <div>
+          Albums
+        </div>
+      )}
+    />
+  </Switch>
 );
 
 AlbumsPage.propTypes = {

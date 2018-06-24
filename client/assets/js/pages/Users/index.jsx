@@ -1,13 +1,26 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Route } from 'react-router-dom';
+import {
+  Route,
+  Switch,
+} from 'react-router-dom';
 import UserPage from './User';
 
 const UsersPage = ({ match }) => (
-  <div>
-    Users
-    <Route path={`${match.url}/:user_id`} exact component={UserPage} />
-  </div>
+  <Switch>
+    <Route
+      path={`${match.url}/:user_id`}
+      component={UserPage}
+    />
+    <Route
+      path={`${match.url}`}
+      component={() => (
+        <div>
+          Users
+        </div>
+      )}
+    />
+  </Switch>
 );
 
 UsersPage.propTypes = {

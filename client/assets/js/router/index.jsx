@@ -1,6 +1,9 @@
 import { ConnectedRouter } from 'connected-react-router';
 import React from 'react';
-import { Route } from 'react-router-dom';
+import {
+  Route,
+  Switch,
+} from 'react-router-dom';
 import history from './history';
 import AlbumsPage from '../pages/Albums';
 import ArtistsPage from '../pages/Artists';
@@ -11,14 +14,14 @@ import UsersPage from '../pages/Users';
 
 const Router = () => (
   <ConnectedRouter history={history}>
-    <div>
-      <Route path="/" exact component={IndexPage} />
+    <Switch>
       <Route path="/albums" component={AlbumsPage} />
       <Route path="/artists" component={ArtistsPage} />
       <Route path="/browse" component={BrowsePage} />
       <Route path="/me" component={MePage} />
       <Route path="/users" component={UsersPage} />
-    </div>
+      <Route path="/" component={IndexPage} />
+    </Switch>
   </ConnectedRouter>
 );
 
