@@ -3,7 +3,8 @@ import {
   FETCH_CATEGORIES_ERROR,
 } from '../constants/browse';
 
-const baseUrl = 'https://api.spotify.com';
+// const baseUrl = 'https://api.spotify.com';
+const baseUrl = 'http://localhost:8080/data';
 
 export const fetchCategoriesSuccess = categories => ({
   type: FETCH_CATEGORIES_SUCCESS,
@@ -16,7 +17,7 @@ export const fetchCategoriesError = error => ({
 });
 
 export const fetchCategories = accessToken => async (dispatch) => {
-  const request = new Request(`${baseUrl}/v1/browse/categories`, {
+  const request = new Request(`${baseUrl}/v1/browse/categories.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
     }),
