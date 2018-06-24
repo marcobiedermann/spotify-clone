@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
+import Main from '../Main';
 import './style.css';
 
 const Layout = ({ children }) => (
@@ -9,7 +10,9 @@ const Layout = ({ children }) => (
     <Header>
       Header
     </Header>
-    {children}
+    <Main>
+      {children}
+    </Main>
     <Footer>
       Footer
     </Footer>
