@@ -13,11 +13,11 @@ import { ACCESS_TOKEN } from '../../../../constants/config';
 
 class CategoryPage extends Component {
   componentDidMount() {
-    const { fetchCategory } = this.props;
+    const { fetchCategory, match } = this.props;
 
     fetchCategory(
       ACCESS_TOKEN,
-      'dinner',
+      match.params.category_id,
     );
   }
 
