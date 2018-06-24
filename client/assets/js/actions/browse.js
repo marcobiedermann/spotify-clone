@@ -1,12 +1,41 @@
 import {
-  FETCH_CATEGORIES_SUCCESS,
-  FETCH_CATEGORIES_ERROR,
   FETCH_CATEGORY_SUCCESS,
   FETCH_CATEGORY_ERROR,
+  FETCH_CATEGORIES_SUCCESS,
+  FETCH_CATEGORIES_ERROR,
+  FETCH_FEATURED_PLAYLISTS_SUCCESS,
+  FETCH_FEATURED_PLAYLISTS_ERROR,
 } from '../constants/browse';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
+
+export const fetchCategorySuccess = category => ({
+  type: FETCH_CATEGORY_SUCCESS,
+  category,
+});
+
+export const fetchCategoryError = error => ({
+  type: FETCH_CATEGORY_ERROR,
+  error,
+});
+
+export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
+  const request = new Request(`${baseUrl}/v1/browse/categories/${categoryId}.json`, {
+    headers: new Headers({
+      Authorization: `Bearer ${accessToken}`,
+    }),
+  });
+
+  try {
+    const response = await fetch(request);
+    const result = await response.json();
+
+    dispatch(fetchCategorySuccess(result));
+  } catch (error) {
+    dispatch(fetchCategoryError(error));
+  }
+};
 
 export const fetchCategoriesSuccess = categories => ({
   type: FETCH_CATEGORIES_SUCCESS,
@@ -35,18 +64,18 @@ export const fetchCategories = accessToken => async (dispatch) => {
   }
 };
 
-export const fetchCategorySuccess = category => ({
-  type: FETCH_CATEGORY_SUCCESS,
-  category,
+export const fetchFeaturedPlaylistsSuccess = playlists => ({
+  type: FETCH_FEATURED_PLAYLISTS_SUCCESS,
+  playlists,
 });
 
-export const fetchCategoryError = error => ({
-  type: FETCH_CATEGORY_ERROR,
+export const fetchFeaturedPlaylistsError = error => ({
+  type: FETCH_FEATURED_PLAYLISTS_ERROR,
   error,
 });
 
-export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
-  const request = new Request(`${baseUrl}/v1/browse/categories/${categoryId}.json`, {
+export const fetchFeaturedPlaylists = accessToken => async (dispatch) => {
+  const request = new Request(`${baseUrl}/v1/browse/featured-playlists.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
     }),
@@ -56,8 +85,8 @@ export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchCategorySuccess(result));
+    dispatch(fetchFeaturedPlaylistsSuccess(result.playlists));
   } catch (error) {
-    dispatch(fetchCategoryError(error));
+    dispatch(fetchFeaturedPlaylistsError(error));
   }
 };
