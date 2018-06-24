@@ -3,12 +3,13 @@ import React from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
 import Main from '../Main';
+import Navigation from '../Navigation';
 import './style.css';
 
 const Layout = ({ children }) => (
   <div className="layout">
     <Header>
-      Header
+      <Navigation />
     </Header>
     <Main>
       {children}
