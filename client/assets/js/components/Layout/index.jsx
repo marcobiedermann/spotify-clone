@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Header from '../Header';
 import './style.css';
 
 const Layout = ({ children }) => (
   <div className="layout">
+    <Header>
+      Header
+    </Header>
     {children}
   </div>
 );
