@@ -6,12 +6,12 @@ import './style.css';
 const Category = ({ id, icons, name }) => (
   <figure className="category">
     {icons[0] && (
-      <Link to={`/browse/categories/${id}`}>
+      <Link to={`/browse/categories/${id}/playlists`}>
         <img src={icons[0].url} alt={name} />
       </Link>
     )}
     <figcaption>
-      <Link to={`/browse/categories/${id}`}>
+      <Link to={`/browse/categories/${id}/playlists`}>
         {name}
       </Link>
     </figcaption>
