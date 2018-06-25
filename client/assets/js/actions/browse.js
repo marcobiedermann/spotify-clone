@@ -5,6 +5,8 @@ import {
   FETCH_CATEGORIES_ERROR,
   FETCH_FEATURED_PLAYLISTS_SUCCESS,
   FETCH_FEATURED_PLAYLISTS_ERROR,
+  FETCH_NEW_RELEASES_SUCCESS,
+  FETCH_NEW_RELEASES_ERROR,
 } from '../constants/browse';
 
 // const baseUrl = 'https://api.spotify.com';
@@ -88,5 +90,32 @@ export const fetchFeaturedPlaylists = accessToken => async (dispatch) => {
     dispatch(fetchFeaturedPlaylistsSuccess(result.playlists));
   } catch (error) {
     dispatch(fetchFeaturedPlaylistsError(error));
+  }
+};
+
+export const fetchNewReleasesSuccess = albums => ({
+  type: FETCH_NEW_RELEASES_SUCCESS,
+  albums,
+});
+
+export const fetchNewReleasesError = error => ({
+  type: FETCH_NEW_RELEASES_ERROR,
+  error,
+});
+
+export const fetchNewReleases = accessToken => async (dispatch) => {
+  const request = new Request(`${baseUrl}/v1/browse/new-releases.json`, {
+    headers: new Headers({
+      Authorization: `Bearer ${accessToken}`,
+    }),
+  });
+
+  try {
+    const response = await fetch(request);
+    const result = await response.json();
+
+    dispatch(fetchNewReleasesSuccess(result.albums));
+  } catch (error) {
+    dispatch(fetchNewReleasesError(error));
   }
 };

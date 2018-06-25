@@ -5,6 +5,8 @@ import {
   FETCH_CATEGORIES_ERROR,
   FETCH_FEATURED_PLAYLISTS_SUCCESS,
   FETCH_FEATURED_PLAYLISTS_ERROR,
+  FETCH_NEW_RELEASES_SUCCESS,
+  FETCH_NEW_RELEASES_ERROR,
 } from '../constants/browse';
 
 const initialState = {
@@ -47,6 +49,18 @@ const browseReducer = (state = initialState, action) => {
       };
     }
     case FETCH_FEATURED_PLAYLISTS_ERROR: {
+      return {
+        ...state,
+        error: action.error,
+      };
+    }
+    case FETCH_NEW_RELEASES_SUCCESS: {
+      return {
+        ...state,
+        albums: action.albums,
+      };
+    }
+    case FETCH_NEW_RELEASES_ERROR: {
       return {
         ...state,
         error: action.error,
