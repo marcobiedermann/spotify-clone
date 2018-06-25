@@ -7,9 +7,12 @@ import {
   FETCH_FEATURED_PLAYLISTS_ERROR,
   FETCH_NEW_RELEASES_SUCCESS,
   FETCH_NEW_RELEASES_ERROR,
+  FETCH_CATEGORY_PLAYLISTS_SUCCESS,
+  FETCH_CATEGORY_PLAYLISTS_ERROR,
 } from '../constants/browse';
 
 const initialState = {
+  albums: {},
   categories: {},
   category: {},
   playlists: {},
@@ -61,6 +64,18 @@ const browseReducer = (state = initialState, action) => {
       };
     }
     case FETCH_NEW_RELEASES_ERROR: {
+      return {
+        ...state,
+        error: action.error,
+      };
+    }
+    case FETCH_CATEGORY_PLAYLISTS_SUCCESS: {
+      return {
+        ...state,
+        playlists: action.playlists,
+      };
+    }
+    case FETCH_CATEGORY_PLAYLISTS_ERROR: {
       return {
         ...state,
         error: action.error,
