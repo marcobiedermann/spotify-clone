@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {
+  Link,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import CategoriesPage from './Categories';
 import FeaturedPlaylistsPage from './FeaturedPlaylists';
 import NewReleasesPage from './NewReleases';
@@ -23,7 +27,23 @@ const BrowsePage = ({ match }) => (
       path={`${match.url}`}
       component={() => (
         <div>
-          Browse
+          <ul>
+            <li>
+              <Link to={`${match.url}/categories`}>
+                Genres & Moods
+              </Link>
+            </li>
+            <li>
+              <Link to={`${match.url}/featured-playlists`}>
+                Featured Playlists
+              </Link>
+            </li>
+            <li>
+              <Link to={`${match.url}/new-releases`}>
+                New Releases
+              </Link>
+            </li>
+          </ul>
         </div>
       )}
     />
