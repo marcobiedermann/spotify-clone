@@ -6,6 +6,7 @@ import Router from './router';
 import store from './store';
 import '../css/elements/figure.css';
 import '../css/elements/image.css';
+import '../css/layout/base.css';
 
 const Root = () => (
   <Provider store={store}>
