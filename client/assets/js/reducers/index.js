@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import artist from './artist';
+import artists from './artists';
 import browse from './browse';
 
 const reducers = combineReducers({
-  artist,
+  artists,
   browse,
 });
 

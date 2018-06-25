@@ -1,7 +1,7 @@
 import {
   FETCH_ARTIST_SUCCESS,
   FETCH_ARTIST_ERROR,
-} from '../constants/artist';
+} from '../constants/artists';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';

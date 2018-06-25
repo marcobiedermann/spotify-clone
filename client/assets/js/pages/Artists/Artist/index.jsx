@@ -9,7 +9,7 @@ import { bindActionCreators } from 'redux';
 import AlbumsPage from './Albums';
 import RelatedArtistsPage from './RelatedArtists';
 import TopTracksPage from './TopTracks';
-import { fetchArtist } from '../../../actions/artist';
+import { fetchArtist } from '../../../actions/artists';
 import Artist from '../../../components/Artist';
 import { ACCESS_TOKEN } from '../../../constants/config';
 
@@ -59,7 +59,7 @@ ArtistPage.defaultProps = {
 };
 
 const mapStateToProps = state => ({
-  artist: state.artist.artist,
+  artist: state.artists.artist,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(
