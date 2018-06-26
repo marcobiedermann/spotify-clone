@@ -8,7 +8,7 @@ const initialState = {
   error: null,
 };
 
-const browseReducer = (state = initialState, action) => {
+const artistsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ARTIST_SUCCESS: {
       return {
@@ -27,4 +27,4 @@ const browseReducer = (state = initialState, action) => {
   }
 };
 
-export default browseReducer;
+export default artistsReducer;
