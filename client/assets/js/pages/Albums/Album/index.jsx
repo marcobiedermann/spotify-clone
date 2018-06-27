@@ -13,9 +13,9 @@ import { ACCESS_TOKEN } from '../../../constants/config';
 
 class AlbumPage extends Component {
   componentDidMount() {
-    const { fetchAlbum } = this.props;
+    const { fetchAlbum, match } = this.props;
 
-    fetchAlbum(ACCESS_TOKEN, '6ApYSpXF8GxZAgBTHDzYge');
+    fetchAlbum(ACCESS_TOKEN, match.params.album_id);
   }
 
   render() {
