@@ -1,5 +1,6 @@
 .aside {
-  flex-grow: 1;
+  flex-shrink: 0;
+  min-width: 14em;
 }
 
 .aside--left {
