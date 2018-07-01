@@ -1,32 +1,42 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Tracks from '../Tracks';
 import './style.css';
 
 const Album = ({
-  artists, id, images, name,
+  artists,
+  id,
+  images,
+  name,
+  tracks,
 }) => (
-  <figure className="album">
-    {images[1] && (
-      <Link to={`/albums/${id}`}>
-        <img src={images[1].url} alt={name} />
-      </Link>
-    )}
-    <figcaption>
-      <h3>
+  <div className="album">
+    <figure className="album">
+      {images[1] && (
         <Link to={`/albums/${id}`}>
-          {name}
+          <img src={images[1].url} alt={name} />
         </Link>
-      </h3>
-      {artists[0] && (
-        <h4>
-          <Link to={`/artists/${artists[0].id}`}>
-            {artists[0].name}
-          </Link>
-        </h4>
       )}
-    </figcaption>
-  </figure>
+      <figcaption>
+        <h3>
+          <Link to={`/albums/${id}`}>
+            {name}
+          </Link>
+        </h3>
+        {artists[0] && (
+          <h4>
+            <Link to={`/artists/${artists[0].id}`}>
+              {artists[0].name}
+            </Link>
+          </h4>
+        )}
+      </figcaption>
+    </figure>
+    {tracks && (
+      <Tracks tracks={tracks.items} />
+    )}
+  </div>
 );
 
 Album.propTypes = {
@@ -34,6 +44,7 @@ Album.propTypes = {
   id: PropTypes.string,
   images: PropTypes.arrayOf(PropTypes.shape()),
   name: PropTypes.string,
+  tracks: PropTypes.shape(),
 };
 
 Album.defaultProps = {
@@ -41,6 +52,7 @@ Album.defaultProps = {
   id: '',
   images: [],
   name: '',
+  tracks: null,
 };
 
 export default Album;

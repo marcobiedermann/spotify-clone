@@ -7,6 +7,7 @@ import store from './store';
 import '../css/elements/anchor.css';
 import '../css/elements/figure.css';
 import '../css/elements/image.css';
+import '../css/elements/table.css';
 import '../css/layout/base.css';
 
 const Root = () => (
