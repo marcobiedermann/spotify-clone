@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Aside from '../Aside';
 import Footer from '../Footer';
 import Header from '../Header';
 import Main from '../Main';
@@ -14,6 +15,9 @@ const Layout = ({ children }) => (
     <Main>
       {children}
     </Main>
+    <Aside>
+      Sidebar
+    </Aside>
     <Footer>
       Footer
     </Footer>

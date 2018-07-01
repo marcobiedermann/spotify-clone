@@ -1,0 +1,7 @@
+.aside {
+  flex-grow: 1;
+}
+
+.aside--left {
+  order: -1;
+}
