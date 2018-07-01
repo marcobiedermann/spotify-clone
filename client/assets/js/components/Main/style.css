@@ -1,3 +1,5 @@
 .main {
   flex-grow: 1;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
 }

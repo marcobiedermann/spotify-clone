@@ -11,14 +11,14 @@ import './style.css';
 const Layout = ({ children }) => (
   <div className="layout">
     <Header>
-      <Navigation />
+      Header
     </Header>
     <Content>
       <Main>
         {children}
       </Main>
       <Aside>
-        Sidebar
+        <Navigation />
       </Aside>
     </Content>
     <Footer>
