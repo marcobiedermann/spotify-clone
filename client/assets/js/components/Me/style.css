@@ -1,0 +1,13 @@
+.me {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.me__image {
+  margin-right: 1em;
+}
+
+.me__image img {
+  border-radius: 50%;
+}
