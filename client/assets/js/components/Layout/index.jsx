@@ -14,10 +14,6 @@ import { ACCESS_TOKEN } from '../../constants/config';
 import './style.css';
 
 class Layout extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     const { fetchMe } = this.props;
 
@@ -50,13 +46,13 @@ class Layout extends Component {
 
 Layout.propTypes = {
   children: PropTypes.node,
-  fetchAlbum: PropTypes.func,
+  fetchMe: PropTypes.func,
   me: PropTypes.shape(),
 };
 
 Layout.defaultProps = {
   children: null,
-  fetchAlbum: () => {},
+  fetchMe: () => {},
   me: null,
 };
 
