@@ -51,6 +51,7 @@ AlbumPage.defaultProps = {
 };
 
 const mapStateToProps = state => ({
+  ...state,
   album: state.albums.album,
 });
 

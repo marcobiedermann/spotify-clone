@@ -52,6 +52,7 @@ CategoryPage.defaultProps = {
 };
 
 const mapStateToProps = state => ({
+  ...state,
   category: state.browse.category,
 });
 

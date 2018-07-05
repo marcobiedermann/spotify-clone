@@ -59,6 +59,7 @@ ArtistPage.defaultProps = {
 };
 
 const mapStateToProps = state => ({
+  ...state,
   artist: state.artists.artist,
 });
 

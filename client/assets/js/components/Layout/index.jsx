@@ -57,6 +57,7 @@ Layout.defaultProps = {
 };
 
 const mapStateToProps = state => ({
+  ...state,
   me: state.me.me,
 });
 

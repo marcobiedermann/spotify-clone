@@ -35,6 +35,7 @@ NewReleasesPage.defaultProps = {
 };
 
 const mapStateToProps = state => ({
+  ...state,
   albums: state.browse.albums,
 });
 

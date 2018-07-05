@@ -44,6 +44,7 @@ PlaylistsPage.defaultProps = {
 };
 
 const mapStateToProps = state => ({
+  ...state,
   playlists: state.browse.playlists,
 });
 
