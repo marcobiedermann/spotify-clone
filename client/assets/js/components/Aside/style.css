@@ -1,9 +1,9 @@
 .aside {
   background-color: #121212;
   flex-shrink: 0;
-  min-width: 14em;
   padding-left: 1.5em;
   padding-right: 1.5em;
+  width: 14em;
 }
 
 .aside--left {
