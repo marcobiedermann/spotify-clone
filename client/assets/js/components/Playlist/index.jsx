@@ -27,14 +27,18 @@ Playlist.propTypes = {
   id: PropTypes.string,
   images: PropTypes.arrayOf(PropTypes.shape()),
   name: PropTypes.string,
-  owner: PropTypes.shape(),
+  owner: PropTypes.shape({
+    id: PropTypes.string,
+  }),
 };
 
 Playlist.defaultProps = {
   id: '',
   images: [],
   name: '',
-  owner: null,
+  owner: {
+    id: '',
+  },
 };
 
 export default Playlist;
