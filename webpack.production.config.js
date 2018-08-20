@@ -46,7 +46,6 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('assets/css/[name].css'),
     new HtmlWebpackPlugin({
-      inject: false,
       minify: {
         caseSensitive: false,
         collapseBooleanAttributes: true,
