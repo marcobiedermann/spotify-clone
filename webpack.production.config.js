@@ -1,30 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const merge = require('webpack-merge');
+const baseConfig = require('./webpack.config');
 
-module.exports = {
-  entry: {
-    main: [
-      path.resolve(__dirname, 'client/assets/js/index'),
-    ],
-  },
-  output: {
-    filename: 'assets/js/[name].js',
-    path: path.resolve(__dirname, 'server/public'),
-  },
+module.exports = merge(baseConfig, {
   mode: 'production',
   module: {
     rules: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-        ],
-      },
       {
         test: /\.css$/,
         exclude: /node_modules/,
@@ -81,10 +64,4 @@ module.exports = {
       template: 'client/index.html',
     }),
   ],
-  resolve: {
-    extensions: [
-      '.js',
-      '.jsx',
-    ],
-  },
-};
+});
