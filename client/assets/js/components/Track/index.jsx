@@ -1,7 +1,6 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
-import './style.css';
 
 const Track = ({
   duration_ms,

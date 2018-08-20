@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './style.css';
+import styles from './style.css';
 
 const Navigation = () => (
-  <nav className="navigation">
+  <nav className={styles.navigation}>
     <ul>
       <li>
         <Link to="/">

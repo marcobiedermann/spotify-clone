@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import './style.css';
+import styles from './style.css';
 
 const Footer = ({ children }) => (
-  <footer className="footer">
+  <footer className={styles.footer}>
     {children}
   </footer>
 );

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './style.css';
+import styles from './style.css';
 
 const Playlist = ({
   id,
@@ -9,7 +9,7 @@ const Playlist = ({
   name,
   owner,
 }) => (
-  <figure className="playlist">
+  <figure className={styles.playlist}>
     {images[0] && (
       <Link to={`/users/${owner.id}/playlists/${id}`}>
         <img src={images[0].url} alt={name} />

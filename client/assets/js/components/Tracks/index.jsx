@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Track from '../Track';
-import './style.css';
+import styles from './style.css';
 
 const Tracks = ({ tracks }) => (
-  <table className="tracks">
+  <table className={styles.tracks}>
     <tbody>
       {tracks.map(track => (
         <Track key={track.id} {...track} />

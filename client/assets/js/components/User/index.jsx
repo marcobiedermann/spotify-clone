@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import './style.css';
 
 const User = ({
   display_name,

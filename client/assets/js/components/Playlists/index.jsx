@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Playlist from '../Playlist';
-import './style.css';
+import styles from './style.css';
 
 const Playlists = ({ playlists }) => (
-  <ul className="playlists">
+  <ul className={styles.playlists}>
     {playlists.map(playlist => (
       <li key={playlist.id}>
         <Playlist {...playlist} />

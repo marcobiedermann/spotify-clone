@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './style.css';
+import styles from './style.css';
 
 const Artist = ({ id, images, name }) => (
-  <figure className="artist">
+  <figure className={styles.artist}>
     {images[0] && (
       <img src={images[0].url} alt={name} width={images[0].width} height={images[0].height} />
     )}

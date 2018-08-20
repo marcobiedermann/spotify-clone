@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import './style.css';
+import styles from './style.css';
 
 const Content = ({ children }) => (
-  <div className="content">
+  <div className={styles.content}>
     {children}
   </div>
 );

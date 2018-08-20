@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './style.css';
+import styles from './style.css';
 
 const Me = ({
   display_name,
   id,
   images,
 }) => (
-  <div className="me">
-    <figure className="me__image">
+  <div className={styles.me}>
+    <figure className={styles.me__image}>
       {images[0] && (
         <img src={images[0].url} alt={display_name} width="32" height="32" />
       )}

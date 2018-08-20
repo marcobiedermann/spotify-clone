@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Album from '../Album';
-import './style.css';
+import styles from './style.css';
 
 const Albums = ({ albums }) => (
-  <ul className="albums">
+  <ul className={styles.albums}>
     {albums.map(album => (
       <li key={album.id}>
         <Album {...album} />

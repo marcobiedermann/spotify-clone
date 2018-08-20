@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Category from '../Category';
-import './style.css';
+import styles from './style.css';
 
 const Categories = ({ categories }) => (
-  <ul className="categories">
+  <ul className={styles.categories}>
     {categories.map(category => (
       <li key={category.id}>
         <Category {...category} />

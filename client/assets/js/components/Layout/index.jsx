@@ -15,7 +15,7 @@ import {
   fetchMePlaylists,
 } from '../../actions/me';
 import { ACCESS_TOKEN } from '../../constants/config';
-import './style.css';
+import styles from './style.css';
 
 class Layout extends Component {
   componentDidMount() {
@@ -36,7 +36,7 @@ class Layout extends Component {
     } = this.props;
 
     return (
-      <div className="layout">
+      <div className={styles.layout}>
         <Header>
           <Me {...me} />
         </Header>

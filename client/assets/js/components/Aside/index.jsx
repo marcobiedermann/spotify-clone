@@ -1,9 +1,10 @@
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import './style.css';
+import styles from './style.css';
 
 const Aside = ({ children }) => (
-  <aside className="aside aside--left">
+  <aside className={classNames(styles.aside, styles['aside--left'])}>
     {children}
   </aside>
 );
