@@ -24,11 +24,15 @@ const AlbumsPage = ({ match }) => (
 );
 
 AlbumsPage.propTypes = {
-  match: PropTypes.shape(),
+  match: PropTypes.shape({
+    url: PropTypes.string,
+  }),
 };
 
 AlbumsPage.defaultProps = {
-  match: null,
+  match: {
+    url: '',
+  },
 };
 
 export default AlbumsPage;
