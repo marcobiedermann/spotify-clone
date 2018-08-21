@@ -2,7 +2,7 @@
   "name": "spotify-clone",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "client/index.html",
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.production.config.js",
