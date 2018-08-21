@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './style.css';
 
 const Category = ({ id, icons, name }) => (
-  <figure className={styles.category}>
+  <figure>
     {icons[0] && (
       <Link to={`/browse/categories/${id}/playlists`}>
         <img src={icons[0].url} alt={name} />

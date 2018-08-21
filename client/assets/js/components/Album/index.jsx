@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Tracks from '../Tracks';
-import styles from './style.css';
 
 const Album = ({
   artists,
@@ -11,8 +10,8 @@ const Album = ({
   name,
   tracks,
 }) => (
-  <div className={styles.album}>
-    <figure className={styles.album}>
+  <div>
+    <figure>
       {images[1] && (
         <Link to={`/albums/${id}`}>
           <img src={images[1].url} alt={name} />

@@ -1,12 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div
-  className="album"
->
-  <figure
-    className="album"
-  >
+<div>
+  <figure>
     <figcaption>
       <h3>
         <a
