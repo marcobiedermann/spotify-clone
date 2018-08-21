@@ -24,11 +24,15 @@ const MePage = ({ match }) => (
 );
 
 MePage.propTypes = {
-  match: PropTypes.shape(),
+  match: PropTypes.shape({
+    url: PropTypes.string,
+  }),
 };
 
 MePage.defaultProps = {
-  match: null,
+  match: {
+    url: '',
+  },
 };
 
 export default MePage;
