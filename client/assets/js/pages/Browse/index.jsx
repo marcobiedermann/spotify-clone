@@ -51,11 +51,15 @@ const BrowsePage = ({ match }) => (
 );
 
 BrowsePage.propTypes = {
-  match: PropTypes.shape(),
+  match: PropTypes.shape({
+    url: PropTypes.string,
+  }),
 };
 
 BrowsePage.defaultProps = {
-  match: null,
+  match: {
+    url: '',
+  },
 };
 
 export default BrowsePage;
