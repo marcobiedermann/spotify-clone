@@ -24,11 +24,15 @@ const UsersPage = ({ match }) => (
 );
 
 UsersPage.propTypes = {
-  match: PropTypes.shape(),
+  match: PropTypes.shape({
+    url: PropTypes.string,
+  }),
 };
 
 UsersPage.defaultProps = {
-  match: null,
+  match: {
+    url: '',
+  },
 };
 
 export default UsersPage;
