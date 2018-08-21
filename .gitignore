@@ -1,3 +1,4 @@
 client/data
+coverage
 node_modules
 server/public
