@@ -5,6 +5,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import history from './history';
+import * as routes from '../constants/routes';
 import LayoutContainer from '../containers/Layout';
 import AlbumsPage from '../pages/Albums';
 import ArtistsPage from '../pages/Artists';
@@ -17,12 +18,12 @@ const Router = () => (
   <ConnectedRouter history={history}>
     <LayoutContainer>
       <Switch>
-        <Route path="/albums" component={AlbumsPage} />
-        <Route path="/artists" component={ArtistsPage} />
-        <Route path="/browse" component={BrowsePage} />
-        <Route path="/me" component={MePage} />
-        <Route path="/users" component={UsersPage} />
-        <Route path="/" component={IndexPage} />
+        <Route path={routes.ALBUMS} component={AlbumsPage} />
+        <Route path={routes.ALBUMS} component={ArtistsPage} />
+        <Route path={routes.BROWSE} component={BrowsePage} />
+        <Route path={routes.ME} component={MePage} />
+        <Route path={routes.USERS} component={UsersPage} />
+        <Route path={routes.INDEX} component={IndexPage} />
       </Switch>
     </LayoutContainer>
   </ConnectedRouter>
