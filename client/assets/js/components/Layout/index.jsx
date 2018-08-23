@@ -66,7 +66,9 @@ Layout.propTypes = {
   fetchMe: PropTypes.func,
   fetchMePlaylists: PropTypes.func,
   me: PropTypes.shape(),
-  playlists: PropTypes.shape(),
+  playlists: PropTypes.shape({
+    items: PropTypes.arrayOf(PropTypes.shape()),
+  }),
 };
 
 Layout.defaultProps = {
@@ -74,7 +76,9 @@ Layout.defaultProps = {
   fetchMe: () => {},
   fetchMePlaylists: () => {},
   me: null,
-  playlists: null,
+  playlists: {
+    items: [],
+  },
 };
 
 export default Layout;

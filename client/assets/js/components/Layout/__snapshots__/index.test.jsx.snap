@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="layout"
+>
+  <header>
+    <div
+      className="me"
+    >
+      <figure
+        className="me__image"
+      />
+      <a
+        href="/users/"
+        onClick={[Function]}
+      >
+        
+      </a>
+    </div>
+  </header>
+  <div
+    className="content"
+  >
+    <main
+      className="main"
+    />
+    <aside
+      className="aside aside--left"
+    >
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="/"
+              onClick={[Function]}
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="/browse"
+              onClick={[Function]}
+            >
+              Browse
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <ul />
+    </aside>
+  </div>
+  <footer>
+    Footer
+  </footer>
+</div>
+`;
