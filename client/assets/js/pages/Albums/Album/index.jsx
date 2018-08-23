@@ -38,13 +38,23 @@ class AlbumPage extends Component {
 AlbumPage.propTypes = {
   artist: PropTypes.shape(),
   fetchAlbum: PropTypes.func,
-  match: PropTypes.shape(),
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      album_id: PropTypes.string,
+    }),
+    url: PropTypes.string,
+  }),
 };
 
 AlbumPage.defaultProps = {
   artist: {},
   fetchAlbum: () => {},
-  match: null,
+  match: {
+    params: {
+      album_id: '',
+    },
+    url: '',
+  },
 };
 
 export default AlbumPage;
