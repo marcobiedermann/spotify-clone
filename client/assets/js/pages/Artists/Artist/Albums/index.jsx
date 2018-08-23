@@ -1,9 +1,9 @@
 import React from 'react';
 
-const AlbumPage = () => (
+const AlbumsPage = () => (
   <div>
-    Album
+    Albums
   </div>
 );
 
-export default AlbumPage;
+export default AlbumsPage;
