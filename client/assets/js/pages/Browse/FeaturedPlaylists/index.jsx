@@ -7,7 +7,7 @@ import {
 import Playlists from '../../../components/Playlists';
 import { ACCESS_TOKEN } from '../../../constants/config';
 
-class FeaturedPlaylists extends Component {
+class FeaturedPlaylistsPage extends Component {
   componentDidMount() {
     const { fetchFeaturedPlaylists } = this.props;
 
@@ -28,16 +28,20 @@ class FeaturedPlaylists extends Component {
   }
 }
 
-FeaturedPlaylists.propTypes = {
+FeaturedPlaylistsPage.propTypes = {
   playlists: PropTypes.shape(),
   fetchFeaturedPlaylists: PropTypes.func,
-  match: PropTypes.shape(),
+  match: PropTypes.shape({
+    url: PropTypes.string,
+  }),
 };
 
-FeaturedPlaylists.defaultProps = {
+FeaturedPlaylistsPage.defaultProps = {
   playlists: {},
   fetchFeaturedPlaylists: () => {},
-  match: null,
+  match: {
+    url: '',
+  },
 };
 
-export default FeaturedPlaylists;
+export default FeaturedPlaylistsPage;
