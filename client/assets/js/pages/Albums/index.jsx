@@ -4,13 +4,13 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import AlbumPage from './Album';
+import AlbumPageContainer from '../../containers/AlbumPage';
 
 const AlbumsPage = ({ match }) => (
   <Switch>
     <Route
       path={`${match.url}/:album_id`}
-      component={AlbumPage}
+      component={AlbumPageContainer}
     />
     <Route
       path={`${match.url}`}

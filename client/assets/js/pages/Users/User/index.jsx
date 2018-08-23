@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
 import PlaylistsPage from './Playlists';
-import { fetchUser } from '../../../actions/users';
 import User from '../../../components/User';
 import { ACCESS_TOKEN } from '../../../constants/config';
 
@@ -46,19 +43,4 @@ UserPage.defaultProps = {
   me: null,
 };
 
-const mapStateToProps = state => ({
-  ...state,
-  user: state.users.user,
-});
-
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchUser,
-  },
-  dispatch,
-);
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(UserPage);
+export default UserPage;

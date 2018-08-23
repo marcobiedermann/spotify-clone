@@ -1,15 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import {
   Route,
   Switch,
 } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
 import AlbumsPage from './Albums';
 import RelatedArtistsPage from './RelatedArtists';
 import TopTracksPage from './TopTracks';
-import { fetchArtist } from '../../../actions/artists';
 import Artist from '../../../components/Artist';
 import { ACCESS_TOKEN } from '../../../constants/config';
 
@@ -58,19 +55,4 @@ ArtistPage.defaultProps = {
   match: null,
 };
 
-const mapStateToProps = state => ({
-  ...state,
-  artist: state.artists.artist,
-});
-
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchArtist,
-  },
-  dispatch,
-);
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(ArtistPage);
+export default ArtistPage;

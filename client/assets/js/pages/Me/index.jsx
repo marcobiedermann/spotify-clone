@@ -4,13 +4,13 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import PlaylistsPage from './Playlists';
+import PlaylistsPageContainer from '../../containers/PlaylistsPage';
 
 const MePage = ({ match }) => (
   <Switch>
     <Route
       path={`${match.url}/playlists`}
-      component={PlaylistsPage}
+      component={PlaylistsPageContainer}
     />
     <Route
       path={`${match.url}`}

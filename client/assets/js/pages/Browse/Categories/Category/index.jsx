@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import {
   Route,
   Switch,
 } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
 import PlaylistsPage from './Playlists';
-import { fetchCategory } from '../../../../actions/browse';
 import Category from '../../../../components/Category';
 import { ACCESS_TOKEN } from '../../../../constants/config';
 
@@ -51,19 +48,4 @@ CategoryPage.defaultProps = {
   match: null,
 };
 
-const mapStateToProps = state => ({
-  ...state,
-  category: state.browse.category,
-});
-
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchCategory,
-  },
-  dispatch,
-);
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(CategoryPage);
+export default CategoryPage;

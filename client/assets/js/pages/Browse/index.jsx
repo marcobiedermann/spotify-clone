@@ -5,23 +5,23 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import CategoriesPage from './Categories';
-import FeaturedPlaylistsPage from './FeaturedPlaylists';
-import NewReleasesPage from './NewReleases';
+import CategoriesPageContainer from '../../containers/CategoriesPage';
+import FeaturedPlaylistsPageContainer from '../../containers/FeaturedPlaylists';
+import NewReleasesPageContainer from '../../containers/NewReleasesPage';
 
 const BrowsePage = ({ match }) => (
   <Switch>
     <Route
       path={`${match.url}/categories`}
-      component={CategoriesPage}
+      component={CategoriesPageContainer}
     />
     <Route
       path={`${match.url}/featured-playlists`}
-      component={FeaturedPlaylistsPage}
+      component={FeaturedPlaylistsPageContainer}
     />
     <Route
       path={`${match.url}/new-releases`}
-      component={NewReleasesPage}
+      component={NewReleasesPageContainer}
     />
     <Route
       path={`${match.url}`}
