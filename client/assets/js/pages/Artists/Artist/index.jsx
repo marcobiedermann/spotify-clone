@@ -46,13 +46,23 @@ class ArtistPage extends Component {
 ArtistPage.propTypes = {
   artist: PropTypes.shape(),
   fetchArtist: PropTypes.func,
-  match: PropTypes.shape(),
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }),
+    url: PropTypes.string,
+  }),
 };
 
 ArtistPage.defaultProps = {
   artist: {},
   fetchArtist: () => {},
-  match: null,
+  match: {
+    params: {
+      id: '',
+    },
+    url: '',
+  },
 };
 
 export default ArtistPage;
