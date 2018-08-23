@@ -31,13 +31,17 @@ class PlaylistsPage extends Component {
 PlaylistsPage.propTypes = {
   playlists: PropTypes.shape(),
   fetchCategoryPlaylists: PropTypes.func,
-  match: PropTypes.shape(),
+  match: PropTypes.shape({
+    url: PropTypes.string,
+  }),
 };
 
 PlaylistsPage.defaultProps = {
   playlists: {},
   fetchCategoryPlaylists: () => {},
-  match: null,
+  match: {
+    url: '',
+  },
 };
 
 export default PlaylistsPage;
