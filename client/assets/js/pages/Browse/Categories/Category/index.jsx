@@ -39,13 +39,23 @@ class CategoryPage extends Component {
 CategoryPage.propTypes = {
   category: PropTypes.shape(),
   fetchCategory: PropTypes.func,
-  match: PropTypes.shape(),
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      category_id: PropTypes.string,
+    }),
+    url: PropTypes.string,
+  }),
 };
 
 CategoryPage.defaultProps = {
   category: {},
   fetchCategory: () => {},
-  match: null,
+  match: {
+    params: {
+      category_id: '',
+    },
+    url: '',
+  },
 };
 
 export default CategoryPage;
