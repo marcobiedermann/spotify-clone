@@ -35,13 +35,17 @@ class CategoriesPage extends Component {
 CategoriesPage.propTypes = {
   categories: PropTypes.shape(),
   fetchCategories: PropTypes.func,
-  match: PropTypes.shape(),
+  match: PropTypes.shape({
+    url: PropTypes.string,
+  }),
 };
 
 CategoriesPage.defaultProps = {
   categories: {},
   fetchCategories: () => {},
-  match: null,
+  match: {
+    url: '',
+  },
 };
 
 export default CategoriesPage;
