@@ -18,11 +18,15 @@ const PlaylistsPage = ({ match }) => (
 );
 
 PlaylistsPage.propTypes = {
-  match: PropTypes.shape(),
+  match: PropTypes.shape({
+    url: PropTypes.string,
+  }),
 };
 
 PlaylistsPage.defaultProps = {
-  match: null,
+  match: {
+    url: '',
+  },
 };
 
 export default PlaylistsPage;
