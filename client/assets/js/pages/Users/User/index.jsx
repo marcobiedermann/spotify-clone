@@ -33,14 +33,28 @@ class UserPage extends Component {
 
 UserPage.propTypes = {
   fetchUser: PropTypes.func,
-  match: PropTypes.shape(),
-  me: PropTypes.shape(),
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      user_id: PropTypes.string,
+    }),
+    url: PropTypes.string,
+  }),
+  me: PropTypes.shape({
+    me: PropTypes.shape(),
+  }),
 };
 
 UserPage.defaultProps = {
   fetchUser: () => {},
-  match: null,
-  me: null,
+  match: {
+    params: {
+      user_id: '',
+    },
+    url: '',
+  },
+  me: {
+    me: null,
+  },
 };
 
 export default UserPage;
