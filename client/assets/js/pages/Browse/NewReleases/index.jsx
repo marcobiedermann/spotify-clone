@@ -22,12 +22,16 @@ class NewReleasesPage extends Component {
 }
 
 NewReleasesPage.propTypes = {
-  albums: PropTypes.shape(),
+  albums: PropTypes.shape({
+    items: PropTypes.arrayOf(PropTypes.shape),
+  }),
   fetchNewReleases: PropTypes.func,
 };
 
 NewReleasesPage.defaultProps = {
-  albums: {},
+  albums: {
+    items: [],
+  },
   fetchNewReleases: () => {},
 };
 

@@ -15,7 +15,11 @@ const Artist = ({ images, name }) => (
 );
 
 Artist.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.shape),
+  images: PropTypes.arrayOf(PropTypes.shape({
+    height: PropTypes.number,
+    url: PropTypes.string,
+    width: PropTypes.number,
+  })),
   name: PropTypes.string,
 };
 

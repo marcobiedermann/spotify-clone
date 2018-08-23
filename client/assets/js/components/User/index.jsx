@@ -17,7 +17,9 @@ const User = ({
     )}
     {followers && (
       <p>
-        {followers.total} Followers
+        {followers.total}
+        {' '}
+        Followers
       </p>
     )}
   </div>
@@ -25,13 +27,19 @@ const User = ({
 
 User.propTypes = {
   display_name: PropTypes.string,
-  followers: PropTypes.shape(),
-  images: PropTypes.arrayOf(PropTypes.shape()),
+  followers: PropTypes.shape({
+    total: PropTypes.number,
+  }),
+  images: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string,
+  })),
 };
 
 User.defaultProps = {
   display_name: '',
-  followers: null,
+  followers: {
+    total: 0,
+  },
   images: [],
 };
 

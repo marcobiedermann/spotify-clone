@@ -55,7 +55,7 @@ ArtistPage.propTypes = {
 };
 
 ArtistPage.defaultProps = {
-  artist: {},
+  artist: null,
   fetchArtist: () => {},
   match: {
     params: {

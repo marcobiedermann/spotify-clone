@@ -36,7 +36,7 @@ class AlbumPage extends Component {
 }
 
 AlbumPage.propTypes = {
-  artist: PropTypes.shape(),
+  album: PropTypes.shape(),
   fetchAlbum: PropTypes.func,
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -47,7 +47,7 @@ AlbumPage.propTypes = {
 };
 
 AlbumPage.defaultProps = {
-  artist: {},
+  album: null,
   fetchAlbum: () => {},
   match: {
     params: {

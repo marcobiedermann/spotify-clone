@@ -24,7 +24,9 @@ const Playlist = ({
 
 Playlist.propTypes = {
   id: PropTypes.string,
-  images: PropTypes.arrayOf(PropTypes.shape()),
+  images: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string,
+  })),
   name: PropTypes.string,
   owner: PropTypes.shape({
     id: PropTypes.string,

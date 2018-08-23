@@ -14,7 +14,9 @@ const Categories = ({ categories }) => (
 );
 
 Categories.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.shape()),
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+  })),
 };
 
 Categories.defaultProps = {

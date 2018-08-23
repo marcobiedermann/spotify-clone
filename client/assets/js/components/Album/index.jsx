@@ -39,11 +39,17 @@ const Album = ({
 );
 
 Album.propTypes = {
-  artists: PropTypes.arrayOf(PropTypes.shape()),
+  artists: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+  })),
   id: PropTypes.string,
-  images: PropTypes.arrayOf(PropTypes.shape()),
+  images: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string,
+  })),
   name: PropTypes.string,
-  tracks: PropTypes.shape(),
+  tracks: PropTypes.shape({
+    items: PropTypes.arrayOf(PropTypes.shape()),
+  }),
 };
 
 Album.defaultProps = {
@@ -51,7 +57,9 @@ Album.defaultProps = {
   id: '',
   images: [],
   name: '',
-  tracks: null,
+  tracks: {
+    items: [],
+  },
 };
 
 export default Album;

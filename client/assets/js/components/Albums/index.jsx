@@ -14,7 +14,9 @@ const Albums = ({ albums }) => (
 );
 
 Albums.propTypes = {
-  albums: PropTypes.arrayOf(PropTypes.shape()),
+  albums: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+  })),
 };
 
 Albums.defaultProps = {

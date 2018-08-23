@@ -6,6 +6,11 @@ exports[`renders correctly 1`] = `
     <h1>
       
     </h1>
+    <p>
+      0
+       
+      Followers
+    </p>
   </div>
 </div>
 `;

@@ -67,7 +67,9 @@ Layout.propTypes = {
   fetchMePlaylists: PropTypes.func,
   me: PropTypes.shape(),
   playlists: PropTypes.shape({
-    items: PropTypes.arrayOf(PropTypes.shape()),
+    items: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+    })),
   }),
 };
 

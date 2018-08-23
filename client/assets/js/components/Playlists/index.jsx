@@ -14,7 +14,9 @@ const Playlists = ({ playlists }) => (
 );
 
 Playlists.propTypes = {
-  playlists: PropTypes.arrayOf(PropTypes.shape()),
+  playlists: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+  })),
 };
 
 Playlists.defaultProps = {

@@ -48,7 +48,7 @@ CategoryPage.propTypes = {
 };
 
 CategoryPage.defaultProps = {
-  category: {},
+  category: null,
   fetchCategory: () => {},
   match: {
     params: {

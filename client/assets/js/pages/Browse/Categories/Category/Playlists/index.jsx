@@ -29,7 +29,9 @@ class PlaylistsPage extends Component {
 }
 
 PlaylistsPage.propTypes = {
-  playlists: PropTypes.shape(),
+  playlists: PropTypes.shape({
+    items: PropTypes.arrayOf(PropTypes.shape),
+  }),
   fetchCategoryPlaylists: PropTypes.func,
   match: PropTypes.shape({
     url: PropTypes.string,
@@ -37,7 +39,9 @@ PlaylistsPage.propTypes = {
 };
 
 PlaylistsPage.defaultProps = {
-  playlists: {},
+  playlists: {
+    items: [],
+  },
   fetchCategoryPlaylists: () => {},
   match: {
     url: '',

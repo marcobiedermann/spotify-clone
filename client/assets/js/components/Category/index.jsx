@@ -18,14 +18,16 @@ const Category = ({ id, icons, name }) => (
 );
 
 Category.propTypes = {
+  icons: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string,
+  })),
   id: PropTypes.string,
-  icons: PropTypes.arrayOf(PropTypes.shape()),
   name: PropTypes.string,
 };
 
 Category.defaultProps = {
-  id: '',
   icons: [],
+  id: '',
   name: '',
 };
 

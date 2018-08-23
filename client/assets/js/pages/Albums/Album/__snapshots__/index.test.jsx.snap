@@ -14,5 +14,8 @@ exports[`renders correctly 1`] = `
       </h3>
     </figcaption>
   </figure>
+  <table>
+    <tbody />
+  </table>
 </div>
 `;

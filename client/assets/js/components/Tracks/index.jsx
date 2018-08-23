@@ -13,7 +13,9 @@ const Tracks = ({ tracks }) => (
 );
 
 Tracks.propTypes = {
-  tracks: PropTypes.arrayOf(PropTypes.shape()),
+  tracks: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+  })),
 };
 
 Tracks.defaultProps = {

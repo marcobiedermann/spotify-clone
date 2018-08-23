@@ -23,7 +23,9 @@ const Me = ({
 Me.propTypes = {
   display_name: PropTypes.string,
   id: PropTypes.string,
-  images: PropTypes.arrayOf(PropTypes.shape()),
+  images: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string,
+  })),
 };
 
 Me.defaultProps = {
