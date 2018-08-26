@@ -11,6 +11,7 @@ import AlbumsPage from '../pages/Albums';
 import ArtistsPage from '../pages/Artists';
 import BrowsePage from '../pages/Browse';
 import IndexPage from '../pages/Index';
+import LoginPage from '../pages/Login';
 import MePage from '../pages/Me';
 import UsersPage from '../pages/Users';
 
@@ -21,6 +22,7 @@ const Router = () => (
         <Route path={routes.ALBUMS} component={AlbumsPage} />
         <Route path={routes.ALBUMS} component={ArtistsPage} />
         <Route path={routes.BROWSE} component={BrowsePage} />
+        <Route path={routes.LOGIN} component={LoginPage} />
         <Route path={routes.ME} component={MePage} />
         <Route path={routes.USERS} component={UsersPage} />
         <Route path={routes.INDEX} component={IndexPage} />
