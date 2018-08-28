@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import PlaylistsPage from './Playlists';
+import UserPlaylistsPageContainer from '../../../containers/UserPlaylistsPage';
 import User from '../../../components/User';
 import { ACCESS_TOKEN } from '../../../constants/config';
 
@@ -17,7 +17,7 @@ class UserPage extends Component {
 
     return (
       <Switch>
-        <Route path={`${match.url}/playlists`} component={PlaylistsPage} />
+        <Route path={`${match.url}/playlists`} component={UserPlaylistsPageContainer} />
         <Route
           path={`${match.url}`}
           component={() => (
