@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCategoryPlaylists } from '../actions/browse';
-import PlaylistsPage from '../pages/Me/Playlists';
+import PlaylistsPage from '../pages/Browse/Categories/Category/Playlists';
 
 const mapStateToProps = state => ({
   ...state,

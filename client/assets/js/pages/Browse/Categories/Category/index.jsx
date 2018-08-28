@@ -4,7 +4,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import PlaylistsPage from './Playlists';
+import PlaylistsPageContainer from '../../../../containers/PlaylistsPage';
 import Category from '../../../../components/Category';
 import { ACCESS_TOKEN } from '../../../../constants/config';
 
@@ -25,7 +25,7 @@ class CategoryPage extends Component {
       <Switch>
         <Route
           path={`${match.url}/playlists`}
-          component={PlaylistsPage}
+          component={PlaylistsPageContainer}
         />
         <Route
           path={`${match.url}`}
