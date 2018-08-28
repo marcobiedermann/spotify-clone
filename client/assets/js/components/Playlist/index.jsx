@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Image from '../Image';
 
 const Playlist = ({
   id,
@@ -11,7 +12,7 @@ const Playlist = ({
   <figure>
     {images[0] && (
       <Link to={`/users/${owner.id}/playlists/${id}`}>
-        <img src={images[0].url} alt={name} />
+        <Image {...images[0]} alt={name} />
       </Link>
     )}
     <figcaption>

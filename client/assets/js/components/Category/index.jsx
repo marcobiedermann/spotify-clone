@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Image from '../Image';
 
 const Category = ({ id, icons, name }) => (
   <figure>
     {icons[0] && (
       <Link to={`/browse/categories/${id}/playlists`}>
-        <img src={icons[0].url} alt={name} />
+        <Image {...icons[0]} alt={name} />
       </Link>
     )}
     <figcaption>

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Image from '../Image';
 import Tracks from '../Tracks';
 
 const Album = ({
@@ -14,7 +15,7 @@ const Album = ({
     <figure>
       {images[1] && (
         <Link to={`/albums/${id}`}>
-          <img src={images[1].url} alt={name} />
+          <Image {...images[1]} alt={name} />
         </Link>
       )}
       <figcaption>

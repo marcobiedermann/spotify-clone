@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Image from '../Image';
 
 const Artist = ({ images, name }) => (
   <figure>
     {images[0] && (
-      <img src={images[0].url} alt={name} width={images[0].width} height={images[0].height} />
+      <Image {...images[0]} alt={name} />
     )}
     <figcaption>
       <h2>
