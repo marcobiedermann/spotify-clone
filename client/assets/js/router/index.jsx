@@ -20,7 +20,7 @@ const Router = () => (
     <LayoutContainer>
       <Switch>
         <Route path={routes.ALBUMS} component={AlbumsPage} />
-        <Route path={routes.ALBUMS} component={ArtistsPage} />
+        <Route path={routes.ARTISTS} component={ArtistsPage} />
         <Route path={routes.BROWSE} component={BrowsePage} />
         <Route path={routes.LOGIN} component={LoginPage} />
         <Route path={routes.ME} component={MePage} />
