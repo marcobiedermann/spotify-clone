@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import ArtistAlbumsPageContainer from '../../../containers/ArtistAlbumsPage';
 import ArtistRelatedArtistsPageContainer from '../../../containers/ArtistRelatedArtistsPage';
-import TopTracksPage from './TopTracks';
+import ArtistTopTracksPageContainer from '../../../containers/ArtistTopTracksPage';
 import Artist from '../../../components/Artist';
 
 class ArtistPage extends Component {
@@ -32,7 +32,7 @@ class ArtistPage extends Component {
         />
         <Route
           path={`${match.url}/top-tracks`}
-          component={TopTracksPage}
+          component={ArtistTopTracksPageContainer}
         />
         <Route
           path={`${match.url}`}
