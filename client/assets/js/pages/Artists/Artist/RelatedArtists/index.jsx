@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Artist from '../../../../components/Artist';
+import Artists from '../../../../components/Artists';
 
 class RelatedArtistsPage extends Component {
   componentDidMount() {
@@ -15,13 +15,7 @@ class RelatedArtistsPage extends Component {
     return (
       <div>
         {artists && (
-          <ul>
-            {artists.map(artist => (
-              <li key={artist.id}>
-                <Artist {...artist} />
-              </li>
-            ))}
-          </ul>
+          <Artists artists={artists} />
         )}
       </div>
     );
