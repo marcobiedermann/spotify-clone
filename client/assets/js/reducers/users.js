@@ -3,10 +3,13 @@ import {
   FETCH_USER_ERROR,
   FETCH_USER_PLAYLISTS_SUCCESS,
   FETCH_USER_PLAYLISTS_ERROR,
+  FETCH_USER_PLAYLIST_SUCCESS,
+  FETCH_USER_PLAYLIST_ERROR,
 } from '../constants/users';
 
 const initialState = {
   error: null,
+  playlist: {},
   playlists: [],
   user: {},
 };
@@ -32,6 +35,18 @@ const usersReducer = (state = initialState, action) => {
       };
     }
     case FETCH_USER_PLAYLISTS_ERROR: {
+      return {
+        ...state,
+        error: action.error,
+      };
+    }
+    case FETCH_USER_PLAYLIST_SUCCESS: {
+      return {
+        ...state,
+        playlist: action.playlist,
+      };
+    }
+    case FETCH_USER_PLAYLIST_ERROR: {
       return {
         ...state,
         error: action.error,

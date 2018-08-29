@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import PlaylistPage from './Playlist';
 import Playlists from '../../../../components/Playlists';
 import { ACCESS_TOKEN } from '../../../../constants/config';
+import PlaylistPageContainer from '../../../../containers/UserPlaylistPage';
 
 class PlaylistsPage extends Component {
   componentDidMount() {
@@ -17,7 +17,7 @@ class PlaylistsPage extends Component {
 
     return (
       <Switch>
-        <Route path={`${match.url}/:playlist_id`} component={PlaylistPage} />
+        <Route path={`${match.url}/:playlist_id`} component={PlaylistPageContainer} />
         <Route
           path={`${match.url}`}
           component={() => (
