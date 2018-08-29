@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import {
+  Link,
   Route,
   Switch,
 } from 'react-router-dom';
@@ -35,7 +36,22 @@ class ArtistPage extends Component {
         />
         <Route
           path={`${match.url}`}
-          component={() => (<Artist {...artist} />)}
+          component={() => (
+            <div>
+              <Artist {...artist} />
+              <ul>
+                <li>
+                  <Link to={`${match.url}/albums`}>Albums</Link>
+                </li>
+                <li>
+                  <Link to={`${match.url}/related-artists`}>Related Artists</Link>
+                </li>
+                <li>
+                  <Link to={`${match.url}/top-tracks`}>Top Tracks</Link>
+                </li>
+              </ul>
+            </div>
+          )}
         />
       </Switch>
     );
