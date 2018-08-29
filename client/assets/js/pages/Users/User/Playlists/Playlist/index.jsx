@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Playlist from '../../../../../components/Playlist';
+import Track from '../../../../../components/Track';
 import ACCESS_TOKEN from '../../../../../constants/config';
 
 class PlaylistPage extends Component {
@@ -14,7 +15,18 @@ class PlaylistPage extends Component {
     const { playlist } = this.props;
 
     return (
-      <Playlist {...playlist} />
+      <div>
+        <Playlist {...playlist} />
+        {playlist.tracks && (
+          <table>
+            <tbody>
+              {playlist.tracks.items.map(track => (
+                <Track key={track.track.id} {...track.track} />
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
     );
   }
 }
@@ -26,6 +38,11 @@ PlaylistPage.propTypes = {
       playlist_id: PropTypes.string,
     }),
   }),
+  playlist: PropTypes.shape({
+    tracks: PropTypes.shape({
+      items: PropTypes.arrayOf(PropTypes.shape),
+    }),
+  }),
 };
 
 PlaylistPage.defaultProps = {
@@ -33,6 +50,11 @@ PlaylistPage.defaultProps = {
   match: {
     params: {
       playlist_id: '',
+    },
+  },
+  playlist: {
+    tracks: {
+      items: [],
     },
   },
 };
