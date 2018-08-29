@@ -5,7 +5,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import AlbumsPage from './Albums';
+import ArtistAlbumsPageContainer from '../../../containers/ArtistAlbumsPage';
 import RelatedArtistsPage from './RelatedArtists';
 import TopTracksPage from './TopTracks';
 import Artist from '../../../components/Artist';
@@ -24,7 +24,7 @@ class ArtistPage extends Component {
       <Switch>
         <Route
           path={`${match.url}/albums`}
-          component={AlbumsPage}
+          component={ArtistAlbumsPageContainer}
         />
         <Route
           path={`${match.url}/related-artists`}
