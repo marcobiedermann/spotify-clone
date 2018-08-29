@@ -20,7 +20,7 @@ class AlbumsPage extends Component {
 
 AlbumsPage.propTypes = {
   accessToken: PropTypes.string,
-  albums: PropTypes.arrayOf(),
+  albums: PropTypes.arrayOf(PropTypes.shape),
   fetchArtistAlbums: PropTypes.func,
 };
 

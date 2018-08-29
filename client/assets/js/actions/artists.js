@@ -3,6 +3,8 @@ import {
   FETCH_ARTIST_ERROR,
   FETCH_ARTIST_ALBUMS_SUCCESS,
   FETCH_ARTIST_ALBUMS_ERROR,
+  FETCH_ARTIST_RELATED_ARTISTS_SUCCESS,
+  FETCH_ARTIST_RELATED_ARTISTS_ERROR,
 } from '../constants/artists';
 
 // const baseUrl = 'https://api.spotify.com';
@@ -59,5 +61,32 @@ export const fetchArtistAlbums = (accessToken, id) => async (dispatch) => {
     dispatch(fetchArtistAlbumsSuccess(result.items));
   } catch (error) {
     dispatch(fetchArtistAlbumsError(error));
+  }
+};
+
+export const fetchArtistRelatedArtistsSuccess = artists => ({
+  type: FETCH_ARTIST_RELATED_ARTISTS_SUCCESS,
+  artists,
+});
+
+export const fetchArtistRelatedArtistsError = error => ({
+  type: FETCH_ARTIST_RELATED_ARTISTS_ERROR,
+  error,
+});
+
+export const fetchArtistRelatedArtists = (accessToken, id) => async (dispatch) => {
+  const request = new Request(`${baseUrl}/v1/artists/${id}/related-artists.json`, {
+    headers: new Headers({
+      Authorization: `Bearer ${accessToken}`,
+    }),
+  });
+
+  try {
+    const response = await fetch(request);
+    const result = await response.json();
+
+    dispatch(fetchArtistRelatedArtistsSuccess(result.artists));
+  } catch (error) {
+    dispatch(fetchArtistRelatedArtistsError(error));
   }
 };

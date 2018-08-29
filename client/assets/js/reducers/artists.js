@@ -3,10 +3,13 @@ import {
   FETCH_ARTIST_ERROR,
   FETCH_ARTIST_ALBUMS_SUCCESS,
   FETCH_ARTIST_ALBUMS_ERROR,
+  FETCH_ARTIST_RELATED_ARTISTS_SUCCESS,
+  FETCH_ARTIST_RELATED_ARTISTS_ERROR,
 } from '../constants/artists';
 
 const initialState = {
   artist: {},
+  artists: [],
   albums: [],
   error: null,
 };
@@ -32,6 +35,18 @@ const artistsReducer = (state = initialState, action) => {
       };
     }
     case FETCH_ARTIST_ALBUMS_ERROR: {
+      return {
+        ...state,
+        error: action.error,
+      };
+    }
+    case FETCH_ARTIST_RELATED_ARTISTS_SUCCESS: {
+      return {
+        ...state,
+        artists: action.artists,
+      };
+    }
+    case FETCH_ARTIST_RELATED_ARTISTS_ERROR: {
       return {
         ...state,
         error: action.error,
