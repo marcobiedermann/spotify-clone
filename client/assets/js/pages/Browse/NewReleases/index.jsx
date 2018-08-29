@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Albums from '../../../components/Albums';
-import { ACCESS_TOKEN } from '../../../constants/config';
 
 class NewReleasesPage extends Component {
   componentDidMount() {
-    const { fetchNewReleases } = this.props;
+    const { accessToken, fetchNewReleases } = this.props;
 
-    fetchNewReleases(ACCESS_TOKEN);
+    fetchNewReleases(accessToken);
   }
 
   render() {
@@ -22,6 +21,7 @@ class NewReleasesPage extends Component {
 }
 
 NewReleasesPage.propTypes = {
+  accessToken: PropTypes.string,
   albums: PropTypes.shape({
     items: PropTypes.arrayOf(PropTypes.shape),
   }),
@@ -29,6 +29,7 @@ NewReleasesPage.propTypes = {
 };
 
 NewReleasesPage.defaultProps = {
+  accessToken: '',
   albums: {
     items: [],
   },

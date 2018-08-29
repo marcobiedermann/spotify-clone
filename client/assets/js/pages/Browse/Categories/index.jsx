@@ -6,13 +6,12 @@ import {
 } from 'react-router-dom';
 import CategoryPageContainer from '../../../containers/CategoryPage';
 import Categories from '../../../components/Categories';
-import { ACCESS_TOKEN } from '../../../constants/config';
 
 class CategoriesPage extends Component {
   componentDidMount() {
-    const { fetchCategories } = this.props;
+    const { accessToken, fetchCategories } = this.props;
 
-    fetchCategories(ACCESS_TOKEN);
+    fetchCategories(accessToken);
   }
 
   render() {
@@ -33,6 +32,7 @@ class CategoriesPage extends Component {
 }
 
 CategoriesPage.propTypes = {
+  accessToken: PropTypes.string,
   categories: PropTypes.shape(),
   fetchCategories: PropTypes.func,
   match: PropTypes.shape({
@@ -41,6 +41,7 @@ CategoriesPage.propTypes = {
 };
 
 CategoriesPage.defaultProps = {
+  accessToken: '',
   categories: {},
   fetchCategories: () => {},
   match: {

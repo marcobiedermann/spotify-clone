@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import UserPlaylistsPageContainer from '../../../containers/UserPlaylistsPage';
 import User from '../../../components/User';
-import { ACCESS_TOKEN } from '../../../constants/config';
 
 class UserPage extends Component {
   componentDidMount() {
-    const { fetchUser, match } = this.props;
+    const { accessToken, fetchUser, match } = this.props;
 
-    fetchUser(ACCESS_TOKEN, match.params.user_id);
+    fetchUser(accessToken, match.params.user_id);
   }
 
   render() {
@@ -32,6 +31,7 @@ class UserPage extends Component {
 }
 
 UserPage.propTypes = {
+  accessToken: PropTypes.string,
   fetchUser: PropTypes.func,
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -45,6 +45,7 @@ UserPage.propTypes = {
 };
 
 UserPage.defaultProps = {
+  accessToken: '',
   fetchUser: () => {},
   match: {
     params: {

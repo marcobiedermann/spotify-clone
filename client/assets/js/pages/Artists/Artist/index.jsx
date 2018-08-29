@@ -8,13 +8,12 @@ import AlbumsPage from './Albums';
 import RelatedArtistsPage from './RelatedArtists';
 import TopTracksPage from './TopTracks';
 import Artist from '../../../components/Artist';
-import { ACCESS_TOKEN } from '../../../constants/config';
 
 class ArtistPage extends Component {
   componentDidMount() {
-    const { fetchArtist, match } = this.props;
+    const { accessToken, fetchArtist, match } = this.props;
 
-    fetchArtist(ACCESS_TOKEN, match.params.id);
+    fetchArtist(accessToken, match.params.id);
   }
 
   render() {
@@ -44,6 +43,7 @@ class ArtistPage extends Component {
 }
 
 ArtistPage.propTypes = {
+  accessToken: PropTypes.string,
   artist: PropTypes.shape(),
   fetchArtist: PropTypes.func,
   match: PropTypes.shape({
@@ -55,6 +55,7 @@ ArtistPage.propTypes = {
 };
 
 ArtistPage.defaultProps = {
+  accessToken: '',
   artist: null,
   fetchArtist: () => {},
   match: {

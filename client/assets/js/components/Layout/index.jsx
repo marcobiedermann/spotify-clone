@@ -8,18 +8,18 @@ import Header from '../Header';
 import Main from '../Main';
 import Me from '../Me';
 import Navigation from '../Navigation';
-import { ACCESS_TOKEN } from '../../constants/config';
 import styles from './style.css';
 
 class Layout extends Component {
   componentDidMount() {
     const {
+      accessToken,
       fetchMe,
       fetchMePlaylists,
     } = this.props;
 
-    fetchMe(ACCESS_TOKEN);
-    fetchMePlaylists(ACCESS_TOKEN);
+    fetchMe(accessToken);
+    fetchMePlaylists(accessToken);
   }
 
   render() {
@@ -62,6 +62,7 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
+  accessToken: PropTypes.string,
   children: PropTypes.node,
   fetchMe: PropTypes.func,
   fetchMePlaylists: PropTypes.func,
@@ -74,6 +75,7 @@ Layout.propTypes = {
 };
 
 Layout.defaultProps = {
+  accessToken: '',
   children: null,
   fetchMe: () => {},
   fetchMePlaylists: () => {},

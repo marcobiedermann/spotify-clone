@@ -6,13 +6,12 @@ import {
 } from 'react-router-dom';
 import TracksPage from './Tracks';
 import Album from '../../../components/Album';
-import { ACCESS_TOKEN } from '../../../constants/config';
 
 class AlbumPage extends Component {
   componentDidMount() {
-    const { fetchAlbum, match } = this.props;
+    const { accessToken, fetchAlbum, match } = this.props;
 
-    fetchAlbum(ACCESS_TOKEN, match.params.album_id);
+    fetchAlbum(accessToken, match.params.album_id);
   }
 
   render() {
@@ -36,6 +35,7 @@ class AlbumPage extends Component {
 }
 
 AlbumPage.propTypes = {
+  accessToken: PropTypes.string,
   album: PropTypes.shape(),
   fetchAlbum: PropTypes.func,
   match: PropTypes.shape({
@@ -47,6 +47,7 @@ AlbumPage.propTypes = {
 };
 
 AlbumPage.defaultProps = {
+  accessToken: '',
   album: null,
   fetchAlbum: () => {},
   match: {

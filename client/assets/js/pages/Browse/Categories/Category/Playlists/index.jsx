@@ -5,13 +5,12 @@ import {
   Switch,
 } from 'react-router-dom';
 import Playlists from '../../../../../components/Playlists';
-import { ACCESS_TOKEN } from '../../../../../constants/config';
 
 class PlaylistsPage extends Component {
   componentDidMount() {
-    const { fetchCategoryPlaylists } = this.props;
+    const { accessToken, fetchCategoryPlaylists } = this.props;
 
-    fetchCategoryPlaylists(ACCESS_TOKEN, 'dinner');
+    fetchCategoryPlaylists(accessToken, 'dinner');
   }
 
   render() {
@@ -29,6 +28,7 @@ class PlaylistsPage extends Component {
 }
 
 PlaylistsPage.propTypes = {
+  accessToken: PropTypes.string,
   playlists: PropTypes.shape({
     items: PropTypes.arrayOf(PropTypes.shape),
   }),
@@ -39,6 +39,7 @@ PlaylistsPage.propTypes = {
 };
 
 PlaylistsPage.defaultProps = {
+  accessToken: '',
   playlists: {
     items: [],
   },

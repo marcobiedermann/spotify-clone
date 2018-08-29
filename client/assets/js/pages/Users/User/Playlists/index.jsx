@@ -2,14 +2,13 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Playlists from '../../../../components/Playlists';
-import { ACCESS_TOKEN } from '../../../../constants/config';
 import PlaylistPageContainer from '../../../../containers/UserPlaylistPage';
 
 class PlaylistsPage extends Component {
   componentDidMount() {
-    const { fetchUserPlaylists } = this.props;
+    const { accessToken, fetchUserPlaylists } = this.props;
 
-    fetchUserPlaylists(ACCESS_TOKEN, '11168662039');
+    fetchUserPlaylists(accessToken, '11168662039');
   }
 
   render() {
@@ -30,6 +29,7 @@ class PlaylistsPage extends Component {
 }
 
 PlaylistsPage.propTypes = {
+  accessToken: PropTypes.string,
   fetchUserPlaylists: PropTypes.func,
   match: PropTypes.shape({
     url: PropTypes.string,
@@ -38,6 +38,7 @@ PlaylistsPage.propTypes = {
 };
 
 PlaylistsPage.defaultProps = {
+  accessToken: '',
   fetchUserPlaylists: () => {},
   match: {
     url: '',

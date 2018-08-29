@@ -6,14 +6,13 @@ import {
 } from 'react-router-dom';
 import CategoryPlaylistsPageContainer from '../../../../containers/CategoryPlaylistsPage';
 import Category from '../../../../components/Category';
-import { ACCESS_TOKEN } from '../../../../constants/config';
 
 class CategoryPage extends Component {
   componentDidMount() {
-    const { fetchCategory, match } = this.props;
+    const { accessToken, fetchCategory, match } = this.props;
 
     fetchCategory(
-      ACCESS_TOKEN,
+      accessToken,
       match.params.category_id,
     );
   }
@@ -37,6 +36,7 @@ class CategoryPage extends Component {
 }
 
 CategoryPage.propTypes = {
+  accessToken: PropTypes.string,
   category: PropTypes.shape(),
   fetchCategory: PropTypes.func,
   match: PropTypes.shape({
@@ -48,6 +48,7 @@ CategoryPage.propTypes = {
 };
 
 CategoryPage.defaultProps = {
+  accessToken: '',
   category: null,
   fetchCategory: () => {},
   match: {

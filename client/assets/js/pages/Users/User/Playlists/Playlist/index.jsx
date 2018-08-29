@@ -2,13 +2,12 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Playlist from '../../../../../components/Playlist';
 import Track from '../../../../../components/Track';
-import ACCESS_TOKEN from '../../../../../constants/config';
 
 class PlaylistPage extends Component {
   componentDidMount() {
-    const { fetchUserPlaylist, match } = this.props;
+    const { accessToken, fetchUserPlaylist, match } = this.props;
 
-    fetchUserPlaylist(ACCESS_TOKEN, '11168662039', match.params.playlist_id);
+    fetchUserPlaylist(accessToken, '11168662039', match.params.playlist_id);
   }
 
   render() {
@@ -32,6 +31,7 @@ class PlaylistPage extends Component {
 }
 
 PlaylistPage.propTypes = {
+  accessToken: PropTypes.string,
   fetchUserPlaylist: PropTypes.func,
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -46,6 +46,7 @@ PlaylistPage.propTypes = {
 };
 
 PlaylistPage.defaultProps = {
+  accessToken: '',
   fetchUserPlaylist: () => {},
   match: {
     params: {
