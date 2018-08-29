@@ -35,17 +35,6 @@ export const fetchMe = accessToken => async (dispatch) => {
   }
 };
 
-
-
-
-
-
-
-
-
-
-
-
 export const fetchMePlaylistsSuccess = playlists => ({
   type: FETCH_ME_PLAYLISTS_SUCCESS,
   playlists,
