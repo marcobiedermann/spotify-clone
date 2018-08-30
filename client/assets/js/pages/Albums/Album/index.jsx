@@ -24,7 +24,7 @@ class AlbumPage extends Component {
           component={TracksPage}
         />
         <Route
-          path={`${match.url}`}
+          path={match.url}
           component={() => (
             <Album {...album} />
           )}

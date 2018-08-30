@@ -18,7 +18,7 @@ class UserPage extends Component {
       <Switch>
         <Route path={`${match.url}/playlists`} component={UserPlaylistsPageContainer} />
         <Route
-          path={`${match.url}`}
+          path={match.url}
           component={() => (
             <div>
               <User {...me.me} />

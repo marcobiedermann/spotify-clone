@@ -23,7 +23,7 @@ class CategoriesPage extends Component {
           component={CategoryPageContainer}
         />
         <Route
-          path={`${match.url}`}
+          path={match.url}
           component={() => <Categories categories={categories.items} />}
         />
       </Switch>

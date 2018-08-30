@@ -18,7 +18,7 @@ class PlaylistsPage extends Component {
       <Switch>
         <Route path={`${match.url}/:playlist_id`} component={PlaylistPageContainer} />
         <Route
-          path={`${match.url}`}
+          path={match.url}
           component={() => (
             <Playlists playlists={playlists} />
           )}

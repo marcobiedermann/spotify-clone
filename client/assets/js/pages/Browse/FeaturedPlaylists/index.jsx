@@ -19,7 +19,7 @@ class FeaturedPlaylistsPage extends Component {
     return (
       <Switch>
         <Route
-          path={`${match.url}`}
+          path={match.url}
           component={() => <Playlists playlists={playlists.items} />}
         />
       </Switch>

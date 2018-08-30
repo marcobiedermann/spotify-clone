@@ -27,7 +27,7 @@ class CategoryPage extends Component {
           component={CategoryPlaylistsPageContainer}
         />
         <Route
-          path={`${match.url}`}
+          path={match.url}
           component={() => <Category {...category} />}
         />
       </Switch>

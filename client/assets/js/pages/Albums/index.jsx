@@ -13,7 +13,7 @@ const AlbumsPage = ({ match }) => (
       component={AlbumPageContainer}
     />
     <Route
-      path={`${match.url}`}
+      path={match.url}
       component={() => (
         <div>
           Albums

@@ -35,7 +35,7 @@ class ArtistPage extends Component {
           component={ArtistTopTracksPageContainer}
         />
         <Route
-          path={`${match.url}`}
+          path={match.url}
           component={() => (
             <div>
               <Artist {...artist} />

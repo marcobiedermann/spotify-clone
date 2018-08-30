@@ -24,7 +24,7 @@ const BrowsePage = ({ match }) => (
       component={NewReleasesPageContainer}
     />
     <Route
-      path={`${match.url}`}
+      path={match.url}
       component={() => (
         <div>
           <ul>
