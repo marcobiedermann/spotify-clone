@@ -24,6 +24,7 @@ module.exports = merge(baseConfig, {
             options: {
               localIdentName: '[local]',
               modules: true,
+              sourceMap: true,
             },
           },
         ],
