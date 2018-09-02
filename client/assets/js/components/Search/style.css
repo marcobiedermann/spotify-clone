@@ -1,0 +1,10 @@
+.search {
+  color: #181818;
+}
+
+.search__input {
+  border-radius: 999em;
+  background-color: #fff;
+  font-size: 0.875rem;
+  padding: 0.5em 1.5em;
+}

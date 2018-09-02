@@ -8,6 +8,7 @@ import Header from '../Header';
 import Main from '../Main';
 import Me from '../Me';
 import Navigation from '../Navigation';
+import Search from '../Search';
 import styles from './style.css';
 
 class Layout extends Component {
@@ -32,6 +33,7 @@ class Layout extends Component {
     return (
       <div className={styles.layout}>
         <Header>
+          <Search />
           <Me {...me} />
         </Header>
         <Content>

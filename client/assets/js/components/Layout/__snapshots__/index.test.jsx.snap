@@ -5,6 +5,15 @@ exports[`renders correctly 1`] = `
   className="layout"
 >
   <header>
+    <form
+      className="search"
+      onSubmit={[Function]}
+    >
+      <input
+        className="search__input"
+        type="search"
+      />
+    </form>
     <div
       className="me"
     >

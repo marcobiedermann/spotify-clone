@@ -8,6 +8,7 @@ import '../css/elements/anchor.css';
 import '../css/elements/button.css';
 import '../css/elements/figure.css';
 import '../css/elements/image.css';
+import '../css/elements/input.css';
 import '../css/elements/list.css';
 import '../css/elements/paragraph.css';
 import '../css/elements/table.css';
