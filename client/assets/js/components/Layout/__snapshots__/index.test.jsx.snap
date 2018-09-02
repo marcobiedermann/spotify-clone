@@ -4,7 +4,9 @@ exports[`renders correctly 1`] = `
 <div
   className="layout"
 >
-  <header>
+  <header
+    className="header"
+  >
     <form
       className="search"
       onSubmit={[Function]}

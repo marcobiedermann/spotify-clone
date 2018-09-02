@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import styles from './style.css';
 
 const Header = ({ children }) => (
-  <header>
+  <header className={styles.header}>
     {children}
   </header>
 );
