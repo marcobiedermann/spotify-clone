@@ -1,0 +1,15 @@
+.button {
+  background-color: #38bc54;
+  border-radius: 999em;
+  color: #fff;
+  display: inline-block;
+  min-width: 10em;
+  padding: 0.75em 1.5em;
+  text-transform: uppercase;
+  transition: transform 0.3s;
+}
+
+.button:focus,
+.button:hover {
+  transform: scale(1.05);
+}

@@ -31,11 +31,14 @@ exports[`renders correctly 1`] = `
      
     songs
   </p>
-  <button
-    type="button"
-  >
-    Play
-  </button>
+  <p>
+    <button
+      className="button"
+      type="button"
+    >
+      Play
+    </button>
+  </p>
   <table>
     <tbody />
   </table>
