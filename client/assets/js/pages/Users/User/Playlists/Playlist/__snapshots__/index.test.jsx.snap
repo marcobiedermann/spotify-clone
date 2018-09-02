@@ -12,6 +12,30 @@ exports[`renders correctly 1`] = `
       </a>
     </figcaption>
   </figure>
+  <p>
+    Playlist
+  </p>
+  <h1 />
+  <p>
+    Created by
+     
+    <a
+      href="/users/"
+      onClick={[Function]}
+    >
+      
+    </a>
+     
+    ·
+     
+     
+    songs
+  </p>
+  <button
+    type="button"
+  >
+    Play
+  </button>
   <table>
     <tbody />
   </table>

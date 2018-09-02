@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Playlist from '../../../../../components/Playlist';
 import Track from '../../../../../components/Track';
+import * as routes from '../../../../../constants/routes';
 
 class PlaylistPage extends Component {
   componentDidMount() {
@@ -16,6 +18,22 @@ class PlaylistPage extends Component {
     return (
       <div>
         <Playlist {...playlist} />
+        <p>Playlist</p>
+        <h1>{playlist.name}</h1>
+        {playlist.owner && (
+          <p>
+            Created by
+            {' '}
+            <Link to={`${routes.USERS}/${playlist.owner.id}`}>{playlist.owner.display_name}</Link>
+            {' '}
+            ·
+            {' '}
+            {playlist.tracks.total}
+            {' '}
+            songs
+          </p>
+        )}
+        <button type="button">Play</button>
         {playlist.tracks && (
           <table>
             <tbody>
@@ -39,6 +57,10 @@ PlaylistPage.propTypes = {
     }),
   }),
   playlist: PropTypes.shape({
+    owner: PropTypes.shape({
+      display_name: PropTypes.string,
+      id: PropTypes.string,
+    }),
     tracks: PropTypes.shape({
       items: PropTypes.arrayOf(PropTypes.shape),
     }),
@@ -54,6 +76,10 @@ PlaylistPage.defaultProps = {
     },
   },
   playlist: {
+    owner: {
+      display_name: '',
+      id: '',
+    },
     tracks: {
       items: [],
     },
