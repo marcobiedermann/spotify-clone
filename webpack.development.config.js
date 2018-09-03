@@ -31,6 +31,16 @@ module.exports = merge(baseConfig, {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
+              config: {
+                ctx: {
+                  cssnext: {
+                    features: {
+                      customProperties: false,
+                      rem: false,
+                    },
+                  },
+                },
+              },
             },
           },
         ],
