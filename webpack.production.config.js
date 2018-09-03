@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config');
 
@@ -64,6 +65,14 @@ module.exports = merge(baseConfig, {
         useShortDoctype: true,
       },
       template: 'client/index.html',
+    }),
+    new UglifyJsPlugin({
+      sourceMap: true,
+      uglifyOptions: {
+        output: {
+          comments: false,
+        },
+      },
     }),
   ],
 });
