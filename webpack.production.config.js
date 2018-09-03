@@ -30,6 +30,7 @@ module.exports = merge(baseConfig, {
                 sourceMap: true,
                 config: {
                   ctx: {
+                    cssnano: {},
                     cssnext: {
                       features: {
                         rem: false,
