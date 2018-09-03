@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import Tracks from '../../../../components/Tracks';
 
 class TopTracksPage extends Component {
@@ -13,7 +14,12 @@ class TopTracksPage extends Component {
     const { tracks } = this.props;
 
     return (
-      <Tracks tracks={tracks} />
+      <div>
+        <Helmet>
+          <title>Top Tracks</title>
+        </Helmet>
+        <Tracks tracks={tracks} />
+      </div>
     );
   }
 }

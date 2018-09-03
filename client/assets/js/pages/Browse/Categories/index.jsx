@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import {
   Route,
   Switch,
@@ -24,7 +25,14 @@ class CategoriesPage extends Component {
         />
         <Route
           path={match.url}
-          component={() => <Categories categories={categories.items} />}
+          component={() => (
+            <div>
+              <Helmet>
+                <title>Categories</title>
+              </Helmet>
+              <Categories categories={categories.items} />
+            </div>
+          )}
         />
       </Switch>
     );

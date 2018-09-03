@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import Artists from '../../../../components/Artists';
 
 class RelatedArtistsPage extends Component {
@@ -14,6 +15,9 @@ class RelatedArtistsPage extends Component {
 
     return (
       <div>
+        <Helmet>
+          <title>Related Artists</title>
+        </Helmet>
         {artists && (
           <Artists artists={artists} />
         )}

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import {
   Route,
   Switch,
@@ -28,7 +29,14 @@ class CategoryPage extends Component {
         />
         <Route
           path={match.url}
-          component={() => <Category {...category} />}
+          component={() => (
+            <div>
+              <Helmet>
+                <title>{category.name}</title>
+              </Helmet>
+              <Category {...category} />
+            </div>
+          )}
         />
       </Switch>
     );
@@ -37,7 +45,9 @@ class CategoryPage extends Component {
 
 CategoryPage.propTypes = {
   accessToken: PropTypes.string,
-  category: PropTypes.shape(),
+  category: PropTypes.shape({
+    name: PropTypes.string,
+  }),
   fetchCategory: PropTypes.func,
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -49,7 +59,9 @@ CategoryPage.propTypes = {
 
 CategoryPage.defaultProps = {
   accessToken: '',
-  category: null,
+  category: {
+    name: '',
+  },
   fetchCategory: () => {},
   match: {
     params: {

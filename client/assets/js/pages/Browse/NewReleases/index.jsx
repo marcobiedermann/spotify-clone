@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import Albums from '../../../components/Albums';
 
 class NewReleasesPage extends Component {
@@ -14,6 +15,9 @@ class NewReleasesPage extends Component {
 
     return (
       <div>
+        <Helmet>
+          <title>New Releases</title>
+        </Helmet>
         <Albums albums={albums.items} />
       </div>
     );

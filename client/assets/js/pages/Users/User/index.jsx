@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
 import UserPlaylistsPageContainer from '../../../containers/UserPlaylistsPage';
 import User from '../../../components/User';
@@ -21,6 +22,9 @@ class UserPage extends Component {
           path={match.url}
           component={() => (
             <div>
+              <Helmet>
+                <title>{me.me.display_name}</title>
+              </Helmet>
               <User {...me.me} />
             </div>
           )}
@@ -40,7 +44,9 @@ UserPage.propTypes = {
     url: PropTypes.string,
   }),
   me: PropTypes.shape({
-    me: PropTypes.shape(),
+    me: PropTypes.shape({
+      display_name: PropTypes.string,
+    }),
   }),
 };
 
@@ -54,7 +60,9 @@ UserPage.defaultProps = {
     url: '',
   },
   me: {
-    me: null,
+    me: {
+      display_name: '',
+    },
   },
 };
 

@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Button from '../../../../../components/Button';
 import Playlist from '../../../../../components/Playlist';
 import Track from '../../../../../components/Track';
 import * as routes from '../../../../../constants/routes';
+
 class PlaylistPage extends Component {
   componentDidMount() {
     const { accessToken, fetchUserPlaylist, match } = this.props;
@@ -17,6 +19,9 @@ class PlaylistPage extends Component {
 
     return (
       <div>
+        <Helmet>
+          <title>Playlist</title>
+        </Helmet>
         <Playlist {...playlist} />
         <p>Playlist</p>
         <h1>{playlist.name}</h1>

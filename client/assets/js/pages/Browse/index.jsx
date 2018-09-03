@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import {
   Link,
   Route,
@@ -27,6 +28,9 @@ const BrowsePage = ({ match }) => (
       path={match.url}
       component={() => (
         <div>
+          <Helmet>
+            <title>Browse</title>
+          </Helmet>
           <ul>
             <li>
               <Link to={`${match.url}/categories`}>

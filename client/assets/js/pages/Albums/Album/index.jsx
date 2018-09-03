@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import {
   Route,
   Switch,
@@ -26,7 +27,12 @@ class AlbumPage extends Component {
         <Route
           path={match.url}
           component={() => (
-            <Album {...album} />
+            <div className="album-page">
+              <Helmet>
+                <title>{album.name}</title>
+              </Helmet>
+              <Album {...album} />
+            </div>
           )}
         />
       </Switch>
@@ -36,7 +42,9 @@ class AlbumPage extends Component {
 
 AlbumPage.propTypes = {
   accessToken: PropTypes.string,
-  album: PropTypes.shape(),
+  album: PropTypes.shape({
+    name: PropTypes.string,
+  }),
   fetchAlbum: PropTypes.func,
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -48,7 +56,9 @@ AlbumPage.propTypes = {
 
 AlbumPage.defaultProps = {
   accessToken: '',
-  album: null,
+  album: {
+    name: '',
+  },
   fetchAlbum: () => {},
   match: {
     params: {

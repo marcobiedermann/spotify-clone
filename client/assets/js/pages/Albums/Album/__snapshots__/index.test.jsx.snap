@@ -1,21 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
-  <figure>
-    <figcaption>
-      <h3>
-        <a
-          href="/albums/"
-          onClick={[Function]}
-        >
-          
-        </a>
-      </h3>
-    </figcaption>
-  </figure>
-  <table>
-    <tbody />
-  </table>
+<div
+  className="album-page"
+>
+  <div>
+    <figure>
+      <figcaption>
+        <h3>
+          <a
+            href="/albums/"
+            onClick={[Function]}
+          >
+            
+          </a>
+        </h3>
+      </figcaption>
+    </figure>
+    <table>
+      <tbody />
+    </table>
+  </div>
 </div>
 `;

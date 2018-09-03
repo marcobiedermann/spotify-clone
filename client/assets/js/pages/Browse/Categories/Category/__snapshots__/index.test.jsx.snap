@@ -1,14 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<figure>
-  <figcaption>
-    <a
-      href="/browse/categories//playlists"
-      onClick={[Function]}
-    >
-      
-    </a>
-  </figcaption>
-</figure>
+<div>
+  <figure>
+    <figcaption>
+      <a
+        href="/browse/categories//playlists"
+        onClick={[Function]}
+      >
+        
+      </a>
+    </figcaption>
+  </figure>
+</div>
 `;

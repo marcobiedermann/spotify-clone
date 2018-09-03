@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import {
   Link,
   Route,
@@ -38,6 +39,9 @@ class ArtistPage extends Component {
           path={match.url}
           component={() => (
             <div>
+              <Helmet>
+                <title>{artist.name}</title>
+              </Helmet>
               <Artist {...artist} />
               <ul>
                 <li>
@@ -60,7 +64,9 @@ class ArtistPage extends Component {
 
 ArtistPage.propTypes = {
   accessToken: PropTypes.string,
-  artist: PropTypes.shape(),
+  artist: PropTypes.shape({
+    name: PropTypes.string,
+  }),
   fetchArtist: PropTypes.func,
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -72,7 +78,9 @@ ArtistPage.propTypes = {
 
 ArtistPage.defaultProps = {
   accessToken: '',
-  artist: null,
+  artist: {
+    name: '',
+  },
   fetchArtist: () => {},
   match: {
     params: {

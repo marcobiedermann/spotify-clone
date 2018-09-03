@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import {
   Route,
   Switch,
@@ -16,6 +17,9 @@ const UsersPage = ({ match }) => (
       path={match.url}
       component={() => (
         <div>
+          <Helmet>
+            <title>Users</title>
+          </Helmet>
           Users
         </div>
       )}

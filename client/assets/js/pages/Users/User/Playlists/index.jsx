@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
 import Playlists from '../../../../components/Playlists';
 import PlaylistPageContainer from '../../../../containers/UserPlaylistPage';
@@ -20,7 +21,12 @@ class PlaylistsPage extends Component {
         <Route
           path={match.url}
           component={() => (
-            <Playlists playlists={playlists} />
+            <div>
+              <Helmet>
+                <title>Playlists</title>
+              </Helmet>
+              <Playlists playlists={playlists} />
+            </div>
           )}
         />
       </Switch>
