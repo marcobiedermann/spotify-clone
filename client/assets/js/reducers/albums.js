@@ -13,13 +13,13 @@ const albumsReducer = (state = initialState, action) => {
     case FETCH_ALBUM_SUCCESS: {
       return {
         ...state,
-        album: action.album,
+        album: action.payload.album,
       };
     }
     case FETCH_ALBUM_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     default:

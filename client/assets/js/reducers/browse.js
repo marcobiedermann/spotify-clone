@@ -24,61 +24,61 @@ const browseReducer = (state = initialState, action) => {
     case FETCH_CATEGORY_SUCCESS: {
       return {
         ...state,
-        category: action.category,
+        category: action.payload.category,
       };
     }
     case FETCH_CATEGORY_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     case FETCH_CATEGORIES_SUCCESS: {
       return {
         ...state,
-        categories: action.categories,
+        categories: action.payload.categories,
       };
     }
     case FETCH_CATEGORIES_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     case FETCH_FEATURED_PLAYLISTS_SUCCESS: {
       return {
         ...state,
-        playlists: action.playlists,
+        playlists: action.payload.playlists,
       };
     }
     case FETCH_FEATURED_PLAYLISTS_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     case FETCH_NEW_RELEASES_SUCCESS: {
       return {
         ...state,
-        albums: action.albums,
+        albums: action.payload.albums,
       };
     }
     case FETCH_NEW_RELEASES_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     case FETCH_CATEGORY_PLAYLISTS_SUCCESS: {
       return {
         ...state,
-        playlists: action.playlists,
+        playlists: action.payload.playlists,
       };
     }
     case FETCH_CATEGORY_PLAYLISTS_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     default:

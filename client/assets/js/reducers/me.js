@@ -16,25 +16,25 @@ const meReducer = (state = initialState, action) => {
     case FETCH_ME_SUCCESS: {
       return {
         ...state,
-        me: action.me,
+        me: action.payload.me,
       };
     }
     case FETCH_ME_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     case FETCH_ME_PLAYLISTS_SUCCESS: {
       return {
         ...state,
-        playlists: action.playlists,
+        playlists: action.payload.playlists,
       };
     }
     case FETCH_ME_PLAYLISTS_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     default:

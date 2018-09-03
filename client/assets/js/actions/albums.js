@@ -8,12 +8,17 @@ const baseUrl = 'http://localhost:8080/data';
 
 export const fetchAlbumSuccess = album => ({
   type: FETCH_ALBUM_SUCCESS,
-  album,
+  payload: {
+    album,
+  },
 });
 
 export const fetchAlbumError = error => ({
   type: FETCH_ALBUM_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchAlbum = (accessToken, albumId) => async (dispatch) => {

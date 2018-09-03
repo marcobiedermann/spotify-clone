@@ -22,49 +22,49 @@ const artistsReducer = (state = initialState, action) => {
     case FETCH_ARTIST_SUCCESS: {
       return {
         ...state,
-        artist: action.artist,
+        artist: action.payload.artist,
       };
     }
     case FETCH_ARTIST_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     case FETCH_ARTIST_ALBUMS_SUCCESS: {
       return {
         ...state,
-        albums: action.albums,
+        albums: action.payload.albums,
       };
     }
     case FETCH_ARTIST_ALBUMS_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     case FETCH_ARTIST_RELATED_ARTISTS_SUCCESS: {
       return {
         ...state,
-        artists: action.artists,
+        artists: action.payload.artists,
       };
     }
     case FETCH_ARTIST_RELATED_ARTISTS_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     case FETCH_ARTIST_TOP_TRACKS_SUCCESS: {
       return {
         ...state,
-        tracks: action.tracks,
+        tracks: action.payload.tracks,
       };
     }
     case FETCH_ARTIST_TOP_TRACKS_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     default:

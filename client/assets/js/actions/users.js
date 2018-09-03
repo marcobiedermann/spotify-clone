@@ -12,12 +12,17 @@ const baseUrl = 'http://localhost:8080/data';
 
 export const fetchUserSuccess = user => ({
   type: FETCH_USER_SUCCESS,
-  user,
+  payload: {
+    user,
+  },
 });
 
 export const fetchUserError = error => ({
   type: FETCH_USER_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchUser = (accessToken, userId) => async (dispatch) => {
@@ -39,12 +44,17 @@ export const fetchUser = (accessToken, userId) => async (dispatch) => {
 
 export const fetchUserPlaylistsSuccess = playlists => ({
   type: FETCH_USER_PLAYLISTS_SUCCESS,
-  playlists,
+  payload: {
+    playlists,
+  },
 });
 
 export const fetchUserPlaylistsError = error => ({
   type: FETCH_USER_PLAYLISTS_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchUserPlaylists = (accessToken, userId) => async (dispatch) => {
@@ -66,12 +76,17 @@ export const fetchUserPlaylists = (accessToken, userId) => async (dispatch) => {
 
 export const fetchUserPlaylistSuccess = playlist => ({
   type: FETCH_USER_PLAYLIST_SUCCESS,
-  playlist,
+  payload: {
+    playlist,
+  },
 });
 
 export const fetchUserPlaylistError = error => ({
   type: FETCH_USER_PLAYLIST_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchUserPlaylist = (accessToken, userId, playlistId) => async (dispatch) => {

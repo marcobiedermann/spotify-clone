@@ -14,12 +14,17 @@ const baseUrl = 'http://localhost:8080/data';
 
 export const fetchArtistSuccess = artist => ({
   type: FETCH_ARTIST_SUCCESS,
-  artist,
+  payload: {
+    artist,
+  },
 });
 
 export const fetchArtistError = error => ({
   type: FETCH_ARTIST_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchArtist = (accessToken, id) => async (dispatch) => {
@@ -41,12 +46,17 @@ export const fetchArtist = (accessToken, id) => async (dispatch) => {
 
 export const fetchArtistAlbumsSuccess = albums => ({
   type: FETCH_ARTIST_ALBUMS_SUCCESS,
-  albums,
+  payload: {
+    albums,
+  },
 });
 
 export const fetchArtistAlbumsError = error => ({
   type: FETCH_ARTIST_ALBUMS_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchArtistAlbums = (accessToken, id) => async (dispatch) => {
@@ -68,12 +78,17 @@ export const fetchArtistAlbums = (accessToken, id) => async (dispatch) => {
 
 export const fetchArtistRelatedArtistsSuccess = artists => ({
   type: FETCH_ARTIST_RELATED_ARTISTS_SUCCESS,
-  artists,
+  payload: {
+    artists,
+  },
 });
 
 export const fetchArtistRelatedArtistsError = error => ({
   type: FETCH_ARTIST_RELATED_ARTISTS_ERROR,
-  error,
+  payoad: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchArtistRelatedArtists = (accessToken, id) => async (dispatch) => {
@@ -95,12 +110,17 @@ export const fetchArtistRelatedArtists = (accessToken, id) => async (dispatch) =
 
 export const fetchArtistTopTracksSuccess = tracks => ({
   type: FETCH_ARTIST_TOP_TRACKS_SUCCESS,
-  tracks,
+  payload: {
+    tracks,
+  },
 });
 
 export const fetchArtistTopTracksError = error => ({
   type: FETCH_ARTIST_TOP_TRACKS_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchArtistTopTracks = (accessToken, id) => async (dispatch) => {

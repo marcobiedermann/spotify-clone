@@ -19,37 +19,37 @@ const usersReducer = (state = initialState, action) => {
     case FETCH_USER_SUCCESS: {
       return {
         ...state,
-        user: action.user,
+        user: action.payload.user,
       };
     }
     case FETCH_USER_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     case FETCH_USER_PLAYLISTS_SUCCESS: {
       return {
         ...state,
-        playlists: action.playlists,
+        playlists: action.payload.playlists,
       };
     }
     case FETCH_USER_PLAYLISTS_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     case FETCH_USER_PLAYLIST_SUCCESS: {
       return {
         ...state,
-        playlist: action.playlist,
+        playlist: action.payload.playlist,
       };
     }
     case FETCH_USER_PLAYLIST_ERROR: {
       return {
         ...state,
-        error: action.error,
+        error: action.payload.error,
       };
     }
     default:

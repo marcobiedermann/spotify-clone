@@ -10,12 +10,17 @@ const baseUrl = 'http://localhost:8080/data';
 
 export const fetchMeSuccess = me => ({
   type: FETCH_ME_SUCCESS,
-  me,
+  payload: {
+    me,
+  },
 });
 
 export const fetchMeError = error => ({
   type: FETCH_ME_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchMe = accessToken => async (dispatch) => {
@@ -37,12 +42,17 @@ export const fetchMe = accessToken => async (dispatch) => {
 
 export const fetchMePlaylistsSuccess = playlists => ({
   type: FETCH_ME_PLAYLISTS_SUCCESS,
-  playlists,
+  payload: {
+    playlists,
+  },
 });
 
 export const fetchMePlaylistsError = error => ({
   type: FETCH_ME_PLAYLISTS_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchMePlaylists = accessToken => async (dispatch) => {

@@ -16,12 +16,17 @@ const baseUrl = 'http://localhost:8080/data';
 
 export const fetchCategorySuccess = category => ({
   type: FETCH_CATEGORY_SUCCESS,
-  category,
+  payload: {
+    category,
+  },
 });
 
 export const fetchCategoryError = error => ({
   type: FETCH_CATEGORY_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
@@ -43,12 +48,17 @@ export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
 
 export const fetchCategoriesSuccess = categories => ({
   type: FETCH_CATEGORIES_SUCCESS,
-  categories,
+  payload: {
+    categories,
+  },
 });
 
 export const fetchCategoriesError = error => ({
   type: FETCH_CATEGORIES_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchCategories = accessToken => async (dispatch) => {
@@ -70,12 +80,17 @@ export const fetchCategories = accessToken => async (dispatch) => {
 
 export const fetchFeaturedPlaylistsSuccess = playlists => ({
   type: FETCH_FEATURED_PLAYLISTS_SUCCESS,
-  playlists,
+  payload: {
+    playlists,
+  },
 });
 
 export const fetchFeaturedPlaylistsError = error => ({
   type: FETCH_FEATURED_PLAYLISTS_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchFeaturedPlaylists = accessToken => async (dispatch) => {
@@ -97,12 +112,17 @@ export const fetchFeaturedPlaylists = accessToken => async (dispatch) => {
 
 export const fetchNewReleasesSuccess = albums => ({
   type: FETCH_NEW_RELEASES_SUCCESS,
-  albums,
+  payload: {
+    albums,
+  },
 });
 
 export const fetchNewReleasesError = error => ({
   type: FETCH_NEW_RELEASES_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchNewReleases = accessToken => async (dispatch) => {
@@ -124,12 +144,17 @@ export const fetchNewReleases = accessToken => async (dispatch) => {
 
 export const fetchCategoryPlaylistsSuccess = playlists => ({
   type: FETCH_CATEGORY_PLAYLISTS_SUCCESS,
-  playlists,
+  payload: {
+    playlists,
+  },
 });
 
 export const fetchCategoryPlaylistsError = error => ({
   type: FETCH_CATEGORY_PLAYLISTS_ERROR,
-  error,
+  payload: {
+    error,
+  },
+  error: true,
 });
 
 export const fetchCategoryPlaylists = (accessToken, categoryId) => async (dispatch) => {
