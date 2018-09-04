@@ -1,7 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Albums component renders correctly 1`] = `
 <ul
   className="albums"
-/>
+>
+  <li>
+    <div>
+      <figure>
+        <figcaption>
+          <h3>
+            <a
+              href="/albums/123456"
+              onClick={[Function]}
+            >
+              
+            </a>
+          </h3>
+        </figcaption>
+      </figure>
+      <table>
+        <tbody />
+      </table>
+    </div>
+  </li>
+</ul>
 `;
