@@ -1,17 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Album component renders correctly 1`] = `
 <div>
   <figure>
+    <a
+      href="/albums/123456"
+      onClick={[Function]}
+    >
+      <img
+        alt="Album Name"
+        height={0}
+        src=""
+        width={0}
+      />
+    </a>
     <figcaption>
       <h3>
         <a
-          href="/albums/"
+          href="/albums/123456"
           onClick={[Function]}
         >
-          
+          Album Name
         </a>
       </h3>
+      <h4>
+        <a
+          href="/artists/123456"
+          onClick={[Function]}
+        />
+      </h4>
     </figcaption>
   </figure>
   <table>
