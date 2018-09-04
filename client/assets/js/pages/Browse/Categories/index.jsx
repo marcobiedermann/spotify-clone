@@ -7,16 +7,25 @@ import {
 } from 'react-router-dom';
 import CategoryPageContainer from '../../../containers/CategoryPage';
 import Categories from '../../../components/Categories';
+import Loader from '../../../components/Loader';
 
 class CategoriesPage extends Component {
   componentDidMount() {
-    const { accessToken, fetchCategories } = this.props;
+    const {
+      accessToken,
+      fetchCategories,
+    } = this.props;
 
     fetchCategories(accessToken);
   }
 
   render() {
-    const { categories, match } = this.props;
+    const {
+      categories,
+      isLoading,
+      match,
+    } = this.props;
+
     return (
       <Switch>
         <Route
@@ -30,7 +39,11 @@ class CategoriesPage extends Component {
               <Helmet>
                 <title>Categories</title>
               </Helmet>
-              <Categories categories={categories.items} />
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <Categories categories={categories.items} />
+              )}
             </div>
           )}
         />
@@ -43,6 +56,7 @@ CategoriesPage.propTypes = {
   accessToken: PropTypes.string,
   categories: PropTypes.shape(),
   fetchCategories: PropTypes.func,
+  isLoading: PropTypes.bool,
   match: PropTypes.shape({
     url: PropTypes.string,
   }),
@@ -52,6 +66,7 @@ CategoriesPage.defaultProps = {
   accessToken: '',
   categories: {},
   fetchCategories: () => {},
+  isLoading: false,
   match: {
     url: '',
   },

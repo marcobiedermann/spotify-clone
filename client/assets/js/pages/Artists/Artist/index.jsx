@@ -10,16 +10,25 @@ import ArtistAlbumsPageContainer from '../../../containers/ArtistAlbumsPage';
 import ArtistRelatedArtistsPageContainer from '../../../containers/ArtistRelatedArtistsPage';
 import ArtistTopTracksPageContainer from '../../../containers/ArtistTopTracksPage';
 import Artist from '../../../components/Artist';
+import Loader from '../../../components/Loader';
 
 class ArtistPage extends Component {
   componentDidMount() {
-    const { accessToken, fetchArtist, match } = this.props;
+    const {
+      accessToken,
+      fetchArtist,
+      match,
+    } = this.props;
 
     fetchArtist(accessToken, match.params.id);
   }
 
   render() {
-    const { artist, match } = this.props;
+    const {
+      artist,
+      isLoading,
+      match,
+    } = this.props;
 
     return (
       <Switch>
@@ -42,7 +51,11 @@ class ArtistPage extends Component {
               <Helmet>
                 <title>{artist.name}</title>
               </Helmet>
-              <Artist {...artist} />
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <Artist {...artist} />
+              )}
               <ul>
                 <li>
                   <Link to={`${match.url}/albums`}>Albums</Link>
@@ -68,6 +81,7 @@ ArtistPage.propTypes = {
     name: PropTypes.string,
   }),
   fetchArtist: PropTypes.func,
+  isLoading: PropTypes.bool,
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,
@@ -82,6 +96,7 @@ ArtistPage.defaultProps = {
     name: '',
   },
   fetchArtist: () => {},
+  isLoading: false,
   match: {
     params: {
       id: '',

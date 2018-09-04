@@ -2,18 +2,26 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
+import Loader from '../../../../components/Loader';
 import Playlists from '../../../../components/Playlists';
 import PlaylistPageContainer from '../../../../containers/UserPlaylistPage';
 
 class PlaylistsPage extends Component {
   componentDidMount() {
-    const { accessToken, fetchUserPlaylists } = this.props;
+    const {
+      accessToken,
+      fetchUserPlaylists,
+    } = this.props;
 
     fetchUserPlaylists(accessToken, '11168662039');
   }
 
   render() {
-    const { match, playlists } = this.props;
+    const {
+      isLoading,
+      match,
+      playlists,
+    } = this.props;
 
     return (
       <Switch>
@@ -25,7 +33,11 @@ class PlaylistsPage extends Component {
               <Helmet>
                 <title>Playlists</title>
               </Helmet>
-              <Playlists playlists={playlists} />
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <Playlists playlists={playlists} />
+              )}
             </div>
           )}
         />
@@ -37,6 +49,7 @@ class PlaylistsPage extends Component {
 PlaylistsPage.propTypes = {
   accessToken: PropTypes.string,
   fetchUserPlaylists: PropTypes.func,
+  isLoading: PropTypes.bool,
   match: PropTypes.shape({
     url: PropTypes.string,
   }),
@@ -46,6 +59,7 @@ PlaylistsPage.propTypes = {
 PlaylistsPage.defaultProps = {
   accessToken: '',
   fetchUserPlaylists: () => {},
+  isLoading: false,
   match: {
     url: '',
   },

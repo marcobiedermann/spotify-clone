@@ -2,23 +2,34 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import Albums from '../../../components/Albums';
+import Loader from '../../../components/Loader';
 
 class NewReleasesPage extends Component {
   componentDidMount() {
-    const { accessToken, fetchNewReleases } = this.props;
+    const {
+      accessToken,
+      fetchNewReleases,
+    } = this.props;
 
     fetchNewReleases(accessToken);
   }
 
   render() {
-    const { albums } = this.props;
+    const {
+      albums,
+      isLoading,
+    } = this.props;
 
     return (
       <div>
         <Helmet>
           <title>New Releases</title>
         </Helmet>
-        <Albums albums={albums.items} />
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <Albums albums={albums.items} />
+        )}
       </div>
     );
   }
@@ -30,6 +41,7 @@ NewReleasesPage.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape),
   }),
   fetchNewReleases: PropTypes.func,
+  isLoading: PropTypes.bool,
 };
 
 NewReleasesPage.defaultProps = {
@@ -38,6 +50,7 @@ NewReleasesPage.defaultProps = {
     items: [],
   },
   fetchNewReleases: () => {},
+  isLoading: false,
 };
 
 export default NewReleasesPage;

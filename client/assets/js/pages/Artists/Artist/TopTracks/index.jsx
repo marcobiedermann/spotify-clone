@@ -1,24 +1,35 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import Loader from '../../../../components/Loader';
 import Tracks from '../../../../components/Tracks';
 
 class TopTracksPage extends Component {
   componentDidMount() {
-    const { accessToken, fetchArtistTopTracks } = this.props;
+    const {
+      accessToken,
+      fetchArtistTopTracks,
+    } = this.props;
 
     fetchArtistTopTracks(accessToken, '20JZFwl6HVl6yg8a4H3ZqK');
   }
 
   render() {
-    const { tracks } = this.props;
+    const {
+      isLoading,
+      tracks,
+    } = this.props;
 
     return (
       <div>
         <Helmet>
           <title>Top Tracks</title>
         </Helmet>
-        <Tracks tracks={tracks} />
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <Tracks tracks={tracks} />
+        )}
       </div>
     );
   }
@@ -27,12 +38,14 @@ class TopTracksPage extends Component {
 TopTracksPage.propTypes = {
   accessToken: PropTypes.string,
   fetchArtistTopTracks: PropTypes.func,
+  isLoading: PropTypes.bool,
   tracks: PropTypes.arrayOf(PropTypes.shape),
 };
 
 TopTracksPage.defaultProps = {
   accessToken: '',
   fetchArtistTopTracks: () => {},
+  isLoading: false,
   tracks: [],
 };
 

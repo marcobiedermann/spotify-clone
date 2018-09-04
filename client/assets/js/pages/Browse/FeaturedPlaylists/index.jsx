@@ -5,17 +5,25 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import Loader from '../../../components/Loader';
 import Playlists from '../../../components/Playlists';
 
 class FeaturedPlaylistsPage extends Component {
   componentDidMount() {
-    const { accessToken, fetchFeaturedPlaylists } = this.props;
+    const {
+      accessToken,
+      fetchFeaturedPlaylists,
+    } = this.props;
 
     fetchFeaturedPlaylists(accessToken);
   }
 
   render() {
-    const { match, playlists } = this.props;
+    const {
+      isLoading,
+      match,
+      playlists,
+    } = this.props;
 
     return (
       <Switch>
@@ -26,7 +34,11 @@ class FeaturedPlaylistsPage extends Component {
               <Helmet>
                 <title>Featured Playlists</title>
               </Helmet>
-              <Playlists playlists={playlists.items} />
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <Playlists playlists={playlists.items} />
+              )}
             </div>
           )}
         />
@@ -39,6 +51,7 @@ FeaturedPlaylistsPage.propTypes = {
   accessToken: PropTypes.string,
   playlists: PropTypes.shape(),
   fetchFeaturedPlaylists: PropTypes.func,
+  isLoading: PropTypes.bool,
   match: PropTypes.shape({
     url: PropTypes.string,
   }),
@@ -48,6 +61,7 @@ FeaturedPlaylistsPage.defaultProps = {
   accessToken: '',
   playlists: {},
   fetchFeaturedPlaylists: () => {},
+  isLoading: false,
   match: {
     url: '',
   },

@@ -3,17 +3,26 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
 import UserPlaylistsPageContainer from '../../../containers/UserPlaylistsPage';
+import Loader from '../../../components/Loader';
 import User from '../../../components/User';
 
 class UserPage extends Component {
   componentDidMount() {
-    const { accessToken, fetchUser, match } = this.props;
+    const {
+      accessToken,
+      fetchUser,
+      match,
+    } = this.props;
 
     fetchUser(accessToken, match.params.user_id);
   }
 
   render() {
-    const { match, me } = this.props;
+    const {
+      isLoading,
+      match,
+      me,
+    } = this.props;
 
     return (
       <Switch>
@@ -25,7 +34,11 @@ class UserPage extends Component {
               <Helmet>
                 <title>{me.me.display_name}</title>
               </Helmet>
-              <User {...me.me} />
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <User {...me.me} />
+              )}
             </div>
           )}
         />
@@ -37,6 +50,7 @@ class UserPage extends Component {
 UserPage.propTypes = {
   accessToken: PropTypes.string,
   fetchUser: PropTypes.func,
+  isLoading: PropTypes.bool,
   match: PropTypes.shape({
     params: PropTypes.shape({
       user_id: PropTypes.string,
@@ -53,6 +67,7 @@ UserPage.propTypes = {
 UserPage.defaultProps = {
   accessToken: '',
   fetchUser: () => {},
+  isLoading: false,
   match: {
     params: {
       user_id: '',

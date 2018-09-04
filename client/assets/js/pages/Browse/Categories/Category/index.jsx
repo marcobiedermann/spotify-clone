@@ -7,10 +7,15 @@ import {
 } from 'react-router-dom';
 import CategoryPlaylistsPageContainer from '../../../../containers/CategoryPlaylistsPage';
 import Category from '../../../../components/Category';
+import Loader from '../../../../components/Loader';
 
 class CategoryPage extends Component {
   componentDidMount() {
-    const { accessToken, fetchCategory, match } = this.props;
+    const {
+      accessToken,
+      fetchCategory,
+      match,
+    } = this.props;
 
     fetchCategory(
       accessToken,
@@ -19,7 +24,11 @@ class CategoryPage extends Component {
   }
 
   render() {
-    const { category, match } = this.props;
+    const {
+      category,
+      isLoading,
+      match,
+    } = this.props;
 
     return (
       <Switch>
@@ -34,7 +43,11 @@ class CategoryPage extends Component {
               <Helmet>
                 <title>{category.name}</title>
               </Helmet>
-              <Category {...category} />
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <Category {...category} />
+              )}
             </div>
           )}
         />
@@ -49,6 +62,7 @@ CategoryPage.propTypes = {
     name: PropTypes.string,
   }),
   fetchCategory: PropTypes.func,
+  isLoading: PropTypes.bool,
   match: PropTypes.shape({
     params: PropTypes.shape({
       category_id: PropTypes.string,
@@ -63,6 +77,7 @@ CategoryPage.defaultProps = {
     name: '',
   },
   fetchCategory: () => {},
+  isLoading: false,
   match: {
     params: {
       category_id: '',

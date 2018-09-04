@@ -2,45 +2,47 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <figure>
-    <figcaption>
+  <div>
+    <figure>
+      <figcaption>
+        <a
+          href="/users//playlists/"
+          onClick={[Function]}
+        >
+          
+        </a>
+      </figcaption>
+    </figure>
+    <p>
+      Playlist
+    </p>
+    <h1 />
+    <p>
+      Created by
+       
       <a
-        href="/users//playlists/"
+        href="/users/"
         onClick={[Function]}
       >
         
       </a>
-    </figcaption>
-  </figure>
-  <p>
-    Playlist
-  </p>
-  <h1 />
-  <p>
-    Created by
-     
-    <a
-      href="/users/"
-      onClick={[Function]}
-    >
-      
-    </a>
-     
-    ·
-     
-     
-    songs
-  </p>
-  <p>
-    <button
-      className="button"
-      type="button"
-    >
-      Play
-    </button>
-  </p>
-  <table>
-    <tbody />
-  </table>
+       
+      ·
+       
+       
+      songs
+    </p>
+    <p>
+      <button
+        className="button"
+        type="button"
+      >
+        Play
+      </button>
+    </p>
+    <table>
+      <tbody />
+    </table>
+  </div>
 </div>
 `;

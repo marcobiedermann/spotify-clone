@@ -3,52 +3,66 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Button from '../../../../../components/Button';
+import Loader from '../../../../../components/Loader';
 import Playlist from '../../../../../components/Playlist';
 import Track from '../../../../../components/Track';
 import * as routes from '../../../../../constants/routes';
 
 class PlaylistPage extends Component {
   componentDidMount() {
-    const { accessToken, fetchUserPlaylist, match } = this.props;
+    const {
+      accessToken,
+      fetchUserPlaylist,
+      match,
+    } = this.props;
 
     fetchUserPlaylist(accessToken, '11168662039', match.params.playlist_id);
   }
 
   render() {
-    const { playlist } = this.props;
+    const {
+      isLoading,
+      playlist,
+    } = this.props;
 
     return (
       <div>
         <Helmet>
           <title>Playlist</title>
         </Helmet>
-        <Playlist {...playlist} />
-        <p>Playlist</p>
-        <h1>{playlist.name}</h1>
-        {playlist.owner && (
-          <p>
-            Created by
-            {' '}
-            <Link to={`${routes.USERS}/${playlist.owner.id}`}>{playlist.owner.display_name}</Link>
-            {' '}
-            ·
-            {' '}
-            {playlist.tracks.total}
-            {' '}
-            songs
-          </p>
-        )}
-        <p>
-          <Button>Play</Button>
-        </p>
-        {playlist.tracks && (
-          <table>
-            <tbody>
-              {playlist.tracks.items.map(track => (
-                <Track key={track.track.id} {...track.track} />
-              ))}
-            </tbody>
-          </table>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <div>
+            <Playlist {...playlist} />
+            <p>Playlist</p>
+            <h1>{playlist.name}</h1>
+            {playlist.owner && (
+              <p>
+                Created by
+                {' '}
+                <Link to={`${routes.USERS}/${playlist.owner.id}`}>{playlist.owner.display_name}</Link>
+                {' '}
+                ·
+                {' '}
+                {playlist.tracks.total}
+                {' '}
+                songs
+              </p>
+            )}
+            <p>
+              <Button>Play</Button>
+            </p>
+            {playlist.tracks && (
+              <table>
+                <tbody>
+                  {playlist.tracks.items.map(track => (
+                    <Track key={track.track.id} {...track.track} />
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </div>
         )}
       </div>
     );
@@ -58,6 +72,7 @@ class PlaylistPage extends Component {
 PlaylistPage.propTypes = {
   accessToken: PropTypes.string,
   fetchUserPlaylist: PropTypes.func,
+  isLoading: PropTypes.bool,
   match: PropTypes.shape({
     params: PropTypes.shape({
       playlist_id: PropTypes.string,
@@ -77,6 +92,7 @@ PlaylistPage.propTypes = {
 PlaylistPage.defaultProps = {
   accessToken: '',
   fetchUserPlaylist: () => {},
+  isLoading: false,
   match: {
     params: {
       playlist_id: '',

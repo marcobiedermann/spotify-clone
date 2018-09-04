@@ -5,17 +5,25 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import Loader from '../../../../../components/Loader';
 import Playlists from '../../../../../components/Playlists';
 
 class PlaylistsPage extends Component {
   componentDidMount() {
-    const { accessToken, fetchCategoryPlaylists } = this.props;
+    const {
+      accessToken,
+      fetchCategoryPlaylists,
+    } = this.props;
 
     fetchCategoryPlaylists(accessToken, 'dinner');
   }
 
   render() {
-    const { match, playlists } = this.props;
+    const {
+      isLoading,
+      match,
+      playlists,
+    } = this.props;
 
     return (
       <Switch>
@@ -26,7 +34,11 @@ class PlaylistsPage extends Component {
               <Helmet>
                 <title>Playlists</title>
               </Helmet>
-              <Playlists playlists={playlists.items} />
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <Playlists playlists={playlists.items} />
+              )}
             </div>
           )}
         />
@@ -41,6 +53,7 @@ PlaylistsPage.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape),
   }),
   fetchCategoryPlaylists: PropTypes.func,
+  isLoading: PropTypes.bool,
   match: PropTypes.shape({
     url: PropTypes.string,
   }),
@@ -52,6 +65,7 @@ PlaylistsPage.defaultProps = {
     items: [],
   },
   fetchCategoryPlaylists: () => {},
+  isLoading: false,
   match: {
     url: '',
   },

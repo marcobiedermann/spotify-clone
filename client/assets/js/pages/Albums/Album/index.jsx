@@ -7,16 +7,25 @@ import {
 } from 'react-router-dom';
 import TracksPage from './Tracks';
 import Album from '../../../components/Album';
+import Loader from '../../../components/Loader';
 
 class AlbumPage extends Component {
   componentDidMount() {
-    const { accessToken, fetchAlbum, match } = this.props;
+    const {
+      accessToken,
+      fetchAlbum,
+      match,
+    } = this.props;
 
     fetchAlbum(accessToken, match.params.album_id);
   }
 
   render() {
-    const { album, match } = this.props;
+    const {
+      album,
+      isLoading,
+      match,
+    } = this.props;
 
     return (
       <Switch>
@@ -31,7 +40,11 @@ class AlbumPage extends Component {
               <Helmet>
                 <title>{album.name}</title>
               </Helmet>
-              <Album {...album} />
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <Album {...album} />
+              )}
             </div>
           )}
         />
@@ -46,6 +59,7 @@ AlbumPage.propTypes = {
     name: PropTypes.string,
   }),
   fetchAlbum: PropTypes.func,
+  isLoading: PropTypes.bool,
   match: PropTypes.shape({
     params: PropTypes.shape({
       album_id: PropTypes.string,
@@ -60,6 +74,7 @@ AlbumPage.defaultProps = {
     name: '',
   },
   fetchAlbum: () => {},
+  isLoading: false,
   match: {
     params: {
       album_id: '',
