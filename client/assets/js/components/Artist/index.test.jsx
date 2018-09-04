@@ -2,10 +2,18 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Artist from '.';
 
-it('renders correctly', () => {
-  const tree = renderer
-    .create(<Artist />)
-    .toJSON();
+describe('Artist component', () => {
+  const artist = {
+    images: [
+      {},
+    ],
+  };
 
-  expect(tree).toMatchSnapshot();
+  it('renders correctly', () => {
+    const tree = renderer
+      .create(<Artist {...artist} />)
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });

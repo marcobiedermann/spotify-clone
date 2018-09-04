@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Artist component renders correctly 1`] = `
 <figure>
+  <img
+    alt=""
+    height={0}
+    src=""
+    width={0}
+  />
   <figcaption>
     <h2>
       
