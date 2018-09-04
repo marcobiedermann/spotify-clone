@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
 import {
   Route,
   Switch,
 } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { fetchCategoryPlaylists } from '../../../../../actions/browse';
 import Loader from '../../../../../components/Loader';
 import Playlists from '../../../../../components/Playlists';
 
-class PlaylistsPage extends Component {
+export class PlaylistsPage extends Component {
   componentDidMount() {
     const {
       accessToken,
@@ -71,4 +74,20 @@ PlaylistsPage.defaultProps = {
   },
 };
 
-export default PlaylistsPage;
+const mapStateToProps = state => ({
+  ...state,
+  playlists: state.browse.playlists,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchCategoryPlaylists,
+  },
+  dispatch,
+);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(PlaylistsPage);
+

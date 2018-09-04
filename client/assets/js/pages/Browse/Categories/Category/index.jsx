@@ -1,15 +1,18 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
 import {
   Route,
   Switch,
 } from 'react-router-dom';
-import CategoryPlaylistsPageContainer from '../../../../containers/CategoryPlaylistsPage';
+import { bindActionCreators } from 'redux';
+import PlaylistsPage from './Playlists';
+import { fetchCategory } from '../../../../actions/browse';
 import Category from '../../../../components/Category';
 import Loader from '../../../../components/Loader';
 
-class CategoryPage extends Component {
+export class CategoryPage extends Component {
   componentDidMount() {
     const {
       accessToken,
@@ -34,7 +37,7 @@ class CategoryPage extends Component {
       <Switch>
         <Route
           path={`${match.url}/playlists`}
-          component={CategoryPlaylistsPageContainer}
+          component={PlaylistsPage}
         />
         <Route
           path={match.url}
@@ -86,4 +89,19 @@ CategoryPage.defaultProps = {
   },
 };
 
-export default CategoryPage;
+const mapStateToProps = state => ({
+  ...state,
+  category: state.browse.category,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchCategory,
+  },
+  dispatch,
+);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(CategoryPage);

@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchArtistTopTracks } from '../../../../actions/artists';
 import Loader from '../../../../components/Loader';
 import Tracks from '../../../../components/Tracks';
 
-class TopTracksPage extends Component {
+export class TopTracksPage extends Component {
   componentDidMount() {
     const {
       accessToken,
@@ -49,4 +52,19 @@ TopTracksPage.defaultProps = {
   tracks: [],
 };
 
-export default TopTracksPage;
+const mapStateToProps = state => ({
+  ...state,
+  tracks: state.artists.tracks,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchArtistTopTracks,
+  },
+  dispatch,
+);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(TopTracksPage);

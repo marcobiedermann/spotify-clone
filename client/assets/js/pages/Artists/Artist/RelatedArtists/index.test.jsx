@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import RelatedArtistsPage from '.';
+import { RelatedArtistsPage } from '.';
 
 it('renders correctly', () => {
   const tree = renderer

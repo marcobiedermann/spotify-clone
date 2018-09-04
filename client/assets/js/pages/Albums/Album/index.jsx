@@ -1,15 +1,18 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
 import {
   Route,
   Switch,
 } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
 import TracksPage from './Tracks';
+import { fetchAlbum } from '../../../actions/albums';
 import Album from '../../../components/Album';
 import Loader from '../../../components/Loader';
 
-class AlbumPage extends Component {
+export class AlbumPage extends Component {
   componentDidMount() {
     const {
       accessToken,
@@ -83,4 +86,19 @@ AlbumPage.defaultProps = {
   },
 };
 
-export default AlbumPage;
+const mapStateToProps = state => ({
+  ...state,
+  album: state.albums.album,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchAlbum,
+  },
+  dispatch,
+);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(AlbumPage);

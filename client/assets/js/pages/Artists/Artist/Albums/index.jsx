@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchArtistAlbums } from '../../../../actions/artists';
 import Albums from '../../../../components/Albums';
 
-class AlbumsPage extends Component {
+export class AlbumsPage extends Component {
   componentDidMount() {
-    const { accessToken, fetchArtistAlbums } = this.props;
+    const {
+      accessToken,
+      fetchArtistAlbums,
+    } = this.props;
 
     fetchArtistAlbums(accessToken, '20JZFwl6HVl6yg8a4H3ZqK');
   }
@@ -36,4 +42,19 @@ AlbumsPage.defaultProps = {
   fetchArtistAlbums: () => {},
 };
 
-export default AlbumsPage;
+const mapStateToProps = state => ({
+  ...state,
+  albums: state.artists.albums,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchArtistAlbums,
+  },
+  dispatch,
+);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(AlbumsPage);

@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
 import Aside from '../Aside';
 import Content from '../Content';
 import Footer from '../Footer';
@@ -10,8 +12,12 @@ import Me from '../Me';
 import Navigation from '../Navigation';
 import Search from '../Search';
 import styles from './style.css';
+import {
+  fetchMe,
+  fetchMePlaylists,
+} from '../../actions/me';
 
-class Layout extends Component {
+export class Layout extends Component {
   componentDidMount() {
     const {
       accessToken,
@@ -87,4 +93,21 @@ Layout.defaultProps = {
   },
 };
 
-export default Layout;
+const mapStateToProps = state => ({
+  ...state,
+  me: state.me.me,
+  playlists: state.me.playlists,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchMe,
+    fetchMePlaylists,
+  },
+  dispatch,
+);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Layout);

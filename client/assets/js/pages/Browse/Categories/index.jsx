@@ -1,15 +1,18 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
 import {
   Route,
   Switch,
 } from 'react-router-dom';
-import CategoryPageContainer from '../../../containers/CategoryPage';
+import { bindActionCreators } from 'redux';
+import { fetchCategories } from '../../../actions/browse';
+import CategoryPage from './Category';
 import Categories from '../../../components/Categories';
 import Loader from '../../../components/Loader';
 
-class CategoriesPage extends Component {
+export class CategoriesPage extends Component {
   componentDidMount() {
     const {
       accessToken,
@@ -30,7 +33,7 @@ class CategoriesPage extends Component {
       <Switch>
         <Route
           path={`${match.url}/:category_id`}
-          component={CategoryPageContainer}
+          component={CategoryPage}
         />
         <Route
           path={match.url}
@@ -72,4 +75,19 @@ CategoriesPage.defaultProps = {
   },
 };
 
-export default CategoriesPage;
+const mapStateToProps = state => ({
+  ...state,
+  categories: state.browse.categories,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchCategories,
+  },
+  dispatch,
+);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(CategoriesPage);

@@ -1,12 +1,18 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
-import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import {
+  Route,
+  Switch,
+} from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { fetchUserPlaylists } from '../../../../actions/users';
 import Loader from '../../../../components/Loader';
 import Playlists from '../../../../components/Playlists';
-import PlaylistPageContainer from '../../../../containers/UserPlaylistPage';
+import PlaylistPage from './Playlist';
 
-class PlaylistsPage extends Component {
+export class PlaylistsPage extends Component {
   componentDidMount() {
     const {
       accessToken,
@@ -25,7 +31,10 @@ class PlaylistsPage extends Component {
 
     return (
       <Switch>
-        <Route path={`${match.url}/:playlist_id`} component={PlaylistPageContainer} />
+        <Route
+          path={`${match.url}/:playlist_id`}
+          component={PlaylistPage}
+        />
         <Route
           path={match.url}
           component={() => (
@@ -66,4 +75,19 @@ PlaylistsPage.defaultProps = {
   playlists: [],
 };
 
-export default PlaylistsPage;
+const mapStateToProps = state => ({
+  ...state,
+  playlists: state.users.playlists,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchUserPlaylists,
+  },
+  dispatch,
+);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(PlaylistsPage);

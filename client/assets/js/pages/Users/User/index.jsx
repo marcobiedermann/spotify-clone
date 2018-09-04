@@ -1,12 +1,19 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
-import { Route, Switch } from 'react-router-dom';
-import UserPlaylistsPageContainer from '../../../containers/UserPlaylistsPage';
+import { connect } from 'react-redux';
+import {
+  Route,
+  Switch,
+} from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { fetchUser } from '../../../actions/users';
+import PlaylistsPage from './Playlists';
 import Loader from '../../../components/Loader';
 import User from '../../../components/User';
 
-class UserPage extends Component {
+
+export class UserPage extends Component {
   componentDidMount() {
     const {
       accessToken,
@@ -26,7 +33,10 @@ class UserPage extends Component {
 
     return (
       <Switch>
-        <Route path={`${match.url}/playlists`} component={UserPlaylistsPageContainer} />
+        <Route
+          path={`${match.url}/playlists`}
+          component={PlaylistsPage}
+        />
         <Route
           path={match.url}
           component={() => (
@@ -81,4 +91,19 @@ UserPage.defaultProps = {
   },
 };
 
-export default UserPage;
+const mapStateToProps = state => ({
+  ...state,
+  user: state.users.user,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchUser,
+  },
+  dispatch,
+);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(UserPage);

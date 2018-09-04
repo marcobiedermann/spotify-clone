@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { fetchUserPlaylist } from '../../../../../actions/users';
 import Button from '../../../../../components/Button';
 import Loader from '../../../../../components/Loader';
 import Playlist from '../../../../../components/Playlist';
 import Track from '../../../../../components/Track';
 import * as routes from '../../../../../constants/routes';
 
-class PlaylistPage extends Component {
+export class PlaylistPage extends Component {
   componentDidMount() {
     const {
       accessToken,
@@ -109,4 +112,19 @@ PlaylistPage.defaultProps = {
   },
 };
 
-export default PlaylistPage;
+const mapStateToProps = state => ({
+  ...state,
+  playlist: state.users.playlist,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchUserPlaylist,
+  },
+  dispatch,
+);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(PlaylistPage);

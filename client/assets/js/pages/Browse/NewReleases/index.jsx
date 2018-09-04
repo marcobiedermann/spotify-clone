@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchNewReleases } from '../../../actions/browse';
 import Albums from '../../../components/Albums';
 import Loader from '../../../components/Loader';
 
-class NewReleasesPage extends Component {
+export class NewReleasesPage extends Component {
   componentDidMount() {
     const {
       accessToken,
@@ -53,4 +56,19 @@ NewReleasesPage.defaultProps = {
   isLoading: false,
 };
 
-export default NewReleasesPage;
+const mapStateToProps = state => ({
+  ...state,
+  albums: state.browse.albums,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchNewReleases,
+  },
+  dispatch,
+);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(NewReleasesPage);

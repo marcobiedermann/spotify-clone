@@ -1,18 +1,21 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
 import {
   Link,
   Route,
   Switch,
 } from 'react-router-dom';
-import ArtistAlbumsPageContainer from '../../../containers/ArtistAlbumsPage';
-import ArtistRelatedArtistsPageContainer from '../../../containers/ArtistRelatedArtistsPage';
-import ArtistTopTracksPageContainer from '../../../containers/ArtistTopTracksPage';
+import { bindActionCreators } from 'redux';
+import AlbumsPage from './Albums';
+import RelatedArtistsPage from './RelatedArtists';
+import TopTracksPage from './TopTracks';
+import { fetchArtist } from '../../../actions/artists';
 import Artist from '../../../components/Artist';
 import Loader from '../../../components/Loader';
 
-class ArtistPage extends Component {
+export class ArtistPage extends Component {
   componentDidMount() {
     const {
       accessToken,
@@ -34,15 +37,15 @@ class ArtistPage extends Component {
       <Switch>
         <Route
           path={`${match.url}/albums`}
-          component={ArtistAlbumsPageContainer}
+          component={AlbumsPage}
         />
         <Route
           path={`${match.url}/related-artists`}
-          component={ArtistRelatedArtistsPageContainer}
+          component={RelatedArtistsPage}
         />
         <Route
           path={`${match.url}/top-tracks`}
-          component={ArtistTopTracksPageContainer}
+          component={TopTracksPage}
         />
         <Route
           path={match.url}
@@ -105,4 +108,19 @@ ArtistPage.defaultProps = {
   },
 };
 
-export default ArtistPage;
+const mapStateToProps = state => ({
+  ...state,
+  artist: state.artists.artist,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    fetchArtist,
+  },
+  dispatch,
+);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ArtistPage);
