@@ -41,7 +41,7 @@ export const fetchUser = (accessToken, userId) => async (dispatch) => {
 
     dispatch(fetchUserFulfilled(result));
   } catch (error) {
-    dispatch(fetchUserRejected(error));
+    dispatch(fetchUserRejected(new Error(error)));
   }
 };
 
@@ -79,7 +79,7 @@ export const fetchUserPlaylists = (accessToken, userId) => async (dispatch) => {
 
     dispatch(fetchUserPlaylistsFulfilled(result.items));
   } catch (error) {
-    dispatch(fetchUserPlaylistsRejected(error));
+    dispatch(fetchUserPlaylistsRejected(new Error(error)));
   }
 };
 
@@ -117,6 +117,6 @@ export const fetchUserPlaylist = (accessToken, userId, playlistId) => async (dis
 
     dispatch(fetchUserPlaylistFulfilled(result));
   } catch (error) {
-    dispatch(fetchUserPlaylistRejected(error));
+    dispatch(fetchUserPlaylistRejected(new Error(error)));
   }
 };

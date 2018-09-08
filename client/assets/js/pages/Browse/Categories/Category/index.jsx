@@ -10,6 +10,7 @@ import { bindActionCreators } from 'redux';
 import PlaylistsPage from './Playlists';
 import { fetchCategory } from '../../../../actions/browse';
 import Category from '../../../../components/Category';
+import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
 
 export class CategoryPage extends Component {
@@ -29,6 +30,7 @@ export class CategoryPage extends Component {
   render() {
     const {
       category,
+      error,
       isLoading,
       match,
     } = this.props;
@@ -46,6 +48,9 @@ export class CategoryPage extends Component {
               <Helmet>
                 <title>{category.name}</title>
               </Helmet>
+              {error && (
+                <Error>{error.message}</Error>
+              )}
               {isLoading ? (
                 <Loader />
               ) : (
@@ -64,6 +69,9 @@ CategoryPage.propTypes = {
   category: PropTypes.shape({
     name: PropTypes.string,
   }),
+  error: PropTypes.shape({
+    message: PropTypes.string,
+  }),
   fetchCategory: PropTypes.func,
   isLoading: PropTypes.bool,
   match: PropTypes.shape({
@@ -79,6 +87,9 @@ CategoryPage.defaultProps = {
   category: {
     name: '',
   },
+  error: {
+    message: '',
+  },
   fetchCategory: () => {},
   isLoading: false,
   match: {
@@ -92,6 +103,7 @@ CategoryPage.defaultProps = {
 const mapStateToProps = state => ({
   ...state,
   category: state.browse.category,
+  error: state.browse.error,
   isLoading: state.browse.isLoading,
 });
 

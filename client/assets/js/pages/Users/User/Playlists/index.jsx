@@ -7,10 +7,11 @@ import {
   Switch,
 } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
+import PlaylistPage from './Playlist';
 import { fetchUserPlaylists } from '../../../../actions/users';
+import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
 import Playlists from '../../../../components/Playlists';
-import PlaylistPage from './Playlist';
 
 export class PlaylistsPage extends Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ export class PlaylistsPage extends Component {
 
   render() {
     const {
+      error,
       isLoading,
       match,
       playlists,
@@ -42,6 +44,9 @@ export class PlaylistsPage extends Component {
               <Helmet>
                 <title>Playlists</title>
               </Helmet>
+              {error && (
+                <Error>{error.message}</Error>
+              )}
               {isLoading ? (
                 <Loader />
               ) : (
@@ -57,6 +62,9 @@ export class PlaylistsPage extends Component {
 
 PlaylistsPage.propTypes = {
   accessToken: PropTypes.string,
+  error: PropTypes.shape({
+    message: PropTypes.string,
+  }),
   fetchUserPlaylists: PropTypes.func,
   isLoading: PropTypes.bool,
   match: PropTypes.shape({
@@ -67,6 +75,9 @@ PlaylistsPage.propTypes = {
 
 PlaylistsPage.defaultProps = {
   accessToken: '',
+  error: {
+    message: '',
+  },
   fetchUserPlaylists: () => {},
   isLoading: false,
   match: {
@@ -77,6 +88,7 @@ PlaylistsPage.defaultProps = {
 
 const mapStateToProps = state => ({
   ...state,
+  error: state.users.error,
   isLoading: state.users.isLoading,
   playlists: state.users.playlists,
 });

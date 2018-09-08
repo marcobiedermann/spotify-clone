@@ -9,6 +9,7 @@ import {
 import { bindActionCreators } from 'redux';
 import { fetchUser } from '../../../actions/users';
 import PlaylistsPage from './Playlists';
+import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 import User from '../../../components/User';
 
@@ -26,6 +27,7 @@ export class UserPage extends Component {
 
   render() {
     const {
+      error,
       isLoading,
       match,
       me,
@@ -44,6 +46,9 @@ export class UserPage extends Component {
               <Helmet>
                 <title>{me.me.display_name}</title>
               </Helmet>
+              {error && (
+                <Error>{error.message}</Error>
+              )}
               {isLoading ? (
                 <Loader />
               ) : (
@@ -59,6 +64,9 @@ export class UserPage extends Component {
 
 UserPage.propTypes = {
   accessToken: PropTypes.string,
+  error: PropTypes.shape({
+    message: PropTypes.string,
+  }),
   fetchUser: PropTypes.func,
   isLoading: PropTypes.bool,
   match: PropTypes.shape({
@@ -76,6 +84,9 @@ UserPage.propTypes = {
 
 UserPage.defaultProps = {
   accessToken: '',
+  error: {
+    message: '',
+  },
   fetchUser: () => {},
   isLoading: false,
   match: {
@@ -93,6 +104,7 @@ UserPage.defaultProps = {
 
 const mapStateToProps = state => ({
   ...state,
+  error: state.users.error,
   isLoading: state.users.isLoading,
   user: state.users.user,
 });

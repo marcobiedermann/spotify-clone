@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { fetchFeaturedPlaylists } from '../../../actions/browse';
+import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 import Playlists from '../../../components/Playlists';
 
@@ -23,6 +24,7 @@ export class FeaturedPlaylistsPage extends Component {
 
   render() {
     const {
+      error,
       isLoading,
       match,
       playlists,
@@ -37,6 +39,9 @@ export class FeaturedPlaylistsPage extends Component {
               <Helmet>
                 <title>Featured Playlists</title>
               </Helmet>
+              {error && (
+                <Error>{error.message}</Error>
+              )}
               {isLoading ? (
                 <Loader />
               ) : (
@@ -52,26 +57,33 @@ export class FeaturedPlaylistsPage extends Component {
 
 FeaturedPlaylistsPage.propTypes = {
   accessToken: PropTypes.string,
-  playlists: PropTypes.shape(),
+  error: PropTypes.shape({
+    message: PropTypes.string,
+  }),
   fetchFeaturedPlaylists: PropTypes.func,
   isLoading: PropTypes.bool,
   match: PropTypes.shape({
     url: PropTypes.string,
   }),
+  playlists: PropTypes.shape(),
 };
 
 FeaturedPlaylistsPage.defaultProps = {
   accessToken: '',
-  playlists: {},
+  error: {
+    message: '',
+  },
   fetchFeaturedPlaylists: () => {},
   isLoading: false,
   match: {
     url: '',
   },
+  playlists: {},
 };
 
 const mapStateToProps = state => ({
   ...state,
+  error: state.browse.error,
   isLoading: state.browse.isLoading,
   playlists: state.browse.playlists,
 });

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchNewReleases } from '../../../actions/browse';
 import Albums from '../../../components/Albums';
+import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
 export class NewReleasesPage extends Component {
@@ -20,6 +21,7 @@ export class NewReleasesPage extends Component {
   render() {
     const {
       albums,
+      error,
       isLoading,
     } = this.props;
 
@@ -28,6 +30,9 @@ export class NewReleasesPage extends Component {
         <Helmet>
           <title>New Releases</title>
         </Helmet>
+        {error && (
+          <Error>{error.message}</Error>
+        )}
         {isLoading ? (
           <Loader />
         ) : (
@@ -43,6 +48,9 @@ NewReleasesPage.propTypes = {
   albums: PropTypes.shape({
     items: PropTypes.arrayOf(PropTypes.shape),
   }),
+  error: PropTypes.shape({
+    message: PropTypes.string,
+  }),
   fetchNewReleases: PropTypes.func,
   isLoading: PropTypes.bool,
 };
@@ -52,6 +60,9 @@ NewReleasesPage.defaultProps = {
   albums: {
     items: [],
   },
+  error: {
+    message: '',
+  },
   fetchNewReleases: () => {},
   isLoading: false,
 };
@@ -59,6 +70,7 @@ NewReleasesPage.defaultProps = {
 const mapStateToProps = state => ({
   ...state,
   albums: state.browse.albums,
+  error: state.browse.error,
   isLoading: state.browse.isLoading,
 });
 

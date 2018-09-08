@@ -2,6 +2,11 @@
 
 exports[`renders correctly 1`] = `
 <div>
+  <div
+    className="error"
+  >
+    
+  </div>
   <div>
     <figure>
       <figcaption>

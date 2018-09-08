@@ -42,7 +42,7 @@ export const fetchArtist = (accessToken, id) => async (dispatch) => {
 
     dispatch(fetchArtistFulfilled(result));
   } catch (error) {
-    dispatch(fetchArtistRejected(error));
+    dispatch(fetchArtistRejected(new Error(error)));
   }
 };
 
@@ -80,7 +80,7 @@ export const fetchArtistAlbums = (accessToken, id) => async (dispatch) => {
 
     dispatch(fetchArtistAlbumsFulfilled(result.items));
   } catch (error) {
-    dispatch(fetchArtistAlbumsRejected(error));
+    dispatch(fetchArtistAlbumsRejected(new Error(error)));
   }
 };
 
@@ -118,7 +118,7 @@ export const fetchArtistRelatedArtists = (accessToken, id) => async (dispatch) =
 
     dispatch(fetchArtistRelatedArtistsFulfilled(result.artists));
   } catch (error) {
-    dispatch(fetchArtistRelatedArtistsRejected(error));
+    dispatch(fetchArtistRelatedArtistsRejected(new Error(error)));
   }
 };
 
@@ -154,6 +154,6 @@ export const fetchArtistTopTracks = (accessToken, id) => async (dispatch) => {
 
     dispatch(fetchArtistTopTracksFulfilled(result.tracks));
   } catch (error) {
-    dispatch(fetchArtistTopTracksRejected(error));
+    dispatch(fetchArtistTopTracksRejected(new Error(error)));
   }
 };

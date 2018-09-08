@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { fetchCategoryPlaylists } from '../../../../../actions/browse';
+import Error from '../../../../../components/Error';
 import Loader from '../../../../../components/Loader';
 import Playlists from '../../../../../components/Playlists';
 
@@ -23,6 +24,7 @@ export class PlaylistsPage extends Component {
 
   render() {
     const {
+      error,
       isLoading,
       match,
       playlists,
@@ -37,6 +39,9 @@ export class PlaylistsPage extends Component {
               <Helmet>
                 <title>Playlists</title>
               </Helmet>
+              {error && (
+                <Error>{error.message}</Error>
+              )}
               {isLoading ? (
                 <Loader />
               ) : (
@@ -52,30 +57,37 @@ export class PlaylistsPage extends Component {
 
 PlaylistsPage.propTypes = {
   accessToken: PropTypes.string,
-  playlists: PropTypes.shape({
-    items: PropTypes.arrayOf(PropTypes.shape),
+  error: PropTypes.shape({
+    message: PropTypes.string,
   }),
   fetchCategoryPlaylists: PropTypes.func,
   isLoading: PropTypes.bool,
   match: PropTypes.shape({
     url: PropTypes.string,
   }),
+  playlists: PropTypes.shape({
+    items: PropTypes.arrayOf(PropTypes.shape),
+  }),
 };
 
 PlaylistsPage.defaultProps = {
   accessToken: '',
-  playlists: {
-    items: [],
+  error: {
+    message: '',
   },
   fetchCategoryPlaylists: () => {},
   isLoading: false,
   match: {
     url: '',
   },
+  playlists: {
+    items: [],
+  },
 };
 
 const mapStateToProps = state => ({
   ...state,
+  error: state.browse.error,
   isLoading: state.browse.isLoading,
   playlists: state.browse.playlists,
 });
@@ -91,4 +103,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(PlaylistsPage);
-

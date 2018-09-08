@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchArtistTopTracks } from '../../../../actions/artists';
+import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
 import Tracks from '../../../../components/Tracks';
 
@@ -19,6 +20,7 @@ export class TopTracksPage extends Component {
 
   render() {
     const {
+      error,
       isLoading,
       tracks,
     } = this.props;
@@ -28,6 +30,9 @@ export class TopTracksPage extends Component {
         <Helmet>
           <title>Top Tracks</title>
         </Helmet>
+        {error && (
+          <Error>{error.message}</Error>
+        )}
         {isLoading ? (
           <Loader />
         ) : (
@@ -41,12 +46,18 @@ export class TopTracksPage extends Component {
 TopTracksPage.propTypes = {
   accessToken: PropTypes.string,
   fetchArtistTopTracks: PropTypes.func,
+  error: PropTypes.shape({
+    message: PropTypes.string,
+  }),
   isLoading: PropTypes.bool,
   tracks: PropTypes.arrayOf(PropTypes.shape),
 };
 
 TopTracksPage.defaultProps = {
   accessToken: '',
+  error: {
+    message: '',
+  },
   fetchArtistTopTracks: () => {},
   isLoading: false,
   tracks: [],
@@ -54,6 +65,7 @@ TopTracksPage.defaultProps = {
 
 const mapStateToProps = state => ({
   ...state,
+  error: state.artists.error,
   isLoading: state.artists.isLoading,
   tracks: state.artists.tracks,
 });

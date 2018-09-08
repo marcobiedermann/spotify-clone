@@ -40,7 +40,7 @@ export const fetchMe = accessToken => async (dispatch) => {
 
     dispatch(fetchMeFulfilled(result));
   } catch (error) {
-    dispatch(fetchMeRejected(error));
+    dispatch(fetchMeRejected(new Error(error)));
   }
 };
 
@@ -78,6 +78,6 @@ export const fetchMePlaylists = accessToken => async (dispatch) => {
 
     dispatch(fetchMePlaylistsFulfilled(result));
   } catch (error) {
-    dispatch(fetchMePlaylistsRejected(error));
+    dispatch(fetchMePlaylistsRejected(new Error(error)));
   }
 };

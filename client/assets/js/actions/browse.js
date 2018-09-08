@@ -43,7 +43,7 @@ export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
 
     dispatch(fetchCategoryFulfilled(result));
   } catch (error) {
-    dispatch(fetchCategoryRejected(error));
+    dispatch(fetchCategoryRejected(new Error(error)));
   }
 };
 
@@ -81,7 +81,7 @@ export const fetchCategories = accessToken => async (dispatch) => {
 
     dispatch(fetchCategoriesFulfilled(result.categories));
   } catch (error) {
-    dispatch(fetchCategoriesRejected(error));
+    dispatch(fetchCategoriesRejected(new Error(error)));
   }
 };
 
@@ -119,7 +119,7 @@ export const fetchFeaturedPlaylists = accessToken => async (dispatch) => {
 
     dispatch(fetchFeaturedPlaylistsFulfilled(result.playlists));
   } catch (error) {
-    dispatch(fetchFeaturedPlaylistsRejected(error));
+    dispatch(fetchFeaturedPlaylistsRejected(new Error(error)));
   }
 };
 
@@ -157,7 +157,7 @@ export const fetchNewReleases = accessToken => async (dispatch) => {
 
     dispatch(fetchNewReleasesFulfilled(result.albums));
   } catch (error) {
-    dispatch(fetchNewReleasesRejected(error));
+    dispatch(fetchNewReleasesRejected(new Error(error)));
   }
 };
 
@@ -195,6 +195,6 @@ export const fetchCategoryPlaylists = (accessToken, categoryId) => async (dispat
 
     dispatch(fetchCategoryPlaylistsFulfilled(result.playlists));
   } catch (error) {
-    dispatch(fetchCategoryPlaylistsRejected(error));
+    dispatch(fetchCategoryPlaylistsRejected(new Error(error)));
   }
 };

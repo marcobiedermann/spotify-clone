@@ -10,6 +10,7 @@ import { bindActionCreators } from 'redux';
 import { fetchCategories } from '../../../actions/browse';
 import CategoryPage from './Category';
 import Categories from '../../../components/Categories';
+import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
 export class CategoriesPage extends Component {
@@ -25,6 +26,7 @@ export class CategoriesPage extends Component {
   render() {
     const {
       categories,
+      error,
       isLoading,
       match,
     } = this.props;
@@ -42,6 +44,9 @@ export class CategoriesPage extends Component {
               <Helmet>
                 <title>Categories</title>
               </Helmet>
+              {error && (
+                <Error>{error.message}</Error>
+              )}
               {isLoading ? (
                 <Loader />
               ) : (
@@ -58,6 +63,9 @@ export class CategoriesPage extends Component {
 CategoriesPage.propTypes = {
   accessToken: PropTypes.string,
   categories: PropTypes.shape(),
+  error: PropTypes.shape({
+    message: PropTypes.string,
+  }),
   fetchCategories: PropTypes.func,
   isLoading: PropTypes.bool,
   match: PropTypes.shape({
@@ -68,6 +76,9 @@ CategoriesPage.propTypes = {
 CategoriesPage.defaultProps = {
   accessToken: '',
   categories: {},
+  error: {
+    message: '',
+  },
   fetchCategories: () => {},
   isLoading: false,
   match: {
@@ -78,6 +89,7 @@ CategoriesPage.defaultProps = {
 const mapStateToProps = state => ({
   ...state,
   categories: state.browse.categories,
+  error: state.browse.error,
   isLoading: state.browse.isLoading,
 });
 

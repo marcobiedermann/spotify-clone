@@ -39,6 +39,6 @@ export const fetchAlbum = (accessToken, albumId) => async (dispatch) => {
 
     dispatch(fetchAlbumFulfilled(result));
   } catch (error) {
-    dispatch(fetchAlbumRejected(error));
+    dispatch(fetchAlbumRejected(new Error(error)));
   }
 };

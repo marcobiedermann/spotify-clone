@@ -13,6 +13,7 @@ import RelatedArtistsPage from './RelatedArtists';
 import TopTracksPage from './TopTracks';
 import { fetchArtist } from '../../../actions/artists';
 import Artist from '../../../components/Artist';
+import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
 export class ArtistPage extends Component {
@@ -29,6 +30,7 @@ export class ArtistPage extends Component {
   render() {
     const {
       artist,
+      error,
       isLoading,
       match,
     } = this.props;
@@ -54,6 +56,9 @@ export class ArtistPage extends Component {
               <Helmet>
                 <title>{artist.name}</title>
               </Helmet>
+              {error && (
+                <Error>{error.message}</Error>
+              )}
               {isLoading ? (
                 <Loader />
               ) : (
@@ -83,6 +88,9 @@ ArtistPage.propTypes = {
   artist: PropTypes.shape({
     name: PropTypes.string,
   }),
+  error: PropTypes.shape({
+    message: PropTypes.string,
+  }),
   fetchArtist: PropTypes.func,
   isLoading: PropTypes.bool,
   match: PropTypes.shape({
@@ -98,6 +106,9 @@ ArtistPage.defaultProps = {
   artist: {
     name: '',
   },
+  error: {
+    message: '',
+  },
   fetchArtist: () => {},
   isLoading: false,
   match: {
@@ -111,6 +122,7 @@ ArtistPage.defaultProps = {
 const mapStateToProps = state => ({
   ...state,
   artist: state.artists.artist,
+  error: state.albums.error,
   isLoading: state.artists.isLoading,
 });
 
