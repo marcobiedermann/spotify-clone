@@ -1,7 +1,7 @@
 import {
   ME_FETCH,
   ME_PLAYLISTS_FETCH,
-} from '../constants/me';
+} from '../constants/action-types';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';

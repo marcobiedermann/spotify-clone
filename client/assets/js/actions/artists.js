@@ -3,7 +3,7 @@ import {
   ARTIST_ALBUMS_FETCH,
   ARTIST_RELATED_ARTISTS_FETCH,
   ARTIST_TOP_TRACKS_FETCH,
-} from '../constants/artists';
+} from '../constants/action-types';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';

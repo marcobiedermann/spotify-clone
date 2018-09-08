@@ -1,6 +1,6 @@
 import {
   ALBUM_FETCH,
-} from '../constants/albums';
+} from '../constants/action-types';
 
 const initialState = {
   artist: {},

@@ -4,7 +4,7 @@ import {
   FEATURED_PLAYLISTS_FETCH,
   NEW_RELEASES_FETCH,
   CATEGORY_PLAYLISTS_FETCH,
-} from '../constants/browse';
+} from '../constants/action-types';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';

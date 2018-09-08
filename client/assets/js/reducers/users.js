@@ -2,7 +2,7 @@ import {
   USER_FETCH,
   USER_PLAYLISTS_FETCH,
   USER_PLAYLIST_FETCH,
-} from '../constants/users';
+} from '../constants/action-types';
 
 const initialState = {
   error: null,

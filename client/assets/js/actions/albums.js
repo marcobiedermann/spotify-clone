@@ -1,6 +1,6 @@
 import {
   ALBUM_FETCH,
-} from '../constants/albums';
+} from '../constants/action-types';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
