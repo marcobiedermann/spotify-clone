@@ -89,6 +89,7 @@ AlbumPage.defaultProps = {
 const mapStateToProps = state => ({
   ...state,
   album: state.albums.album,
+  isLoading: state.albums.isLoading,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(

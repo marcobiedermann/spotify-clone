@@ -77,6 +77,7 @@ PlaylistsPage.defaultProps = {
 
 const mapStateToProps = state => ({
   ...state,
+  isLoading: state.users.isLoading,
   playlists: state.users.playlists,
 });
 

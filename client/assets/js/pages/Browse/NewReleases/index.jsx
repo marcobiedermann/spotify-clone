@@ -59,6 +59,7 @@ NewReleasesPage.defaultProps = {
 const mapStateToProps = state => ({
   ...state,
   albums: state.browse.albums,
+  isLoading: state.browse.isLoading,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(

@@ -1,11 +1,15 @@
 import {
   ARTIST_FETCH_FULFILLED,
+  ARTIST_FETCH_PENDING,
   ARTIST_FETCH_REJECTED,
   ARTIST_ALBUMS_FETCH_FULFILLED,
+  ARTIST_ALBUMS_FETCH_PENDING,
   ARTIST_ALBUMS_FETCH_REJECTED,
   ARTIST_RELATED_ARTISTS_FETCH_FULFILLED,
+  ARTIST_RELATED_ARTISTS_FETCH_PENDING,
   ARTIST_RELATED_ARTISTS_FETCH_REJECTED,
   ARTIST_TOP_TRACKS_FETCH_FULFILLED,
+  ARTIST_TOP_TRACKS_FETCH_PENDING,
   ARTIST_TOP_TRACKS_FETCH_REJECTED,
 } from '../constants/artists';
 
@@ -17,6 +21,10 @@ export const fetchArtistFulfilled = artist => ({
   payload: {
     artist,
   },
+});
+
+export const fetchArtistPending = () => ({
+  type: ARTIST_FETCH_PENDING,
 });
 
 export const fetchArtistRejected = error => ({
@@ -33,6 +41,8 @@ export const fetchArtist = (accessToken, id) => async (dispatch) => {
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchArtistPending());
 
   try {
     const response = await fetch(request);
@@ -51,6 +61,10 @@ export const fetchArtistAlbumsFulfilled = albums => ({
   },
 });
 
+export const fetchArtistAlbumsPending = () => ({
+  type: ARTIST_ALBUMS_FETCH_PENDING,
+});
+
 export const fetchArtistAlbumsRejected = error => ({
   type: ARTIST_ALBUMS_FETCH_REJECTED,
   payload: {
@@ -65,6 +79,8 @@ export const fetchArtistAlbums = (accessToken, id) => async (dispatch) => {
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchArtistAlbumsPending());
 
   try {
     const response = await fetch(request);
@@ -83,6 +99,10 @@ export const fetchArtistRelatedArtistsFulfilled = artists => ({
   },
 });
 
+export const fetchArtistRelatedArtistsPending = () => ({
+  type: ARTIST_RELATED_ARTISTS_FETCH_PENDING,
+});
+
 export const fetchArtistRelatedArtistsRejected = error => ({
   type: ARTIST_RELATED_ARTISTS_FETCH_REJECTED,
   payoad: {
@@ -97,6 +117,8 @@ export const fetchArtistRelatedArtists = (accessToken, id) => async (dispatch) =
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchArtistRelatedArtistsPending());
 
   try {
     const response = await fetch(request);
@@ -113,6 +135,10 @@ export const fetchArtistTopTracksFulfilled = tracks => ({
   payload: {
     tracks,
   },
+});
+
+export const fetchArtistTopTracksPending = () => ({
+  type: ARTIST_TOP_TRACKS_FETCH_PENDING,
 });
 
 export const fetchArtistTopTracksRejected = error => ({

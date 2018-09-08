@@ -1,13 +1,18 @@
 import {
   CATEGORY_FETCH_FULFILLED,
+  CATEGORY_FETCH_PENDING,
   CATEGORY_FETCH_REJECTED,
   CATEGORIES_FETCH_FULFILLED,
+  CATEGORIES_FETCH_PENDING,
   CATEGORIES_FETCH_REJECTED,
   FEATURED_PLAYLISTS_FETCH_FULFILLED,
+  FEATURED_PLAYLISTS_FETCH_PENDING,
   FEATURED_PLAYLISTS_FETCH_REJECTED,
   NEW_RELEASES_FETCH_FULFILLED,
+  NEW_RELEASES_FETCH_PENDING,
   NEW_RELEASES_FETCH_REJECTED,
   CATEGORY_PLAYLISTS_FETCH_FULFILLED,
+  CATEGORY_PLAYLISTS_FETCH_PENDING,
   CATEGORY_PLAYLISTS_FETCH_REJECTED,
 } from '../constants/browse';
 
@@ -19,6 +24,10 @@ export const fetchCategoryFulfilled = category => ({
   payload: {
     category,
   },
+});
+
+export const fetchCategoryPending = () => ({
+  type: CATEGORY_FETCH_PENDING,
 });
 
 export const fetchCategoryRejected = error => ({
@@ -35,6 +44,8 @@ export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchCategoryPending());
 
   try {
     const response = await fetch(request);
@@ -53,6 +64,10 @@ export const fetchCategoriesFulfilled = categories => ({
   },
 });
 
+export const fetchCategoriesPending = () => ({
+  type: CATEGORIES_FETCH_PENDING,
+});
+
 export const fetchCategoriesRejected = error => ({
   type: CATEGORIES_FETCH_REJECTED,
   payload: {
@@ -67,6 +82,8 @@ export const fetchCategories = accessToken => async (dispatch) => {
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchCategoriesPending());
 
   try {
     const response = await fetch(request);
@@ -85,6 +102,10 @@ export const fetchFeaturedPlaylistsFulfilled = playlists => ({
   },
 });
 
+export const fetchFeaturedPlaylistsPending = () => ({
+  type: FEATURED_PLAYLISTS_FETCH_PENDING,
+});
+
 export const fetchFeaturedPlaylistsRejected = error => ({
   type: FEATURED_PLAYLISTS_FETCH_REJECTED,
   payload: {
@@ -99,6 +120,8 @@ export const fetchFeaturedPlaylists = accessToken => async (dispatch) => {
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchFeaturedPlaylistsPending());
 
   try {
     const response = await fetch(request);
@@ -117,6 +140,10 @@ export const fetchNewReleasesFulfilled = albums => ({
   },
 });
 
+export const fetchNewReleasesPending = () => ({
+  type: NEW_RELEASES_FETCH_PENDING,
+});
+
 export const fetchNewReleasesRejected = error => ({
   type: NEW_RELEASES_FETCH_REJECTED,
   payload: {
@@ -131,6 +158,8 @@ export const fetchNewReleases = accessToken => async (dispatch) => {
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchNewReleasesPending());
 
   try {
     const response = await fetch(request);
@@ -149,6 +178,10 @@ export const fetchCategoryPlaylistsFulfilled = playlists => ({
   },
 });
 
+export const fetchCategoryPlaylistsPending = () => ({
+  type: CATEGORY_PLAYLISTS_FETCH_PENDING,
+});
+
 export const fetchCategoryPlaylistsRejected = error => ({
   type: CATEGORY_PLAYLISTS_FETCH_REJECTED,
   payload: {
@@ -163,6 +196,8 @@ export const fetchCategoryPlaylists = (accessToken, categoryId) => async (dispat
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchCategoryPlaylistsPending());
 
   try {
     const response = await fetch(request);

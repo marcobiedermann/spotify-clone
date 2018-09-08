@@ -1,7 +1,9 @@
 import {
   ME_FETCH_FULFILLED,
+  ME_FETCH_PENDING,
   ME_FETCH_REJECTED,
   ME_PLAYLISTS_FETCH_FULFILLED,
+  ME_PLAYLISTS_FETCH_PENDING,
   ME_PLAYLISTS_FETCH_REJECTED,
 } from '../constants/me';
 
@@ -13,6 +15,10 @@ export const fetchMeFulfilled = me => ({
   payload: {
     me,
   },
+});
+
+export const fetchMePending = () => ({
+  type: ME_FETCH_PENDING,
 });
 
 export const fetchMeRejected = error => ({
@@ -29,6 +35,8 @@ export const fetchMe = accessToken => async (dispatch) => {
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchMePending());
 
   try {
     const response = await fetch(request);
@@ -47,6 +55,10 @@ export const fetchMePlaylistsFulfilled = playlists => ({
   },
 });
 
+export const fetchMePlaylistsPending = () => ({
+  type: ME_PLAYLISTS_FETCH_PENDING,
+});
+
 export const fetchMePlaylistsRejected = error => ({
   type: ME_PLAYLISTS_FETCH_REJECTED,
   payload: {
@@ -61,6 +73,8 @@ export const fetchMePlaylists = accessToken => async (dispatch) => {
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchMePlaylistsPending());
 
   try {
     const response = await fetch(request);

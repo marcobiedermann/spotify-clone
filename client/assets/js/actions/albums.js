@@ -1,5 +1,6 @@
 import {
   ALBUM_FETCH_FULFILLED,
+  ALBUM_FETCH_PENDING,
   ALBUM_FETCH_REJECTED,
 } from '../constants/albums';
 
@@ -11,6 +12,10 @@ export const fetchAlbumFulfilled = album => ({
   payload: {
     album,
   },
+});
+
+export const fetchAlbumPending = () => ({
+  type: ALBUM_FETCH_PENDING,
 });
 
 export const fetchAlbumRejected = error => ({
@@ -27,6 +32,8 @@ export const fetchAlbum = (accessToken, albumId) => async (dispatch) => {
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchAlbumFulfilled());
 
   try {
     const response = await fetch(request);

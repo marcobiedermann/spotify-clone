@@ -54,6 +54,7 @@ TopTracksPage.defaultProps = {
 
 const mapStateToProps = state => ({
   ...state,
+  isLoading: state.artists.isLoading,
   tracks: state.artists.tracks,
 });
 

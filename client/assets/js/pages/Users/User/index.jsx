@@ -93,6 +93,7 @@ UserPage.defaultProps = {
 
 const mapStateToProps = state => ({
   ...state,
+  isLoading: state.users.isLoading,
   user: state.users.user,
 });
 

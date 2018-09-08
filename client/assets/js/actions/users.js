@@ -1,9 +1,12 @@
 import {
   USER_FETCH_FULFILLED,
+  USER_FETCH_PENDING,
   USER_FETCH_REJECTED,
   USER_PLAYLISTS_FETCH_FULFILLED,
+  USER_PLAYLISTS_FETCH_PENDING,
   USER_PLAYLISTS_FETCH_REJECTED,
   USER_PLAYLIST_FETCH_FULFILLED,
+  USER_PLAYLIST_FETCH_PENDING,
   USER_PLAYLIST_FETCH_REJECTED,
 } from '../constants/users';
 
@@ -15,6 +18,10 @@ export const fetchUserFulfilled = user => ({
   payload: {
     user,
   },
+});
+
+export const fetchUserPending = () => ({
+  type: USER_FETCH_PENDING,
 });
 
 export const fetchUserRejected = error => ({
@@ -31,6 +38,8 @@ export const fetchUser = (accessToken, userId) => async (dispatch) => {
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchUserPending());
 
   try {
     const response = await fetch(request);
@@ -49,6 +58,10 @@ export const fetchUserPlaylistsFulfilled = playlists => ({
   },
 });
 
+export const fetchUserPlaylistsPending = () => ({
+  type: USER_PLAYLISTS_FETCH_PENDING,
+});
+
 export const fetchUserPlaylistsRejected = error => ({
   type: USER_PLAYLISTS_FETCH_REJECTED,
   payload: {
@@ -63,6 +76,8 @@ export const fetchUserPlaylists = (accessToken, userId) => async (dispatch) => {
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchUserPlaylistsPending());
 
   try {
     const response = await fetch(request);
@@ -81,6 +96,10 @@ export const fetchUserPlaylistFulfilled = playlist => ({
   },
 });
 
+export const fetchUserPlaylistPending = () => ({
+  type: USER_PLAYLIST_FETCH_PENDING,
+});
+
 export const fetchUserPlaylistRejected = error => ({
   type: USER_PLAYLIST_FETCH_REJECTED,
   payload: {
@@ -95,6 +114,8 @@ export const fetchUserPlaylist = (accessToken, userId, playlistId) => async (dis
       Authorization: `Bearer ${accessToken}`,
     }),
   });
+
+  dispatch(fetchUserPlaylistPending());
 
   try {
     const response = await fetch(request);

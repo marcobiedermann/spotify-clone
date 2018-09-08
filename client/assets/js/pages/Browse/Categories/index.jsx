@@ -78,6 +78,7 @@ CategoriesPage.defaultProps = {
 const mapStateToProps = state => ({
   ...state,
   categories: state.browse.categories,
+  isLoading: state.browse.isLoading,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(

@@ -47,6 +47,7 @@ RelatedArtistsPage.defaultProps = {
 const mapStateToProps = state => ({
   ...state,
   artists: state.artists.artists,
+  isLoading: state.artists.isLoading,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(

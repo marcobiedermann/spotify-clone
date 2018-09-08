@@ -76,6 +76,7 @@ PlaylistsPage.defaultProps = {
 
 const mapStateToProps = state => ({
   ...state,
+  isLoading: state.browse.isLoading,
   playlists: state.browse.playlists,
 });
 
