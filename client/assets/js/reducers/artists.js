@@ -1,12 +1,12 @@
 import {
-  FETCH_ARTIST_SUCCESS,
-  FETCH_ARTIST_ERROR,
-  FETCH_ARTIST_ALBUMS_SUCCESS,
-  FETCH_ARTIST_ALBUMS_ERROR,
-  FETCH_ARTIST_RELATED_ARTISTS_SUCCESS,
-  FETCH_ARTIST_RELATED_ARTISTS_ERROR,
-  FETCH_ARTIST_TOP_TRACKS_SUCCESS,
-  FETCH_ARTIST_TOP_TRACKS_ERROR,
+  FETCH_ARTIST_FULFILLED,
+  FETCH_ARTIST_REJECTED,
+  FETCH_ARTIST_ALBUMS_FULFILLED,
+  FETCH_ARTIST_ALBUMS_REJECTED,
+  FETCH_ARTIST_RELATED_ARTISTS_FULFILLED,
+  FETCH_ARTIST_RELATED_ARTISTS_REJECTED,
+  FETCH_ARTIST_TOP_TRACKS_FULFILLED,
+  FETCH_ARTIST_TOP_TRACKS_REJECTED,
 } from '../constants/artists';
 
 const initialState = {
@@ -19,49 +19,49 @@ const initialState = {
 
 const artistsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_ARTIST_SUCCESS: {
+    case FETCH_ARTIST_FULFILLED: {
       return {
         ...state,
         artist: action.payload.artist,
       };
     }
-    case FETCH_ARTIST_ERROR: {
+    case FETCH_ARTIST_REJECTED: {
       return {
         ...state,
         error: action.payload.error,
       };
     }
-    case FETCH_ARTIST_ALBUMS_SUCCESS: {
+    case FETCH_ARTIST_ALBUMS_FULFILLED: {
       return {
         ...state,
         albums: action.payload.albums,
       };
     }
-    case FETCH_ARTIST_ALBUMS_ERROR: {
+    case FETCH_ARTIST_ALBUMS_REJECTED: {
       return {
         ...state,
         error: action.payload.error,
       };
     }
-    case FETCH_ARTIST_RELATED_ARTISTS_SUCCESS: {
+    case FETCH_ARTIST_RELATED_ARTISTS_FULFILLED: {
       return {
         ...state,
         artists: action.payload.artists,
       };
     }
-    case FETCH_ARTIST_RELATED_ARTISTS_ERROR: {
+    case FETCH_ARTIST_RELATED_ARTISTS_REJECTED: {
       return {
         ...state,
         error: action.payload.error,
       };
     }
-    case FETCH_ARTIST_TOP_TRACKS_SUCCESS: {
+    case FETCH_ARTIST_TOP_TRACKS_FULFILLED: {
       return {
         ...state,
         tracks: action.payload.tracks,
       };
     }
-    case FETCH_ARTIST_TOP_TRACKS_ERROR: {
+    case FETCH_ARTIST_TOP_TRACKS_REJECTED: {
       return {
         ...state,
         error: action.payload.error,

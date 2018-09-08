@@ -1,28 +1,28 @@
 import {
-  FETCH_CATEGORY_SUCCESS,
-  FETCH_CATEGORY_ERROR,
-  FETCH_CATEGORIES_SUCCESS,
-  FETCH_CATEGORIES_ERROR,
-  FETCH_FEATURED_PLAYLISTS_SUCCESS,
-  FETCH_FEATURED_PLAYLISTS_ERROR,
-  FETCH_NEW_RELEASES_SUCCESS,
-  FETCH_NEW_RELEASES_ERROR,
-  FETCH_CATEGORY_PLAYLISTS_SUCCESS,
-  FETCH_CATEGORY_PLAYLISTS_ERROR,
+  FETCH_CATEGORY_FULFILLED,
+  FETCH_CATEGORY_REJECTED,
+  FETCH_CATEGORIES_FULFILLED,
+  FETCH_CATEGORIES_REJECTED,
+  FETCH_FEATURED_PLAYLISTS_FULFILLED,
+  FETCH_FEATURED_PLAYLISTS_REJECTED,
+  FETCH_NEW_RELEASES_FULFILLED,
+  FETCH_NEW_RELEASES_REJECTED,
+  FETCH_CATEGORY_PLAYLISTS_FULFILLED,
+  FETCH_CATEGORY_PLAYLISTS_REJECTED,
 } from '../constants/browse';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
 export const fetchCategorySuccess = category => ({
-  type: FETCH_CATEGORY_SUCCESS,
+  type: FETCH_CATEGORY_FULFILLED,
   payload: {
     category,
   },
 });
 
 export const fetchCategoryError = error => ({
-  type: FETCH_CATEGORY_ERROR,
+  type: FETCH_CATEGORY_REJECTED,
   payload: {
     error,
   },
@@ -47,14 +47,14 @@ export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
 };
 
 export const fetchCategoriesSuccess = categories => ({
-  type: FETCH_CATEGORIES_SUCCESS,
+  type: FETCH_CATEGORIES_FULFILLED,
   payload: {
     categories,
   },
 });
 
 export const fetchCategoriesError = error => ({
-  type: FETCH_CATEGORIES_ERROR,
+  type: FETCH_CATEGORIES_REJECTED,
   payload: {
     error,
   },
@@ -79,14 +79,14 @@ export const fetchCategories = accessToken => async (dispatch) => {
 };
 
 export const fetchFeaturedPlaylistsSuccess = playlists => ({
-  type: FETCH_FEATURED_PLAYLISTS_SUCCESS,
+  type: FETCH_FEATURED_PLAYLISTS_FULFILLED,
   payload: {
     playlists,
   },
 });
 
 export const fetchFeaturedPlaylistsError = error => ({
-  type: FETCH_FEATURED_PLAYLISTS_ERROR,
+  type: FETCH_FEATURED_PLAYLISTS_REJECTED,
   payload: {
     error,
   },
@@ -111,14 +111,14 @@ export const fetchFeaturedPlaylists = accessToken => async (dispatch) => {
 };
 
 export const fetchNewReleasesSuccess = albums => ({
-  type: FETCH_NEW_RELEASES_SUCCESS,
+  type: FETCH_NEW_RELEASES_FULFILLED,
   payload: {
     albums,
   },
 });
 
 export const fetchNewReleasesError = error => ({
-  type: FETCH_NEW_RELEASES_ERROR,
+  type: FETCH_NEW_RELEASES_REJECTED,
   payload: {
     error,
   },
@@ -143,14 +143,14 @@ export const fetchNewReleases = accessToken => async (dispatch) => {
 };
 
 export const fetchCategoryPlaylistsSuccess = playlists => ({
-  type: FETCH_CATEGORY_PLAYLISTS_SUCCESS,
+  type: FETCH_CATEGORY_PLAYLISTS_FULFILLED,
   payload: {
     playlists,
   },
 });
 
 export const fetchCategoryPlaylistsError = error => ({
-  type: FETCH_CATEGORY_PLAYLISTS_ERROR,
+  type: FETCH_CATEGORY_PLAYLISTS_REJECTED,
   payload: {
     error,
   },

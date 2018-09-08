@@ -1,26 +1,26 @@
 import {
-  FETCH_ARTIST_SUCCESS,
-  FETCH_ARTIST_ERROR,
-  FETCH_ARTIST_ALBUMS_SUCCESS,
-  FETCH_ARTIST_ALBUMS_ERROR,
-  FETCH_ARTIST_RELATED_ARTISTS_SUCCESS,
-  FETCH_ARTIST_RELATED_ARTISTS_ERROR,
-  FETCH_ARTIST_TOP_TRACKS_SUCCESS,
-  FETCH_ARTIST_TOP_TRACKS_ERROR,
+  FETCH_ARTIST_FULFILLED,
+  FETCH_ARTIST_REJECTED,
+  FETCH_ARTIST_ALBUMS_FULFILLED,
+  FETCH_ARTIST_ALBUMS_REJECTED,
+  FETCH_ARTIST_RELATED_ARTISTS_FULFILLED,
+  FETCH_ARTIST_RELATED_ARTISTS_REJECTED,
+  FETCH_ARTIST_TOP_TRACKS_FULFILLED,
+  FETCH_ARTIST_TOP_TRACKS_REJECTED,
 } from '../constants/artists';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
 export const fetchArtistSuccess = artist => ({
-  type: FETCH_ARTIST_SUCCESS,
+  type: FETCH_ARTIST_FULFILLED,
   payload: {
     artist,
   },
 });
 
 export const fetchArtistError = error => ({
-  type: FETCH_ARTIST_ERROR,
+  type: FETCH_ARTIST_REJECTED,
   payload: {
     error,
   },
@@ -45,14 +45,14 @@ export const fetchArtist = (accessToken, id) => async (dispatch) => {
 };
 
 export const fetchArtistAlbumsSuccess = albums => ({
-  type: FETCH_ARTIST_ALBUMS_SUCCESS,
+  type: FETCH_ARTIST_ALBUMS_FULFILLED,
   payload: {
     albums,
   },
 });
 
 export const fetchArtistAlbumsError = error => ({
-  type: FETCH_ARTIST_ALBUMS_ERROR,
+  type: FETCH_ARTIST_ALBUMS_REJECTED,
   payload: {
     error,
   },
@@ -77,14 +77,14 @@ export const fetchArtistAlbums = (accessToken, id) => async (dispatch) => {
 };
 
 export const fetchArtistRelatedArtistsSuccess = artists => ({
-  type: FETCH_ARTIST_RELATED_ARTISTS_SUCCESS,
+  type: FETCH_ARTIST_RELATED_ARTISTS_FULFILLED,
   payload: {
     artists,
   },
 });
 
 export const fetchArtistRelatedArtistsError = error => ({
-  type: FETCH_ARTIST_RELATED_ARTISTS_ERROR,
+  type: FETCH_ARTIST_RELATED_ARTISTS_REJECTED,
   payoad: {
     error,
   },
@@ -109,14 +109,14 @@ export const fetchArtistRelatedArtists = (accessToken, id) => async (dispatch) =
 };
 
 export const fetchArtistTopTracksSuccess = tracks => ({
-  type: FETCH_ARTIST_TOP_TRACKS_SUCCESS,
+  type: FETCH_ARTIST_TOP_TRACKS_FULFILLED,
   payload: {
     tracks,
   },
 });
 
 export const fetchArtistTopTracksError = error => ({
-  type: FETCH_ARTIST_TOP_TRACKS_ERROR,
+  type: FETCH_ARTIST_TOP_TRACKS_REJECTED,
   payload: {
     error,
   },

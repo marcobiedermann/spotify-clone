@@ -1,8 +1,8 @@
 import {
-  FETCH_ME_SUCCESS,
-  FETCH_ME_ERROR,
-  FETCH_ME_PLAYLISTS_SUCCESS,
-  FETCH_ME_PLAYLISTS_ERROR,
+  FETCH_ME_FULFILLED,
+  FETCH_ME_REJECTED,
+  FETCH_ME_PLAYLISTS_FULFILLED,
+  FETCH_ME_PLAYLISTS_REJECTED,
 } from '../constants/me';
 
 const initialState = {
@@ -13,25 +13,25 @@ const initialState = {
 
 const meReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_ME_SUCCESS: {
+    case FETCH_ME_FULFILLED: {
       return {
         ...state,
         me: action.payload.me,
       };
     }
-    case FETCH_ME_ERROR: {
+    case FETCH_ME_REJECTED: {
       return {
         ...state,
         error: action.payload.error,
       };
     }
-    case FETCH_ME_PLAYLISTS_SUCCESS: {
+    case FETCH_ME_PLAYLISTS_FULFILLED: {
       return {
         ...state,
         playlists: action.payload.playlists,
       };
     }
-    case FETCH_ME_PLAYLISTS_ERROR: {
+    case FETCH_ME_PLAYLISTS_REJECTED: {
       return {
         ...state,
         error: action.payload.error,

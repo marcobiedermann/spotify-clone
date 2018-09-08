@@ -1,10 +1,10 @@
 import {
-  FETCH_USER_SUCCESS,
-  FETCH_USER_ERROR,
-  FETCH_USER_PLAYLISTS_SUCCESS,
-  FETCH_USER_PLAYLISTS_ERROR,
-  FETCH_USER_PLAYLIST_SUCCESS,
-  FETCH_USER_PLAYLIST_ERROR,
+  FETCH_USER_FULFILLED,
+  FETCH_USER_REJECTED,
+  FETCH_USER_PLAYLISTS_FULFILLED,
+  FETCH_USER_PLAYLISTS_REJECTED,
+  FETCH_USER_PLAYLIST_FULFILLED,
+  FETCH_USER_PLAYLIST_REJECTED,
 } from '../constants/users';
 
 const initialState = {
@@ -16,37 +16,37 @@ const initialState = {
 
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_USER_SUCCESS: {
+    case FETCH_USER_FULFILLED: {
       return {
         ...state,
         user: action.payload.user,
       };
     }
-    case FETCH_USER_ERROR: {
+    case FETCH_USER_REJECTED: {
       return {
         ...state,
         error: action.payload.error,
       };
     }
-    case FETCH_USER_PLAYLISTS_SUCCESS: {
+    case FETCH_USER_PLAYLISTS_FULFILLED: {
       return {
         ...state,
         playlists: action.payload.playlists,
       };
     }
-    case FETCH_USER_PLAYLISTS_ERROR: {
+    case FETCH_USER_PLAYLISTS_REJECTED: {
       return {
         ...state,
         error: action.payload.error,
       };
     }
-    case FETCH_USER_PLAYLIST_SUCCESS: {
+    case FETCH_USER_PLAYLIST_FULFILLED: {
       return {
         ...state,
         playlist: action.payload.playlist,
       };
     }
-    case FETCH_USER_PLAYLIST_ERROR: {
+    case FETCH_USER_PLAYLIST_REJECTED: {
       return {
         ...state,
         error: action.payload.error,
