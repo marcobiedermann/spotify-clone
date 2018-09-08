@@ -1,19 +1,9 @@
 import {
-  CATEGORY_FETCH_FULFILLED,
-  CATEGORY_FETCH_PENDING,
-  CATEGORY_FETCH_REJECTED,
-  CATEGORIES_FETCH_FULFILLED,
-  CATEGORIES_FETCH_PENDING,
-  CATEGORIES_FETCH_REJECTED,
-  FEATURED_PLAYLISTS_FETCH_FULFILLED,
-  FEATURED_PLAYLISTS_FETCH_PENDING,
-  FEATURED_PLAYLISTS_FETCH_REJECTED,
-  NEW_RELEASES_FETCH_FULFILLED,
-  NEW_RELEASES_FETCH_PENDING,
-  NEW_RELEASES_FETCH_REJECTED,
-  CATEGORY_PLAYLISTS_FETCH_FULFILLED,
-  CATEGORY_PLAYLISTS_FETCH_PENDING,
-  CATEGORY_PLAYLISTS_FETCH_REJECTED,
+  CATEGORY_FETCH,
+  CATEGORIES_FETCH,
+  FEATURED_PLAYLISTS_FETCH,
+  NEW_RELEASES_FETCH,
+  CATEGORY_PLAYLISTS_FETCH,
 } from '../constants/browse';
 
 const initialState = {
@@ -27,7 +17,7 @@ const initialState = {
 
 const browseReducer = (state = initialState, action) => {
   switch (action.type) {
-    case CATEGORY_FETCH_FULFILLED: {
+    case `${CATEGORY_FETCH}_FULFILLED`: {
       return {
         ...state,
         category: action.payload.category,
@@ -35,14 +25,14 @@ const browseReducer = (state = initialState, action) => {
       };
     }
 
-    case CATEGORY_FETCH_PENDING: {
+    case `${CATEGORY_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case CATEGORY_FETCH_REJECTED: {
+    case `${CATEGORY_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,
@@ -50,7 +40,7 @@ const browseReducer = (state = initialState, action) => {
       };
     }
 
-    case CATEGORIES_FETCH_FULFILLED: {
+    case `${CATEGORIES_FETCH}_FULFILLED`: {
       return {
         ...state,
         categories: action.payload.categories,
@@ -58,14 +48,14 @@ const browseReducer = (state = initialState, action) => {
       };
     }
 
-    case CATEGORIES_FETCH_PENDING: {
+    case `${CATEGORIES_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case CATEGORIES_FETCH_REJECTED: {
+    case `${CATEGORIES_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,
@@ -73,7 +63,7 @@ const browseReducer = (state = initialState, action) => {
       };
     }
 
-    case FEATURED_PLAYLISTS_FETCH_FULFILLED: {
+    case `${FEATURED_PLAYLISTS_FETCH}_FULFILLED`: {
       return {
         ...state,
         isLoading: false,
@@ -81,14 +71,14 @@ const browseReducer = (state = initialState, action) => {
       };
     }
 
-    case FEATURED_PLAYLISTS_FETCH_PENDING: {
+    case `${FEATURED_PLAYLISTS_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case FEATURED_PLAYLISTS_FETCH_REJECTED: {
+    case `${FEATURED_PLAYLISTS_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,
@@ -96,7 +86,7 @@ const browseReducer = (state = initialState, action) => {
       };
     }
 
-    case NEW_RELEASES_FETCH_FULFILLED: {
+    case `${NEW_RELEASES_FETCH}_FULFILLED`: {
       return {
         ...state,
         albums: action.payload.albums,
@@ -104,14 +94,14 @@ const browseReducer = (state = initialState, action) => {
       };
     }
 
-    case NEW_RELEASES_FETCH_PENDING: {
+    case `${NEW_RELEASES_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case NEW_RELEASES_FETCH_REJECTED: {
+    case `${NEW_RELEASES_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,
@@ -119,7 +109,7 @@ const browseReducer = (state = initialState, action) => {
       };
     }
 
-    case CATEGORY_PLAYLISTS_FETCH_FULFILLED: {
+    case `${CATEGORY_PLAYLISTS_FETCH}_FULFILLED`: {
       return {
         ...state,
         isLoading: false,
@@ -127,14 +117,14 @@ const browseReducer = (state = initialState, action) => {
       };
     }
 
-    case CATEGORY_PLAYLISTS_FETCH_PENDING: {
+    case `${CATEGORY_PLAYLISTS_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case CATEGORY_PLAYLISTS_FETCH_REJECTED: {
+    case `${CATEGORY_PLAYLISTS_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,

@@ -1,31 +1,25 @@
 import {
-  USER_FETCH_FULFILLED,
-  USER_FETCH_PENDING,
-  USER_FETCH_REJECTED,
-  USER_PLAYLISTS_FETCH_FULFILLED,
-  USER_PLAYLISTS_FETCH_PENDING,
-  USER_PLAYLISTS_FETCH_REJECTED,
-  USER_PLAYLIST_FETCH_FULFILLED,
-  USER_PLAYLIST_FETCH_PENDING,
-  USER_PLAYLIST_FETCH_REJECTED,
+  USER_FETCH,
+  USER_PLAYLISTS_FETCH,
+  USER_PLAYLIST_FETCH,
 } from '../constants/users';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
 export const fetchUserFulfilled = user => ({
-  type: USER_FETCH_FULFILLED,
+  type: `${USER_FETCH}_FULFILLED`,
   payload: {
     user,
   },
 });
 
 export const fetchUserPending = () => ({
-  type: USER_FETCH_PENDING,
+  type: `${USER_FETCH}_PENDING`,
 });
 
 export const fetchUserRejected = error => ({
-  type: USER_FETCH_REJECTED,
+  type: `${USER_FETCH}_REJECTED`,
   payload: {
     error,
   },
@@ -52,18 +46,18 @@ export const fetchUser = (accessToken, userId) => async (dispatch) => {
 };
 
 export const fetchUserPlaylistsFulfilled = playlists => ({
-  type: USER_PLAYLISTS_FETCH_FULFILLED,
+  type: `${USER_PLAYLISTS_FETCH}_FULFILLED`,
   payload: {
     playlists,
   },
 });
 
 export const fetchUserPlaylistsPending = () => ({
-  type: USER_PLAYLISTS_FETCH_PENDING,
+  type: `${USER_PLAYLISTS_FETCH}_PENDING`,
 });
 
 export const fetchUserPlaylistsRejected = error => ({
-  type: USER_PLAYLISTS_FETCH_REJECTED,
+  type: `${USER_PLAYLISTS_FETCH}_REJECTED`,
   payload: {
     error,
   },
@@ -90,18 +84,18 @@ export const fetchUserPlaylists = (accessToken, userId) => async (dispatch) => {
 };
 
 export const fetchUserPlaylistFulfilled = playlist => ({
-  type: USER_PLAYLIST_FETCH_FULFILLED,
+  type: `${USER_PLAYLIST_FETCH}_FULFILLED`,
   payload: {
     playlist,
   },
 });
 
 export const fetchUserPlaylistPending = () => ({
-  type: USER_PLAYLIST_FETCH_PENDING,
+  type: `${USER_PLAYLIST_FETCH}_PENDING`,
 });
 
 export const fetchUserPlaylistRejected = error => ({
-  type: USER_PLAYLIST_FETCH_REJECTED,
+  type: `${USER_PLAYLIST_FETCH}_REJECTED`,
   payload: {
     error,
   },

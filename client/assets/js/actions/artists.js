@@ -1,34 +1,26 @@
 import {
-  ARTIST_FETCH_FULFILLED,
-  ARTIST_FETCH_PENDING,
-  ARTIST_FETCH_REJECTED,
-  ARTIST_ALBUMS_FETCH_FULFILLED,
-  ARTIST_ALBUMS_FETCH_PENDING,
-  ARTIST_ALBUMS_FETCH_REJECTED,
-  ARTIST_RELATED_ARTISTS_FETCH_FULFILLED,
-  ARTIST_RELATED_ARTISTS_FETCH_PENDING,
-  ARTIST_RELATED_ARTISTS_FETCH_REJECTED,
-  ARTIST_TOP_TRACKS_FETCH_FULFILLED,
-  ARTIST_TOP_TRACKS_FETCH_PENDING,
-  ARTIST_TOP_TRACKS_FETCH_REJECTED,
+  ARTIST_FETCH,
+  ARTIST_ALBUMS_FETCH,
+  ARTIST_RELATED_ARTISTS_FETCH,
+  ARTIST_TOP_TRACKS_FETCH,
 } from '../constants/artists';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
 export const fetchArtistFulfilled = artist => ({
-  type: ARTIST_FETCH_FULFILLED,
+  type: `${ARTIST_FETCH}_FULFILLED`,
   payload: {
     artist,
   },
 });
 
 export const fetchArtistPending = () => ({
-  type: ARTIST_FETCH_PENDING,
+  type: `${ARTIST_FETCH}_PENDING`,
 });
 
 export const fetchArtistRejected = error => ({
-  type: ARTIST_FETCH_REJECTED,
+  type: `${ARTIST_FETCH}_REJECTED`,
   payload: {
     error,
   },
@@ -55,18 +47,18 @@ export const fetchArtist = (accessToken, id) => async (dispatch) => {
 };
 
 export const fetchArtistAlbumsFulfilled = albums => ({
-  type: ARTIST_ALBUMS_FETCH_FULFILLED,
+  type: `${ARTIST_ALBUMS_FETCH}_FULFILLED`,
   payload: {
     albums,
   },
 });
 
 export const fetchArtistAlbumsPending = () => ({
-  type: ARTIST_ALBUMS_FETCH_PENDING,
+  type: `${ARTIST_ALBUMS_FETCH}_PENDING`,
 });
 
 export const fetchArtistAlbumsRejected = error => ({
-  type: ARTIST_ALBUMS_FETCH_REJECTED,
+  type: `${ARTIST_ALBUMS_FETCH}_REJECTED`,
   payload: {
     error,
   },
@@ -93,18 +85,18 @@ export const fetchArtistAlbums = (accessToken, id) => async (dispatch) => {
 };
 
 export const fetchArtistRelatedArtistsFulfilled = artists => ({
-  type: ARTIST_RELATED_ARTISTS_FETCH_FULFILLED,
+  type: `${ARTIST_RELATED_ARTISTS_FETCH}_FULFILLED`,
   payload: {
     artists,
   },
 });
 
 export const fetchArtistRelatedArtistsPending = () => ({
-  type: ARTIST_RELATED_ARTISTS_FETCH_PENDING,
+  type: `${ARTIST_RELATED_ARTISTS_FETCH}_PENDING`,
 });
 
 export const fetchArtistRelatedArtistsRejected = error => ({
-  type: ARTIST_RELATED_ARTISTS_FETCH_REJECTED,
+  type: `${ARTIST_RELATED_ARTISTS_FETCH}_REJECTED`,
   payoad: {
     error,
   },
@@ -131,18 +123,18 @@ export const fetchArtistRelatedArtists = (accessToken, id) => async (dispatch) =
 };
 
 export const fetchArtistTopTracksFulfilled = tracks => ({
-  type: ARTIST_TOP_TRACKS_FETCH_FULFILLED,
+  type: `${ARTIST_TOP_TRACKS_FETCH}_FULFILLED`,
   payload: {
     tracks,
   },
 });
 
 export const fetchArtistTopTracksPending = () => ({
-  type: ARTIST_TOP_TRACKS_FETCH_PENDING,
+  type: `${ARTIST_TOP_TRACKS_FETCH}_PENDING`,
 });
 
 export const fetchArtistTopTracksRejected = error => ({
-  type: ARTIST_TOP_TRACKS_FETCH_REJECTED,
+  type: `${ARTIST_TOP_TRACKS_FETCH}_REJECTED`,
   payload: {
     error,
   },

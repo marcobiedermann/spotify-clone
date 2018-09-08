@@ -1,7 +1,5 @@
 import {
-  ALBUM_FETCH_FULFILLED,
-  ALBUM_FETCH_PENDING,
-  ALBUM_FETCH_REJECTED,
+  ALBUM_FETCH,
 } from '../constants/albums';
 
 const initialState = {
@@ -12,7 +10,7 @@ const initialState = {
 
 const albumsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ALBUM_FETCH_FULFILLED: {
+    case `${ALBUM_FETCH}_FULFILLED`: {
       return {
         ...state,
         album: action.payload.album,
@@ -20,14 +18,14 @@ const albumsReducer = (state = initialState, action) => {
       };
     }
 
-    case ALBUM_FETCH_PENDING: {
+    case `${ALBUM_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case ALBUM_FETCH_REJECTED: {
+    case `${ALBUM_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,

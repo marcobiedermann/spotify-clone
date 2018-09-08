@@ -1,10 +1,6 @@
 import {
-  ME_FETCH_FULFILLED,
-  ME_FETCH_PENDING,
-  ME_FETCH_REJECTED,
-  ME_PLAYLISTS_FETCH_FULFILLED,
-  ME_PLAYLISTS_FETCH_PENDING,
-  ME_PLAYLISTS_FETCH_REJECTED,
+  ME_FETCH,
+  ME_PLAYLISTS_FETCH,
 } from '../constants/me';
 
 const initialState = {
@@ -16,7 +12,7 @@ const initialState = {
 
 const meReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ME_FETCH_FULFILLED: {
+    case `${ME_FETCH}_FULFILLED`: {
       return {
         ...state,
         isLoading: false,
@@ -24,14 +20,14 @@ const meReducer = (state = initialState, action) => {
       };
     }
 
-    case ME_FETCH_PENDING: {
+    case `${ME_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case ME_FETCH_REJECTED: {
+    case `${ME_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,
@@ -39,7 +35,7 @@ const meReducer = (state = initialState, action) => {
       };
     }
 
-    case ME_PLAYLISTS_FETCH_FULFILLED: {
+    case `${ME_PLAYLISTS_FETCH}_FULFILLED`: {
       return {
         ...state,
         isLoading: false,
@@ -47,14 +43,14 @@ const meReducer = (state = initialState, action) => {
       };
     }
 
-    case ME_PLAYLISTS_FETCH_PENDING: {
+    case `${ME_PLAYLISTS_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case ME_PLAYLISTS_FETCH_REJECTED: {
+    case `${ME_PLAYLISTS_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,

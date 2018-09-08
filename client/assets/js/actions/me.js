@@ -1,28 +1,24 @@
 import {
-  ME_FETCH_FULFILLED,
-  ME_FETCH_PENDING,
-  ME_FETCH_REJECTED,
-  ME_PLAYLISTS_FETCH_FULFILLED,
-  ME_PLAYLISTS_FETCH_PENDING,
-  ME_PLAYLISTS_FETCH_REJECTED,
+  ME_FETCH,
+  ME_PLAYLISTS_FETCH,
 } from '../constants/me';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
 export const fetchMeFulfilled = me => ({
-  type: ME_FETCH_FULFILLED,
+  type: `${ME_FETCH}_FULFILLED`,
   payload: {
     me,
   },
 });
 
 export const fetchMePending = () => ({
-  type: ME_FETCH_PENDING,
+  type: `${ME_FETCH}_PENDING`,
 });
 
 export const fetchMeRejected = error => ({
-  type: ME_FETCH_REJECTED,
+  type: `${ME_FETCH}_REJECTED`,
   payload: {
     error,
   },
@@ -49,18 +45,18 @@ export const fetchMe = accessToken => async (dispatch) => {
 };
 
 export const fetchMePlaylistsFulfilled = playlists => ({
-  type: ME_PLAYLISTS_FETCH_FULFILLED,
+  type: `${ME_PLAYLISTS_FETCH}_FULFILLED`,
   payload: {
     playlists,
   },
 });
 
 export const fetchMePlaylistsPending = () => ({
-  type: ME_PLAYLISTS_FETCH_PENDING,
+  type: `${ME_PLAYLISTS_FETCH}_PENDING`,
 });
 
 export const fetchMePlaylistsRejected = error => ({
-  type: ME_PLAYLISTS_FETCH_REJECTED,
+  type: `${ME_PLAYLISTS_FETCH}_REJECTED`,
   payload: {
     error,
   },

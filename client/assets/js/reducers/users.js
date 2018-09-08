@@ -1,13 +1,7 @@
 import {
-  USER_FETCH_FULFILLED,
-  USER_FETCH_PENDING,
-  USER_FETCH_REJECTED,
-  USER_PLAYLISTS_FETCH_FULFILLED,
-  USER_PLAYLISTS_FETCH_PENDING,
-  USER_PLAYLISTS_FETCH_REJECTED,
-  USER_PLAYLIST_FETCH_FULFILLED,
-  USER_PLAYLIST_FETCH_PENDING,
-  USER_PLAYLIST_FETCH_REJECTED,
+  USER_FETCH,
+  USER_PLAYLISTS_FETCH,
+  USER_PLAYLIST_FETCH,
 } from '../constants/users';
 
 const initialState = {
@@ -20,7 +14,7 @@ const initialState = {
 
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case USER_FETCH_FULFILLED: {
+    case `${USER_FETCH}_FULFILLED`: {
       return {
         ...state,
         isLoading: false,
@@ -28,14 +22,14 @@ const usersReducer = (state = initialState, action) => {
       };
     }
 
-    case USER_FETCH_PENDING: {
+    case `${USER_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case USER_FETCH_REJECTED: {
+    case `${USER_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,
@@ -43,7 +37,7 @@ const usersReducer = (state = initialState, action) => {
       };
     }
 
-    case USER_PLAYLISTS_FETCH_FULFILLED: {
+    case `${USER_PLAYLISTS_FETCH}_FULFILLED`: {
       return {
         ...state,
         isLoading: false,
@@ -51,14 +45,14 @@ const usersReducer = (state = initialState, action) => {
       };
     }
 
-    case USER_PLAYLISTS_FETCH_PENDING: {
+    case `${USER_PLAYLISTS_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case USER_PLAYLISTS_FETCH_REJECTED: {
+    case `${USER_PLAYLISTS_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,
@@ -66,7 +60,7 @@ const usersReducer = (state = initialState, action) => {
       };
     }
 
-    case USER_PLAYLIST_FETCH_FULFILLED: {
+    case `${USER_PLAYLIST_FETCH}_FULFILLED`: {
       return {
         ...state,
         isLoading: false,
@@ -74,14 +68,14 @@ const usersReducer = (state = initialState, action) => {
       };
     }
 
-    case USER_PLAYLIST_FETCH_PENDING: {
+    case `${USER_PLAYLIST_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case USER_PLAYLIST_FETCH_REJECTED: {
+    case `${USER_PLAYLIST_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,

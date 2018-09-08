@@ -1,16 +1,8 @@
 import {
-  ARTIST_FETCH_FULFILLED,
-  ARTIST_FETCH_PENDING,
-  ARTIST_FETCH_REJECTED,
-  ARTIST_ALBUMS_FETCH_FULFILLED,
-  ARTIST_ALBUMS_FETCH_PENDING,
-  ARTIST_ALBUMS_FETCH_REJECTED,
-  ARTIST_RELATED_ARTISTS_FETCH_FULFILLED,
-  ARTIST_RELATED_ARTISTS_FETCH_PENDING,
-  ARTIST_RELATED_ARTISTS_FETCH_REJECTED,
-  ARTIST_TOP_TRACKS_FETCH_FULFILLED,
-  ARTIST_TOP_TRACKS_FETCH_PENDING,
-  ARTIST_TOP_TRACKS_FETCH_REJECTED,
+  ARTIST_FETCH,
+  ARTIST_ALBUMS_FETCH,
+  ARTIST_RELATED_ARTISTS_FETCH,
+  ARTIST_TOP_TRACKS_FETCH,
 } from '../constants/artists';
 
 const initialState = {
@@ -24,7 +16,7 @@ const initialState = {
 
 const artistsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ARTIST_FETCH_FULFILLED: {
+    case `${ARTIST_FETCH}_FULFILLED`: {
       return {
         ...state,
         artist: action.payload.artist,
@@ -32,14 +24,14 @@ const artistsReducer = (state = initialState, action) => {
       };
     }
 
-    case ARTIST_FETCH_PENDING: {
+    case `${ARTIST_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case ARTIST_FETCH_REJECTED: {
+    case `${ARTIST_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,
@@ -47,7 +39,7 @@ const artistsReducer = (state = initialState, action) => {
       };
     }
 
-    case ARTIST_ALBUMS_FETCH_FULFILLED: {
+    case `${ARTIST_ALBUMS_FETCH}_FULFILLED`: {
       return {
         ...state,
         albums: action.payload.albums,
@@ -55,14 +47,14 @@ const artistsReducer = (state = initialState, action) => {
       };
     }
 
-    case ARTIST_ALBUMS_FETCH_PENDING: {
+    case `${ARTIST_ALBUMS_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case ARTIST_ALBUMS_FETCH_REJECTED: {
+    case `${ARTIST_ALBUMS_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,
@@ -70,7 +62,7 @@ const artistsReducer = (state = initialState, action) => {
       };
     }
 
-    case ARTIST_RELATED_ARTISTS_FETCH_FULFILLED: {
+    case `${ARTIST_RELATED_ARTISTS_FETCH}_FULFILLED`: {
       return {
         ...state,
         artists: action.payload.artists,
@@ -78,14 +70,14 @@ const artistsReducer = (state = initialState, action) => {
       };
     }
 
-    case ARTIST_RELATED_ARTISTS_FETCH_PENDING: {
+    case `${ARTIST_RELATED_ARTISTS_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case ARTIST_RELATED_ARTISTS_FETCH_REJECTED: {
+    case `${ARTIST_RELATED_ARTISTS_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,
@@ -93,7 +85,7 @@ const artistsReducer = (state = initialState, action) => {
       };
     }
 
-    case ARTIST_TOP_TRACKS_FETCH_FULFILLED: {
+    case `${ARTIST_TOP_TRACKS_FETCH}_FULFILLED`: {
       return {
         ...state,
         isLoading: false,
@@ -101,14 +93,14 @@ const artistsReducer = (state = initialState, action) => {
       };
     }
 
-    case ARTIST_TOP_TRACKS_FETCH_PENDING: {
+    case `${ARTIST_TOP_TRACKS_FETCH}_PENDING`: {
       return {
         ...state,
         isLoading: true,
       };
     }
 
-    case ARTIST_TOP_TRACKS_FETCH_REJECTED: {
+    case `${ARTIST_TOP_TRACKS_FETCH}_REJECTED`: {
       return {
         ...state,
         error: action.payload.error,
