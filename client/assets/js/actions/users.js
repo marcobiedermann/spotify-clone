@@ -1,24 +1,24 @@
 import {
-  FETCH_USER_FULFILLED,
-  FETCH_USER_REJECTED,
-  FETCH_USER_PLAYLISTS_FULFILLED,
-  FETCH_USER_PLAYLISTS_REJECTED,
-  FETCH_USER_PLAYLIST_FULFILLED,
-  FETCH_USER_PLAYLIST_REJECTED,
+  USER_FETCH_FULFILLED,
+  USER_FETCH_REJECTED,
+  USER_PLAYLISTS_FETCH_FULFILLED,
+  USER_PLAYLISTS_FETCH_REJECTED,
+  USER_PLAYLIST_FETCH_FULFILLED,
+  USER_PLAYLIST_FETCH_REJECTED,
 } from '../constants/users';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
 export const fetchUserSuccess = user => ({
-  type: FETCH_USER_FULFILLED,
+  type: USER_FETCH_FULFILLED,
   payload: {
     user,
   },
 });
 
 export const fetchUserError = error => ({
-  type: FETCH_USER_REJECTED,
+  type: USER_FETCH_REJECTED,
   payload: {
     error,
   },
@@ -43,14 +43,14 @@ export const fetchUser = (accessToken, userId) => async (dispatch) => {
 };
 
 export const fetchUserPlaylistsSuccess = playlists => ({
-  type: FETCH_USER_PLAYLISTS_FULFILLED,
+  type: USER_PLAYLISTS_FETCH_FULFILLED,
   payload: {
     playlists,
   },
 });
 
 export const fetchUserPlaylistsError = error => ({
-  type: FETCH_USER_PLAYLISTS_REJECTED,
+  type: USER_PLAYLISTS_FETCH_REJECTED,
   payload: {
     error,
   },
@@ -75,14 +75,14 @@ export const fetchUserPlaylists = (accessToken, userId) => async (dispatch) => {
 };
 
 export const fetchUserPlaylistSuccess = playlist => ({
-  type: FETCH_USER_PLAYLIST_FULFILLED,
+  type: USER_PLAYLIST_FETCH_FULFILLED,
   payload: {
     playlist,
   },
 });
 
 export const fetchUserPlaylistError = error => ({
-  type: FETCH_USER_PLAYLIST_REJECTED,
+  type: USER_PLAYLIST_FETCH_REJECTED,
   payload: {
     error,
   },

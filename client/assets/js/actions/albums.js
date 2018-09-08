@@ -1,20 +1,20 @@
 import {
-  FETCH_ALBUM_FULFILLED,
-  FETCH_ALBUM_REJECTED,
+  ALBUM_FETCH_FULFILLED,
+  ALBUM_FETCH_REJECTED,
 } from '../constants/albums';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
 export const fetchAlbumSuccess = album => ({
-  type: FETCH_ALBUM_FULFILLED,
+  type: ALBUM_FETCH_FULFILLED,
   payload: {
     album,
   },
 });
 
 export const fetchAlbumError = error => ({
-  type: FETCH_ALBUM_REJECTED,
+  type: ALBUM_FETCH_REJECTED,
   payload: {
     error,
   },

@@ -1,6 +1,6 @@
 import {
-  FETCH_ALBUM_FULFILLED,
-  FETCH_ALBUM_REJECTED,
+  ALBUM_FETCH_FULFILLED,
+  ALBUM_FETCH_REJECTED,
 } from '../constants/albums';
 
 const initialState = {
@@ -10,13 +10,13 @@ const initialState = {
 
 const albumsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_ALBUM_FULFILLED: {
+    case ALBUM_FETCH_FULFILLED: {
       return {
         ...state,
         album: action.payload.album,
       };
     }
-    case FETCH_ALBUM_REJECTED: {
+    case ALBUM_FETCH_REJECTED: {
       return {
         ...state,
         error: action.payload.error,

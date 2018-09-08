@@ -1,14 +1,14 @@
 import {
-  FETCH_CATEGORY_FULFILLED,
-  FETCH_CATEGORY_REJECTED,
-  FETCH_CATEGORIES_FULFILLED,
-  FETCH_CATEGORIES_REJECTED,
-  FETCH_FEATURED_PLAYLISTS_FULFILLED,
-  FETCH_FEATURED_PLAYLISTS_REJECTED,
-  FETCH_NEW_RELEASES_FULFILLED,
-  FETCH_NEW_RELEASES_REJECTED,
-  FETCH_CATEGORY_PLAYLISTS_FULFILLED,
-  FETCH_CATEGORY_PLAYLISTS_REJECTED,
+  CATEGORY_FETCH_FULFILLED,
+  CATEGORY_FETCH_REJECTED,
+  CATEGORIES_FETCH_FULFILLED,
+  CATEGORIES_FETCH_REJECTED,
+  FEATURED_PLAYLISTS_FETCH_FULFILLED,
+  FEATURED_PLAYLISTS_FETCH_REJECTED,
+  NEW_RELEASES_FETCH_FULFILLED,
+  NEW_RELEASES_FETCH_REJECTED,
+  CATEGORY_PLAYLISTS_FETCH_FULFILLED,
+  CATEGORY_PLAYLISTS_FETCH_REJECTED,
 } from '../constants/browse';
 
 const initialState = {
@@ -21,61 +21,61 @@ const initialState = {
 
 const browseReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_CATEGORY_FULFILLED: {
+    case CATEGORY_FETCH_FULFILLED: {
       return {
         ...state,
         category: action.payload.category,
       };
     }
-    case FETCH_CATEGORY_REJECTED: {
+    case CATEGORY_FETCH_REJECTED: {
       return {
         ...state,
         error: action.payload.error,
       };
     }
-    case FETCH_CATEGORIES_FULFILLED: {
+    case CATEGORIES_FETCH_FULFILLED: {
       return {
         ...state,
         categories: action.payload.categories,
       };
     }
-    case FETCH_CATEGORIES_REJECTED: {
+    case CATEGORIES_FETCH_REJECTED: {
       return {
         ...state,
         error: action.payload.error,
       };
     }
-    case FETCH_FEATURED_PLAYLISTS_FULFILLED: {
+    case FEATURED_PLAYLISTS_FETCH_FULFILLED: {
       return {
         ...state,
         playlists: action.payload.playlists,
       };
     }
-    case FETCH_FEATURED_PLAYLISTS_REJECTED: {
+    case FEATURED_PLAYLISTS_FETCH_REJECTED: {
       return {
         ...state,
         error: action.payload.error,
       };
     }
-    case FETCH_NEW_RELEASES_FULFILLED: {
+    case NEW_RELEASES_FETCH_FULFILLED: {
       return {
         ...state,
         albums: action.payload.albums,
       };
     }
-    case FETCH_NEW_RELEASES_REJECTED: {
+    case NEW_RELEASES_FETCH_REJECTED: {
       return {
         ...state,
         error: action.payload.error,
       };
     }
-    case FETCH_CATEGORY_PLAYLISTS_FULFILLED: {
+    case CATEGORY_PLAYLISTS_FETCH_FULFILLED: {
       return {
         ...state,
         playlists: action.payload.playlists,
       };
     }
-    case FETCH_CATEGORY_PLAYLISTS_REJECTED: {
+    case CATEGORY_PLAYLISTS_FETCH_REJECTED: {
       return {
         ...state,
         error: action.payload.error,
