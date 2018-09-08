@@ -18,7 +18,7 @@ const usersReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        user: action.payload.user,
+        user: action.payload,
       };
     }
 
@@ -32,7 +32,7 @@ const usersReducer = (state = initialState, action) => {
     case `${USER_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }
@@ -41,7 +41,7 @@ const usersReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        playlists: action.payload.playlists,
+        playlists: action.payload,
       };
     }
 
@@ -55,7 +55,7 @@ const usersReducer = (state = initialState, action) => {
     case `${USER_PLAYLISTS_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }
@@ -64,7 +64,7 @@ const usersReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        playlist: action.payload.playlist,
+        playlist: action.payload,
       };
     }
 
@@ -78,7 +78,7 @@ const usersReducer = (state = initialState, action) => {
     case `${USER_PLAYLIST_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }

@@ -9,9 +9,7 @@ const baseUrl = 'http://localhost:8080/data';
 
 export const fetchUserFulfilled = user => ({
   type: `${USER_FETCH}_FULFILLED`,
-  payload: {
-    user,
-  },
+  payload: user,
 });
 
 export const fetchUserPending = () => ({
@@ -20,9 +18,7 @@ export const fetchUserPending = () => ({
 
 export const fetchUserRejected = error => ({
   type: `${USER_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 
@@ -47,9 +43,7 @@ export const fetchUser = (accessToken, userId) => async (dispatch) => {
 
 export const fetchUserPlaylistsFulfilled = playlists => ({
   type: `${USER_PLAYLISTS_FETCH}_FULFILLED`,
-  payload: {
-    playlists,
-  },
+  payload: playlists,
 });
 
 export const fetchUserPlaylistsPending = () => ({
@@ -58,9 +52,7 @@ export const fetchUserPlaylistsPending = () => ({
 
 export const fetchUserPlaylistsRejected = error => ({
   type: `${USER_PLAYLISTS_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 
@@ -85,9 +77,7 @@ export const fetchUserPlaylists = (accessToken, userId) => async (dispatch) => {
 
 export const fetchUserPlaylistFulfilled = playlist => ({
   type: `${USER_PLAYLIST_FETCH}_FULFILLED`,
-  payload: {
-    playlist,
-  },
+  payload: playlist,
 });
 
 export const fetchUserPlaylistPending = () => ({
@@ -96,9 +86,7 @@ export const fetchUserPlaylistPending = () => ({
 
 export const fetchUserPlaylistRejected = error => ({
   type: `${USER_PLAYLIST_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 

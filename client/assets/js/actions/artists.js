@@ -10,9 +10,7 @@ const baseUrl = 'http://localhost:8080/data';
 
 export const fetchArtistFulfilled = artist => ({
   type: `${ARTIST_FETCH}_FULFILLED`,
-  payload: {
-    artist,
-  },
+  payload: artist,
 });
 
 export const fetchArtistPending = () => ({
@@ -21,9 +19,7 @@ export const fetchArtistPending = () => ({
 
 export const fetchArtistRejected = error => ({
   type: `${ARTIST_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 
@@ -48,9 +44,7 @@ export const fetchArtist = (accessToken, id) => async (dispatch) => {
 
 export const fetchArtistAlbumsFulfilled = albums => ({
   type: `${ARTIST_ALBUMS_FETCH}_FULFILLED`,
-  payload: {
-    albums,
-  },
+  payload: albums,
 });
 
 export const fetchArtistAlbumsPending = () => ({
@@ -59,9 +53,7 @@ export const fetchArtistAlbumsPending = () => ({
 
 export const fetchArtistAlbumsRejected = error => ({
   type: `${ARTIST_ALBUMS_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 
@@ -86,9 +78,7 @@ export const fetchArtistAlbums = (accessToken, id) => async (dispatch) => {
 
 export const fetchArtistRelatedArtistsFulfilled = artists => ({
   type: `${ARTIST_RELATED_ARTISTS_FETCH}_FULFILLED`,
-  payload: {
-    artists,
-  },
+  payload: artists,
 });
 
 export const fetchArtistRelatedArtistsPending = () => ({
@@ -97,9 +87,7 @@ export const fetchArtistRelatedArtistsPending = () => ({
 
 export const fetchArtistRelatedArtistsRejected = error => ({
   type: `${ARTIST_RELATED_ARTISTS_FETCH}_REJECTED`,
-  payoad: {
-    error,
-  },
+  payoad: error,
   error: true,
 });
 
@@ -124,9 +112,7 @@ export const fetchArtistRelatedArtists = (accessToken, id) => async (dispatch) =
 
 export const fetchArtistTopTracksFulfilled = tracks => ({
   type: `${ARTIST_TOP_TRACKS_FETCH}_FULFILLED`,
-  payload: {
-    tracks,
-  },
+  payload: tracks,
 });
 
 export const fetchArtistTopTracksPending = () => ({
@@ -135,9 +121,7 @@ export const fetchArtistTopTracksPending = () => ({
 
 export const fetchArtistTopTracksRejected = error => ({
   type: `${ARTIST_TOP_TRACKS_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 

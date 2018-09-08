@@ -8,9 +8,7 @@ const baseUrl = 'http://localhost:8080/data';
 
 export const fetchMeFulfilled = me => ({
   type: `${ME_FETCH}_FULFILLED`,
-  payload: {
-    me,
-  },
+  payload: me,
 });
 
 export const fetchMePending = () => ({
@@ -19,9 +17,7 @@ export const fetchMePending = () => ({
 
 export const fetchMeRejected = error => ({
   type: `${ME_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 
@@ -46,9 +42,7 @@ export const fetchMe = accessToken => async (dispatch) => {
 
 export const fetchMePlaylistsFulfilled = playlists => ({
   type: `${ME_PLAYLISTS_FETCH}_FULFILLED`,
-  payload: {
-    playlists,
-  },
+  payload: playlists,
 });
 
 export const fetchMePlaylistsPending = () => ({
@@ -57,9 +51,7 @@ export const fetchMePlaylistsPending = () => ({
 
 export const fetchMePlaylistsRejected = error => ({
   type: `${ME_PLAYLISTS_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 

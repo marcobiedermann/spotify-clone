@@ -16,7 +16,7 @@ const meReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        me: action.payload.me,
+        me: action.payload,
       };
     }
 
@@ -30,7 +30,7 @@ const meReducer = (state = initialState, action) => {
     case `${ME_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }
@@ -39,7 +39,7 @@ const meReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        playlists: action.payload.playlists,
+        playlists: action.payload,
       };
     }
 
@@ -53,7 +53,7 @@ const meReducer = (state = initialState, action) => {
     case `${ME_PLAYLISTS_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }

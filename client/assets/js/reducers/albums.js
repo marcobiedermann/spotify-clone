@@ -13,7 +13,7 @@ const albumsReducer = (state = initialState, action) => {
     case `${ALBUM_FETCH}_FULFILLED`: {
       return {
         ...state,
-        album: action.payload.album,
+        album: action.payload,
         isLoading: false,
       };
     }
@@ -28,7 +28,7 @@ const albumsReducer = (state = initialState, action) => {
     case `${ALBUM_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }

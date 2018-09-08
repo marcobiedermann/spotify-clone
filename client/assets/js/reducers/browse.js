@@ -20,7 +20,7 @@ const browseReducer = (state = initialState, action) => {
     case `${CATEGORY_FETCH}_FULFILLED`: {
       return {
         ...state,
-        category: action.payload.category,
+        category: action.payload,
         isLoading: false,
       };
     }
@@ -35,7 +35,7 @@ const browseReducer = (state = initialState, action) => {
     case `${CATEGORY_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }
@@ -43,7 +43,7 @@ const browseReducer = (state = initialState, action) => {
     case `${CATEGORIES_FETCH}_FULFILLED`: {
       return {
         ...state,
-        categories: action.payload.categories,
+        categories: action.payload,
         isLoading: false,
       };
     }
@@ -58,7 +58,7 @@ const browseReducer = (state = initialState, action) => {
     case `${CATEGORIES_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }
@@ -67,7 +67,7 @@ const browseReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        playlists: action.payload.playlists,
+        playlists: action.payload,
       };
     }
 
@@ -81,7 +81,7 @@ const browseReducer = (state = initialState, action) => {
     case `${FEATURED_PLAYLISTS_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }
@@ -89,7 +89,7 @@ const browseReducer = (state = initialState, action) => {
     case `${NEW_RELEASES_FETCH}_FULFILLED`: {
       return {
         ...state,
-        albums: action.payload.albums,
+        albums: action.payload,
         isLoading: false,
       };
     }
@@ -104,7 +104,7 @@ const browseReducer = (state = initialState, action) => {
     case `${NEW_RELEASES_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }
@@ -113,7 +113,7 @@ const browseReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        playlists: action.payload.playlists,
+        playlists: action.payload,
       };
     }
 
@@ -127,7 +127,7 @@ const browseReducer = (state = initialState, action) => {
     case `${CATEGORY_PLAYLISTS_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }

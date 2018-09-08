@@ -19,7 +19,7 @@ const artistsReducer = (state = initialState, action) => {
     case `${ARTIST_FETCH}_FULFILLED`: {
       return {
         ...state,
-        artist: action.payload.artist,
+        artist: action.payload,
         isLoading: false,
       };
     }
@@ -34,7 +34,7 @@ const artistsReducer = (state = initialState, action) => {
     case `${ARTIST_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }
@@ -42,7 +42,7 @@ const artistsReducer = (state = initialState, action) => {
     case `${ARTIST_ALBUMS_FETCH}_FULFILLED`: {
       return {
         ...state,
-        albums: action.payload.albums,
+        albums: action.payload,
         isLoading: false,
       };
     }
@@ -57,7 +57,7 @@ const artistsReducer = (state = initialState, action) => {
     case `${ARTIST_ALBUMS_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }
@@ -65,7 +65,7 @@ const artistsReducer = (state = initialState, action) => {
     case `${ARTIST_RELATED_ARTISTS_FETCH}_FULFILLED`: {
       return {
         ...state,
-        artists: action.payload.artists,
+        artists: action.payload,
         isLoading: false,
       };
     }
@@ -80,7 +80,7 @@ const artistsReducer = (state = initialState, action) => {
     case `${ARTIST_RELATED_ARTISTS_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }
@@ -89,7 +89,7 @@ const artistsReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        tracks: action.payload.tracks,
+        tracks: action.payload,
       };
     }
 
@@ -103,7 +103,7 @@ const artistsReducer = (state = initialState, action) => {
     case `${ARTIST_TOP_TRACKS_FETCH}_REJECTED`: {
       return {
         ...state,
-        error: action.payload.error,
+        error: action.payload,
         isLoading: false,
       };
     }

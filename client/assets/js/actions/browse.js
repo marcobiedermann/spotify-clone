@@ -11,9 +11,7 @@ const baseUrl = 'http://localhost:8080/data';
 
 export const fetchCategoryFulfilled = category => ({
   type: `${CATEGORY_FETCH}_FULFILLED`,
-  payload: {
-    category,
-  },
+  payload: category,
 });
 
 export const fetchCategoryPending = () => ({
@@ -22,9 +20,7 @@ export const fetchCategoryPending = () => ({
 
 export const fetchCategoryRejected = error => ({
   type: `${CATEGORY_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 
@@ -49,9 +45,7 @@ export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
 
 export const fetchCategoriesFulfilled = categories => ({
   type: `${CATEGORIES_FETCH}_FULFILLED`,
-  payload: {
-    categories,
-  },
+  payload: categories,
 });
 
 export const fetchCategoriesPending = () => ({
@@ -60,9 +54,7 @@ export const fetchCategoriesPending = () => ({
 
 export const fetchCategoriesRejected = error => ({
   type: `${CATEGORIES_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 
@@ -87,9 +79,7 @@ export const fetchCategories = accessToken => async (dispatch) => {
 
 export const fetchFeaturedPlaylistsFulfilled = playlists => ({
   type: `${FEATURED_PLAYLISTS_FETCH}_FULFILLED`,
-  payload: {
-    playlists,
-  },
+  payload: playlists,
 });
 
 export const fetchFeaturedPlaylistsPending = () => ({
@@ -98,9 +88,7 @@ export const fetchFeaturedPlaylistsPending = () => ({
 
 export const fetchFeaturedPlaylistsRejected = error => ({
   type: `${FEATURED_PLAYLISTS_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 
@@ -125,9 +113,7 @@ export const fetchFeaturedPlaylists = accessToken => async (dispatch) => {
 
 export const fetchNewReleasesFulfilled = albums => ({
   type: `${NEW_RELEASES_FETCH}_FULFILLED`,
-  payload: {
-    albums,
-  },
+  payload: albums,
 });
 
 export const fetchNewReleasesPending = () => ({
@@ -136,9 +122,7 @@ export const fetchNewReleasesPending = () => ({
 
 export const fetchNewReleasesRejected = error => ({
   type: `${NEW_RELEASES_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 
@@ -163,9 +147,7 @@ export const fetchNewReleases = accessToken => async (dispatch) => {
 
 export const fetchCategoryPlaylistsFulfilled = playlists => ({
   type: `${CATEGORY_PLAYLISTS_FETCH}_FULFILLED`,
-  payload: {
-    playlists,
-  },
+  payload: playlists,
 });
 
 export const fetchCategoryPlaylistsPending = () => ({
@@ -174,9 +156,7 @@ export const fetchCategoryPlaylistsPending = () => ({
 
 export const fetchCategoryPlaylistsRejected = error => ({
   type: `${CATEGORY_PLAYLISTS_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 

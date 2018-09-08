@@ -7,9 +7,7 @@ const baseUrl = 'http://localhost:8080/data';
 
 export const fetchAlbumFulfilled = album => ({
   type: `${ALBUM_FETCH}_FULFILLED`,
-  payload: {
-    album,
-  },
+  payload: album,
 });
 
 export const fetchAlbumPending = () => ({
@@ -18,9 +16,7 @@ export const fetchAlbumPending = () => ({
 
 export const fetchAlbumRejected = error => ({
   type: `${ALBUM_FETCH}_REJECTED`,
-  payload: {
-    error,
-  },
+  payload: error,
   error: true,
 });
 
