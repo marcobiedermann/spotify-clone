@@ -8,14 +8,14 @@ import {
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
-export const fetchMeSuccess = me => ({
+export const fetchMeFulfilled = me => ({
   type: ME_FETCH_FULFILLED,
   payload: {
     me,
   },
 });
 
-export const fetchMeError = error => ({
+export const fetchMeRejected = error => ({
   type: ME_FETCH_REJECTED,
   payload: {
     error,
@@ -34,20 +34,20 @@ export const fetchMe = accessToken => async (dispatch) => {
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchMeSuccess(result));
+    dispatch(fetchMeFulfilled(result));
   } catch (error) {
-    dispatch(fetchMeError(error));
+    dispatch(fetchMeRejected(error));
   }
 };
 
-export const fetchMePlaylistsSuccess = playlists => ({
+export const fetchMePlaylistsFulfilled = playlists => ({
   type: ME_PLAYLISTS_FETCH_FULFILLED,
   payload: {
     playlists,
   },
 });
 
-export const fetchMePlaylistsError = error => ({
+export const fetchMePlaylistsRejected = error => ({
   type: ME_PLAYLISTS_FETCH_REJECTED,
   payload: {
     error,
@@ -66,8 +66,8 @@ export const fetchMePlaylists = accessToken => async (dispatch) => {
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchMePlaylistsSuccess(result));
+    dispatch(fetchMePlaylistsFulfilled(result));
   } catch (error) {
-    dispatch(fetchMePlaylistsError(error));
+    dispatch(fetchMePlaylistsRejected(error));
   }
 };

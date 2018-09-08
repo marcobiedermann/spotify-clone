@@ -12,14 +12,14 @@ import {
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
-export const fetchArtistSuccess = artist => ({
+export const fetchArtistFulfilled = artist => ({
   type: ARTIST_FETCH_FULFILLED,
   payload: {
     artist,
   },
 });
 
-export const fetchArtistError = error => ({
+export const fetchArtistRejected = error => ({
   type: ARTIST_FETCH_REJECTED,
   payload: {
     error,
@@ -38,20 +38,20 @@ export const fetchArtist = (accessToken, id) => async (dispatch) => {
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchArtistSuccess(result));
+    dispatch(fetchArtistFulfilled(result));
   } catch (error) {
-    dispatch(fetchArtistError(error));
+    dispatch(fetchArtistRejected(error));
   }
 };
 
-export const fetchArtistAlbumsSuccess = albums => ({
+export const fetchArtistAlbumsFulfilled = albums => ({
   type: ARTIST_ALBUMS_FETCH_FULFILLED,
   payload: {
     albums,
   },
 });
 
-export const fetchArtistAlbumsError = error => ({
+export const fetchArtistAlbumsRejected = error => ({
   type: ARTIST_ALBUMS_FETCH_REJECTED,
   payload: {
     error,
@@ -70,20 +70,20 @@ export const fetchArtistAlbums = (accessToken, id) => async (dispatch) => {
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchArtistAlbumsSuccess(result.items));
+    dispatch(fetchArtistAlbumsFulfilled(result.items));
   } catch (error) {
-    dispatch(fetchArtistAlbumsError(error));
+    dispatch(fetchArtistAlbumsRejected(error));
   }
 };
 
-export const fetchArtistRelatedArtistsSuccess = artists => ({
+export const fetchArtistRelatedArtistsFulfilled = artists => ({
   type: ARTIST_RELATED_ARTISTS_FETCH_FULFILLED,
   payload: {
     artists,
   },
 });
 
-export const fetchArtistRelatedArtistsError = error => ({
+export const fetchArtistRelatedArtistsRejected = error => ({
   type: ARTIST_RELATED_ARTISTS_FETCH_REJECTED,
   payoad: {
     error,
@@ -102,20 +102,20 @@ export const fetchArtistRelatedArtists = (accessToken, id) => async (dispatch) =
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchArtistRelatedArtistsSuccess(result.artists));
+    dispatch(fetchArtistRelatedArtistsFulfilled(result.artists));
   } catch (error) {
-    dispatch(fetchArtistRelatedArtistsError(error));
+    dispatch(fetchArtistRelatedArtistsRejected(error));
   }
 };
 
-export const fetchArtistTopTracksSuccess = tracks => ({
+export const fetchArtistTopTracksFulfilled = tracks => ({
   type: ARTIST_TOP_TRACKS_FETCH_FULFILLED,
   payload: {
     tracks,
   },
 });
 
-export const fetchArtistTopTracksError = error => ({
+export const fetchArtistTopTracksRejected = error => ({
   type: ARTIST_TOP_TRACKS_FETCH_REJECTED,
   payload: {
     error,
@@ -134,8 +134,8 @@ export const fetchArtistTopTracks = (accessToken, id) => async (dispatch) => {
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchArtistTopTracksSuccess(result.tracks));
+    dispatch(fetchArtistTopTracksFulfilled(result.tracks));
   } catch (error) {
-    dispatch(fetchArtistTopTracksError(error));
+    dispatch(fetchArtistTopTracksRejected(error));
   }
 };

@@ -6,14 +6,14 @@ import {
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
-export const fetchAlbumSuccess = album => ({
+export const fetchAlbumFulfilled = album => ({
   type: ALBUM_FETCH_FULFILLED,
   payload: {
     album,
   },
 });
 
-export const fetchAlbumError = error => ({
+export const fetchAlbumRejected = error => ({
   type: ALBUM_FETCH_REJECTED,
   payload: {
     error,
@@ -32,8 +32,8 @@ export const fetchAlbum = (accessToken, albumId) => async (dispatch) => {
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchAlbumSuccess(result));
+    dispatch(fetchAlbumFulfilled(result));
   } catch (error) {
-    dispatch(fetchAlbumError(error));
+    dispatch(fetchAlbumRejected(error));
   }
 };

@@ -14,14 +14,14 @@ import {
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
-export const fetchCategorySuccess = category => ({
+export const fetchCategoryFulfilled = category => ({
   type: CATEGORY_FETCH_FULFILLED,
   payload: {
     category,
   },
 });
 
-export const fetchCategoryError = error => ({
+export const fetchCategoryRejected = error => ({
   type: CATEGORY_FETCH_REJECTED,
   payload: {
     error,
@@ -40,20 +40,20 @@ export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchCategorySuccess(result));
+    dispatch(fetchCategoryFulfilled(result));
   } catch (error) {
-    dispatch(fetchCategoryError(error));
+    dispatch(fetchCategoryRejected(error));
   }
 };
 
-export const fetchCategoriesSuccess = categories => ({
+export const fetchCategoriesFulfilled = categories => ({
   type: CATEGORIES_FETCH_FULFILLED,
   payload: {
     categories,
   },
 });
 
-export const fetchCategoriesError = error => ({
+export const fetchCategoriesRejected = error => ({
   type: CATEGORIES_FETCH_REJECTED,
   payload: {
     error,
@@ -72,20 +72,20 @@ export const fetchCategories = accessToken => async (dispatch) => {
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchCategoriesSuccess(result.categories));
+    dispatch(fetchCategoriesFulfilled(result.categories));
   } catch (error) {
-    dispatch(fetchCategoriesError(error));
+    dispatch(fetchCategoriesRejected(error));
   }
 };
 
-export const fetchFeaturedPlaylistsSuccess = playlists => ({
+export const fetchFeaturedPlaylistsFulfilled = playlists => ({
   type: FEATURED_PLAYLISTS_FETCH_FULFILLED,
   payload: {
     playlists,
   },
 });
 
-export const fetchFeaturedPlaylistsError = error => ({
+export const fetchFeaturedPlaylistsRejected = error => ({
   type: FEATURED_PLAYLISTS_FETCH_REJECTED,
   payload: {
     error,
@@ -104,20 +104,20 @@ export const fetchFeaturedPlaylists = accessToken => async (dispatch) => {
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchFeaturedPlaylistsSuccess(result.playlists));
+    dispatch(fetchFeaturedPlaylistsFulfilled(result.playlists));
   } catch (error) {
-    dispatch(fetchFeaturedPlaylistsError(error));
+    dispatch(fetchFeaturedPlaylistsRejected(error));
   }
 };
 
-export const fetchNewReleasesSuccess = albums => ({
+export const fetchNewReleasesFulfilled = albums => ({
   type: NEW_RELEASES_FETCH_FULFILLED,
   payload: {
     albums,
   },
 });
 
-export const fetchNewReleasesError = error => ({
+export const fetchNewReleasesRejected = error => ({
   type: NEW_RELEASES_FETCH_REJECTED,
   payload: {
     error,
@@ -136,20 +136,20 @@ export const fetchNewReleases = accessToken => async (dispatch) => {
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchNewReleasesSuccess(result.albums));
+    dispatch(fetchNewReleasesFulfilled(result.albums));
   } catch (error) {
-    dispatch(fetchNewReleasesError(error));
+    dispatch(fetchNewReleasesRejected(error));
   }
 };
 
-export const fetchCategoryPlaylistsSuccess = playlists => ({
+export const fetchCategoryPlaylistsFulfilled = playlists => ({
   type: CATEGORY_PLAYLISTS_FETCH_FULFILLED,
   payload: {
     playlists,
   },
 });
 
-export const fetchCategoryPlaylistsError = error => ({
+export const fetchCategoryPlaylistsRejected = error => ({
   type: CATEGORY_PLAYLISTS_FETCH_REJECTED,
   payload: {
     error,
@@ -168,8 +168,8 @@ export const fetchCategoryPlaylists = (accessToken, categoryId) => async (dispat
     const response = await fetch(request);
     const result = await response.json();
 
-    dispatch(fetchCategoryPlaylistsSuccess(result.playlists));
+    dispatch(fetchCategoryPlaylistsFulfilled(result.playlists));
   } catch (error) {
-    dispatch(fetchCategoryPlaylistsError(error));
+    dispatch(fetchCategoryPlaylistsRejected(error));
   }
 };
