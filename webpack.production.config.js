@@ -49,7 +49,7 @@ module.exports = merge(baseConfig, {
   plugins: [
     new CleanWebpackPlugin('server/public'),
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[name].css',
+      filename: 'assets/css/[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       minify: {
