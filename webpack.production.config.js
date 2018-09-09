@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config');
@@ -14,41 +14,43 @@ module.exports = merge(baseConfig, {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                minimize: true,
-                modules: true,
-                sourceMap: true,
-              },
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true,
+              modules: true,
+              sourceMap: true,
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: true,
-                config: {
-                  ctx: {
-                    cssnano: {},
-                    cssnext: {
-                      features: {
-                        rem: false,
-                      },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              config: {
+                ctx: {
+                  cssnano: {},
+                  cssnext: {
+                    features: {
+                      rem: false,
                     },
                   },
                 },
               },
             },
-          ],
-        }),
+          },
+        ],
       },
     ],
   },
   plugins: [
     new CleanWebpackPlugin('server/public'),
-    new ExtractTextPlugin('assets/css/[name].css'),
+    new MiniCssExtractPlugin({
+      filename: 'assets/css/[name].css',
+    }),
     new HtmlWebpackPlugin({
       minify: {
         caseSensitive: false,
