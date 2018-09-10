@@ -1,4 +1,4 @@
-import moment from 'moment';
+import format from 'date-fns/format';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -15,7 +15,7 @@ const Track = ({
       {name}
     </td>
     <td>
-      {moment.utc(duration_ms).format('mm:ss')}
+      {format(duration_ms, 'mm:ss')}
     </td>
   </tr>
 );
