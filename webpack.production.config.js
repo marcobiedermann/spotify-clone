@@ -21,7 +21,6 @@ module.exports = merge(baseConfig, {
           {
             loader: 'css-loader',
             options: {
-              minimize: true,
               modules: true,
               sourceMap: true,
             },
