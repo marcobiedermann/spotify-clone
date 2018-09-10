@@ -10,7 +10,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: 'assets/js/[name].[contenthash].js',
+    filename: 'assets/js/[name].[contenthash:8].js',
     path: path.resolve(__dirname, 'server/public'),
   },
   module: {
