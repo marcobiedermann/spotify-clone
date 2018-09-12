@@ -4,6 +4,7 @@ import {
   ARTIST_RELATED_ARTISTS_FETCH,
   ARTIST_TOP_TRACKS_FETCH,
 } from '../constants/action-types';
+import handleError from '../utilities/error';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
@@ -34,7 +35,7 @@ export const fetchArtist = (accessToken, id) => async (dispatch) => {
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchArtistFulfilled(result));
   } catch (error) {
@@ -68,7 +69,7 @@ export const fetchArtistAlbums = (accessToken, id) => async (dispatch) => {
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchArtistAlbumsFulfilled(result.items));
   } catch (error) {
@@ -102,7 +103,7 @@ export const fetchArtistRelatedArtists = (accessToken, id) => async (dispatch) =
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchArtistRelatedArtistsFulfilled(result.artists));
   } catch (error) {
@@ -134,7 +135,7 @@ export const fetchArtistTopTracks = (accessToken, id) => async (dispatch) => {
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchArtistTopTracksFulfilled(result.tracks));
   } catch (error) {

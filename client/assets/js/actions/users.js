@@ -3,6 +3,7 @@ import {
   USER_PLAYLISTS_FETCH,
   USER_PLAYLIST_FETCH,
 } from '../constants/action-types';
+import handleError from '../utilities/error';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
@@ -33,7 +34,7 @@ export const fetchUser = (accessToken, userId) => async (dispatch) => {
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchUserFulfilled(result));
   } catch (error) {
@@ -67,7 +68,7 @@ export const fetchUserPlaylists = (accessToken, userId) => async (dispatch) => {
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchUserPlaylistsFulfilled(result.items));
   } catch (error) {
@@ -101,7 +102,7 @@ export const fetchUserPlaylist = (accessToken, userId, playlistId) => async (dis
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchUserPlaylistFulfilled(result));
   } catch (error) {

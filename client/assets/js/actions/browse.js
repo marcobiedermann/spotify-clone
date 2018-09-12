@@ -5,6 +5,7 @@ import {
   NEW_RELEASES_FETCH,
   CATEGORY_PLAYLISTS_FETCH,
 } from '../constants/action-types';
+import handleError from '../utilities/error';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
@@ -35,7 +36,7 @@ export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchCategoryFulfilled(result));
   } catch (error) {
@@ -69,7 +70,7 @@ export const fetchCategories = accessToken => async (dispatch) => {
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchCategoriesFulfilled(result.categories));
   } catch (error) {
@@ -103,7 +104,7 @@ export const fetchFeaturedPlaylists = accessToken => async (dispatch) => {
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchFeaturedPlaylistsFulfilled(result.playlists));
   } catch (error) {
@@ -137,7 +138,7 @@ export const fetchNewReleases = accessToken => async (dispatch) => {
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchNewReleasesFulfilled(result.albums));
   } catch (error) {
@@ -171,7 +172,7 @@ export const fetchCategoryPlaylists = (accessToken, categoryId) => async (dispat
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchCategoryPlaylistsFulfilled(result.playlists));
   } catch (error) {

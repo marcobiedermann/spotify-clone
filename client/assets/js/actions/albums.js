@@ -1,6 +1,7 @@
 import {
   ALBUM_FETCH,
 } from '../constants/action-types';
+import handleError from '../utilities/error';
 
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
@@ -31,7 +32,7 @@ export const fetchAlbum = (accessToken, albumId) => async (dispatch) => {
 
   try {
     const response = await fetch(request);
-    const result = await response.json();
+    const result = await handleError(response).json();
 
     dispatch(fetchAlbumFulfilled(result));
   } catch (error) {
