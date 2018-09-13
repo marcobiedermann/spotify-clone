@@ -2,29 +2,8 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="album-page"
+  className="error"
 >
-  <div
-    className="error"
-  >
-    
-  </div>
-  <div>
-    <figure>
-      <figcaption>
-        <h3>
-          <a
-            href="/albums/"
-            onClick={[Function]}
-          >
-            
-          </a>
-        </h3>
-      </figcaption>
-    </figure>
-    <table>
-      <tbody />
-    </table>
-  </div>
+  
 </div>
 `;

@@ -1,53 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
-  <div
-    className="error"
-  >
-    
-  </div>
-  <div>
-    <figure>
-      <figcaption>
-        <a
-          href="/users//playlists/"
-          onClick={[Function]}
-        >
-          
-        </a>
-      </figcaption>
-    </figure>
-    <p>
-      Playlist
-    </p>
-    <h1 />
-    <p>
-      Created by
-       
-      <a
-        href="/users/"
-        onClick={[Function]}
-      >
-        
-      </a>
-       
-      ·
-       
-       
-      songs
-    </p>
-    <p>
-      <button
-        className="button"
-        type="button"
-      >
-        Play
-      </button>
-    </p>
-    <table>
-      <tbody />
-    </table>
-  </div>
+<div
+  className="error"
+>
+  
 </div>
 `;

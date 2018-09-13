@@ -41,21 +41,24 @@ export class UserPage extends Component {
         />
         <Route
           path={match.url}
-          component={() => (
-            <div>
-              <Helmet>
-                <title>{me.me.display_name}</title>
-              </Helmet>
-              {error && (
-                <Error>{error.message}</Error>
-              )}
-              {isLoading ? (
-                <Loader />
-              ) : (
+          component={() => {
+            if (error) {
+              return <Error>{error.message}</Error>;
+            }
+
+            if (isLoading) {
+              return <Loader />;
+            }
+
+            return (
+              <div>
+                <Helmet>
+                  <title>{me.me.display_name}</title>
+                </Helmet>
                 <User {...me.me} />
-              )}
-            </div>
-          )}
+              </div>
+            );
+          }}
         />
       </Switch>
     );

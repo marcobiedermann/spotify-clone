@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { fetchArtistRelatedArtists } from '../../../../actions/artists';
 import Artists from '../../../../components/Artists';
 import Error from '../../../../components/Error';
+import Loader from '../../../../components/Loader';
 
 export class RelatedArtistsPage extends Component {
   componentDidMount() {
@@ -21,19 +22,23 @@ export class RelatedArtistsPage extends Component {
     const {
       artists,
       error,
+      isLoading,
     } = this.props;
+
+    if (error) {
+      return <Error>{error.message}</Error>;
+    }
+
+    if (isLoading) {
+      return <Loader />;
+    }
 
     return (
       <div>
         <Helmet>
           <title>Related Artists</title>
         </Helmet>
-        {error && (
-          <Error>{error.message}</Error>
-        )}
-        {artists && (
-          <Artists artists={artists} />
-        )}
+        <Artists artists={artists} />
       </div>
     );
   }
@@ -46,6 +51,7 @@ RelatedArtistsPage.propTypes = {
     message: PropTypes.string,
   }),
   fetchArtistRelatedArtists: PropTypes.func,
+  isLoading: PropTypes.bool,
 };
 
 RelatedArtistsPage.defaultProps = {
@@ -55,6 +61,7 @@ RelatedArtistsPage.defaultProps = {
     message: '',
   },
   fetchArtistRelatedArtists: () => {},
+  isLoading: false,
 };
 
 const mapStateToProps = state => ({

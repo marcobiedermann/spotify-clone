@@ -25,19 +25,20 @@ export class NewReleasesPage extends Component {
       isLoading,
     } = this.props;
 
+    if (error) {
+      return <Error>{error.message}</Error>;
+    }
+
+    if (isLoading) {
+      return <Loader />;
+    }
+
     return (
       <div>
         <Helmet>
           <title>New Releases</title>
         </Helmet>
-        {error && (
-          <Error>{error.message}</Error>
-        )}
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <Albums albums={albums.items} />
-        )}
+        <Albums albums={albums.items} />
       </div>
     );
   }

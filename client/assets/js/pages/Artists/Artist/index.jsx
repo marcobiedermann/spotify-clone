@@ -51,32 +51,35 @@ export class ArtistPage extends Component {
         />
         <Route
           path={match.url}
-          component={() => (
-            <div>
-              <Helmet>
-                <title>{artist.name}</title>
-              </Helmet>
-              {error && (
-                <Error>{error.message}</Error>
-              )}
-              {isLoading ? (
-                <Loader />
-              ) : (
+          component={() => {
+            if (error) {
+              return <Error>{error.message}</Error>;
+            }
+
+            if (isLoading) {
+              return <Loader />;
+            }
+
+            return (
+              <div>
+                <Helmet>
+                  <title>{artist.name}</title>
+                </Helmet>
                 <Artist {...artist} />
-              )}
-              <ul>
-                <li>
-                  <Link to={`${match.url}/albums`}>Albums</Link>
-                </li>
-                <li>
-                  <Link to={`${match.url}/related-artists`}>Related Artists</Link>
-                </li>
-                <li>
-                  <Link to={`${match.url}/top-tracks`}>Top Tracks</Link>
-                </li>
-              </ul>
-            </div>
-          )}
+                <ul>
+                  <li>
+                    <Link to={`${match.url}/albums`}>Albums</Link>
+                  </li>
+                  <li>
+                    <Link to={`${match.url}/related-artists`}>Related Artists</Link>
+                  </li>
+                  <li>
+                    <Link to={`${match.url}/top-tracks`}>Top Tracks</Link>
+                  </li>
+                </ul>
+              </div>
+            );
+          }}
         />
       </Switch>
     );

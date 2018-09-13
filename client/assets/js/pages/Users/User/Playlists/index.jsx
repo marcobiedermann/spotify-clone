@@ -39,21 +39,24 @@ export class PlaylistsPage extends Component {
         />
         <Route
           path={match.url}
-          component={() => (
-            <div>
-              <Helmet>
-                <title>Playlists</title>
-              </Helmet>
-              {error && (
-                <Error>{error.message}</Error>
-              )}
-              {isLoading ? (
-                <Loader />
-              ) : (
+          component={() => {
+            if (error) {
+              return <Error>{error.message}</Error>;
+            }
+
+            if (isLoading) {
+              return <Loader />;
+            }
+
+            return (
+              <div>
+                <Helmet>
+                  <title>Playlists</title>
+                </Helmet>
                 <Playlists playlists={playlists} />
-              )}
-            </div>
-          )}
+              </div>
+            );
+          }}
         />
       </Switch>
     );

@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { fetchArtistAlbums } from '../../../../actions/artists';
 import Albums from '../../../../components/Albums';
 import Error from '../../../../components/Error';
+import Loader from '../../../../components/Loader';
 
 export class AlbumsPage extends Component {
   componentDidMount() {
@@ -21,16 +22,22 @@ export class AlbumsPage extends Component {
     const {
       albums,
       error,
+      isLoading,
     } = this.props;
+
+    if (error) {
+      return <Error>{error.message}</Error>;
+    }
+
+    if (isLoading) {
+      return <Loader />;
+    }
 
     return (
       <div>
         <Helmet>
           <title>Albums</title>
         </Helmet>
-        {error && (
-          <Error>{error.message}</Error>
-        )}
         <Albums albums={albums} />
       </div>
     );
@@ -44,6 +51,7 @@ AlbumsPage.propTypes = {
     message: PropTypes.string,
   }),
   fetchArtistAlbums: PropTypes.func,
+  isLoading: PropTypes.bool,
 };
 
 AlbumsPage.defaultProps = {
@@ -53,6 +61,7 @@ AlbumsPage.defaultProps = {
     message: '',
   },
   fetchArtistAlbums: () => {},
+  isLoading: false,
 };
 
 const mapStateToProps = state => ({

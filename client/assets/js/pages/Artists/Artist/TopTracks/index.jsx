@@ -25,19 +25,20 @@ export class TopTracksPage extends Component {
       tracks,
     } = this.props;
 
+    if (error) {
+      return <Error>{error.message}</Error>;
+    }
+
+    if (isLoading) {
+      return <Loader />;
+    }
+
     return (
       <div>
         <Helmet>
           <title>Top Tracks</title>
         </Helmet>
-        {error && (
-          <Error>{error.message}</Error>
-        )}
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <Tracks tracks={tracks} />
-        )}
+        <Tracks tracks={tracks} />
       </div>
     );
   }

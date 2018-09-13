@@ -2,10 +2,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-import {
-  Route,
-  Switch,
-} from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { fetchFeaturedPlaylists } from '../../../actions/browse';
 import Error from '../../../components/Error';
@@ -26,31 +22,24 @@ export class FeaturedPlaylistsPage extends Component {
     const {
       error,
       isLoading,
-      match,
       playlists,
     } = this.props;
 
+    if (error) {
+      return <Error>{error.message}</Error>;
+    }
+
+    if (isLoading) {
+      return <Loader />;
+    }
+
     return (
-      <Switch>
-        <Route
-          path={match.url}
-          component={() => (
-            <div>
-              <Helmet>
-                <title>Featured Playlists</title>
-              </Helmet>
-              {error && (
-                <Error>{error.message}</Error>
-              )}
-              {isLoading ? (
-                <Loader />
-              ) : (
-                <Playlists playlists={playlists.items} />
-              )}
-            </div>
-          )}
-        />
-      </Switch>
+      <div>
+        <Helmet>
+          <title>Featured Playlists</title>
+        </Helmet>
+        <Playlists playlists={playlists.items} />
+      </div>
     );
   }
 }

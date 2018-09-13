@@ -40,21 +40,24 @@ export class AlbumPage extends Component {
         />
         <Route
           path={match.url}
-          component={() => (
-            <div className="album-page">
-              <Helmet>
-                <title>{album.name}</title>
-              </Helmet>
-              {error && (
-                <Error>{error.message}</Error>
-              )}
-              {isLoading ? (
-                <Loader />
-              ) : (
+          component={() => {
+            if (error) {
+              return <Error>{error.message}</Error>;
+            }
+
+            if (isLoading) {
+              return <Loader />;
+            }
+
+            return (
+              <div className="album-page">
+                <Helmet>
+                  <title>{album.name}</title>
+                </Helmet>
                 <Album {...album} />
-              )}
-            </div>
-          )}
+              </div>
+            );
+          }}
         />
       </Switch>
     );

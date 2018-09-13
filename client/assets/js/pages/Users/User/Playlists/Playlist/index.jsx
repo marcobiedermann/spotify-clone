@@ -30,48 +30,49 @@ export class PlaylistPage extends Component {
       playlist,
     } = this.props;
 
+    if (error) {
+      return <Error>{error.message}</Error>;
+    }
+
+    if (isLoading) {
+      return <Loader />;
+    }
+
     return (
       <div>
         <Helmet>
           <title>Playlist</title>
         </Helmet>
-        {error && (
-          <Error>{error.message}</Error>
-        )}
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <div>
-            <Playlist {...playlist} />
-            <p>Playlist</p>
-            <h1>{playlist.name}</h1>
-            {playlist.owner && (
-              <p>
-                Created by
-                {' '}
-                <Link to={`${routes.USERS}/${playlist.owner.id}`}>{playlist.owner.display_name}</Link>
-                {' '}
-                ·
-                {' '}
-                {playlist.tracks.total}
-                {' '}
-                songs
-              </p>
-            )}
+        <div>
+          <Playlist {...playlist} />
+          <p>Playlist</p>
+          <h1>{playlist.name}</h1>
+          {playlist.owner && (
             <p>
-              <Button>Play</Button>
+              Created by
+              {' '}
+              <Link to={`${routes.USERS}/${playlist.owner.id}`}>{playlist.owner.display_name}</Link>
+              {' '}
+              ·
+              {' '}
+              {playlist.tracks.total}
+              {' '}
+              songs
             </p>
-            {playlist.tracks && (
-              <table>
-                <tbody>
-                  {playlist.tracks.items.map(track => (
-                    <Track key={track.track.id} {...track.track} />
-                  ))}
-                </tbody>
-              </table>
-            )}
-          </div>
-        )}
+          )}
+          <p>
+            <Button>Play</Button>
+          </p>
+          {playlist.tracks && (
+            <table>
+              <tbody>
+                {playlist.tracks.items.map(track => (
+                  <Track key={track.track.id} {...track.track} />
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
       </div>
     );
   }

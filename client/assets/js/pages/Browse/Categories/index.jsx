@@ -39,21 +39,24 @@ export class CategoriesPage extends Component {
         />
         <Route
           path={match.url}
-          component={() => (
-            <div>
-              <Helmet>
-                <title>Categories</title>
-              </Helmet>
-              {error && (
-                <Error>{error.message}</Error>
-              )}
-              {isLoading ? (
-                <Loader />
-              ) : (
+          component={() => {
+            if (error) {
+              return <Error>{error.message}</Error>;
+            }
+
+            if (isLoading) {
+              return <Loader />;
+            }
+
+            return (
+              <div>
+                <Helmet>
+                  <title>Categories</title>
+                </Helmet>
                 <Categories categories={categories.items} />
-              )}
-            </div>
-          )}
+              </div>
+            );
+          }}
         />
       </Switch>
     );
