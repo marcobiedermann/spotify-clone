@@ -1,6 +1,6 @@
 module.exports = ({ env, options }) => ({
   plugins: {
-    'postcss-cssnext': options.cssnext ? options.cssnext : false,
+    'postcss-preset-env': options.postcssPresetEnv ? options.postcssPresetEnv : false,
     cssnano: env === 'production' ? options.cssnano : false,
   },
 });

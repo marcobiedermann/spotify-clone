@@ -32,10 +32,8 @@ module.exports = merge(baseConfig, {
               config: {
                 ctx: {
                   cssnano: {},
-                  cssnext: {
-                    features: {
-                      rem: false,
-                    },
+                  postcssPresetEnv: {
+                    stage: 0,
                   },
                 },
               },

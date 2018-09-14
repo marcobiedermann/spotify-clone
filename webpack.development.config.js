@@ -33,11 +33,8 @@ module.exports = merge(baseConfig, {
               sourceMap: true,
               config: {
                 ctx: {
-                  cssnext: {
-                    features: {
-                      customProperties: false,
-                      rem: false,
-                    },
+                  postcssPresetEnv: {
+                    stage: 0,
                   },
                 },
               },
