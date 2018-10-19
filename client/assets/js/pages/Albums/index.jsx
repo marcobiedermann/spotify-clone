@@ -1,42 +1,42 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { Helmet } from 'react-helmet';
-import {
-  Route,
-  Switch,
-} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import AlbumPage from './Album';
 
-const AlbumsPage = ({ match }) => (
-  <Switch>
-    <Route
-      path={`${match.url}/:album_id`}
-      component={AlbumPage}
-    />
-    <Route
-      path={match.url}
-      component={() => (
-        <div>
-          <Helmet>
-            <title>Albums</title>
-          </Helmet>
-          Albums
-        </div>
-      )}
-    />
-  </Switch>
-);
+class AlbumsPage extends PureComponent {
+  static propTypes = {
+    match: PropTypes.shape({
+      url: PropTypes.string,
+    }),
+  };
 
-AlbumsPage.propTypes = {
-  match: PropTypes.shape({
-    url: PropTypes.string,
-  }),
-};
+  static defaultProps = {
+    match: {
+      url: '',
+    },
+  };
 
-AlbumsPage.defaultProps = {
-  match: {
-    url: '',
-  },
-};
+  render() {
+    const { match } = this.props;
+
+    return (
+      <Switch>
+        <Route path={`${match.url}/:album_id`} component={AlbumPage} />
+        <Route
+          path={match.url}
+          component={() => (
+            <div>
+              <Helmet>
+                <title>Albums</title>
+              </Helmet>
+              Albums
+            </div>
+          )}
+        />
+      </Switch>
+    );
+  }
+}
 
 export default AlbumsPage;

@@ -9,21 +9,44 @@ import Loader from '../../../../../components/Loader';
 import Playlists from '../../../../../components/Playlists';
 
 export class PlaylistsPage extends Component {
+  static propTypes = {
+    accessToken: PropTypes.string,
+    error: PropTypes.shape({
+      message: PropTypes.string,
+    }),
+    fetchCategoryPlaylists: PropTypes.func,
+    isLoading: PropTypes.bool,
+    match: PropTypes.shape({
+      url: PropTypes.string,
+    }),
+    playlists: PropTypes.shape({
+      items: PropTypes.arrayOf(PropTypes.shape),
+    }),
+  };
+
+  static defaultProps = {
+    accessToken: '',
+    error: {
+      message: '',
+    },
+    fetchCategoryPlaylists: () => {},
+    isLoading: false,
+    match: {
+      url: '',
+    },
+    playlists: {
+      items: [],
+    },
+  };
+
   componentDidMount() {
-    const {
-      accessToken,
-      fetchCategoryPlaylists,
-    } = this.props;
+    const { accessToken, fetchCategoryPlaylists } = this.props;
 
     fetchCategoryPlaylists(accessToken, 'dinner');
   }
 
   render() {
-    const {
-      error,
-      isLoading,
-      playlists,
-    } = this.props;
+    const { error, isLoading, playlists } = this.props;
 
     if (error) {
       return <Error>{error.message}</Error>;
@@ -43,36 +66,6 @@ export class PlaylistsPage extends Component {
     );
   }
 }
-
-PlaylistsPage.propTypes = {
-  accessToken: PropTypes.string,
-  error: PropTypes.shape({
-    message: PropTypes.string,
-  }),
-  fetchCategoryPlaylists: PropTypes.func,
-  isLoading: PropTypes.bool,
-  match: PropTypes.shape({
-    url: PropTypes.string,
-  }),
-  playlists: PropTypes.shape({
-    items: PropTypes.arrayOf(PropTypes.shape),
-  }),
-};
-
-PlaylistsPage.defaultProps = {
-  accessToken: '',
-  error: {
-    message: '',
-  },
-  fetchCategoryPlaylists: () => {},
-  isLoading: false,
-  match: {
-    url: '',
-  },
-  playlists: {
-    items: [],
-  },
-};
 
 const mapStateToProps = state => ({
   ...state,

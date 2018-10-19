@@ -1,17 +1,21 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 import styles from './style.css';
 
-const Error = ({ children }) => (
-  <div className={styles.error}>{children}</div>
-);
+class Error extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+  };
 
-Error.propTypes = {
-  children: PropTypes.node,
-};
+  static defaultProps = {
+    children: null,
+  };
 
-Error.defaultProps = {
-  children: null,
-};
+  render() {
+    const { children } = this.props;
+
+    return <div className={styles.error}>{children}</div>;
+  }
+}
 
 export default Error;

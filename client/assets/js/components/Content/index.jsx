@@ -1,19 +1,21 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 import styles from './style.css';
 
-const Content = ({ children }) => (
-  <div className={styles.content}>
-    {children}
-  </div>
-);
+class Content extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+  };
 
-Content.propTypes = {
-  children: PropTypes.node,
-};
+  static defaultProps = {
+    children: null,
+  };
 
-Content.defaultProps = {
-  children: null,
-};
+  render() {
+    const { children } = this.props;
+
+    return <div className={styles.content}>{children}</div>;
+  }
+}
 
 export default Content;

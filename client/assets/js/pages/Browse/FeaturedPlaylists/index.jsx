@@ -9,21 +9,40 @@ import Loader from '../../../components/Loader';
 import Playlists from '../../../components/Playlists';
 
 export class FeaturedPlaylistsPage extends Component {
+  static propTypes = {
+    accessToken: PropTypes.string,
+    error: PropTypes.shape({
+      message: PropTypes.string,
+    }),
+    fetchFeaturedPlaylists: PropTypes.func,
+    isLoading: PropTypes.bool,
+    match: PropTypes.shape({
+      url: PropTypes.string,
+    }),
+    playlists: PropTypes.shape(),
+  };
+
+  static defaultProps = {
+    accessToken: '',
+    error: {
+      message: '',
+    },
+    fetchFeaturedPlaylists: () => {},
+    isLoading: false,
+    match: {
+      url: '',
+    },
+    playlists: {},
+  };
+
   componentDidMount() {
-    const {
-      accessToken,
-      fetchFeaturedPlaylists,
-    } = this.props;
+    const { accessToken, fetchFeaturedPlaylists } = this.props;
 
     fetchFeaturedPlaylists(accessToken);
   }
 
   render() {
-    const {
-      error,
-      isLoading,
-      playlists,
-    } = this.props;
+    const { error, isLoading, playlists } = this.props;
 
     if (error) {
       return <Error>{error.message}</Error>;
@@ -44,32 +63,6 @@ export class FeaturedPlaylistsPage extends Component {
   }
 }
 
-FeaturedPlaylistsPage.propTypes = {
-  accessToken: PropTypes.string,
-  error: PropTypes.shape({
-    message: PropTypes.string,
-  }),
-  fetchFeaturedPlaylists: PropTypes.func,
-  isLoading: PropTypes.bool,
-  match: PropTypes.shape({
-    url: PropTypes.string,
-  }),
-  playlists: PropTypes.shape(),
-};
-
-FeaturedPlaylistsPage.defaultProps = {
-  accessToken: '',
-  error: {
-    message: '',
-  },
-  fetchFeaturedPlaylists: () => {},
-  isLoading: false,
-  match: {
-    url: '',
-  },
-  playlists: {},
-};
-
 const mapStateToProps = state => ({
   ...state,
   error: state.browse.error,
@@ -78,11 +71,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchFeaturedPlaylists,
-  },
-  dispatch,
-);
+    {
+      fetchFeaturedPlaylists,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

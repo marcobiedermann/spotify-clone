@@ -9,21 +9,34 @@ import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
 
 export class RelatedArtistsPage extends Component {
+  static propTypes = {
+    accessToken: PropTypes.string,
+    artists: PropTypes.arrayOf(PropTypes.shape),
+    error: PropTypes.shape({
+      message: PropTypes.string,
+    }),
+    fetchArtistRelatedArtists: PropTypes.func,
+    isLoading: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    accessToken: '',
+    artists: [],
+    error: {
+      message: '',
+    },
+    fetchArtistRelatedArtists: () => {},
+    isLoading: false,
+  };
+
   componentDidMount() {
-    const {
-      accessToken,
-      fetchArtistRelatedArtists,
-    } = this.props;
+    const { accessToken, fetchArtistRelatedArtists } = this.props;
 
     fetchArtistRelatedArtists(accessToken, '20JZFwl6HVl6yg8a4H3ZqK');
   }
 
   render() {
-    const {
-      artists,
-      error,
-      isLoading,
-    } = this.props;
+    const { artists, error, isLoading } = this.props;
 
     if (error) {
       return <Error>{error.message}</Error>;
@@ -43,26 +56,6 @@ export class RelatedArtistsPage extends Component {
     );
   }
 }
-
-RelatedArtistsPage.propTypes = {
-  accessToken: PropTypes.string,
-  artists: PropTypes.arrayOf(PropTypes.shape),
-  error: PropTypes.shape({
-    message: PropTypes.string,
-  }),
-  fetchArtistRelatedArtists: PropTypes.func,
-  isLoading: PropTypes.bool,
-};
-
-RelatedArtistsPage.defaultProps = {
-  accessToken: '',
-  artists: [],
-  error: {
-    message: '',
-  },
-  fetchArtistRelatedArtists: () => {},
-  isLoading: false,
-};
 
 const mapStateToProps = state => ({
   ...state,

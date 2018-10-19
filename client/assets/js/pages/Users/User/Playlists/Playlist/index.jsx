@@ -13,22 +13,60 @@ import Track from '../../../../../components/Track';
 import * as routes from '../../../../../constants/routes';
 
 export class PlaylistPage extends Component {
+  static propTypes = {
+    accessToken: PropTypes.string,
+    error: PropTypes.shape({
+      message: PropTypes.string,
+    }),
+    fetchUserPlaylist: PropTypes.func,
+    isLoading: PropTypes.bool,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        playlist_id: PropTypes.string,
+      }),
+    }),
+    playlist: PropTypes.shape({
+      owner: PropTypes.shape({
+        display_name: PropTypes.string,
+        id: PropTypes.string,
+      }),
+      tracks: PropTypes.shape({
+        items: PropTypes.arrayOf(PropTypes.shape),
+      }),
+    }),
+  };
+
+  static defaultProps = {
+    accessToken: '',
+    error: {
+      message: '',
+    },
+    fetchUserPlaylist: () => {},
+    isLoading: false,
+    match: {
+      params: {
+        playlist_id: '',
+      },
+    },
+    playlist: {
+      owner: {
+        display_name: '',
+        id: '',
+      },
+      tracks: {
+        items: [],
+      },
+    },
+  };
+
   componentDidMount() {
-    const {
-      accessToken,
-      fetchUserPlaylist,
-      match,
-    } = this.props;
+    const { accessToken, fetchUserPlaylist, match } = this.props;
 
     fetchUserPlaylist(accessToken, '11168662039', match.params.playlist_id);
   }
 
   render() {
-    const {
-      error,
-      isLoading,
-      playlist,
-    } = this.props;
+    const { error, isLoading, playlist } = this.props;
 
     if (error) {
       return <Error>{error.message}</Error>;
@@ -51,7 +89,9 @@ export class PlaylistPage extends Component {
             <p>
               Created by
               {' '}
-              <Link to={`${routes.USERS}/${playlist.owner.id}`}>{playlist.owner.display_name}</Link>
+              <Link to={`${routes.USERS}/${playlist.owner.id}`}>
+                {playlist.owner.display_name}
+              </Link>
               {' '}
               ·
               {' '}
@@ -77,52 +117,6 @@ export class PlaylistPage extends Component {
     );
   }
 }
-
-PlaylistPage.propTypes = {
-  accessToken: PropTypes.string,
-  error: PropTypes.shape({
-    message: PropTypes.string,
-  }),
-  fetchUserPlaylist: PropTypes.func,
-  isLoading: PropTypes.bool,
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      playlist_id: PropTypes.string,
-    }),
-  }),
-  playlist: PropTypes.shape({
-    owner: PropTypes.shape({
-      display_name: PropTypes.string,
-      id: PropTypes.string,
-    }),
-    tracks: PropTypes.shape({
-      items: PropTypes.arrayOf(PropTypes.shape),
-    }),
-  }),
-};
-
-PlaylistPage.defaultProps = {
-  accessToken: '',
-  error: {
-    message: '',
-  },
-  fetchUserPlaylist: () => {},
-  isLoading: false,
-  match: {
-    params: {
-      playlist_id: '',
-    },
-  },
-  playlist: {
-    owner: {
-      display_name: '',
-      id: '',
-    },
-    tracks: {
-      items: [],
-    },
-  },
-};
 
 const mapStateToProps = state => ({
   ...state,

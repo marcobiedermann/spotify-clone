@@ -1,42 +1,42 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { Helmet } from 'react-helmet';
-import {
-  Route,
-  Switch,
-} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import PlaylistsPage from './Playlists';
 
-const MePage = ({ match }) => (
-  <Switch>
-    <Route
-      path={`${match.url}/playlists`}
-      component={PlaylistsPage}
-    />
-    <Route
-      path={match.url}
-      component={() => (
-        <div>
-          <Helmet>
-            <title>Me</title>
-          </Helmet>
-          Me
-        </div>
-      )}
-    />
-  </Switch>
-);
+class MePage extends PureComponent {
+  static propTypes = {
+    match: PropTypes.shape({
+      url: PropTypes.string,
+    }),
+  };
 
-MePage.propTypes = {
-  match: PropTypes.shape({
-    url: PropTypes.string,
-  }),
-};
+  static defaultProps = {
+    match: {
+      url: '',
+    },
+  };
 
-MePage.defaultProps = {
-  match: {
-    url: '',
-  },
-};
+  render() {
+    const { match } = this.props;
+
+    return (
+      <Switch>
+        <Route path={`${match.url}/playlists`} component={PlaylistsPage} />
+        <Route
+          path={match.url}
+          component={() => (
+            <div>
+              <Helmet>
+                <title>Me</title>
+              </Helmet>
+              Me
+            </div>
+          )}
+        />
+      </Switch>
+    );
+  }
+}
 
 export default MePage;

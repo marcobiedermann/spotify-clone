@@ -1,20 +1,26 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 import styles from './style.css';
 
-const Aside = ({ children }) => (
-  <aside className={classNames(styles.aside, styles['aside--left'])}>
-    {children}
-  </aside>
-);
+class Aside extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+  };
 
-Aside.propTypes = {
-  children: PropTypes.node,
-};
+  static defaultProps = {
+    children: null,
+  };
 
-Aside.defaultProps = {
-  children: null,
-};
+  render() {
+    const { children } = this.props;
+
+    return (
+      <aside className={classNames(styles.aside, styles['aside--left'])}>
+        {children}
+      </aside>
+    );
+  }
+}
 
 export default Aside;

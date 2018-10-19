@@ -1,19 +1,21 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 import styles from './style.css';
 
-const Main = ({ children }) => (
-  <main className={styles.main}>
-    {children}
-  </main>
-);
+class Main extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+  };
 
-Main.propTypes = {
-  children: PropTypes.node,
-};
+  static defaultProps = {
+    children: null,
+  };
 
-Main.defaultProps = {
-  children: null,
-};
+  render() {
+    const { children } = this.props;
+
+    return <main className={styles.main}>{children}</main>;
+  }
+}
 
 export default Main;

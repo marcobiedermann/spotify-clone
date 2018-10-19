@@ -1,26 +1,34 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 import Category from '../Category';
 import styles from './style.css';
 
-const Categories = ({ categories }) => (
-  <ul className={styles.categories}>
-    {categories.map(category => (
-      <li key={category.id}>
-        <Category {...category} />
-      </li>
-    ))}
-  </ul>
-);
+class Categories extends PureComponent {
+  static propTypes = {
+    categories: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+      }),
+    ),
+  };
 
-Categories.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-  })),
-};
+  static defaultProps = {
+    categories: [],
+  };
 
-Categories.defaultProps = {
-  categories: [],
-};
+  render() {
+    const { categories } = this.props;
+
+    return (
+      <ul className={styles.categories}>
+        {categories.map(category => (
+          <li key={category.id}>
+            <Category {...category} />
+          </li>
+        ))}
+      </ul>
+    );
+  }
+}
 
 export default Categories;

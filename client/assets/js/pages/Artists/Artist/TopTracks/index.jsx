@@ -9,21 +9,34 @@ import Loader from '../../../../components/Loader';
 import Tracks from '../../../../components/Tracks';
 
 export class TopTracksPage extends Component {
+  static propTypes = {
+    accessToken: PropTypes.string,
+    fetchArtistTopTracks: PropTypes.func,
+    error: PropTypes.shape({
+      message: PropTypes.string,
+    }),
+    isLoading: PropTypes.bool,
+    tracks: PropTypes.arrayOf(PropTypes.shape),
+  };
+
+  static defaultProps = {
+    accessToken: '',
+    error: {
+      message: '',
+    },
+    fetchArtistTopTracks: () => {},
+    isLoading: false,
+    tracks: [],
+  };
+
   componentDidMount() {
-    const {
-      accessToken,
-      fetchArtistTopTracks,
-    } = this.props;
+    const { accessToken, fetchArtistTopTracks } = this.props;
 
     fetchArtistTopTracks(accessToken, '20JZFwl6HVl6yg8a4H3ZqK');
   }
 
   render() {
-    const {
-      error,
-      isLoading,
-      tracks,
-    } = this.props;
+    const { error, isLoading, tracks } = this.props;
 
     if (error) {
       return <Error>{error.message}</Error>;
@@ -43,26 +56,6 @@ export class TopTracksPage extends Component {
     );
   }
 }
-
-TopTracksPage.propTypes = {
-  accessToken: PropTypes.string,
-  fetchArtistTopTracks: PropTypes.func,
-  error: PropTypes.shape({
-    message: PropTypes.string,
-  }),
-  isLoading: PropTypes.bool,
-  tracks: PropTypes.arrayOf(PropTypes.shape),
-};
-
-TopTracksPage.defaultProps = {
-  accessToken: '',
-  error: {
-    message: '',
-  },
-  fetchArtistTopTracks: () => {},
-  isLoading: false,
-  tracks: [],
-};
 
 const mapStateToProps = state => ({
   ...state,

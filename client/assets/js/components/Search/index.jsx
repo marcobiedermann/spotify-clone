@@ -1,25 +1,25 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 import styles from './style.css';
 
-const Search = ({ onSubmit }) => (
-  <form
-    className={styles.search}
-    onSubmit={onSubmit}
-  >
-    <input
-      className={styles.search__input}
-      type="search"
-    />
-  </form>
-);
+class Search extends PureComponent {
+  static propTypes = {
+    onSubmit: PropTypes.func,
+  };
 
-Search.propTypes = {
-  onSubmit: PropTypes.func,
-};
+  static defaultProps = {
+    onSubmit: () => {},
+  };
 
-Search.defaultProps = {
-  onSubmit: () => {},
-};
+  render() {
+    const { onSubmit } = this.props;
+
+    return (
+      <form className={styles.search} onSubmit={onSubmit}>
+        <input className={styles.search__input} type="search" />
+      </form>
+    );
+  }
+}
 
 export default Search;

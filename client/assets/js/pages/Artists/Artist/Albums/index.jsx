@@ -9,21 +9,34 @@ import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
 
 export class AlbumsPage extends Component {
+  static propTypes = {
+    accessToken: PropTypes.string,
+    albums: PropTypes.arrayOf(PropTypes.shape),
+    error: PropTypes.shape({
+      message: PropTypes.string,
+    }),
+    fetchArtistAlbums: PropTypes.func,
+    isLoading: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    accessToken: '',
+    albums: [],
+    error: {
+      message: '',
+    },
+    fetchArtistAlbums: () => {},
+    isLoading: false,
+  };
+
   componentDidMount() {
-    const {
-      accessToken,
-      fetchArtistAlbums,
-    } = this.props;
+    const { accessToken, fetchArtistAlbums } = this.props;
 
     fetchArtistAlbums(accessToken, '20JZFwl6HVl6yg8a4H3ZqK');
   }
 
   render() {
-    const {
-      albums,
-      error,
-      isLoading,
-    } = this.props;
+    const { albums, error, isLoading } = this.props;
 
     if (error) {
       return <Error>{error.message}</Error>;
@@ -43,26 +56,6 @@ export class AlbumsPage extends Component {
     );
   }
 }
-
-AlbumsPage.propTypes = {
-  accessToken: PropTypes.string,
-  albums: PropTypes.arrayOf(PropTypes.shape),
-  error: PropTypes.shape({
-    message: PropTypes.string,
-  }),
-  fetchArtistAlbums: PropTypes.func,
-  isLoading: PropTypes.bool,
-};
-
-AlbumsPage.defaultProps = {
-  accessToken: '',
-  albums: [],
-  error: {
-    message: '',
-  },
-  fetchArtistAlbums: () => {},
-  isLoading: false,
-};
 
 const mapStateToProps = state => ({
   ...state,

@@ -1,25 +1,31 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PureComponent } from 'react';
 import Track from '../Track';
 
-const Tracks = ({ tracks }) => (
-  <table>
-    <tbody>
-      {tracks.map(track => (
-        <Track key={track.id} {...track} />
-      ))}
-    </tbody>
-  </table>
-);
+class Tracks extends PureComponent {
+  static propTypes = {
+    tracks: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string,
+    })),
+  };
 
-Tracks.propTypes = {
-  tracks: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-  })),
-};
+  static defaultProps = {
+    tracks: [],
+  };
 
-Tracks.defaultProps = {
-  tracks: [],
-};
+  render() {
+    const { tracks } = this.props;
+
+    return (
+      <table>
+        <tbody>
+          {tracks.map(track => (
+            <Track key={track.id} {...track} />
+          ))}
+        </tbody>
+      </table>
+    );
+  }
+}
 
 export default Tracks;

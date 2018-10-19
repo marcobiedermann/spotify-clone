@@ -2,11 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-import {
-  Link,
-  Route,
-  Switch,
-} from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import AlbumsPage from './Albums';
 import RelatedArtistsPage from './RelatedArtists';
@@ -17,38 +13,61 @@ import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
 export class ArtistPage extends Component {
+  static propTypes = {
+    accessToken: PropTypes.string,
+    artist: PropTypes.shape({
+      name: PropTypes.string,
+    }),
+    error: PropTypes.shape({
+      message: PropTypes.string,
+    }),
+    fetchArtist: PropTypes.func,
+    isLoading: PropTypes.bool,
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        id: PropTypes.string,
+      }),
+      url: PropTypes.string,
+    }),
+  };
+
+  static defaultProps = {
+    accessToken: '',
+    artist: {
+      name: '',
+    },
+    error: {
+      message: '',
+    },
+    fetchArtist: () => {},
+    isLoading: false,
+    match: {
+      params: {
+        id: '',
+      },
+      url: '',
+    },
+  };
+
   componentDidMount() {
-    const {
-      accessToken,
-      fetchArtist,
-      match,
-    } = this.props;
+    const { accessToken, fetchArtist, match } = this.props;
 
     fetchArtist(accessToken, match.params.id);
   }
 
   render() {
     const {
-      artist,
-      error,
-      isLoading,
-      match,
+      artist, error, isLoading, match,
     } = this.props;
 
     return (
       <Switch>
-        <Route
-          path={`${match.url}/albums`}
-          component={AlbumsPage}
-        />
+        <Route path={`${match.url}/albums`} component={AlbumsPage} />
         <Route
           path={`${match.url}/related-artists`}
           component={RelatedArtistsPage}
         />
-        <Route
-          path={`${match.url}/top-tracks`}
-          component={TopTracksPage}
-        />
+        <Route path={`${match.url}/top-tracks`} component={TopTracksPage} />
         <Route
           path={match.url}
           component={() => {
@@ -71,7 +90,9 @@ export class ArtistPage extends Component {
                     <Link to={`${match.url}/albums`}>Albums</Link>
                   </li>
                   <li>
-                    <Link to={`${match.url}/related-artists`}>Related Artists</Link>
+                    <Link to={`${match.url}/related-artists`}>
+                      Related Artists
+                    </Link>
                   </li>
                   <li>
                     <Link to={`${match.url}/top-tracks`}>Top Tracks</Link>
@@ -85,42 +106,6 @@ export class ArtistPage extends Component {
     );
   }
 }
-
-ArtistPage.propTypes = {
-  accessToken: PropTypes.string,
-  artist: PropTypes.shape({
-    name: PropTypes.string,
-  }),
-  error: PropTypes.shape({
-    message: PropTypes.string,
-  }),
-  fetchArtist: PropTypes.func,
-  isLoading: PropTypes.bool,
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string,
-    }),
-    url: PropTypes.string,
-  }),
-};
-
-ArtistPage.defaultProps = {
-  accessToken: '',
-  artist: {
-    name: '',
-  },
-  error: {
-    message: '',
-  },
-  fetchArtist: () => {},
-  isLoading: false,
-  match: {
-    params: {
-      id: '',
-    },
-    url: '',
-  },
-};
 
 const mapStateToProps = state => ({
   ...state,
