@@ -71,11 +71,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(
-    {
-      fetchFeaturedPlaylists,
-    },
-    dispatch,
-  );
+  {
+    fetchFeaturedPlaylists,
+  },
+  dispatch,
+);
 
 export default connect(
   mapStateToProps,

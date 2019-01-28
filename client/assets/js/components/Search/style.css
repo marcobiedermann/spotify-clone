@@ -3,8 +3,8 @@
 }
 
 .search__input {
-  border-radius: 999em;
   background-color: #fff;
+  border-radius: 999em;
   font-size: 0.875rem;
   padding: 0.5em 1.5em;
 }
