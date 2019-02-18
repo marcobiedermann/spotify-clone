@@ -5,7 +5,11 @@ import { UserPage } from '.';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<MemoryRouter><UserPage /></MemoryRouter>)
+    .create(
+      <MemoryRouter>
+        <UserPage />
+      </MemoryRouter>,
+    )
     .toJSON();
 
   expect(tree).toMatchSnapshot();

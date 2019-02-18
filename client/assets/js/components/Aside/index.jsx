@@ -15,11 +15,7 @@ class Aside extends PureComponent {
   render() {
     const { children } = this.props;
 
-    return (
-      <aside className={classNames(styles.aside, styles['aside--left'])}>
-        {children}
-      </aside>
-    );
+    return <aside className={classNames(styles.aside, styles['aside--left'])}>{children}</aside>;
   }
 }
 

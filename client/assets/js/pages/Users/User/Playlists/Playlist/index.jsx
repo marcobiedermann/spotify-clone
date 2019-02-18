@@ -87,17 +87,9 @@ export class PlaylistPage extends Component {
           <h1>{playlist.name}</h1>
           {playlist.owner && (
             <p>
-              Created by
-              {' '}
-              <Link to={`${routes.USERS}/${playlist.owner.id}`}>
-                {playlist.owner.display_name}
-              </Link>
-              {' '}
-              ·
-              {' '}
-              {playlist.tracks.total}
-              {' '}
-              songs
+              Created by{' '}
+              <Link to={`${routes.USERS}/${playlist.owner.id}`}>{playlist.owner.display_name}</Link>{' '}
+              · {playlist.tracks.total} songs
             </p>
           )}
           <p>
@@ -125,12 +117,13 @@ const mapStateToProps = state => ({
   playlist: state.users.playlist,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchUserPlaylist,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchUserPlaylist,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

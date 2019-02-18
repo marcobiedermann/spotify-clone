@@ -27,9 +27,7 @@ class Playlist extends PureComponent {
   };
 
   render() {
-    const {
-      id, images, name, owner,
-    } = this.props;
+    const { id, images, name, owner } = this.props;
 
     return (
       <figure>

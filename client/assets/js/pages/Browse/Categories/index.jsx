@@ -44,9 +44,7 @@ export class CategoriesPage extends Component {
   }
 
   render() {
-    const {
-      categories, error, isLoading, match,
-    } = this.props;
+    const { categories, error, isLoading, match } = this.props;
 
     return (
       <Switch>
@@ -84,12 +82,13 @@ const mapStateToProps = state => ({
   isLoading: state.browse.isLoading,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchCategories,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchCategories,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

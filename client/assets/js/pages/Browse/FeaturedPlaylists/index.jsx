@@ -70,12 +70,13 @@ const mapStateToProps = state => ({
   playlists: state.browse.playlists,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchFeaturedPlaylists,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchFeaturedPlaylists,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

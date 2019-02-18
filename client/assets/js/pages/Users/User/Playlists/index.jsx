@@ -44,9 +44,7 @@ export class PlaylistsPage extends Component {
   }
 
   render() {
-    const {
-      error, isLoading, match, playlists,
-    } = this.props;
+    const { error, isLoading, match, playlists } = this.props;
 
     return (
       <Switch>
@@ -84,12 +82,13 @@ const mapStateToProps = state => ({
   playlists: state.users.playlists,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchUserPlaylists,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchUserPlaylists,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

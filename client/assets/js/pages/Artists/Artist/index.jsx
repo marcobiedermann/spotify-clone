@@ -56,17 +56,12 @@ export class ArtistPage extends Component {
   }
 
   render() {
-    const {
-      artist, error, isLoading, match,
-    } = this.props;
+    const { artist, error, isLoading, match } = this.props;
 
     return (
       <Switch>
         <Route path={`${match.url}/albums`} component={AlbumsPage} />
-        <Route
-          path={`${match.url}/related-artists`}
-          component={RelatedArtistsPage}
-        />
+        <Route path={`${match.url}/related-artists`} component={RelatedArtistsPage} />
         <Route path={`${match.url}/top-tracks`} component={TopTracksPage} />
         <Route
           path={match.url}
@@ -90,9 +85,7 @@ export class ArtistPage extends Component {
                     <Link to={`${match.url}/albums`}>Albums</Link>
                   </li>
                   <li>
-                    <Link to={`${match.url}/related-artists`}>
-                      Related Artists
-                    </Link>
+                    <Link to={`${match.url}/related-artists`}>Related Artists</Link>
                   </li>
                   <li>
                     <Link to={`${match.url}/top-tracks`}>Top Tracks</Link>
@@ -114,12 +107,13 @@ const mapStateToProps = state => ({
   isLoading: state.artists.isLoading,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchArtist,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchArtist,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

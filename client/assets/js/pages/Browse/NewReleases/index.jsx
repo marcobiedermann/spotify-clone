@@ -68,12 +68,13 @@ const mapStateToProps = state => ({
   isLoading: state.browse.isLoading,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchNewReleases,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchNewReleases,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

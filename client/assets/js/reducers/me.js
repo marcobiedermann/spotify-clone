@@ -1,7 +1,4 @@
-import {
-  ME_FETCH,
-  ME_PLAYLISTS_FETCH,
-} from '../constants/action-types';
+import { ME_FETCH, ME_PLAYLISTS_FETCH } from '../constants/action-types';
 
 const initialState = {
   error: null,

@@ -5,7 +5,11 @@ import BrowsePage from '.';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<MemoryRouter><BrowsePage /></MemoryRouter>)
+    .create(
+      <MemoryRouter>
+        <BrowsePage />
+      </MemoryRouter>,
+    )
     .toJSON();
 
   expect(tree).toMatchSnapshot();

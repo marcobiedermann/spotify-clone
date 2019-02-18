@@ -64,12 +64,13 @@ const mapStateToProps = state => ({
   isLoading: state.artists.isLoading,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchArtistRelatedArtists,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchArtistRelatedArtists,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

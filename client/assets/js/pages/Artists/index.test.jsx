@@ -5,7 +5,11 @@ import ArtistsPage from '.';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<MemoryRouter><ArtistsPage /></MemoryRouter>)
+    .create(
+      <MemoryRouter>
+        <ArtistsPage />
+      </MemoryRouter>,
+    )
     .toJSON();
 
   expect(tree).toMatchSnapshot();

@@ -1,6 +1,4 @@
-import {
-  ALBUM_FETCH,
-} from '../constants/action-types';
+import { ALBUM_FETCH } from '../constants/action-types';
 import handleError from '../utilities/error';
 
 // const baseUrl = 'https://api.spotify.com';
@@ -21,7 +19,7 @@ export const fetchAlbumRejected = error => ({
   error: true,
 });
 
-export const fetchAlbum = (accessToken, albumId) => async (dispatch) => {
+export const fetchAlbum = (accessToken, albumId) => async dispatch => {
   const request = new Request(`${baseUrl}/v1/albums/${albumId}.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,

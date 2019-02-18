@@ -17,9 +17,7 @@ class Image extends PureComponent {
   };
 
   render() {
-    const {
-      alt, height, url, width,
-    } = this.props;
+    const { alt, height, url, width } = this.props;
 
     return <img alt={alt} height={height} src={url} width={width} />;
   }

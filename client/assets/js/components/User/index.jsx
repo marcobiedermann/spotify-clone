@@ -33,13 +33,7 @@ class User extends PureComponent {
             <img src={images[0].url} alt={display_name} />
           </figure>
         )}
-        {followers && (
-        <p>
-          {followers.total}
-          {' '}
-          Followers
-        </p>
-        )}
+        {followers && <p>{followers.total} Followers</p>}
       </div>
     );
   }

@@ -65,11 +65,7 @@ export class Layout extends Component {
               <ul>
                 {playlists.items.map(playlist => (
                   <li key={playlist.id}>
-                    <Link
-                      to={`/users/${playlist.owner.id}/playlists/${
-                        playlist.id
-                      }`}
-                    >
+                    <Link to={`/users/${playlist.owner.id}/playlists/${playlist.id}`}>
                       {playlist.name}
                     </Link>
                   </li>
@@ -90,13 +86,14 @@ const mapStateToProps = state => ({
   playlists: state.me.playlists,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchMe,
-    fetchMePlaylists,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchMe,
+      fetchMePlaylists,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

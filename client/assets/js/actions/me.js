@@ -1,7 +1,4 @@
-import {
-  ME_FETCH,
-  ME_PLAYLISTS_FETCH,
-} from '../constants/action-types';
+import { ME_FETCH, ME_PLAYLISTS_FETCH } from '../constants/action-types';
 import handleError from '../utilities/error';
 
 // const baseUrl = 'https://api.spotify.com';
@@ -22,7 +19,7 @@ export const fetchMeRejected = error => ({
   error: true,
 });
 
-export const fetchMe = accessToken => async (dispatch) => {
+export const fetchMe = accessToken => async dispatch => {
   const request = new Request(`${baseUrl}/v1/me.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -56,7 +53,7 @@ export const fetchMePlaylistsRejected = error => ({
   error: true,
 });
 
-export const fetchMePlaylists = accessToken => async (dispatch) => {
+export const fetchMePlaylists = accessToken => async dispatch => {
   const request = new Request(`${baseUrl}/v1/me/playlists.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,

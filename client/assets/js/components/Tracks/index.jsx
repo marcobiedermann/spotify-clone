@@ -4,9 +4,11 @@ import Track from '../Track';
 
 class Tracks extends PureComponent {
   static propTypes = {
-    tracks: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.string,
-    })),
+    tracks: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+      }),
+    ),
   };
 
   static defaultProps = {

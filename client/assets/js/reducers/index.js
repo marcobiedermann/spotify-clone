@@ -6,13 +6,14 @@ import browse from './browse';
 import me from './me';
 import users from './users';
 
-const reducers = history => combineReducers({
-  albums,
-  artists,
-  browse,
-  me,
-  router: connectRouter(history),
-  users,
-});
+const reducers = history =>
+  combineReducers({
+    albums,
+    artists,
+    browse,
+    me,
+    router: connectRouter(history),
+    users,
+  });
 
 export default reducers;

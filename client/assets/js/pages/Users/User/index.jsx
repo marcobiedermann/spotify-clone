@@ -58,9 +58,7 @@ export class UserPage extends Component {
   }
 
   render() {
-    const {
-      error, isLoading, match, me,
-    } = this.props;
+    const { error, isLoading, match, me } = this.props;
 
     return (
       <Switch>
@@ -98,12 +96,13 @@ const mapStateToProps = state => ({
   user: state.users.user,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchUser,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchUser,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

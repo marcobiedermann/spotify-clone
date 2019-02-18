@@ -5,7 +5,11 @@ import Navigation from '.';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<MemoryRouter><Navigation /></MemoryRouter>)
+    .create(
+      <MemoryRouter>
+        <Navigation />
+      </MemoryRouter>,
+    )
     .toJSON();
 
   expect(tree).toMatchSnapshot();

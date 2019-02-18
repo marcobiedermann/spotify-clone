@@ -34,9 +34,7 @@ class Album extends PureComponent {
   };
 
   render() {
-    const {
-      artists, id, images, name, tracks,
-    } = this.props;
+    const { artists, id, images, name, tracks } = this.props;
 
     return (
       <div>

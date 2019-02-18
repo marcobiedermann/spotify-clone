@@ -64,12 +64,13 @@ const mapStateToProps = state => ({
   tracks: state.artists.tracks,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchArtistTopTracks,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchArtistTopTracks,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

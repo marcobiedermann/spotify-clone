@@ -11,10 +11,7 @@ describe('Album component', () => {
       },
     ],
     id: '123456',
-    images: [
-      {},
-      {},
-    ],
+    images: [{}, {}],
     name: 'Album Name',
     tracks: {
       items: [],
@@ -23,7 +20,11 @@ describe('Album component', () => {
 
   it('renders correctly', () => {
     const tree = renderer
-      .create(<MemoryRouter><Album {...album} /></MemoryRouter>)
+      .create(
+        <MemoryRouter>
+          <Album {...album} />
+        </MemoryRouter>,
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();

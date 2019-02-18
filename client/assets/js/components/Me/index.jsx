@@ -27,14 +27,7 @@ class Me extends PureComponent {
     return (
       <div className={styles.me}>
         <figure className={styles.me__image}>
-          {images[0] && (
-            <Image
-              url={images[0].url}
-              alt={display_name}
-              width={32}
-              height={32}
-            />
-          )}
+          {images[0] && <Image url={images[0].url} alt={display_name} width={32} height={32} />}
         </figure>
         <Link to={`/users/${id}`}>{display_name}</Link>
       </div>

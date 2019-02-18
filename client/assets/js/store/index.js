@@ -3,9 +3,6 @@ import middleware from './middleware';
 import reducers from '../reducers';
 import history from '../router/history';
 
-const store = createStore(
-  reducers(history),
-  middleware,
-);
+const store = createStore(reducers(history), middleware);
 
 export default store;

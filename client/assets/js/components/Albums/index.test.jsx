@@ -12,7 +12,11 @@ describe('Albums component', () => {
 
   it('renders correctly', () => {
     const tree = renderer
-      .create(<MemoryRouter><Albums albums={albums} /></MemoryRouter>)
+      .create(
+        <MemoryRouter>
+          <Albums albums={albums} />
+        </MemoryRouter>,
+      )
       .toJSON();
 
     expect(tree).toMatchSnapshot();

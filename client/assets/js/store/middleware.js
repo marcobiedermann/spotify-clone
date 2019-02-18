@@ -4,11 +4,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import history from '../router/history';
 
-const middleware = composeWithDevTools(
-  applyMiddleware(
-    routerMiddleware(history),
-    thunk,
-  ),
-);
+const middleware = composeWithDevTools(applyMiddleware(routerMiddleware(history), thunk));
 
 export default middleware;

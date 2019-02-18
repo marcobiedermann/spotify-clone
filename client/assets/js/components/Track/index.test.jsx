@@ -3,9 +3,7 @@ import renderer from 'react-test-renderer';
 import Track from '.';
 
 it('renders correctly', () => {
-  const tree = renderer
-    .create(<Track />)
-    .toJSON();
+  const tree = renderer.create(<Track />).toJSON();
 
   expect(tree).toMatchSnapshot();
 });

@@ -24,7 +24,7 @@ export const fetchArtistRejected = error => ({
   error: true,
 });
 
-export const fetchArtist = (accessToken, id) => async (dispatch) => {
+export const fetchArtist = (accessToken, id) => async dispatch => {
   const request = new Request(`${baseUrl}/v1/artists/${id}.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -58,7 +58,7 @@ export const fetchArtistAlbumsRejected = error => ({
   error: true,
 });
 
-export const fetchArtistAlbums = (accessToken, id) => async (dispatch) => {
+export const fetchArtistAlbums = (accessToken, id) => async dispatch => {
   const request = new Request(`${baseUrl}/v1/artists/${id}/albums.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -92,7 +92,7 @@ export const fetchArtistRelatedArtistsRejected = error => ({
   error: true,
 });
 
-export const fetchArtistRelatedArtists = (accessToken, id) => async (dispatch) => {
+export const fetchArtistRelatedArtists = (accessToken, id) => async dispatch => {
   const request = new Request(`${baseUrl}/v1/artists/${id}/related-artists.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -126,7 +126,7 @@ export const fetchArtistTopTracksRejected = error => ({
   error: true,
 });
 
-export const fetchArtistTopTracks = (accessToken, id) => async (dispatch) => {
+export const fetchArtistTopTracks = (accessToken, id) => async dispatch => {
   const request = new Request(`${baseUrl}/v1/artists/${id}/top-tracks.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,

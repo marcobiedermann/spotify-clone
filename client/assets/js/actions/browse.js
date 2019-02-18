@@ -25,7 +25,7 @@ export const fetchCategoryRejected = error => ({
   error: true,
 });
 
-export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
+export const fetchCategory = (accessToken, categoryId) => async dispatch => {
   const request = new Request(`${baseUrl}/v1/browse/categories/${categoryId}.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -59,7 +59,7 @@ export const fetchCategoriesRejected = error => ({
   error: true,
 });
 
-export const fetchCategories = accessToken => async (dispatch) => {
+export const fetchCategories = accessToken => async dispatch => {
   const request = new Request(`${baseUrl}/v1/browse/categories.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -93,7 +93,7 @@ export const fetchFeaturedPlaylistsRejected = error => ({
   error: true,
 });
 
-export const fetchFeaturedPlaylists = accessToken => async (dispatch) => {
+export const fetchFeaturedPlaylists = accessToken => async dispatch => {
   const request = new Request(`${baseUrl}/v1/browse/featured-playlists.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -127,7 +127,7 @@ export const fetchNewReleasesRejected = error => ({
   error: true,
 });
 
-export const fetchNewReleases = accessToken => async (dispatch) => {
+export const fetchNewReleases = accessToken => async dispatch => {
   const request = new Request(`${baseUrl}/v1/browse/new-releases.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -161,7 +161,7 @@ export const fetchCategoryPlaylistsRejected = error => ({
   error: true,
 });
 
-export const fetchCategoryPlaylists = (accessToken, categoryId) => async (dispatch) => {
+export const fetchCategoryPlaylists = (accessToken, categoryId) => async dispatch => {
   const request = new Request(`${baseUrl}/v1/browse/categories/${categoryId}/playlists.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,

@@ -5,7 +5,11 @@ import Category from '.';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<MemoryRouter><Category /></MemoryRouter>)
+    .create(
+      <MemoryRouter>
+        <Category />
+      </MemoryRouter>,
+    )
     .toJSON();
 
   expect(tree).toMatchSnapshot();

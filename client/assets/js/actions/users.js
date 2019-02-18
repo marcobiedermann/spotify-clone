@@ -1,8 +1,4 @@
-import {
-  USER_FETCH,
-  USER_PLAYLISTS_FETCH,
-  USER_PLAYLIST_FETCH,
-} from '../constants/action-types';
+import { USER_FETCH, USER_PLAYLISTS_FETCH, USER_PLAYLIST_FETCH } from '../constants/action-types';
 import handleError from '../utilities/error';
 
 // const baseUrl = 'https://api.spotify.com';
@@ -23,7 +19,7 @@ export const fetchUserRejected = error => ({
   error: true,
 });
 
-export const fetchUser = (accessToken, userId) => async (dispatch) => {
+export const fetchUser = (accessToken, userId) => async dispatch => {
   const request = new Request(`${baseUrl}/v1/users/${userId}.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -57,7 +53,7 @@ export const fetchUserPlaylistsRejected = error => ({
   error: true,
 });
 
-export const fetchUserPlaylists = (accessToken, userId) => async (dispatch) => {
+export const fetchUserPlaylists = (accessToken, userId) => async dispatch => {
   const request = new Request(`${baseUrl}/v1/users/${userId}/playlists.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -91,7 +87,7 @@ export const fetchUserPlaylistRejected = error => ({
   error: true,
 });
 
-export const fetchUserPlaylist = (accessToken, userId, playlistId) => async (dispatch) => {
+export const fetchUserPlaylist = (accessToken, userId, playlistId) => async dispatch => {
   const request = new Request(`${baseUrl}/v1/users/${userId}/playlists/${playlistId}.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,

@@ -54,9 +54,7 @@ export class AlbumPage extends Component {
   }
 
   render() {
-    const {
-      album, error, isLoading, match,
-    } = this.props;
+    const { album, error, isLoading, match } = this.props;
 
     return (
       <Switch>
@@ -94,12 +92,13 @@ const mapStateToProps = state => ({
   isLoading: state.albums.isLoading,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchAlbum,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchAlbum,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,
