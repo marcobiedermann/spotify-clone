@@ -55,7 +55,7 @@
     "style-loader": "^0.23.1",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
-    "stylelint-order": "^2.1.0",
+    "stylelint-order": "^3.0.0",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
