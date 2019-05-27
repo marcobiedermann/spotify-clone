@@ -63,7 +63,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.3",
+    "@babel/polyfill": "^7.4.4",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.4.0",
     "date-fns": "^1.30.1",
