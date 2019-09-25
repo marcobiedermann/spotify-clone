@@ -67,7 +67,7 @@
     "classnames": "^2.2.6",
     "connected-react-router": "^6.5.2",
     "date-fns": "^2.3.0",
-    "history": "^4.9.0",
+    "history": "^4.10.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
