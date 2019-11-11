@@ -44,7 +44,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.12.4",
-    "html-webpack-plugin": "^4.0.0-beta.9",
+    "html-webpack-plugin": "^4.0.0-beta.10",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.8.0",
