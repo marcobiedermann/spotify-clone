@@ -42,7 +42,7 @@
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.12.4",
     "html-webpack-plugin": "^4.0.0-beta.11",
     "identity-obj-proxy": "^3.0.0",
