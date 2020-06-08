@@ -57,14 +57,14 @@ export class RelatedArtistsPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   ...state,
   artists: state.artists.artists,
   error: state.artists.error,
   isLoading: state.artists.isLoading,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchArtistRelatedArtists,
@@ -72,7 +72,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(RelatedArtistsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(RelatedArtistsPage);

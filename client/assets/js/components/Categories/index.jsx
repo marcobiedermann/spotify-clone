@@ -21,7 +21,7 @@ class Categories extends PureComponent {
 
     return (
       <ul className={styles.categories}>
-        {categories.map(category => (
+        {categories.map((category) => (
           <li key={category.id}>
             <Category {...category} />
           </li>

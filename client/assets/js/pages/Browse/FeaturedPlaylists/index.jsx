@@ -63,14 +63,14 @@ export class FeaturedPlaylistsPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   ...state,
   error: state.browse.error,
   isLoading: state.browse.isLoading,
   playlists: state.browse.playlists,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchFeaturedPlaylists,
@@ -78,7 +78,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(FeaturedPlaylistsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(FeaturedPlaylistsPage);

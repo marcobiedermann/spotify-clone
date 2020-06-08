@@ -57,14 +57,14 @@ export class TopTracksPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   ...state,
   error: state.artists.error,
   isLoading: state.artists.isLoading,
   tracks: state.artists.tracks,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchArtistTopTracks,
@@ -72,7 +72,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(TopTracksPage);
+export default connect(mapStateToProps, mapDispatchToProps)(TopTracksPage);

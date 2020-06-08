@@ -21,7 +21,7 @@ class Playlists extends PureComponent {
 
     return (
       <ul className={styles.playlists}>
-        {playlists.map(playlist => (
+        {playlists.map((playlist) => (
           <li key={playlist.id}>
             <Playlist {...playlist} />
           </li>

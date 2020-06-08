@@ -98,7 +98,7 @@ export class PlaylistPage extends Component {
           {playlist.tracks && (
             <table>
               <tbody>
-                {playlist.tracks.items.map(track => (
+                {playlist.tracks.items.map((track) => (
                   <Track key={track.track.id} {...track.track} />
                 ))}
               </tbody>
@@ -110,14 +110,14 @@ export class PlaylistPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   ...state,
   error: state.users.error,
   isLoading: state.users.isLoading,
   playlist: state.users.playlist,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchUserPlaylist,
@@ -125,7 +125,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(PlaylistPage);
+export default connect(mapStateToProps, mapDispatchToProps)(PlaylistPage);

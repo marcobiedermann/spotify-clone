@@ -85,14 +85,14 @@ export class AlbumPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   ...state,
   album: state.albums.album,
   error: state.albums.error,
   isLoading: state.albums.isLoading,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchAlbum,
@@ -100,7 +100,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(AlbumPage);
+export default connect(mapStateToProps, mapDispatchToProps)(AlbumPage);

@@ -85,14 +85,14 @@ export class CategoryPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   ...state,
   category: state.browse.category,
   error: state.browse.error,
   isLoading: state.browse.isLoading,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchCategory,
@@ -100,7 +100,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(CategoryPage);
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryPage);

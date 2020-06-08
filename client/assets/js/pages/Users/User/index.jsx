@@ -89,14 +89,14 @@ export class UserPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   ...state,
   error: state.users.error,
   isLoading: state.users.isLoading,
   user: state.users.user,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchUser,
@@ -104,7 +104,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(UserPage);
+export default connect(mapStateToProps, mapDispatchToProps)(UserPage);

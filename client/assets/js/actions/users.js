@@ -4,7 +4,7 @@ import handleError from '../utilities/error';
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
-export const fetchUserFulfilled = user => ({
+export const fetchUserFulfilled = (user) => ({
   type: `${USER_FETCH}_FULFILLED`,
   payload: user,
 });
@@ -13,13 +13,13 @@ export const fetchUserPending = () => ({
   type: `${USER_FETCH}_PENDING`,
 });
 
-export const fetchUserRejected = error => ({
+export const fetchUserRejected = (error) => ({
   type: `${USER_FETCH}_REJECTED`,
   payload: error,
   error: true,
 });
 
-export const fetchUser = (accessToken, userId) => async dispatch => {
+export const fetchUser = (accessToken, userId) => async (dispatch) => {
   const request = new Request(`${baseUrl}/v1/users/${userId}.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -38,7 +38,7 @@ export const fetchUser = (accessToken, userId) => async dispatch => {
   }
 };
 
-export const fetchUserPlaylistsFulfilled = playlists => ({
+export const fetchUserPlaylistsFulfilled = (playlists) => ({
   type: `${USER_PLAYLISTS_FETCH}_FULFILLED`,
   payload: playlists,
 });
@@ -47,13 +47,13 @@ export const fetchUserPlaylistsPending = () => ({
   type: `${USER_PLAYLISTS_FETCH}_PENDING`,
 });
 
-export const fetchUserPlaylistsRejected = error => ({
+export const fetchUserPlaylistsRejected = (error) => ({
   type: `${USER_PLAYLISTS_FETCH}_REJECTED`,
   payload: error,
   error: true,
 });
 
-export const fetchUserPlaylists = (accessToken, userId) => async dispatch => {
+export const fetchUserPlaylists = (accessToken, userId) => async (dispatch) => {
   const request = new Request(`${baseUrl}/v1/users/${userId}/playlists.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -72,7 +72,7 @@ export const fetchUserPlaylists = (accessToken, userId) => async dispatch => {
   }
 };
 
-export const fetchUserPlaylistFulfilled = playlist => ({
+export const fetchUserPlaylistFulfilled = (playlist) => ({
   type: `${USER_PLAYLIST_FETCH}_FULFILLED`,
   payload: playlist,
 });
@@ -81,13 +81,13 @@ export const fetchUserPlaylistPending = () => ({
   type: `${USER_PLAYLIST_FETCH}_PENDING`,
 });
 
-export const fetchUserPlaylistRejected = error => ({
+export const fetchUserPlaylistRejected = (error) => ({
   type: `${USER_PLAYLIST_FETCH}_REJECTED`,
   payload: error,
   error: true,
 });
 
-export const fetchUserPlaylist = (accessToken, userId, playlistId) => async dispatch => {
+export const fetchUserPlaylist = (accessToken, userId, playlistId) => async (dispatch) => {
   const request = new Request(`${baseUrl}/v1/users/${userId}/playlists/${playlistId}.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,

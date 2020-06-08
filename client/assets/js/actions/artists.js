@@ -9,7 +9,7 @@ import handleError from '../utilities/error';
 // const baseUrl = 'https://api.spotify.com';
 const baseUrl = 'http://localhost:8080/data';
 
-export const fetchArtistFulfilled = artist => ({
+export const fetchArtistFulfilled = (artist) => ({
   type: `${ARTIST_FETCH}_FULFILLED`,
   payload: artist,
 });
@@ -18,13 +18,13 @@ export const fetchArtistPending = () => ({
   type: `${ARTIST_FETCH}_PENDING`,
 });
 
-export const fetchArtistRejected = error => ({
+export const fetchArtistRejected = (error) => ({
   type: `${ARTIST_FETCH}_REJECTED`,
   payload: error,
   error: true,
 });
 
-export const fetchArtist = (accessToken, id) => async dispatch => {
+export const fetchArtist = (accessToken, id) => async (dispatch) => {
   const request = new Request(`${baseUrl}/v1/artists/${id}.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -43,7 +43,7 @@ export const fetchArtist = (accessToken, id) => async dispatch => {
   }
 };
 
-export const fetchArtistAlbumsFulfilled = albums => ({
+export const fetchArtistAlbumsFulfilled = (albums) => ({
   type: `${ARTIST_ALBUMS_FETCH}_FULFILLED`,
   payload: albums,
 });
@@ -52,13 +52,13 @@ export const fetchArtistAlbumsPending = () => ({
   type: `${ARTIST_ALBUMS_FETCH}_PENDING`,
 });
 
-export const fetchArtistAlbumsRejected = error => ({
+export const fetchArtistAlbumsRejected = (error) => ({
   type: `${ARTIST_ALBUMS_FETCH}_REJECTED`,
   payload: error,
   error: true,
 });
 
-export const fetchArtistAlbums = (accessToken, id) => async dispatch => {
+export const fetchArtistAlbums = (accessToken, id) => async (dispatch) => {
   const request = new Request(`${baseUrl}/v1/artists/${id}/albums.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -77,7 +77,7 @@ export const fetchArtistAlbums = (accessToken, id) => async dispatch => {
   }
 };
 
-export const fetchArtistRelatedArtistsFulfilled = artists => ({
+export const fetchArtistRelatedArtistsFulfilled = (artists) => ({
   type: `${ARTIST_RELATED_ARTISTS_FETCH}_FULFILLED`,
   payload: artists,
 });
@@ -86,13 +86,13 @@ export const fetchArtistRelatedArtistsPending = () => ({
   type: `${ARTIST_RELATED_ARTISTS_FETCH}_PENDING`,
 });
 
-export const fetchArtistRelatedArtistsRejected = error => ({
+export const fetchArtistRelatedArtistsRejected = (error) => ({
   type: `${ARTIST_RELATED_ARTISTS_FETCH}_REJECTED`,
   payoad: error,
   error: true,
 });
 
-export const fetchArtistRelatedArtists = (accessToken, id) => async dispatch => {
+export const fetchArtistRelatedArtists = (accessToken, id) => async (dispatch) => {
   const request = new Request(`${baseUrl}/v1/artists/${id}/related-artists.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,
@@ -111,7 +111,7 @@ export const fetchArtistRelatedArtists = (accessToken, id) => async dispatch => 
   }
 };
 
-export const fetchArtistTopTracksFulfilled = tracks => ({
+export const fetchArtistTopTracksFulfilled = (tracks) => ({
   type: `${ARTIST_TOP_TRACKS_FETCH}_FULFILLED`,
   payload: tracks,
 });
@@ -120,13 +120,13 @@ export const fetchArtistTopTracksPending = () => ({
   type: `${ARTIST_TOP_TRACKS_FETCH}_PENDING`,
 });
 
-export const fetchArtistTopTracksRejected = error => ({
+export const fetchArtistTopTracksRejected = (error) => ({
   type: `${ARTIST_TOP_TRACKS_FETCH}_REJECTED`,
   payload: error,
   error: true,
 });
 
-export const fetchArtistTopTracks = (accessToken, id) => async dispatch => {
+export const fetchArtistTopTracks = (accessToken, id) => async (dispatch) => {
   const request = new Request(`${baseUrl}/v1/artists/${id}/top-tracks.json`, {
     headers: new Headers({
       Authorization: `Bearer ${accessToken}`,

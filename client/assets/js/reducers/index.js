@@ -6,7 +6,7 @@ import browse from './browse';
 import me from './me';
 import users from './users';
 
-const reducers = history =>
+const reducers = (history) =>
   combineReducers({
     albums,
     artists,

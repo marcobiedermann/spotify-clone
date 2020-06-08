@@ -61,14 +61,14 @@ export class NewReleasesPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   ...state,
   albums: state.browse.albums,
   error: state.browse.error,
   isLoading: state.browse.isLoading,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchNewReleases,
@@ -76,7 +76,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(NewReleasesPage);
+export default connect(mapStateToProps, mapDispatchToProps)(NewReleasesPage);

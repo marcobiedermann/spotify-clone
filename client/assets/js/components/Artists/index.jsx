@@ -17,7 +17,7 @@ class Artists extends PureComponent {
 
     return (
       <ul className={styles.artists}>
-        {artists.map(artist => (
+        {artists.map((artist) => (
           <li key={artist.id}>
             <Artist {...artist} />
           </li>

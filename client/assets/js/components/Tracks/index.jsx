@@ -21,7 +21,7 @@ class Tracks extends PureComponent {
     return (
       <table>
         <tbody>
-          {tracks.map(track => (
+          {tracks.map((track) => (
             <Track key={track.id} {...track} />
           ))}
         </tbody>

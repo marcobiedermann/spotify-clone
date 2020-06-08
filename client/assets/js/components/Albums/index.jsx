@@ -21,7 +21,7 @@ class Albums extends PureComponent {
 
     return (
       <ul className={styles.albums}>
-        {albums.map(album => (
+        {albums.map((album) => (
           <li key={album.id}>
             <Album {...album} />
           </li>
