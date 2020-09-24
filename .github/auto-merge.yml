@@ -5,4 +5,4 @@ mergeMethod: rebase
 reportStatus: true
 
 requiredLabels:
-- dependencies
+  - dependencies

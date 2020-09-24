@@ -1,0 +1,181 @@
+import {
+  CATEGORIES_FETCH,
+  CATEGORY_FETCH,
+  CATEGORY_PLAYLISTS_FETCH,
+  FEATURED_PLAYLISTS_FETCH,
+  NEW_RELEASES_FETCH,
+} from '../constants/action-types';
+import handleError from '../utilities/error';
+
+const baseUrl = 'https://api.spotify.com';
+
+export const fetchCategoryFulfilled = (category) => ({
+  type: `${CATEGORY_FETCH}_FULFILLED`,
+  payload: category,
+});
+
+export const fetchCategoryPending = () => ({
+  type: `${CATEGORY_FETCH}_PENDING`,
+});
+
+export const fetchCategoryRejected = (error) => ({
+  type: `${CATEGORY_FETCH}_REJECTED`,
+  payload: error,
+  error: true,
+});
+
+export const fetchCategory = (accessToken, categoryId) => async (dispatch) => {
+  const request = new Request(`${baseUrl}/v1/browse/categories/${categoryId}`, {
+    headers: new Headers({
+      Authorization: `Bearer ${accessToken}`,
+    }),
+  });
+
+  dispatch(fetchCategoryPending());
+
+  try {
+    const response = await fetch(request);
+    const result = await handleError(response).json();
+
+    dispatch(fetchCategoryFulfilled(result));
+  } catch (error) {
+    dispatch(fetchCategoryRejected(new Error(error)));
+  }
+};
+
+export const fetchCategoriesFulfilled = (categories) => ({
+  type: `${CATEGORIES_FETCH}_FULFILLED`,
+  payload: categories,
+});
+
+export const fetchCategoriesPending = () => ({
+  type: `${CATEGORIES_FETCH}_PENDING`,
+});
+
+export const fetchCategoriesRejected = (error) => ({
+  type: `${CATEGORIES_FETCH}_REJECTED`,
+  payload: error,
+  error: true,
+});
+
+export const fetchCategories = (accessToken) => async (dispatch) => {
+  const request = new Request(`${baseUrl}/v1/browse/categories`, {
+    headers: new Headers({
+      Authorization: `Bearer ${accessToken}`,
+    }),
+  });
+
+  dispatch(fetchCategoriesPending());
+
+  try {
+    const response = await fetch(request);
+    const result = await handleError(response).json();
+
+    dispatch(fetchCategoriesFulfilled(result.categories));
+  } catch (error) {
+    dispatch(fetchCategoriesRejected(new Error(error)));
+  }
+};
+
+export const fetchFeaturedPlaylistsFulfilled = (playlists) => ({
+  type: `${FEATURED_PLAYLISTS_FETCH}_FULFILLED`,
+  payload: playlists,
+});
+
+export const fetchFeaturedPlaylistsPending = () => ({
+  type: `${FEATURED_PLAYLISTS_FETCH}_PENDING`,
+});
+
+export const fetchFeaturedPlaylistsRejected = (error) => ({
+  type: `${FEATURED_PLAYLISTS_FETCH}_REJECTED`,
+  payload: error,
+  error: true,
+});
+
+export const fetchFeaturedPlaylists = () => async (dispatch) => {
+  const accessToken = '';
+  const request = new Request(`${baseUrl}/v1/browse/featured-playlists`, {
+    headers: new Headers({
+      Authorization: `Bearer ${accessToken}`,
+    }),
+  });
+
+  dispatch(fetchFeaturedPlaylistsPending());
+
+  try {
+    const response = await fetch(request);
+    const result = await handleError(response).json();
+
+    dispatch(fetchFeaturedPlaylistsFulfilled(result.playlists));
+  } catch (error) {
+    dispatch(fetchFeaturedPlaylistsRejected(new Error(error)));
+  }
+};
+
+export const fetchNewReleasesFulfilled = (albums) => ({
+  type: `${NEW_RELEASES_FETCH}_FULFILLED`,
+  payload: albums,
+});
+
+export const fetchNewReleasesPending = () => ({
+  type: `${NEW_RELEASES_FETCH}_PENDING`,
+});
+
+export const fetchNewReleasesRejected = (error) => ({
+  type: `${NEW_RELEASES_FETCH}_REJECTED`,
+  payload: error,
+  error: true,
+});
+
+export const fetchNewReleases = (accessToken) => async (dispatch) => {
+  const request = new Request(`${baseUrl}/v1/browse/new-releases`, {
+    headers: new Headers({
+      Authorization: `Bearer ${accessToken}`,
+    }),
+  });
+
+  dispatch(fetchNewReleasesPending());
+
+  try {
+    const response = await fetch(request);
+    const result = await handleError(response).json();
+
+    dispatch(fetchNewReleasesFulfilled(result.albums));
+  } catch (error) {
+    dispatch(fetchNewReleasesRejected(new Error(error)));
+  }
+};
+
+export const fetchCategoryPlaylistsFulfilled = (playlists) => ({
+  type: `${CATEGORY_PLAYLISTS_FETCH}_FULFILLED`,
+  payload: playlists,
+});
+
+export const fetchCategoryPlaylistsPending = () => ({
+  type: `${CATEGORY_PLAYLISTS_FETCH}_PENDING`,
+});
+
+export const fetchCategoryPlaylistsRejected = (error) => ({
+  type: `${CATEGORY_PLAYLISTS_FETCH}_REJECTED`,
+  payload: error,
+  error: true,
+});
+
+export const fetchCategoryPlaylists = (accessToken, categoryId) => async (dispatch) => {
+  const request = new Request(`${baseUrl}/v1/browse/categories/${categoryId}/playlists`, {
+    headers: new Headers({
+      Authorization: `Bearer ${accessToken}`,
+    }),
+  });
+
+  dispatch(fetchCategoryPlaylistsPending());
+
+  try {
+    const response = await fetch(request);
+    const result = await handleError(response).json();
+
+    dispatch(fetchCategoryPlaylistsFulfilled(result.playlists));
+  } catch (error) {
+    dispatch(fetchCategoryPlaylistsRejected(new Error(error)));
+  }
+};

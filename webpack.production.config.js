@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -56,7 +56,7 @@ module.exports = merge(baseConfig, {
     },
   },
   plugins: [
-    new CleanWebpackPlugin('server/public'),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].[contenthash:8].css',
     }),
