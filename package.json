@@ -10,7 +10,7 @@
     "develop": "webpack-dev-server --config webpack.development.config.js",
     "format": "prettier --write .",
     "lint:css": "stylelint '**/*.css'",
-    "lint:js": "eslint '**/*.{js,jsx}'",
+    "lint:js": "eslint '**/*.{ts,tsx}'",
     "lint": "npm run lint:css && npm run lint:js",
     "test": "jest"
   },

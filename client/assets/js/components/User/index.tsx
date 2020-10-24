@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import React, { FC } from 'react';
 import Image, { ImageProps } from '../Image';
 
