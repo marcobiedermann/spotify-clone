@@ -71,12 +71,10 @@ npm run lint:js
 
 Run tests using [Jest](https://jestjs.io/) testing framework.
 
-``sh
+```sh
 npm test
-
 ```
 
 ## License
 
 [MIT](LICENSE) © [Marco Biedermann](https://github.com/marcobiedermann)
-```

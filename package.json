@@ -1,7 +1,7 @@
 {
   "name": "spotify-clone",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple Spotify clone using their Web API.",
   "main": "client/index.html",
   "private": true,
   "scripts": {
