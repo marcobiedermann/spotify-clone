@@ -29,14 +29,6 @@ module.exports = merge(baseConfig, {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              config: {
-                ctx: {
-                  cssnano: {},
-                  postcssPresetEnv: {
-                    stage: 0,
-                  },
-                },
-              },
             },
           },
         ],

@@ -32,13 +32,6 @@ module.exports = merge(baseConfig, {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
-              config: {
-                ctx: {
-                  postcssPresetEnv: {
-                    stage: 0,
-                  },
-                },
-              },
             },
           },
         ],
