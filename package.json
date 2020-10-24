@@ -18,9 +18,16 @@
     "type": "git",
     "url": "git+https://github.com/marcobiedermann/spotify-clone.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "api",
+    "clone",
+    "front-end",
+    "music",
+    "spotify",
+    "ui"
+  ],
+  "author": "Marco Biedermann",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/marcobiedermann/spotify-clone/issues"
   },
