@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
 import Playlist, { PlaylistProps } from '../Playlist';
-import styles from './style.css';
+import styles from './style.module.css';
 
 export interface PlaylistsProps {
   className?: string;

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
 import Artist, { ArtistProps } from '../Artist';
-import styles from './style.css';
+import styles from './style.module.css';
 
 export interface ArtistsProps {
   artists: ArtistProps[];

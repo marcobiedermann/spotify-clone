@@ -10,7 +10,7 @@ import Loader from '../Loader';
 import Main from '../Main';
 import Navigation from '../Navigation';
 import Search from '../Search';
-import styles from './style.css';
+import styles from './style.module.css';
 
 interface ExternalUrls {
   spotify: string;

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
 import Category, { CategoryProps } from '../Category';
-import styles from './style.css';
+import styles from './style.module.css';
 
 export interface CategoriesProps {
   className?: string;

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import Image, { ImageProps } from '../Image';
-import styles from './style.css';
+import styles from './style.module.css';
 
 export interface MeProps {
   className?: string;

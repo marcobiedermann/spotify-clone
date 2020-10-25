@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
 import Album, { AlbumProps } from '../Album';
-import styles from './style.css';
+import styles from './style.module.css';
 
 export interface AlbumsProps {
   className?: string;
