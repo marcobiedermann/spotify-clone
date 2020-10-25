@@ -10,10 +10,38 @@ interface Params {
   artistId: string;
 }
 
+interface ExternalUrls {
+  spotify: string;
+}
+
+interface Followers {
+  href: null;
+  total: number;
+}
+
+interface Image {
+  height: number;
+  url: string;
+  width: number;
+}
+
+export interface ArtistData {
+  external_urls: ExternalUrls;
+  followers: Followers;
+  genres: string[];
+  href: string;
+  id: string;
+  images: Image[];
+  name: string;
+  popularity: number;
+  type: string;
+  uri: string;
+}
+
 const ArtistPage: FC<RouteChildrenProps> = () => {
   const { pathname } = useLocation();
   const { artistId } = useParams<Params>();
-  const { data, error } = useSWR(`/v1/artists/${artistId}`);
+  const { data, error } = useSWR<ArtistData>(`/v1/artists/${artistId}`);
 
   if (error) {
     return <Error>{error.message}</Error>;

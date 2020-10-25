@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteChildrenProps, useParams } from 'react-router-dom';
@@ -12,9 +10,35 @@ interface Params {
   userId: string;
 }
 
+interface ExternalUrls {
+  spotify: string;
+}
+
+interface Followers {
+  href: null;
+  total: number;
+}
+
+interface Image {
+  height: null;
+  url: string;
+  width: null;
+}
+
+interface UserData {
+  display_name: string;
+  external_urls: ExternalUrls;
+  followers: Followers;
+  href: string;
+  id: string;
+  images: Image[];
+  type: string;
+  uri: string;
+}
+
 const UserPage: FC<RouteChildrenProps> = () => {
   const { userId } = useParams<Params>();
-  const { data, error } = useSWR(`/v1/users/${userId}`);
+  const { data, error } = useSWR<UserData>(`/v1/users/${userId}`);
 
   if (error) {
     return <Error>{error.message}</Error>;

@@ -10,9 +10,22 @@ interface Params {
   categoryId: string;
 }
 
+interface Icon {
+  height: number;
+  url: string;
+  width: number;
+}
+
+interface PlaylistData {
+  href: string;
+  icons: Icon[];
+  id: string;
+  name: string;
+}
+
 const CategoryPage: FC<RouteChildrenProps> = () => {
   const { categoryId } = useParams<Params>();
-  const { data, error } = useSWR(`/v1/browse/categories/${categoryId}`);
+  const { data, error } = useSWR<PlaylistData>(`/v1/browse/categories/${categoryId}`);
 
   if (error) {
     return <Error>{error.message}</Error>;

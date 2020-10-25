@@ -10,11 +10,60 @@ interface Params {
   userId: string;
 }
 
+interface ExternalUrls {
+  spotify: string;
+}
+
+interface Image {
+  height: number | null;
+  url: string;
+  width: number | null;
+}
+
+interface Item {
+  collaborative: boolean;
+  description: string;
+  external_urls: ExternalUrls;
+  href: string;
+  id: string;
+  images: Image[];
+  name: string;
+  owner: Owner;
+  primary_color: null;
+  public: boolean;
+  snapshot_id: string;
+  tracks: Tracks;
+  type: string;
+  uri: string;
+}
+
+interface Owner {
+  display_name: string;
+  external_urls: ExternalUrls;
+  href: string;
+  id: string;
+  type: string;
+  uri: string;
+}
+
+interface Tracks {
+  href: string;
+  total: number;
+}
+
+interface PlaylistsData {
+  href: string;
+  items: Item[];
+  limit: number;
+  next: string;
+  offset: number;
+  previous: null;
+  total: number;
+}
+
 const PlaylistsPage: FC<RouteChildrenProps> = () => {
   const { userId } = useParams<Params>();
-  const { data, error } = useSWR(`/v1/users/${userId}/playlists`);
-
-  console.log({ data });
+  const { data, error } = useSWR<PlaylistsData>(`/v1/users/${userId}/playlists`);
 
   if (error) {
     return <Error>{error.message}</Error>;

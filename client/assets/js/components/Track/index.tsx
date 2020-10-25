@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-
 import format from 'date-fns/format';
 import React, { FC } from 'react';
 
