@@ -1,7 +1,5 @@
-import AlbumsPage from '../pages/Albums';
 import AlbumPage from '../pages/Albums/Album';
 import TracksPage from '../pages/Albums/Album/Tracks';
-import ArtistsPage from '../pages/Artists';
 import ArtistPage from '../pages/Artists/Artist';
 import ArtistAlbumsPage from '../pages/Artists/Artist/Albums';
 import ArtistRelatedArtistsPage from '../pages/Artists/Artist/RelatedArtists';
@@ -12,68 +10,39 @@ import CategoryPage from '../pages/Browse/Categories/Category';
 import CategoryPlaylistsPage from '../pages/Browse/Categories/Category/Playlists';
 import FeaturedPlaylistsPage from '../pages/Browse/FeaturedPlaylists';
 import NewReleasesPage from '../pages/Browse/NewReleases';
-import IndexPage from '../pages/Index';
 import LoginPage from '../pages/Login';
 import MePage from '../pages/Me';
 import PlaylistsPage from '../pages/Me/Playlists';
 import PlaylistPage from '../pages/Playlists/Playlist';
-import UsersPage from '../pages/Users';
 import UserPage from '../pages/Users/User';
 import UserPlaylistsPage from '../pages/Users/User/Playlists';
 
-export const ARTISTS_ARTIST_ALBUMS = '/artists/:artist_id/albums';
-export const ARTISTS_ARTIST_RELATED_ARTISTS = '/artists/:artist_id/related-artists';
-export const ARTISTS_ARTIST_TOP_TRACKS = '/artists/:artist_id/top-tracks';
-
-export const BROWSE_CATEGORIES_CATEGORY = '/browse/categories/:category_id';
-export const BROWSE_CATEGORIES_CATEGORY_PLAYLISTS = '/browse/categories/:category_id/playlists';
-
-export const USERS_USER_PLAYLISTS = '/users/:user_id/playlists';
-export const USERS_USER_PLAYLISTS_PLAYLIST = '/users/:user_id/playlists/:playlist_id';
-
 const routes = [
   {
-    component: IndexPage,
-    exact: true,
-    path: '/',
-  },
-  {
-    component: AlbumsPage,
-    path: '/albums',
+    component: AlbumPage,
+    path: '/albums/:albumId',
     routes: [
       {
-        component: AlbumPage,
-        path: '/albums/:albumId',
-        routes: [
-          {
-            component: TracksPage,
-            path: '/albums/:albumId/tracks',
-          },
-        ],
+        component: TracksPage,
+        path: '/albums/:albumId/tracks',
       },
     ],
   },
   {
-    component: ArtistsPage,
-    path: '/artists',
+    component: ArtistPage,
+    path: '/artists/:artistId',
     routes: [
       {
-        component: ArtistPage,
-        path: '/artists/:artistId',
-        routes: [
-          {
-            component: ArtistAlbumsPage,
-            path: '/artists/:artistId/albums',
-          },
-          {
-            component: ArtistRelatedArtistsPage,
-            path: '/artists/:artistId/related-artists',
-          },
-          {
-            component: ArtistTopTracksPage,
-            path: '/artists/:artistId/top-tracks',
-          },
-        ],
+        component: ArtistAlbumsPage,
+        path: '/artists/:artistId/albums',
+      },
+      {
+        component: ArtistRelatedArtistsPage,
+        path: '/artists/:artistId/related-artists',
+      },
+      {
+        component: ArtistTopTracksPage,
+        path: '/artists/:artistId/top-tracks',
       },
     ],
   },
@@ -108,10 +77,6 @@ const routes = [
     ],
   },
   {
-    component: AlbumsPage,
-    path: '/albums',
-  },
-  {
     component: LoginPage,
     path: '/login',
   },
@@ -130,18 +95,12 @@ const routes = [
     path: '/playlists/:playlistId',
   },
   {
-    component: UsersPage,
-    path: '/users',
+    component: UserPage,
+    path: '/users/:userId',
     routes: [
       {
-        component: UserPage,
-        path: '/users/:userId',
-        routes: [
-          {
-            component: UserPlaylistsPage,
-            path: '/users/:userId/playlists',
-          },
-        ],
+        component: UserPlaylistsPage,
+        path: '/users/:userId/playlists',
       },
     ],
   },
