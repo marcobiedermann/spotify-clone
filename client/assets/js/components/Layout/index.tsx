@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { fetchMe, fetchMePlaylists } from '../../actions/me';
+import useSWR from 'swr';
 import Aside from '../Aside';
 import Content from '../Content';
+import Error from '../Error';
 import Footer from '../Footer';
 import Header from '../Header';
+import Loader from '../Loader';
 import Main from '../Main';
 import { MeProps } from '../Me';
 import Navigation from '../Navigation';
@@ -22,59 +22,42 @@ export interface LayoutProps {
   playlists: PlaylistsProps;
 }
 
-export class Layout extends Component<any> {
-  componentDidMount() {
-    const { accessToken, fetchMe, fetchMePlaylists } = this.props;
+const Layout: FC = (props) => {
+  const { children } = props;
+  const { data, error } = useSWR('/v1/me/playlists');
 
-    fetchMe(accessToken);
-    fetchMePlaylists(accessToken);
+  if (error) {
+    return <Error>{error.message}</Error>;
   }
 
-  render() {
-    const { children, me, playlists } = this.props;
-
-    return (
-      <div className={styles.layout}>
-        <Header>
-          <Search onSubmit={() => console.log('Search')} />
-          {/* <Me {...me} /> */}
-        </Header>
-        <Content>
-          <Main>{children}</Main>
-          <Aside>
-            <Navigation />
-            {playlists.items && (
-              <ul>
-                {playlists.items.map((playlist) => (
-                  <li key={playlist.id}>
-                    <Link to={`/users/${playlist.owner.id}/playlists/${playlist.id}`}>
-                      {playlist.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </Aside>
-        </Content>
-        <Footer>Footer</Footer>
-      </div>
-    );
+  if (!data) {
+    return <Loader />;
   }
-}
 
-const mapStateToProps = (state) => ({
-  ...state,
-  me: state.me.me,
-  playlists: state.me.playlists,
-});
+  const { items } = data;
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchMe,
-      fetchMePlaylists,
-    },
-    dispatch,
+  return (
+    <div className={styles.layout}>
+      <Header>
+        <Search onSubmit={() => console.log('Search')} />
+        {/* <Me {...me} /> */}
+      </Header>
+      <Content>
+        <Main>{children}</Main>
+        <Aside>
+          <Navigation />
+          <ul>
+            {items.map((item) => (
+              <li key={item.id}>
+                <Link to={`/users/${item.owner.id}/playlists/${item.id}`}>{item.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </Aside>
+      </Content>
+      <Footer>Footer</Footer>
+    </div>
   );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+export default Layout;

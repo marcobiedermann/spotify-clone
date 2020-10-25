@@ -1,66 +1,37 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
-import { RouteChildrenProps } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { fetchArtistRelatedArtists } from '../../../../actions/artists';
-import { ArtistProps } from '../../../../components/Artist';
+import { RouteChildrenProps, useParams } from 'react-router-dom';
+import useSWR from 'swr';
 import Artists from '../../../../components/Artists';
 import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
 
-export interface RelatedArtistsPageProps extends RouteChildrenProps {
-  accessToken: string;
-  artists: ArtistProps[];
-  error: {
-    message: string;
-  };
-  fetchArtistRelatedArtists: any;
-  isLoading: boolean;
+interface Params {
+  artistId: string;
 }
 
-export class RelatedArtistsPage extends Component<RelatedArtistsPageProps> {
-  componentDidMount() {
-    const { accessToken, fetchArtistRelatedArtists } = this.props;
+const RelatedArtistsPage: FC<RouteChildrenProps> = () => {
+  const { artistId } = useParams<Params>();
+  const { data, error } = useSWR(`/v1/artists/${artistId}/related-artists`);
 
-    fetchArtistRelatedArtists(accessToken, '20JZFwl6HVl6yg8a4H3ZqK');
+  if (error) {
+    return <Error>{error.message}</Error>;
   }
 
-  render() {
-    const { artists, error, isLoading } = this.props;
-
-    if (error) {
-      return <Error>{error.message}</Error>;
-    }
-
-    if (isLoading) {
-      return <Loader />;
-    }
-
-    return (
-      <>
-        <Helmet>
-          <title>Related Artists</title>
-        </Helmet>
-        <Artists artists={artists} />
-      </>
-    );
+  if (!data) {
+    return <Loader />;
   }
-}
 
-const mapStateToProps = (state) => ({
-  ...state,
-  artists: state.artists.artists,
-  error: state.artists.error,
-  isLoading: state.artists.isLoading,
-});
+  const { artists } = data;
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchArtistRelatedArtists,
-    },
-    dispatch,
+  return (
+    <>
+      <Helmet>
+        <title>Related Artists</title>
+      </Helmet>
+      <Artists artists={artists} />
+    </>
   );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(RelatedArtistsPage);
+export default RelatedArtistsPage;

@@ -1,65 +1,32 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
 import { RouteChildrenProps } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { fetchCategories } from '../../../actions/browse';
-import Categories, { CategoriesProps } from '../../../components/Categories';
+import useSWR from 'swr';
+import Categories from '../../../components/Categories';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
-export interface CategoriesPageProps extends RouteChildrenProps {
-  accessToken: string;
-  categories: CategoriesProps;
-  error: {
-    message: string;
-  };
-  fetchCategories: any;
-  isLoading: boolean;
-}
+const CategoriesPage: FC<RouteChildrenProps> = () => {
+  const { data, error } = useSWR('/v1/browse/categories');
 
-export class CategoriesPage extends Component<CategoriesPageProps> {
-  componentDidMount() {
-    const { accessToken, fetchCategories } = this.props;
-
-    fetchCategories(accessToken);
+  if (error) {
+    return <Error>{error.message}</Error>;
   }
 
-  render() {
-    const { categories, error, isLoading } = this.props;
-
-    if (error) {
-      return <Error>{error.message}</Error>;
-    }
-
-    if (isLoading) {
-      return <Loader />;
-    }
-
-    return (
-      <>
-        <Helmet>
-          <title>Categories</title>
-        </Helmet>
-        <Categories {...categories} />
-      </>
-    );
+  if (!data) {
+    return <Loader />;
   }
-}
 
-const mapStateToProps = (state) => ({
-  ...state,
-  categories: state.browse.categories,
-  error: state.browse.error,
-  isLoading: state.browse.isLoading,
-});
+  const { categories } = data;
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchCategories,
-    },
-    dispatch,
+  return (
+    <>
+      <Helmet>
+        <title>Categories</title>
+      </Helmet>
+      <Categories items={categories.items} />
+    </>
   );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CategoriesPage);
+export default CategoriesPage;

@@ -1,66 +1,37 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
 import { RouteChildrenProps, useParams } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { fetchAlbum } from '../../../actions/albums';
-import Album, { AlbumProps } from '../../../components/Album';
+import useSWR from 'swr';
+import Album from '../../../components/Album';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
-export interface AlbumPageProps extends RouteChildrenProps {
-  accessToken: string;
-  album: AlbumProps;
-  error: {
-    message: string;
-  };
-  fetchAlbum: any;
-  isLoading: boolean;
+interface Params {
+  albumId: string;
 }
 
-export class AlbumPage extends Component<AlbumPageProps> {
-  componentDidMount() {
-    const { accessToken, fetchAlbum } = this.props;
-    const { albumId } = useParams();
+const AlbumPage: FC<RouteChildrenProps> = () => {
+  const { albumId } = useParams<Params>();
+  const { data, error } = useSWR(`/v1/albums/${albumId}`);
 
-    fetchAlbum(accessToken, albumId);
+  if (error) {
+    return <Error>{error.message}</Error>;
   }
 
-  render() {
-    const { album, error, isLoading } = this.props;
-
-    if (error) {
-      return <Error>{error.message}</Error>;
-    }
-
-    if (isLoading) {
-      return <Loader />;
-    }
-
-    return (
-      <>
-        <Helmet>
-          <title>{album.name}</title>
-        </Helmet>
-        <Album {...album} />
-      </>
-    );
+  if (!data) {
+    return <Loader />;
   }
-}
 
-const mapStateToProps = (state) => ({
-  ...state,
-  album: state.albums.album,
-  error: state.albums.error,
-  isLoading: state.albums.isLoading,
-});
+  const { name } = data;
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchAlbum,
-    },
-    dispatch,
+  return (
+    <>
+      <Helmet>
+        <title>{name}</title>
+      </Helmet>
+      <Album {...data} />
+    </>
   );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(AlbumPage);
+export default AlbumPage;

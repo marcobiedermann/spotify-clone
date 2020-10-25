@@ -1,65 +1,39 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
-import { RouteChildrenProps } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { fetchUserPlaylists } from '../../../../actions/users';
+import { RouteChildrenProps, useParams } from 'react-router-dom';
+import useSWR from 'swr';
 import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
-import Playlists, { PlaylistsProps } from '../../../../components/Playlists';
+import Playlists from '../../../../components/Playlists';
 
-export interface PlaylistsPageProps extends RouteChildrenProps {
-  accessToken: string;
-  error: {
-    message: string;
-  };
-  fetchUserPlaylists: any;
-  isLoading: boolean;
-  playlists: PlaylistsProps;
+interface Params {
+  userId: string;
 }
 
-export class PlaylistsPage extends Component<PlaylistsPageProps> {
-  componentDidMount() {
-    const { accessToken, fetchUserPlaylists } = this.props;
+const PlaylistsPage: FC<RouteChildrenProps> = () => {
+  const { userId } = useParams<Params>();
+  const { data, error } = useSWR(`/v1/users/${userId}/playlists`);
 
-    fetchUserPlaylists(accessToken, '11168662039');
+  console.log({ data });
+
+  if (error) {
+    return <Error>{error.message}</Error>;
   }
 
-  render() {
-    const { error, isLoading, playlists } = this.props;
-
-    if (error) {
-      return <Error>{error.message}</Error>;
-    }
-
-    if (isLoading) {
-      return <Loader />;
-    }
-
-    return (
-      <>
-        <Helmet>
-          <title>Playlists</title>
-        </Helmet>
-        <Playlists {...playlists} />
-      </>
-    );
+  if (!data) {
+    return <Loader />;
   }
-}
 
-const mapStateToProps = (state) => ({
-  ...state,
-  error: state.users.error,
-  isLoading: state.users.isLoading,
-  playlists: state.users.playlists,
-});
+  const { items } = data;
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchUserPlaylists,
-    },
-    dispatch,
+  return (
+    <>
+      <Helmet>
+        <title>Playlists</title>
+      </Helmet>
+      <Playlists items={items} />
+    </>
   );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlaylistsPage);
+export default PlaylistsPage;

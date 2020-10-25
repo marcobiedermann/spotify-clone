@@ -1,65 +1,37 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
-import { RouteChildrenProps } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { fetchCategoryPlaylists } from '../../../../../actions/browse';
+import { RouteChildrenProps, useParams } from 'react-router-dom';
+import useSWR from 'swr';
 import Error from '../../../../../components/Error';
 import Loader from '../../../../../components/Loader';
-import Playlists, { PlaylistsProps } from '../../../../../components/Playlists';
+import Playlists from '../../../../../components/Playlists';
 
-export interface PlaylistsPageProps extends RouteChildrenProps {
-  accessToken: string;
-  error: {
-    message: string;
-  };
-  fetchCategoryPlaylists: any;
-  isLoading: boolean;
-  playlists: PlaylistsProps;
+interface Params {
+  categoryId: string;
 }
 
-export class PlaylistsPage extends Component<PlaylistsPageProps> {
-  componentDidMount() {
-    const { accessToken, fetchCategoryPlaylists } = this.props;
+const PlaylistsPage: FC<RouteChildrenProps> = () => {
+  const { categoryId } = useParams<Params>();
+  const { data, error } = useSWR(`/v1/browse/categories/${categoryId}/playlists`);
 
-    fetchCategoryPlaylists(accessToken, 'dinner');
+  if (error) {
+    return <Error>{error.message}</Error>;
   }
 
-  render() {
-    const { error, isLoading, playlists } = this.props;
-
-    if (error) {
-      return <Error>{error.message}</Error>;
-    }
-
-    if (isLoading) {
-      return <Loader />;
-    }
-
-    return (
-      <>
-        <Helmet>
-          <title>Playlists</title>
-        </Helmet>
-        <Playlists {...playlists} />
-      </>
-    );
+  if (!data) {
+    return <Loader />;
   }
-}
 
-const mapStateToProps = (state) => ({
-  ...state,
-  error: state.browse.error,
-  isLoading: state.browse.isLoading,
-  playlists: state.browse.playlists,
-});
+  const { playlists } = data;
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchCategoryPlaylists,
-    },
-    dispatch,
+  return (
+    <>
+      <Helmet>
+        <title>Playlists</title>
+      </Helmet>
+      <Playlists items={playlists.items} />
+    </>
   );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlaylistsPage);
+export default PlaylistsPage;

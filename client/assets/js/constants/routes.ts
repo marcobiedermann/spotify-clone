@@ -3,16 +3,23 @@ import AlbumPage from '../pages/Albums/Album';
 import TracksPage from '../pages/Albums/Album/Tracks';
 import ArtistsPage from '../pages/Artists';
 import ArtistPage from '../pages/Artists/Artist';
+import ArtistAlbumsPage from '../pages/Artists/Artist/Albums';
+import ArtistRelatedArtistsPage from '../pages/Artists/Artist/RelatedArtists';
+import ArtistTopTracksPage from '../pages/Artists/Artist/TopTracks';
 import BrowsePage from '../pages/Browse';
 import CategoriesPage from '../pages/Browse/Categories';
+import CategoryPage from '../pages/Browse/Categories/Category';
+import CategoryPlaylistsPage from '../pages/Browse/Categories/Category/Playlists';
 import FeaturedPlaylistsPage from '../pages/Browse/FeaturedPlaylists';
 import NewReleasesPage from '../pages/Browse/NewReleases';
 import IndexPage from '../pages/Index';
 import LoginPage from '../pages/Login';
 import MePage from '../pages/Me';
 import PlaylistsPage from '../pages/Me/Playlists';
+import PlaylistPage from '../pages/Playlists/Playlist';
 import UsersPage from '../pages/Users';
 import UserPage from '../pages/Users/User';
+import UserPlaylistsPage from '../pages/Users/User/Playlists';
 
 export const ARTISTS_ARTIST_ALBUMS = '/artists/:artist_id/albums';
 export const ARTISTS_ARTIST_RELATED_ARTISTS = '/artists/:artist_id/related-artists';
@@ -53,6 +60,20 @@ const routes = [
       {
         component: ArtistPage,
         path: '/artists/:artistId',
+        routes: [
+          {
+            component: ArtistAlbumsPage,
+            path: '/artists/:artistId/albums',
+          },
+          {
+            component: ArtistRelatedArtistsPage,
+            path: '/artists/:artistId/related-artists',
+          },
+          {
+            component: ArtistTopTracksPage,
+            path: '/artists/:artistId/top-tracks',
+          },
+        ],
       },
     ],
   },
@@ -63,6 +84,18 @@ const routes = [
       {
         component: CategoriesPage,
         path: '/browse/categories',
+        routes: [
+          {
+            component: CategoryPage,
+            path: '/browse/categories/:categoryId',
+            routes: [
+              {
+                component: CategoryPlaylistsPage,
+                path: '/browse/categories/:categoryId/playlists',
+              },
+            ],
+          },
+        ],
       },
       {
         component: FeaturedPlaylistsPage,
@@ -93,12 +126,22 @@ const routes = [
     ],
   },
   {
+    component: PlaylistPage,
+    path: '/playlists/:playlistId',
+  },
+  {
     component: UsersPage,
     path: '/users',
     routes: [
       {
         component: UserPage,
         path: '/users/:userId',
+        routes: [
+          {
+            component: UserPlaylistsPage,
+            path: '/users/:userId/playlists',
+          },
+        ],
       },
     ],
   },

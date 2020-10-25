@@ -1,65 +1,37 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
-import { RouteChildrenProps } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { fetchArtistAlbums } from '../../../../actions/artists';
-import Albums, { AlbumsProps } from '../../../../components/Albums';
+import { RouteChildrenProps, useParams } from 'react-router-dom';
+import useSWR from 'swr';
+import Albums from '../../../../components/Albums';
 import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
 
-export interface AlbumsPageProps extends RouteChildrenProps {
-  accessToken: string;
-  albums: AlbumsProps;
-  error: {
-    message: string;
-  };
-  fetchArtistAlbums: any;
-  isLoading: boolean;
+interface Params {
+  artistId: string;
 }
 
-export class AlbumsPage extends Component<AlbumsPageProps> {
-  componentDidMount() {
-    const { accessToken, fetchArtistAlbums } = this.props;
+const AlbumsPage: FC<RouteChildrenProps> = () => {
+  const { artistId } = useParams<Params>();
+  const { data, error } = useSWR(`/v1/artists/${artistId}/albums`);
 
-    fetchArtistAlbums(accessToken, '20JZFwl6HVl6yg8a4H3ZqK');
+  if (error) {
+    return <Error>{error.message}</Error>;
   }
 
-  render() {
-    const { albums, error, isLoading } = this.props;
-
-    if (error) {
-      return <Error>{error.message}</Error>;
-    }
-
-    if (isLoading) {
-      return <Loader />;
-    }
-
-    return (
-      <>
-        <Helmet>
-          <title>Albums</title>
-        </Helmet>
-        <Albums {...albums} />
-      </>
-    );
+  if (!data) {
+    return <Loader />;
   }
-}
 
-const mapStateToProps = (state) => ({
-  ...state,
-  albums: state.artists.albums,
-  error: state.artists.error,
-  isLoading: state.artists.isLoading,
-});
+  const { items } = data;
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchArtistAlbums,
-    },
-    dispatch,
+  return (
+    <>
+      <Helmet>
+        <title>Albums</title>
+      </Helmet>
+      <Albums items={items} />
+    </>
   );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(AlbumsPage);
+export default AlbumsPage;

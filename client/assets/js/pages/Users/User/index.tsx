@@ -1,72 +1,39 @@
 /* eslint-disable camelcase */
 
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
 import { RouteChildrenProps, useParams } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { fetchUser } from '../../../actions/users';
+import useSWR from 'swr';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 import User from '../../../components/User';
 
-export interface UserPageProps extends RouteChildrenProps {
-  accessToken: string;
-  error: {
-    message: string;
-  };
-  fetchUser: any;
-  isLoading: boolean;
-  me: {
-    me: {
-      display_name: string;
-    };
-  };
+interface Params {
+  userId: string;
 }
 
-export class UserPage extends Component<UserPageProps> {
-  componentDidMount() {
-    const { accessToken, fetchUser } = this.props;
-    const { userId } = useParams();
+const UserPage: FC<RouteChildrenProps> = () => {
+  const { userId } = useParams<Params>();
+  const { data, error } = useSWR(`/v1/users/${userId}`);
 
-    fetchUser(accessToken, userId);
+  if (error) {
+    return <Error>{error.message}</Error>;
   }
 
-  render() {
-    const { error, isLoading, me } = this.props;
-
-    if (error) {
-      return <Error>{error.message}</Error>;
-    }
-
-    if (isLoading) {
-      return <Loader />;
-    }
-
-    return (
-      <>
-        <Helmet>
-          <title>{me.me.display_name}</title>
-        </Helmet>
-        <User {...me.me} />
-      </>
-    );
+  if (!data) {
+    return <Loader />;
   }
-}
 
-const mapStateToProps = (state) => ({
-  ...state,
-  error: state.users.error,
-  isLoading: state.users.isLoading,
-  user: state.users.user,
-});
+  const { display_name } = data;
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchUser,
-    },
-    dispatch,
+  return (
+    <>
+      <Helmet>
+        <title>{display_name}</title>
+      </Helmet>
+      <User {...data} />
+    </>
   );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserPage);
+export default UserPage;

@@ -39,7 +39,6 @@
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.1.0",
-    "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.6",
     "@types/react-test-renderer": "^16.9.3",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
@@ -79,16 +78,11 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "classnames": "^2.2.6",
-    "connected-react-router": "^6.8.0",
     "date-fns": "^2.16.1",
-    "history": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
-    "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "swr": "^0.3.6"
   }
 }

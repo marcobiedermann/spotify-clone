@@ -1,65 +1,37 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
-import { RouteChildrenProps } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { fetchArtistTopTracks } from '../../../../actions/artists';
+import { RouteChildrenProps, useParams } from 'react-router-dom';
+import useSWR from 'swr';
 import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
-import Tracks, { TracksProps } from '../../../../components/Tracks';
+import Tracks from '../../../../components/Tracks';
 
-export interface TopTracksPageProps extends RouteChildrenProps {
-  accessToken: string;
-  fetchArtistTopTracks: any;
-  error: {
-    message: string;
-  };
-  isLoading: boolean;
-  tracks: TracksProps;
+interface Params {
+  artistId: string;
 }
 
-export class TopTracksPage extends Component<TopTracksPageProps> {
-  componentDidMount() {
-    const { accessToken, fetchArtistTopTracks } = this.props;
+const TopTracksPage: FC<RouteChildrenProps> = () => {
+  const { artistId } = useParams<Params>();
+  const { data, error } = useSWR(`/v1/artists/${artistId}/top-tracks?market=DE`);
 
-    fetchArtistTopTracks(accessToken, '20JZFwl6HVl6yg8a4H3ZqK');
+  if (error) {
+    return <Error>{error.message}</Error>;
   }
 
-  render() {
-    const { error, isLoading, tracks } = this.props;
-
-    if (error) {
-      return <Error>{error.message}</Error>;
-    }
-
-    if (isLoading) {
-      return <Loader />;
-    }
-
-    return (
-      <>
-        <Helmet>
-          <title>Top Tracks</title>
-        </Helmet>
-        <Tracks {...tracks} />
-      </>
-    );
+  if (!data) {
+    return <Loader />;
   }
-}
 
-const mapStateToProps = (state) => ({
-  ...state,
-  error: state.artists.error,
-  isLoading: state.artists.isLoading,
-  tracks: state.artists.tracks,
-});
+  const { tracks } = data;
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchArtistTopTracks,
-    },
-    dispatch,
+  return (
+    <>
+      <Helmet>
+        <title>Top Tracks</title>
+      </Helmet>
+      <Tracks tracks={tracks} />
+    </>
   );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(TopTracksPage);
+export default TopTracksPage;

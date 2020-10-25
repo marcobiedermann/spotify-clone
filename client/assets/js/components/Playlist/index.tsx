@@ -19,17 +19,17 @@ export interface PlaylistProps {
 }
 
 const Playlist: FC<PlaylistProps> = (props) => {
-  const { id, images, name, owner } = props;
+  const { id, images, name } = props;
 
   return (
     <figure>
       {images[0] && (
-        <Link to={`/users/${owner.id}/playlists/${id}`}>
+        <Link to={`/playlists/${id}`}>
           <Image {...images[0]} alt={name} />
         </Link>
       )}
       <figcaption>
-        <Link to={`/users/${owner.id}/playlists/${id}`}>{name}</Link>
+        <Link to={`/playlists/${id}`}>{name}</Link>
       </figcaption>
     </figure>
   );

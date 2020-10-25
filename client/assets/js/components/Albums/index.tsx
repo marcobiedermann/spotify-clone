@@ -9,7 +9,7 @@ export interface AlbumsProps {
 }
 
 const Albums: FC<AlbumsProps> = (props) => {
-  const { items, className } = props;
+  const { className, items } = props;
 
   return (
     <ul className={classNames(className, styles.albums)}>

@@ -1,7 +1,5 @@
-import { ConnectedRouter } from 'connected-react-router';
 import React, { FC } from 'react';
-import { Switch } from 'react-router-dom';
-import history from '../../router/history';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import AppRoute, { AppRouteProps } from '../AppRoute';
 import Layout from '../Layout';
 
@@ -13,7 +11,7 @@ const Router: FC<RouterProps> = (props) => {
   const { routes } = props;
 
   return (
-    <ConnectedRouter history={history}>
+    <BrowserRouter>
       <Layout>
         <Switch>
           {routes.map((route) => (
@@ -21,7 +19,7 @@ const Router: FC<RouterProps> = (props) => {
           ))}
         </Switch>
       </Layout>
-    </ConnectedRouter>
+    </BrowserRouter>
   );
 };
 

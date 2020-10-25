@@ -4,18 +4,16 @@ import Category, { CategoryProps } from '../Category';
 import styles from './style.css';
 
 export interface CategoriesProps {
-  items: {
-    categories: CategoryProps[];
-  };
   className?: string;
+  items: CategoryProps[];
 }
 
 const Categories: FC<CategoriesProps> = (props) => {
-  const { items, className } = props;
+  const { className, items } = props;
 
   return (
     <ul className={classNames(className, styles.categories)}>
-      {items.categories.map((category) => (
+      {items.map((category) => (
         <li key={category.id}>
           <Category {...category} />
         </li>

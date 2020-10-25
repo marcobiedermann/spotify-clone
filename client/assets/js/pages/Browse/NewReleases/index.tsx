@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
 import { RouteChildrenProps } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { fetchNewReleases } from '../../../actions/browse';
+import useSWR from 'swr';
 import Albums, { AlbumsProps } from '../../../components/Albums';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
@@ -18,48 +16,27 @@ export interface NewReleasesPageProps extends RouteChildrenProps {
   isLoading: boolean;
 }
 
-export class NewReleasesPage extends Component<NewReleasesPageProps> {
-  componentDidMount() {
-    const { accessToken, fetchNewReleases } = this.props;
+const NewReleasesPage: FC<RouteChildrenProps> = () => {
+  const { data, error } = useSWR('/v1/browse/new-releases');
 
-    fetchNewReleases(accessToken);
+  if (error) {
+    return <Error>{error.message}</Error>;
   }
 
-  render() {
-    const { albums, error, isLoading } = this.props;
-
-    if (error) {
-      return <Error>{error.message}</Error>;
-    }
-
-    if (isLoading) {
-      return <Loader />;
-    }
-
-    return (
-      <>
-        <Helmet>
-          <title>New Releases</title>
-        </Helmet>
-        <Albums {...albums} />
-      </>
-    );
+  if (!data) {
+    return <Loader />;
   }
-}
 
-const mapStateToProps = (state) => ({
-  ...state,
-  albums: state.browse.albums,
-  error: state.browse.error,
-  isLoading: state.browse.isLoading,
-});
+  const { albums } = data;
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchNewReleases,
-    },
-    dispatch,
+  return (
+    <>
+      <Helmet>
+        <title>New Releases</title>
+      </Helmet>
+      <Albums items={albums.items} />
+    </>
   );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewReleasesPage);
+export default NewReleasesPage;

@@ -1,77 +1,49 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
-import { Link, RouteChildrenProps, useParams } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { fetchArtist } from '../../../actions/artists';
-import Artist, { ArtistProps } from '../../../components/Artist';
+import { Link, RouteChildrenProps, useLocation, useParams } from 'react-router-dom';
+import useSWR from 'swr';
+import Artist from '../../../components/Artist';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
-export interface ArtistPageProps extends RouteChildrenProps {
-  accessToken: string;
-  artist: ArtistProps;
-  error: {
-    message: string;
-  };
-  fetchArtist: any;
-  isLoading: boolean;
+interface Params {
+  artistId: string;
 }
 
-export class ArtistPage extends Component<ArtistPageProps> {
-  componentDidMount() {
-    const { accessToken, fetchArtist } = this.props;
-    const { artistId } = useParams();
+const ArtistPage: FC<RouteChildrenProps> = () => {
+  const { pathname } = useLocation();
+  const { artistId } = useParams<Params>();
+  const { data, error } = useSWR(`/v1/artists/${artistId}`);
 
-    fetchArtist(accessToken, artistId);
+  if (error) {
+    return <Error>{error.message}</Error>;
   }
 
-  render() {
-    const { artist, error, isLoading, match } = this.props;
-
-    if (error) {
-      return <Error>{error.message}</Error>;
-    }
-
-    if (isLoading) {
-      return <Loader />;
-    }
-
-    return (
-      <>
-        <Helmet>
-          <title>{artist.name}</title>
-        </Helmet>
-        <Artist {...artist} />
-        <ul>
-          <li>
-            <Link to={`${match.url}/albums`}>Albums</Link>
-          </li>
-          <li>
-            <Link to={`${match.url}/related-artists`}>Related Artists</Link>
-          </li>
-          <li>
-            <Link to={`${match.url}/top-tracks`}>Top Tracks</Link>
-          </li>
-        </ul>
-      </>
-    );
+  if (!data) {
+    return <Loader />;
   }
-}
 
-const mapStateToProps = (state) => ({
-  ...state,
-  artist: state.artists.artist,
-  error: state.albums.error,
-  isLoading: state.artists.isLoading,
-});
+  const { name } = data;
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchArtist,
-    },
-    dispatch,
+  return (
+    <>
+      <Helmet>
+        <title>{name}</title>
+      </Helmet>
+      <Artist {...data} />
+      <ul>
+        <li>
+          <Link to={`${pathname}/albums`}>Albums</Link>
+        </li>
+        <li>
+          <Link to={`${pathname}/related-artists`}>Related Artists</Link>
+        </li>
+        <li>
+          <Link to={`${pathname}/top-tracks`}>Top Tracks</Link>
+        </li>
+      </ul>
+    </>
   );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArtistPage);
+export default ArtistPage;
