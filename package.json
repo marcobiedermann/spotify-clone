@@ -76,7 +76,6 @@
     "webpack-merge": "^5.2.0"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1",
     "classnames": "^2.2.6",
     "date-fns": "^2.16.1",
     "react": "^17.0.1",
