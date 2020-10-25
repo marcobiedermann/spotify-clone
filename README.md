@@ -47,6 +47,14 @@ Format code using [Prettier](https://prettier.io/).
 npm run format
 ```
 
+### Generate
+
+Generate TypeScript definitions files from [CSS Modules](https://github.com/css-modules/css-modules) using [typed-css-modules](https://github.com/Quramy/typed-css-modules).
+
+```sh
+npm run generate:css
+```
+
 ### Linting
 
 Lint CSS and JavaScript code.
