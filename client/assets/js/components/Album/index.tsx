@@ -1,15 +1,36 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { ArtistProps } from '../Artist';
-import Image, { ImageProps } from '../Image';
-import Tracks, { TracksProps } from '../Tracks';
+import Image from '../Image';
+import Tracks from '../Tracks';
+
+interface Artist {
+  id: string;
+  name: string;
+}
+
+interface Image {
+  height: number;
+  url: string;
+  width: number;
+}
+
+interface Item {
+  duration_ms: number;
+  id: string;
+  name: string;
+  track_number: number;
+}
+
+interface Tracks {
+  items: Item[];
+}
 
 export interface AlbumProps {
-  artists: ArtistProps[];
+  artists: Artist[];
   id: string;
-  images: ImageProps[];
+  images: Image[];
   name: string;
-  tracks: TracksProps;
+  tracks?: Tracks;
 }
 
 const Album: FC<AlbumProps> = (props) => {
@@ -34,7 +55,7 @@ const Album: FC<AlbumProps> = (props) => {
           )}
         </figcaption>
       </figure>
-      {tracks && <Tracks {...tracks} />}
+      {tracks && <Tracks items={tracks.items} />}
     </div>
   );
 };

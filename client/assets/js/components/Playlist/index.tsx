@@ -1,19 +1,17 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import Image, { ImageProps } from '../Image';
-import { TracksProps } from '../Tracks';
+import Image from '../Image';
 
-interface OwnerProps {
-  display_name: string;
-  id: string;
+interface Image {
+  height: number;
+  url: string;
+  width: number;
 }
 
 export interface PlaylistProps {
   id: string;
-  images: ImageProps[];
+  images: Image[];
   name: string;
-  owner: OwnerProps;
-  tracks: TracksProps;
 }
 
 const Playlist: FC<PlaylistProps> = (props) => {

@@ -1,11 +1,23 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
-import Playlist, { PlaylistProps } from '../Playlist';
+import Playlist from '../Playlist';
 import styles from './style.module.css';
+
+interface Image {
+  height: number;
+  url: string;
+  width: number;
+}
+
+interface Item {
+  id: string;
+  images: Image[];
+  name: string;
+}
 
 export interface PlaylistsProps {
   className?: string;
-  items: PlaylistProps[];
+  items: Item[];
 }
 
 const Playlists: FC<PlaylistsProps> = (props) => {

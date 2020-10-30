@@ -1,10 +1,16 @@
 import React, { FC } from 'react';
-import Image, { ImageProps } from '../Image';
+import Image from '../Image';
+
+interface Image {
+  height: number;
+  url: string;
+  width: number;
+}
 
 export interface ArtistProps {
   name: string;
   id: string;
-  images: ImageProps[];
+  images: Image[];
 }
 
 const Artist: FC<ArtistProps> = (props) => {

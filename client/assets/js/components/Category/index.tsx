@@ -1,9 +1,15 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import Image, { ImageProps } from '../Image';
+import Image from '../Image';
+
+interface Icon {
+  height: number;
+  url: string;
+  width: number;
+}
 
 export interface CategoryProps {
-  icons: ImageProps[];
+  icons: Icon[];
   id: string;
   name: string;
 }

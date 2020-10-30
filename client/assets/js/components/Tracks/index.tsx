@@ -2,16 +2,16 @@ import React, { FC } from 'react';
 import Track, { TrackProps } from '../Track';
 
 export interface TracksProps {
-  tracks: TrackProps[];
+  items: TrackProps[];
 }
 
 const Tracks: FC<TracksProps> = (props) => {
-  const { tracks } = props;
+  const { items } = props;
 
   return (
     <table>
       <tbody>
-        {tracks.map((track) => (
+        {items.map((track) => (
           <Track key={track.id} {...track} />
         ))}
       </tbody>

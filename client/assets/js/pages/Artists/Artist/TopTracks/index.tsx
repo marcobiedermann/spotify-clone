@@ -91,7 +91,7 @@ const TopTracksPage: FC<RouteChildrenProps> = () => {
       <Helmet>
         <title>Top Tracks</title>
       </Helmet>
-      <Tracks tracks={tracks} />
+      <Tracks items={tracks} />
     </>
   );
 };

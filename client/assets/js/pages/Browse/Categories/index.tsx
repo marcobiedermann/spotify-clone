@@ -17,9 +17,9 @@ interface Categories {
 }
 
 interface Icon {
-  height: number | null;
+  height: number;
   url: string;
-  width: number | null;
+  width: number;
 }
 
 interface Item {
