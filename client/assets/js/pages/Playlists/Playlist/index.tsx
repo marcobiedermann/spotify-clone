@@ -4,6 +4,7 @@ import { Link, RouteChildrenProps, useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import Button from '../../../components/Button';
 import Error from '../../../components/Error';
+import Image from '../../../components/Image';
 import Loader from '../../../components/Loader';
 import Track from '../../../components/Track';
 
@@ -131,7 +132,7 @@ const PlaylistPage: FC<RouteChildrenProps> = () => {
     return <Loader />;
   }
 
-  const { name, owner, tracks } = data;
+  const { description, images, name, owner, tracks } = data;
 
   return (
     <>
@@ -139,8 +140,9 @@ const PlaylistPage: FC<RouteChildrenProps> = () => {
         <title>Playlist</title>
       </Helmet>
       <div>
-        <p>Playlist</p>
+        <Image url={images[0].url} alt={name} width={300} height={300} />
         <h1>{name}</h1>
+        <p>{description}</p>
         <p>
           Created by <Link to={`/users/${owner.id}`}>{owner.display_name}</Link> · {tracks.total}{' '}
           songs
