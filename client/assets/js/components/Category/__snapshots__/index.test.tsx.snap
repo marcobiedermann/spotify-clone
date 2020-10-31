@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<figure>
+  <a
+    href="/browse/categories//playlists"
+    onClick={[Function]}
+  >
+    <img
+      alt=""
+      height={10}
+      src=""
+      width={100}
+    />
+  </a>
+  <figcaption>
+    <a
+      href="/browse/categories//playlists"
+      onClick={[Function]}
+    >
+      
+    </a>
+  </figcaption>
+</figure>
+`;

@@ -2,11 +2,11 @@ import React, { FC } from 'react';
 import Track, { TrackProps } from '../Track';
 
 export interface TracksProps {
-  items: TrackProps[];
+  items?: TrackProps[];
 }
 
 const Tracks: FC<TracksProps> = (props) => {
-  const { items } = props;
+  const { items = [] } = props;
 
   return (
     <table>

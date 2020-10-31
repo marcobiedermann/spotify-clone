@@ -1,9 +1,16 @@
 import React from 'react';
+import { MemoryRouter, Route } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import { TopTracksPage } from '.';
+import TopTracksPage from '.';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<TopTracksPage />).toJSON();
+  const tree = renderer
+    .create(
+      <MemoryRouter>
+        <Route render={(props) => <TopTracksPage {...props} />} />
+      </MemoryRouter>,
+    )
+    .toJSON();
 
   expect(tree).toMatchSnapshot();
 });

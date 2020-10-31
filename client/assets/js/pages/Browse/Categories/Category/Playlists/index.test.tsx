@@ -1,13 +1,13 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, Route } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import { PlaylistsPage } from '.';
+import PlaylistsPage from '.';
 
 it('renders correctly', () => {
   const tree = renderer
     .create(
       <MemoryRouter>
-        <PlaylistsPage />
+        <Route render={(props) => <PlaylistsPage {...props} />} />
       </MemoryRouter>,
     )
     .toJSON();

@@ -1,14 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Artist from '.';
+import artistFixtures from './__fixtures__';
 
 describe('Artist component', () => {
-  const artist = {
-    images: [{}],
-  };
-
   it('renders correctly', () => {
-    const tree = renderer.create(<Artist {...artist} />).toJSON();
+    const tree = renderer.create(<Artist {...artistFixtures} />).toJSON();
 
     expect(tree).toMatchSnapshot();
   });

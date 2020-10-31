@@ -17,7 +17,7 @@ interface Item {
 
 export interface PlaylistsProps {
   className?: string;
-  items: Item[];
+  items?: Item[];
 }
 
 const Playlists: FC<PlaylistsProps> = (props) => {

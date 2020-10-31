@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Album component renders correctly 1`] = `
+<div>
+  <figure>
+    <figcaption>
+      <h3>
+        <a
+          href="/albums/"
+          onClick={[Function]}
+        >
+          
+        </a>
+      </h3>
+      <h4>
+        <a
+          href="/artists/"
+          onClick={[Function]}
+        >
+          
+        </a>
+      </h4>
+    </figcaption>
+  </figure>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          100
+        </td>
+        <td>
+          
+        </td>
+        <td>
+          00:00
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

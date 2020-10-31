@@ -5,11 +5,11 @@ import styles from './style.module.css';
 
 export interface AlbumsProps {
   className?: string;
-  items: AlbumProps[];
+  items?: AlbumProps[];
 }
 
 const Albums: FC<AlbumsProps> = (props) => {
-  const { className, items } = props;
+  const { className, items = [] } = props;
 
   return (
     <ul className={classNames(className, styles.albums)}>

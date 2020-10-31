@@ -4,12 +4,12 @@ import Artist, { ArtistProps } from '../Artist';
 import styles from './style.module.css';
 
 export interface ArtistsProps {
-  artists: ArtistProps[];
+  artists?: ArtistProps[];
   className?: string;
 }
 
 const Artists: FC<ArtistsProps> = (props) => {
-  const { artists, className } = props;
+  const { artists = [], className } = props;
 
   return (
     <ul className={classNames(className, styles.artists)}>

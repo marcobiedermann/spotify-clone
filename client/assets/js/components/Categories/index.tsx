@@ -5,11 +5,11 @@ import styles from './style.module.css';
 
 export interface CategoriesProps {
   className?: string;
-  items: CategoryProps[];
+  items?: CategoryProps[];
 }
 
 const Categories: FC<CategoriesProps> = (props) => {
-  const { className, items } = props;
+  const { className, items = [] } = props;
 
   return (
     <ul className={classNames(className, styles.categories)}>

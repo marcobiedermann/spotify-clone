@@ -7,7 +7,7 @@ it('renders correctly', () => {
   const tree = renderer
     .create(
       <MemoryRouter>
-        <Route render={(routeProps) => <MePage {...routeProps} />} />
+        <Route render={(props) => <MePage {...props} />} />
       </MemoryRouter>,
     )
     .toJSON();

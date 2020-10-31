@@ -1,14 +1,20 @@
 import classNames from 'classnames';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import Image, { ImageProps } from '../Image';
+import Image from '../Image';
 import styles from './style.module.css';
+
+interface Image {
+  height: number;
+  url: string;
+  width: number;
+}
 
 export interface MeProps {
   className?: string;
   display_name: string;
   id: string;
-  images: ImageProps[];
+  images: Image[];
 }
 
 const Me: FC<MeProps> = (props) => {
