@@ -13,7 +13,7 @@ import '../css/layout/base.css';
 import Router from './components/Router';
 import ROUTES from './constants/routes';
 
-const ACCESS_TOKEN = '';
+const ACCESS_TOKEN = process.env.SPOTIFY_ACCESS_TOKEN || '';
 
 async function fetcher(url: string) {
   const response = await fetch(`https://api.spotify.com${url}`, {
