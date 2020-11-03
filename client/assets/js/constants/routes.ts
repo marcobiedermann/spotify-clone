@@ -10,6 +10,7 @@ import CategoryPage from '../pages/Browse/Categories/Category';
 import CategoryPlaylistsPage from '../pages/Browse/Categories/Category/Playlists';
 import FeaturedPlaylistsPage from '../pages/Browse/FeaturedPlaylists';
 import NewReleasesPage from '../pages/Browse/NewReleases';
+import CallbackPage from '../pages/Callback';
 import LoginPage from '../pages/Login';
 import MePage from '../pages/Me';
 import PlaylistsPage from '../pages/Me/Playlists';
@@ -75,6 +76,10 @@ const routes = [
         path: '/browse/new-releases',
       },
     ],
+  },
+  {
+    component: CallbackPage,
+    path: '/callback',
   },
   {
     component: LoginPage,
