@@ -6,6 +6,7 @@ import Button from '../../../components/Button';
 import Error from '../../../components/Error';
 import Image from '../../../components/Image';
 import Loader from '../../../components/Loader';
+import Media, { MediaBody, MediaObject } from '../../../components/Media';
 import Track from '../../../components/Track';
 
 interface Params {
@@ -140,16 +141,22 @@ const PlaylistPage: FC<RouteChildrenProps> = () => {
         <title>Playlist</title>
       </Helmet>
       <div>
-        <Image url={images[0].url} alt={name} width={300} height={300} />
-        <h1>{name}</h1>
-        <p>{description}</p>
-        <p>
-          Created by <Link to={`/users/${owner.id}`}>{owner.display_name}</Link> · {tracks.total}{' '}
-          songs
-        </p>
-        <p>
-          <Button>Play</Button>
-        </p>
+        <Media>
+          <MediaObject>
+            <Image url={images[0].url} alt={name} width={240} height={240} />
+          </MediaObject>
+          <MediaBody>
+            <h1>{name}</h1>
+            <p>{description}</p>
+            <p>
+              Created by <Link to={`/users/${owner.id}`}>{owner.display_name}</Link> ·{' '}
+              {tracks.total} songs
+            </p>
+            <p>
+              <Button>Play</Button>
+            </p>
+          </MediaBody>
+        </Media>
         <table>
           <tbody>
             {tracks.items.map((track) => (
