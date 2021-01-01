@@ -1,12 +1,12 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const { merge } = require('webpack-merge');
-const baseConfig = require('./webpack.config');
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import { Configuration } from 'webpack';
+import { merge } from 'webpack-merge';
+import baseConfig from './webpack.config';
 
-module.exports = merge(baseConfig, {
+const config: Configuration = {
   devtool: 'source-map',
   mode: 'production',
   module: {
@@ -69,8 +69,6 @@ module.exports = merge(baseConfig, {
         preserveLineBreaks: false,
         preventAttributesEscaping: false,
         processConditionalComments: false,
-        processScripts: false,
-        quoteCharacter: false,
         removeAttributeQuotes: true,
         removeComments: true,
         removeEmptyAttributes: true,
@@ -96,4 +94,6 @@ module.exports = merge(baseConfig, {
       },
     }),
   ],
-});
+};
+
+export default merge(baseConfig, config);

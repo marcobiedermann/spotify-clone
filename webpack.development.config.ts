@@ -1,9 +1,9 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { merge } = require('webpack-merge');
-const baseConfig = require('./webpack.config');
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { Configuration } from 'webpack';
+import { merge } from 'webpack-merge';
+import baseConfig from './webpack.config';
 
-module.exports = merge(baseConfig, {
+const config: Configuration = {
   devServer: {
     contentBase: 'client',
     historyApiFallback: true,
@@ -43,4 +43,6 @@ module.exports = merge(baseConfig, {
       template: 'client/index.html',
     }),
   ],
-});
+};
+
+export default merge(baseConfig, config);

@@ -46,7 +46,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["**/*.test.ts", "**/*.test.tsx", "**/*.stories.ts", "**/*.stories.tsx"]
+        "devDependencies": ["**/*.stories.tsx", "**/*.test.tsx", "**/webpack*.config.ts"]
       }
     ],
     "no-use-before-define": [0],
