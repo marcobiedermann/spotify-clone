@@ -1,8 +1,8 @@
 # Spotify Clone
 
-[![Build Status](https://img.shields.io/travis/com/marcobiedermann/spotify-clone)](https://travis-ci.com/marcobiedermann/spotify-clone)
 [![dependencies Status](https://img.shields.io/david/marcobiedermann/spotify-clone)](https://david-dm.org/marcobiedermann/spotify-clone)
 [![devDependencies Status](https://img.shields.io/david/dev/marcobiedermann/spotify-clone)](https://david-dm.org/marcobiedermann/spotify-clone?type=dev)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/marcobiedermann/spotify-clone/Node.js%20CI)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/61c90aa7-3e6e-436e-8497-2c69b699c156/deploy-status)](https://app.netlify.com/sites/marcobiedermann-spotify-clone/deploys)
 
 Simple [Spotify](https://www.spotify.com/) clone using their [Web API](https://developer.spotify.com/documentation/web-api/).
