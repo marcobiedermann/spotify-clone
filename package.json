@@ -14,7 +14,8 @@
     "lint:js": "eslint '**/*.{ts,tsx}'",
     "lint": "npm run lint:css && npm run lint:js",
     "server": "json-server db.json",
-    "test": "jest"
+    "test": "jest --color --runInBand",
+    "test:ci": "npm run test -- --ci"
   },
   "repository": {
     "type": "git",
