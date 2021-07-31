@@ -1,6 +1,0 @@
-.env
-client/data
-coverage
-node_modules
-server/public
-__snapshorts__

@@ -11,7 +11,7 @@
     "plugin:import/typescript",
     "plugin:prettier/recommended",
     "plugin:react/recommended",
-    "prettier",
+    "prettier"
   ],
   "overrides": [
     {
@@ -44,7 +44,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["**/*.stories.tsx", "**/*.test.tsx", "**/webpack*.config.ts"]
+        "devDependencies": ["**/*.stories.tsx", "**/*.test.tsx", "**/*.config.js", "**/*.config.ts"]
       }
     ],
     "no-use-before-define": [0],
