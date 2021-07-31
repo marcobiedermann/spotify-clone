@@ -1,7 +1,7 @@
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
 import baseConfig from './webpack.config';
@@ -36,16 +36,8 @@ const config: Configuration = {
     ],
   },
   optimization: {
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
-    },
+    minimize: true,
+    minimizer: [new TerserPlugin()],
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -84,14 +76,6 @@ const config: Configuration = {
         useShortDoctype: true,
       },
       template: 'client/index.html',
-    }),
-    new UglifyJsPlugin({
-      sourceMap: true,
-      uglifyOptions: {
-        output: {
-          comments: false,
-        },
-      },
     }),
   ],
 };
