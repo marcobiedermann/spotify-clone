@@ -1,5 +1,5 @@
-.env
-client/data
+!.env.sample
+.env*
 coverage
+dist
 node_modules
-server/public
