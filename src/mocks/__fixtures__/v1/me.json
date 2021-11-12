@@ -1,0 +1,29 @@
+{
+  "birthdate": "1994-01-13",
+  "country": "DE",
+  "display_name": "Marco Biedermann",
+  "email": "5244986+marcobiedermann@users.noreply.github.com",
+  "explicit_content": {
+    "filter_enabled": false,
+    "filter_locked": false
+  },
+  "external_urls": {
+    "spotify": "https://open.spotify.com/user/11168662039"
+  },
+  "followers": {
+    "href": null,
+    "total": 7
+  },
+  "href": "https://api.spotify.com/v1/users/11168662039",
+  "id": "11168662039",
+  "images": [
+    {
+      "height": null,
+      "url": "https://i.scdn.co/image/ab6775700000ee85c7b1bba102a2bd1be30862af",
+      "width": null
+    }
+  ],
+  "product": "premium",
+  "type": "user",
+  "uri": "spotify:user:11168662039"
+}

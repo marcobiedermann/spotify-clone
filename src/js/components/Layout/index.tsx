@@ -89,7 +89,7 @@ const Layout: FC = (props) => {
           <ul>
             {items.map((item) => (
               <li key={item.id}>
-                <Link to={`/users/${item.owner.id}/playlists/${item.id}`}>{item.name}</Link>
+                <Link to={`/playlists/${item.id}`}>{item.name}</Link>
               </li>
             ))}
           </ul>
