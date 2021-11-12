@@ -1,0 +1,445 @@
+{
+  "message": "Editor's picks",
+  "playlists": {
+    "href": "https://api.spotify.com/v1/browse/featured-playlists?timestamp=2021-11-12T14%3A15%3A09&offset=0&limit=20",
+    "items": [
+      {
+        "collaborative": false,
+        "description": "The very best in new music from around the world. Cover: Post Malone & The Weeknd",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWXJfnUiYjUKT"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWXJfnUiYjUKT",
+        "id": "37i9dQZF1DWXJfnUiYjUKT",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f000000033b532f9a08357914eb1cc637",
+            "width": null
+          }
+        ],
+        "name": "New Music Friday",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTYzNjA4NDgwMCwwMDAwMDM0ODAwMDAwMTdjZWU0MGRhYjkwMDAwMDE3Y2VjYTZmZTA4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWXJfnUiYjUKT/tracks",
+          "total": 99
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DWXJfnUiYjUKT"
+      },
+      {
+        "collaborative": false,
+        "description": "New music from Juice WRLD, Polo G and DaBaby. ",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX0XUsuxWHRQd",
+        "id": "37i9dQZF1DX0XUsuxWHRQd",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003480421685a950a576c15f5d8",
+            "width": null
+          }
+        ],
+        "name": "RapCaviar",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTYzNjY5MzIwMCwwMDAwMDVmMzAwMDAwMTdkMTI4NDRkNjMwMDAwMDE3ZDBjOTU2NDQx",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX0XUsuxWHRQd/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX0XUsuxWHRQd"
+      },
+      {
+        "collaborative": false,
+        "description": "Dua Lipa & Elton John are on top of the Hottest 50!",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M",
+        "id": "37i9dQZF1DXcBWIGoYBM5M",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003be3ded781783c8313fdda978",
+            "width": null
+          }
+        ],
+        "name": "Today's Top Hits",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTYzNjY5MzQxNiwwMDAwMDUwMTAwMDAwMTdkMTI4Nzk5ZDkwMDAwMDE3ZDExODg2OWVk",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+      },
+      {
+        "collaborative": false,
+        "description": "Current favorites and exciting new music. Cover: Adele",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXcRXFNfZr7Tp"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXcRXFNfZr7Tp",
+        "id": "37i9dQZF1DXcRXFNfZr7Tp",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f000000036c19afa4016326a4b102b060",
+            "width": null
+          }
+        ],
+        "name": "just hits",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTYzNjY5MzI2MCwwMDAwMDUwZTAwMDAwMTdkMTI4NTM3NWIwMDAwMDE3Y2ExNDJmZmE2",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXcRXFNfZr7Tp/tracks",
+          "total": 99
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DXcRXFNfZr7Tp"
+      },
+      {
+        "collaborative": false,
+        "description": "Get pumped, feel the vibe and get ready for the swell coming in.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX6aqIZNmXBGU"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX6aqIZNmXBGU",
+        "id": "37i9dQZF1DX6aqIZNmXBGU",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003a0dda4037acff8c0c172decd",
+            "width": null
+          }
+        ],
+        "name": "Sun & Surf",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTYzNjcyNjQ3MCwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX6aqIZNmXBGU/tracks",
+          "total": 60
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX6aqIZNmXBGU"
+      },
+      {
+        "collaborative": false,
+        "description": "Because we all deserve great pop love songs in one playlist.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX50QitC6Oqtn"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX50QitC6Oqtn",
+        "id": "37i9dQZF1DX50QitC6Oqtn",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003505e19aaff29a5dc3bc2503c",
+            "width": null
+          }
+        ],
+        "name": "Love Pop",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTYzNjcyNjUwMywwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX50QitC6Oqtn/tracks",
+          "total": 100
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX50QitC6Oqtn"
+      },
+      {
+        "collaborative": false,
+        "description": "The biggest songs of the 1970s. Cover: ABBA.\n",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWTJ7xPn4vNaz"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWTJ7xPn4vNaz",
+        "id": "37i9dQZF1DWTJ7xPn4vNaz",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003814809ba3a46d4ca9fd03ae4",
+            "width": null
+          }
+        ],
+        "name": "All Out 70s",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTYzNjcyNjUwMSwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWTJ7xPn4vNaz/tracks",
+          "total": 150
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DWTJ7xPn4vNaz"
+      },
+      {
+        "collaborative": false,
+        "description": "That’s how its supposed to be. Living young, wild and free!",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX843Qf4lrFtZ"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX843Qf4lrFtZ",
+        "id": "37i9dQZF1DX843Qf4lrFtZ",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003e2c938563967c4f22c76ed74",
+            "width": null
+          }
+        ],
+        "name": "Young, Wild & Free",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTYzNjcyNjQ5MiwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX843Qf4lrFtZ/tracks",
+          "total": 100
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX843Qf4lrFtZ"
+      },
+      {
+        "collaborative": false,
+        "description": "Indie, pop, and everything in between to bring you good energy and good vibes. Cover: corook",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXca8AyWK6Y7g"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXca8AyWK6Y7g",
+        "id": "37i9dQZF1DXca8AyWK6Y7g",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f0000000347916d57adeb622860c36272",
+            "width": null
+          }
+        ],
+        "name": "young & free",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTYzNjcyNjQ5MywwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXca8AyWK6Y7g/tracks",
+          "total": 150
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DXca8AyWK6Y7g"
+      },
+      {
+        "collaborative": false,
+        "description": "Get happy with today's dose of feel-good songs!",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX3rxVfibe1L0"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX3rxVfibe1L0",
+        "id": "37i9dQZF1DX3rxVfibe1L0",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003bd0e19e810bb4b55ab164a95",
+            "width": null
+          }
+        ],
+        "name": "Mood Booster",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTYzNjcyNjQ3MiwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX3rxVfibe1L0/tracks",
+          "total": 76
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX3rxVfibe1L0"
+      },
+      {
+        "collaborative": false,
+        "description": "The hits of tomorrow are on Spotify today. Cover: Tate McRae",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWUa8ZRTfalHk"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWUa8ZRTfalHk",
+        "id": "37i9dQZF1DWUa8ZRTfalHk",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003b5c47afc5b0d55e9ea49a208",
+            "width": null
+          }
+        ],
+        "name": "Pop Rising",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTYzNjY5MzIwMCwwMDAwMDU3ZTAwMDAwMTdkMTI4NDRkNDEwMDAwMDE3ZDEwNWYwMDNh",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWUa8ZRTfalHk/tracks",
+          "total": 85
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DWUa8ZRTfalHk"
+      },
+      {
+        "collaborative": false,
+        "description": "The pulse of R&B music today.  Cover: Silk Sonic",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX4SBhb3fqCJd"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX4SBhb3fqCJd",
+        "id": "37i9dQZF1DX4SBhb3fqCJd",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003f02285f3704b7ec4f0fe5d74",
+            "width": null
+          }
+        ],
+        "name": "Are & Be",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTYzNjY5MzIwMCwwMDAwMDUzODAwMDAwMTdkMTI4NDRkNDUwMDAwMDE3ZDEwYTgzMjc4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX4SBhb3fqCJd/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX4SBhb3fqCJd"
+      }
+    ],
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total": 12
+  }
+}

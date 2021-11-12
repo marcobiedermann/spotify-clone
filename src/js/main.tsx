@@ -10,6 +10,7 @@ import '../css/elements/list.css';
 import '../css/elements/paragraph.css';
 import '../css/elements/table.css';
 import '../css/layout/base.css';
+import { worker } from '../mocks/browser';
 import Router from './components/Router';
 import ROUTES from './constants/routes';
 
@@ -38,5 +39,9 @@ const Root = () => (
     <Router routes={ROUTES} />
   </SWRConfig>
 );
+
+if (import.meta.env.DEV) {
+  worker.start();
+}
 
 render(<Root />, document.getElementById('root'));

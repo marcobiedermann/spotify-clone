@@ -1,0 +1,620 @@
+{
+  "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=5&limit=10&include_groups=single,appears_on&market=ES",
+  "items": [
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3f4OfcNtgL9MLgiyOdIHC7"
+          },
+          "href": "https://api.spotify.com/v1/artists/3f4OfcNtgL9MLgiyOdIHC7",
+          "id": "3f4OfcNtgL9MLgiyOdIHC7",
+          "name": "JENCARLOS",
+          "type": "artist",
+          "uri": "spotify:artist:3f4OfcNtgL9MLgiyOdIHC7"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/6Vk2TVVMsR68HPiO6993Pa"
+      },
+      "href": "https://api.spotify.com/v1/albums/6Vk2TVVMsR68HPiO6993Pa",
+      "id": "6Vk2TVVMsR68HPiO6993Pa",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273758791af0d0c4b091a8bbe7f",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02758791af0d0c4b091a8bbe7f",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851758791af0d0c4b091a8bbe7f",
+          "width": 64
+        }
+      ],
+      "name": "Cosita Linda",
+      "release_date": "2021-01-15",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:6Vk2TVVMsR68HPiO6993Pa"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1uid9dUz5STckJAH7kFCoE"
+          },
+          "href": "https://api.spotify.com/v1/artists/1uid9dUz5STckJAH7kFCoE",
+          "id": "1uid9dUz5STckJAH7kFCoE",
+          "name": "TAG",
+          "type": "artist",
+          "uri": "spotify:artist:1uid9dUz5STckJAH7kFCoE"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/610UORPcvFwB9dEDUBIvEk"
+      },
+      "href": "https://api.spotify.com/v1/albums/610UORPcvFwB9dEDUBIvEk",
+      "id": "610UORPcvFwB9dEDUBIvEk",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b27300488db1bd03174d0b10a25b",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e0200488db1bd03174d0b10a25b",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d0000485100488db1bd03174d0b10a25b",
+          "width": 64
+        }
+      ],
+      "name": "Backpack",
+      "release_date": "2021-01-14",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:610UORPcvFwB9dEDUBIvEk"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0b2GL7Y02vu50qieoQmw1w"
+          },
+          "href": "https://api.spotify.com/v1/artists/0b2GL7Y02vu50qieoQmw1w",
+          "id": "0b2GL7Y02vu50qieoQmw1w",
+          "name": "IAmChino",
+          "type": "artist",
+          "uri": "spotify:artist:0b2GL7Y02vu50qieoQmw1w"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/2eQMfQXKQGV98HKiCOB7en"
+          },
+          "href": "https://api.spotify.com/v1/artists/2eQMfQXKQGV98HKiCOB7en",
+          "id": "2eQMfQXKQGV98HKiCOB7en",
+          "name": "Yomil y El Dany",
+          "type": "artist",
+          "uri": "spotify:artist:2eQMfQXKQGV98HKiCOB7en"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/2B4G3D8pCGzk3ryWVPD6ga"
+      },
+      "href": "https://api.spotify.com/v1/albums/2B4G3D8pCGzk3ryWVPD6ga",
+      "id": "2B4G3D8pCGzk3ryWVPD6ga",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273c6a2e0cbdea65683f2bc9e8a",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02c6a2e0cbdea65683f2bc9e8a",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851c6a2e0cbdea65683f2bc9e8a",
+          "width": 64
+        }
+      ],
+      "name": "Give It To Me",
+      "release_date": "2020-12-11",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:2B4G3D8pCGzk3ryWVPD6ga"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/15jrieCvf3EklAScnD9kKl"
+          },
+          "href": "https://api.spotify.com/v1/artists/15jrieCvf3EklAScnD9kKl",
+          "id": "15jrieCvf3EklAScnD9kKl",
+          "name": "Sak Noel",
+          "type": "artist",
+          "uri": "spotify:artist:15jrieCvf3EklAScnD9kKl"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/09M87xFMTKdsWJxpEWaiat"
+          },
+          "href": "https://api.spotify.com/v1/artists/09M87xFMTKdsWJxpEWaiat",
+          "id": "09M87xFMTKdsWJxpEWaiat",
+          "name": "Salvi",
+          "type": "artist",
+          "uri": "spotify:artist:09M87xFMTKdsWJxpEWaiat"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/2AW6HCRfGox94vO7GMQSLD"
+      },
+      "href": "https://api.spotify.com/v1/albums/2AW6HCRfGox94vO7GMQSLD",
+      "id": "2AW6HCRfGox94vO7GMQSLD",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b2738a11785f7485f8acb177c996",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e028a11785f7485f8acb177c996",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d000048518a11785f7485f8acb177c996",
+          "width": 64
+        }
+      ],
+      "name": "Que Rica (Tocame)",
+      "release_date": "2020-11-13",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:2AW6HCRfGox94vO7GMQSLD"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/15jrieCvf3EklAScnD9kKl"
+          },
+          "href": "https://api.spotify.com/v1/artists/15jrieCvf3EklAScnD9kKl",
+          "id": "15jrieCvf3EklAScnD9kKl",
+          "name": "Sak Noel",
+          "type": "artist",
+          "uri": "spotify:artist:15jrieCvf3EklAScnD9kKl"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/09M87xFMTKdsWJxpEWaiat"
+          },
+          "href": "https://api.spotify.com/v1/artists/09M87xFMTKdsWJxpEWaiat",
+          "id": "09M87xFMTKdsWJxpEWaiat",
+          "name": "Salvi",
+          "type": "artist",
+          "uri": "spotify:artist:09M87xFMTKdsWJxpEWaiat"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/5FVNWYM95qgM8Wkzksnszy"
+      },
+      "href": "https://api.spotify.com/v1/albums/5FVNWYM95qgM8Wkzksnszy",
+      "id": "5FVNWYM95qgM8Wkzksnszy",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273836cdabc9f3e7d842d60140e",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02836cdabc9f3e7d842d60140e",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851836cdabc9f3e7d842d60140e",
+          "width": 64
+        }
+      ],
+      "name": "Que Rica (Tocame)",
+      "release_date": "2020-11-13",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:5FVNWYM95qgM8Wkzksnszy"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3odR1GtDKRGhCwheY7jpi9"
+          },
+          "href": "https://api.spotify.com/v1/artists/3odR1GtDKRGhCwheY7jpi9",
+          "id": "3odR1GtDKRGhCwheY7jpi9",
+          "name": "Mr. Mauricio",
+          "type": "artist",
+          "uri": "spotify:artist:3odR1GtDKRGhCwheY7jpi9"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3f4OfcNtgL9MLgiyOdIHC7"
+          },
+          "href": "https://api.spotify.com/v1/artists/3f4OfcNtgL9MLgiyOdIHC7",
+          "id": "3f4OfcNtgL9MLgiyOdIHC7",
+          "name": "JENCARLOS",
+          "type": "artist",
+          "uri": "spotify:artist:3f4OfcNtgL9MLgiyOdIHC7"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/3yaQNz5hglJrlaVJTLcUCb"
+      },
+      "href": "https://api.spotify.com/v1/albums/3yaQNz5hglJrlaVJTLcUCb",
+      "id": "3yaQNz5hglJrlaVJTLcUCb",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b2735b5a8655b2e3e14fad7cc8cb",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e025b5a8655b2e3e14fad7cc8cb",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d000048515b5a8655b2e3e14fad7cc8cb",
+          "width": 64
+        }
+      ],
+      "name": "Voodoo",
+      "release_date": "2020-10-30",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:3yaQNz5hglJrlaVJTLcUCb"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0acSKGMIRsorWH3cQd5JrE"
+          },
+          "href": "https://api.spotify.com/v1/artists/0acSKGMIRsorWH3cQd5JrE",
+          "id": "0acSKGMIRsorWH3cQd5JrE",
+          "name": "Vikina",
+          "type": "artist",
+          "uri": "spotify:artist:0acSKGMIRsorWH3cQd5JrE"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0b2GL7Y02vu50qieoQmw1w"
+          },
+          "href": "https://api.spotify.com/v1/artists/0b2GL7Y02vu50qieoQmw1w",
+          "id": "0b2GL7Y02vu50qieoQmw1w",
+          "name": "IAmChino",
+          "type": "artist",
+          "uri": "spotify:artist:0b2GL7Y02vu50qieoQmw1w"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/6ajdXlPMknejXW5TxqTMr0"
+      },
+      "href": "https://api.spotify.com/v1/albums/6ajdXlPMknejXW5TxqTMr0",
+      "id": "6ajdXlPMknejXW5TxqTMr0",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273e45f35a1a80753b2e1d65bb5",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02e45f35a1a80753b2e1d65bb5",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851e45f35a1a80753b2e1d65bb5",
+          "width": 64
+        }
+      ],
+      "name": "Borracha (Pero Buena Muchacha)",
+      "release_date": "2020-10-21",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:6ajdXlPMknejXW5TxqTMr0"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1wZtkThiXbVNtj6hee6dz9"
+          },
+          "href": "https://api.spotify.com/v1/artists/1wZtkThiXbVNtj6hee6dz9",
+          "id": "1wZtkThiXbVNtj6hee6dz9",
+          "name": "Wisin & Yandel",
+          "type": "artist",
+          "uri": "spotify:artist:1wZtkThiXbVNtj6hee6dz9"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/2oQX8QiMXOyuqbcZEFsZfm"
+          },
+          "href": "https://api.spotify.com/v1/artists/2oQX8QiMXOyuqbcZEFsZfm",
+          "id": "2oQX8QiMXOyuqbcZEFsZfm",
+          "name": "El Alfa",
+          "type": "artist",
+          "uri": "spotify:artist:2oQX8QiMXOyuqbcZEFsZfm"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/5XWqGM9qDxw3KjQCBgewAV"
+      },
+      "href": "https://api.spotify.com/v1/albums/5XWqGM9qDxw3KjQCBgewAV",
+      "id": "5XWqGM9qDxw3KjQCBgewAV",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b27351c7920b68769dd7c2d4b475",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e0251c7920b68769dd7c2d4b475",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d0000485151c7920b68769dd7c2d4b475",
+          "width": 64
+        }
+      ],
+      "name": "Moviéndolo (Remix)",
+      "release_date": "2020-10-21",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:5XWqGM9qDxw3KjQCBgewAV"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1uid9dUz5STckJAH7kFCoE"
+          },
+          "href": "https://api.spotify.com/v1/artists/1uid9dUz5STckJAH7kFCoE",
+          "id": "1uid9dUz5STckJAH7kFCoE",
+          "name": "TAG",
+          "type": "artist",
+          "uri": "spotify:artist:1uid9dUz5STckJAH7kFCoE"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/4s096NcPZeqXsj8gQ1R1aT"
+      },
+      "href": "https://api.spotify.com/v1/albums/4s096NcPZeqXsj8gQ1R1aT",
+      "id": "4s096NcPZeqXsj8gQ1R1aT",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273e1b3eff89ff2a089f5170b0f",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02e1b3eff89ff2a089f5170b0f",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851e1b3eff89ff2a089f5170b0f",
+          "width": 64
+        }
+      ],
+      "name": "Backpack",
+      "release_date": "2020-09-04",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:4s096NcPZeqXsj8gQ1R1aT"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7DgpPXntG6DkNR4hCi4PjP"
+          },
+          "href": "https://api.spotify.com/v1/artists/7DgpPXntG6DkNR4hCi4PjP",
+          "id": "7DgpPXntG6DkNR4hCi4PjP",
+          "name": "Chesca",
+          "type": "artist",
+          "uri": "spotify:artist:7DgpPXntG6DkNR4hCi4PjP"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3CDKmzJu6uwEGnPLLZffpD"
+          },
+          "href": "https://api.spotify.com/v1/artists/3CDKmzJu6uwEGnPLLZffpD",
+          "id": "3CDKmzJu6uwEGnPLLZffpD",
+          "name": "Frankie Valli",
+          "type": "artist",
+          "uri": "spotify:artist:3CDKmzJu6uwEGnPLLZffpD"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/0T3RVlrWzids265ebYOkDq"
+      },
+      "href": "https://api.spotify.com/v1/albums/0T3RVlrWzids265ebYOkDq",
+      "id": "0T3RVlrWzids265ebYOkDq",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273981cbf7b07ca8b09671f6ae4",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02981cbf7b07ca8b09671f6ae4",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851981cbf7b07ca8b09671f6ae4",
+          "width": 64
+        }
+      ],
+      "name": "Te Quiero Baby (I Love You Baby)",
+      "release_date": "2020-08-14",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:0T3RVlrWzids265ebYOkDq"
+    }
+  ],
+  "limit": 10,
+  "next": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=15&limit=10&include_groups=single,appears_on&market=ES",
+  "offset": 5,
+  "previous": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=0&limit=10&include_groups=single,appears_on&market=ES",
+  "total": 1804
+}

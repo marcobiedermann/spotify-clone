@@ -1,0 +1,390 @@
+{
+  "href": "https://api.spotify.com/v1/users/11168662039/playlists?offset=5&limit=10",
+  "items": [
+    {
+      "collaborative": false,
+      "description": "Daily music, curated for you based on your listening history. If you don&#x27;t want to get this daily playlist anymore, you can unsubscribe at https:&#x2F;&#x2F;discoverifymusic.com",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/3KepkkxRrj3Oyog76Vkmc1"
+      },
+      "href": "https://api.spotify.com/v1/playlists/3KepkkxRrj3Oyog76Vkmc1",
+      "id": "3KepkkxRrj3Oyog76Vkmc1",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b2734350116b1085b346f79fc24aab67616d0000b273878e20064dd6bcbd95638756ab67616d0000b2738fcfedea64e1c78cd3d55001ab67616d0000b273ad1d03aad2b433b063d858e9",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b2734350116b1085b346f79fc24aab67616d0000b273878e20064dd6bcbd95638756ab67616d0000b2738fcfedea64e1c78cd3d55001ab67616d0000b273ad1d03aad2b433b063d858e9",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b2734350116b1085b346f79fc24aab67616d0000b273878e20064dd6bcbd95638756ab67616d0000b2738fcfedea64e1c78cd3d55001ab67616d0000b273ad1d03aad2b433b063d858e9",
+          "width": 60
+        }
+      ],
+      "name": "Discover Daily",
+      "owner": {
+        "display_name": "Marco Biedermann",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/11168662039"
+        },
+        "href": "https://api.spotify.com/v1/users/11168662039",
+        "id": "11168662039",
+        "type": "user",
+        "uri": "spotify:user:11168662039"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTg2LGUyZWUyYmUwNThjNDM0ODAzMGMxN2IzYmM5YzY4M2Q4YTM2ZGYwOTU=",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/3KepkkxRrj3Oyog76Vkmc1/tracks",
+        "total": 30
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:3KepkkxRrj3Oyog76Vkmc1"
+    },
+    {
+      "collaborative": false,
+      "description": "Mix of Soft-House - Low-Key-Techno - Deep House &amp; Chilly Vibes",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/7LS2grTMmboABdGoy1Nbf4"
+      },
+      "href": "https://api.spotify.com/v1/playlists/7LS2grTMmboABdGoy1Nbf4",
+      "id": "7LS2grTMmboABdGoy1Nbf4",
+      "images": [
+        {
+          "height": null,
+          "url": "https://i.scdn.co/image/ab67706c0000bebbb59f1cd0e2c84f760d86ca9a",
+          "width": null
+        }
+      ],
+      "name": "Chill Techno",
+      "owner": {
+        "display_name": "Lena Bojko",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/lena.bojko"
+        },
+        "href": "https://api.spotify.com/v1/users/lena.bojko",
+        "id": "lena.bojko",
+        "type": "user",
+        "uri": "spotify:user:lena.bojko"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTk1MCxhNDJlMjJhMmVmNzE0MTMzNGI3NDRlMTA0N2UyOTFkNTZlMDkwMTA5",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/7LS2grTMmboABdGoy1Nbf4/tracks",
+        "total": 166
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:7LS2grTMmboABdGoy1Nbf4"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/5hKeofAxecz614mH433mPH"
+      },
+      "href": "https://api.spotify.com/v1/playlists/5hKeofAxecz614mH433mPH",
+      "id": "5hKeofAxecz614mH433mPH",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b2732bc699cca1173c5fcbd1e70fab67616d0000b2737238a0ac4ceb5bb52bbdaacdab67616d0000b273b2594160bea519edbe43cb52ab67616d0000b273f458bada33f03c83ebf57172",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b2732bc699cca1173c5fcbd1e70fab67616d0000b2737238a0ac4ceb5bb52bbdaacdab67616d0000b273b2594160bea519edbe43cb52ab67616d0000b273f458bada33f03c83ebf57172",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b2732bc699cca1173c5fcbd1e70fab67616d0000b2737238a0ac4ceb5bb52bbdaacdab67616d0000b273b2594160bea519edbe43cb52ab67616d0000b273f458bada33f03c83ebf57172",
+          "width": 60
+        }
+      ],
+      "name": "Chill",
+      "owner": {
+        "display_name": "Marco Biedermann",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/11168662039"
+        },
+        "href": "https://api.spotify.com/v1/users/11168662039",
+        "id": "11168662039",
+        "type": "user",
+        "uri": "spotify:user:11168662039"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MjgsZGU5YTI4MTRhYWQ4NTM2MmU0NDU2YjY0ZDk4ZGEyNWU5N2YxYTIzYQ==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/5hKeofAxecz614mH433mPH/tracks",
+        "total": 22
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:5hKeofAxecz614mH433mPH"
+    },
+    {
+      "collaborative": false,
+      "description": "it's just chill vibes, respectfully ",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX2yvmlOdMYzV"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX2yvmlOdMYzV",
+      "id": "37i9dQZF1DX2yvmlOdMYzV",
+      "images": [
+        {
+          "height": null,
+          "url": "https://i.scdn.co/image/ab67706f00000003c0c5bb00461fd08b95f9b9da",
+          "width": null
+        }
+      ],
+      "name": "Low-Key",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTYzNjcyNjI3MywwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX2yvmlOdMYzV/tracks",
+        "total": 100
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:37i9dQZF1DX2yvmlOdMYzV"
+    },
+    {
+      "collaborative": false,
+      "description": "Beats to relax, study, and focus...",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWWQRwui0ExPn"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWQRwui0ExPn",
+      "id": "37i9dQZF1DWWQRwui0ExPn",
+      "images": [
+        {
+          "height": null,
+          "url": "https://i.scdn.co/image/ab67706f00000003e4793b7b7a06c3cc64341790",
+          "width": null
+        }
+      ],
+      "name": "lofi beats",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTYzNjcyNjI3MywwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWQRwui0ExPn/tracks",
+        "total": 650
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:37i9dQZF1DWWQRwui0ExPn"
+    },
+    {
+      "collaborative": false,
+      "description": "Chillhop for studying / relaxing / gaming / working. Instrumental lofi hip hop beats from around the globe. Check out our  24/7 YouTube livestream <a href=\"https://youtu.be/5yx6BWlEVcY\">here</a> or listen on other platforms <a href=\"https://chillhop.lnk.to/listenWE\">here</a>.",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/0CFuMybe6s77w6QQrJjW7d"
+      },
+      "href": "https://api.spotify.com/v1/playlists/0CFuMybe6s77w6QQrJjW7d",
+      "id": "0CFuMybe6s77w6QQrJjW7d",
+      "images": [
+        {
+          "height": null,
+          "url": "https://i.scdn.co/image/ab67706c0000bebb2a897a84b50d325c2082c7dc",
+          "width": null
+        }
+      ],
+      "name": "Chillhop Radio 🐾 jazzy/lofi hip hop beats to study/relax to | Study Music | Chillhop Music 2021 ",
+      "owner": {
+        "display_name": "Chillhop Music",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/chillhopmusic"
+        },
+        "href": "https://api.spotify.com/v1/users/chillhopmusic",
+        "id": "chillhopmusic",
+        "type": "user",
+        "uri": "spotify:user:chillhopmusic"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTU2MywxYjUyN2U1NGIzYzNhMmYxNDA1Yzg4N2FhMjg0ZDg3MDQ0MzNmNDc3",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/0CFuMybe6s77w6QQrJjW7d/tracks",
+        "total": 300
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:0CFuMybe6s77w6QQrJjW7d"
+    },
+    {
+      "collaborative": false,
+      "description": "Beats to focus &amp; get work done!",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/1ZdrZenSKvkrZB85BKrnK2"
+      },
+      "href": "https://api.spotify.com/v1/playlists/1ZdrZenSKvkrZB85BKrnK2",
+      "id": "1ZdrZenSKvkrZB85BKrnK2",
+      "images": [
+        {
+          "height": null,
+          "url": "https://i.scdn.co/image/ab67706c0000bebbc4c8edbf78eaa3dd071cd2e6",
+          "width": null
+        }
+      ],
+      "name": "work/focus lofi ",
+      "owner": {
+        "display_name": "Chill Music",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/9godcu30vi3mmxek5a35lgqjd"
+        },
+        "href": "https://api.spotify.com/v1/users/9godcu30vi3mmxek5a35lgqjd",
+        "id": "9godcu30vi3mmxek5a35lgqjd",
+        "type": "user",
+        "uri": "spotify:user:9godcu30vi3mmxek5a35lgqjd"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTk5Miw1ZGM1NDQ2OGI4MDg0OTFjNjA1MTFlY2MwZWZjMjliM2VlY2Q4MGU2",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/1ZdrZenSKvkrZB85BKrnK2/tracks",
+        "total": 316
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:1ZdrZenSKvkrZB85BKrnK2"
+    },
+    {
+      "collaborative": false,
+      "description": "Just lean back and enjoy relaxed beats.",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWTvNyxOwkztu"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWTvNyxOwkztu",
+      "id": "37i9dQZF1DWTvNyxOwkztu",
+      "images": [
+        {
+          "height": null,
+          "url": "https://i.scdn.co/image/ab67706f00000003d6b79e5fcec64b502dd292b9",
+          "width": null
+        }
+      ],
+      "name": "Chillout Lounge",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTYzNjcyNjI3MywwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWTvNyxOwkztu/tracks",
+        "total": 100
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:37i9dQZF1DWTvNyxOwkztu"
+    },
+    {
+      "collaborative": false,
+      "description": "This is a deep tribal sound, combining electronic elements and organic instrumentation, stemming from the folk music of Africa, Latin America, and the Middle East.",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX2pprEpa9URZ"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX2pprEpa9URZ",
+      "id": "37i9dQZF1DX2pprEpa9URZ",
+      "images": [
+        {
+          "height": null,
+          "url": "https://i.scdn.co/image/ab67706f0000000389114dc85925a55cc46e4e6e",
+          "width": null
+        }
+      ],
+      "name": "Orgánica",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTYzNjcyNjI3MywwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX2pprEpa9URZ/tracks",
+        "total": 60
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:37i9dQZF1DX2pprEpa9URZ"
+    },
+    {
+      "collaborative": false,
+      "description": "Let's flow to the beats of downtempo deep house.",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWYUYYlhkTuEn"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWYUYYlhkTuEn",
+      "id": "37i9dQZF1DWYUYYlhkTuEn",
+      "images": [
+        {
+          "height": null,
+          "url": "https://i.scdn.co/image/ab67706f000000032362023a094e7c01005685a7",
+          "width": null
+        }
+      ],
+      "name": "Yoga Electronica",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTYzNTIzMjYyMCwwMDAwMDAzYTAwMDAwMTdjYmI3NTllM2EwMDAwMDE3MGM0Y2U0MTll",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWYUYYlhkTuEn/tracks",
+        "total": 68
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:37i9dQZF1DWYUYYlhkTuEn"
+    }
+  ],
+  "limit": 10,
+  "next": "https://api.spotify.com/v1/users/11168662039/playlists?offset=15&limit=10",
+  "offset": 5,
+  "previous": "https://api.spotify.com/v1/users/11168662039/playlists?offset=0&limit=10",
+  "total": 153
+}
