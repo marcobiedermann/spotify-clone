@@ -11,11 +11,11 @@
     "format": "prettier --ignore-path .gitignore --write .",
     "generate:css": "tcm -p 'src/**/*.module.css' .",
     "lint:css": "stylelint --ignore-path .gitignore '**/*.css'",
-    "lint:js": "eslint --ignore-path .gitignore '**/*.{js,jsx,ts,tsx}'",
-    "lint": "npm run lint:css && npm run lint:js",
+    "lint:js": "eslint --ignore-path .gitignore .",
+    "lint": "npm-run-all --parallel lint:css lint:js",
     "serve": "vite preview",
-    "test": "jest --color --runInBand",
-    "test:ci": "npm run test -- --ci"
+    "test": "jest --maxWorkers=50% --watch",
+    "test:ci": "jest --ci --coverage --runInBand"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,9 @@
   },
   "homepage": "https://github.com/marcobiedermann/spotify-clone#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
     "@types/classnames": "^2.3.0",
     "@types/jest": "^26.0.24",
     "@types/node": "^16.4.8",
@@ -59,14 +62,13 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.6",
     "msw": "^0.35.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.3.2",
     "react-test-renderer": "^17.0.2",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
-    "ts-jest": "^27.0.4",
-    "ts-node": "^10.1.0",
     "typed-css-modules": "^0.7.0",
     "typescript": "^4.3.5",
     "vite": "^2.6.4"
