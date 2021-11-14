@@ -1,9 +1,11 @@
 import { parse } from 'qs';
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Redirect, RouteChildrenProps, useLocation } from 'react-router-dom';
 
-const CalbackPage: FC<RouteChildrenProps> = () => {
+export type CallbackPageProps = RouteChildrenProps;
+
+function CallbackPage(): JSX.Element {
   const { search } = useLocation();
   const { code } = parse(search, {
     ignoreQueryPrefix: true,
@@ -20,6 +22,6 @@ const CalbackPage: FC<RouteChildrenProps> = () => {
       <Redirect to="/" />
     </>
   );
-};
+}
 
-export default CalbackPage;
+export default CallbackPage;

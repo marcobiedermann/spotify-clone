@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Image from '../Image';
 import Tracks from '../Tracks';
@@ -33,7 +33,7 @@ export interface AlbumProps {
   tracks?: Tracks;
 }
 
-const Album: FC<AlbumProps> = (props) => {
+function Album(props: AlbumProps): JSX.Element {
   const { artists, id, images, name, tracks } = props;
 
   return (
@@ -58,6 +58,6 @@ const Album: FC<AlbumProps> = (props) => {
       {tracks && <Tracks items={tracks.items} />}
     </div>
   );
-};
+}
 
 export default Album;

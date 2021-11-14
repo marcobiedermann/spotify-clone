@@ -3,5 +3,7 @@
 exports[`renders correctly 1`] = `
 <header
   className="header"
-/>
+>
+  Header
+</header>
 `;

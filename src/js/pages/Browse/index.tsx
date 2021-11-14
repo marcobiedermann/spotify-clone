@@ -1,8 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, RouteChildrenProps } from 'react-router-dom';
 
-const BrowsePage: FC<RouteChildrenProps> = (props) => {
+export type BrowsePageProps = RouteChildrenProps;
+
+function BrowsePage(props: BrowsePageProps): JSX.Element {
   const { match } = props;
 
   return (
@@ -23,6 +25,6 @@ const BrowsePage: FC<RouteChildrenProps> = (props) => {
       </ul>
     </>
   );
-};
+}
 
 export default BrowsePage;

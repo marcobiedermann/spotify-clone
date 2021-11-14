@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteChildrenProps, useParams } from 'react-router-dom';
 import useSWR from 'swr';
@@ -42,7 +42,9 @@ interface RelatedArtistsData {
   artists: Artist[];
 }
 
-const RelatedArtistsPage: FC<RouteChildrenProps> = () => {
+export type RelatedArtistsPageProps = RouteChildrenProps;
+
+function RelatedArtistsPage(): JSX.Element {
   const { artistId } = useParams<Params>();
   const { data, error } = useSWR<RelatedArtistsData>(`/v1/artists/${artistId}/related-artists`);
 
@@ -64,6 +66,6 @@ const RelatedArtistsPage: FC<RouteChildrenProps> = () => {
       <Artists artists={artists} />
     </>
   );
-};
+}
 
 export default RelatedArtistsPage;

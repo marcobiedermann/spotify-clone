@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Route, RouteProps, Switch } from 'react-router-dom';
 
 export interface AppRouteProps extends RouteProps {
   routes?: AppRouteProps[];
 }
 
-const AppRoute: FC<AppRouteProps> = (props) => {
+function AppRoute(props: AppRouteProps): JSX.Element {
   const { routes = [], ...otherProps } = props;
 
   return (
@@ -16,6 +16,6 @@ const AppRoute: FC<AppRouteProps> = (props) => {
       <Route {...otherProps} />
     </Switch>
   );
-};
+}
 
 export default AppRoute;

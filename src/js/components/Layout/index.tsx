@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import useSWR from 'swr';
 import Aside from '../Aside';
@@ -62,7 +62,11 @@ interface PlaylistsData {
   total: number;
 }
 
-const Layout: FC = (props) => {
+export interface LayoutProps {
+  children: ReactNode;
+}
+
+function Layout(props: LayoutProps): JSX.Element {
   const { children } = props;
   const { data, error } = useSWR<PlaylistsData>('/v1/me/playlists');
 
@@ -98,6 +102,6 @@ const Layout: FC = (props) => {
       <Footer>Footer</Footer>
     </div>
   );
-};
+}
 
 export default Layout;

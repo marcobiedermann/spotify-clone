@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC } from 'react';
+import React from 'react';
 import styles from './style.module.css';
 
 export interface SearchProps {
@@ -7,7 +7,7 @@ export interface SearchProps {
   onSubmit: () => void;
 }
 
-const Search: FC<SearchProps> = (props) => {
+function Search(props: SearchProps): JSX.Element {
   const { className, onSubmit } = props;
 
   return (
@@ -15,6 +15,6 @@ const Search: FC<SearchProps> = (props) => {
       <input className={styles.search__input} type="search" />
     </form>
   );
-};
+}
 
 export default Search;

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC } from 'react';
+import React from 'react';
 import Playlist from '../Playlist';
 import styles from './style.module.css';
 
@@ -20,7 +20,7 @@ export interface PlaylistsProps {
   items?: Item[];
 }
 
-const Playlists: FC<PlaylistsProps> = (props) => {
+function Playlists(props: PlaylistsProps): JSX.Element {
   const { className, items = [] } = props;
 
   return (
@@ -32,6 +32,6 @@ const Playlists: FC<PlaylistsProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
 export default Playlists;

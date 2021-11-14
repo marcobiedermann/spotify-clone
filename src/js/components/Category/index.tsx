@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Image from '../Image';
 
@@ -14,7 +14,7 @@ export interface CategoryProps {
   name: string;
 }
 
-const Category: FC<CategoryProps> = (props) => {
+function Category(props: CategoryProps): JSX.Element {
   const { id, icons, name } = props;
 
   return (
@@ -29,6 +29,6 @@ const Category: FC<CategoryProps> = (props) => {
       </figcaption>
     </figure>
   );
-};
+}
 
 export default Category;

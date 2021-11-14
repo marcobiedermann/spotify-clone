@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC } from 'react';
+import React from 'react';
 import Artist, { ArtistProps } from '../Artist';
 import styles from './style.module.css';
 
@@ -8,7 +8,7 @@ export interface ArtistsProps {
   className?: string;
 }
 
-const Artists: FC<ArtistsProps> = (props) => {
+function Artists(props: ArtistsProps): JSX.Element {
   const { artists = [], className } = props;
 
   return (
@@ -20,6 +20,6 @@ const Artists: FC<ArtistsProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
 export default Artists;

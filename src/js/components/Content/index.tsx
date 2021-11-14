@@ -1,15 +1,16 @@
 import classNames from 'classnames';
-import React, { FC } from 'react';
+import React, { ReactNode } from 'react';
 import styles from './style.module.css';
 
 export interface ContentProps {
+  children: ReactNode;
   className?: string;
 }
 
-const Content: FC<ContentProps> = (props) => {
+function Content(props: ContentProps): JSX.Element {
   const { className, ...otherProps } = props;
 
   return <div className={classNames(className, styles.content)} {...otherProps} />;
-};
+}
 
 export default Content;

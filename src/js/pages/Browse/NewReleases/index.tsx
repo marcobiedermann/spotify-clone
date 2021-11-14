@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteChildrenProps } from 'react-router-dom';
 import useSWR from 'swr';
@@ -55,7 +55,9 @@ interface NewReleasesData {
   albums: Albums;
 }
 
-const NewReleasesPage: FC<RouteChildrenProps> = () => {
+export type NewReleasesPageProps = RouteChildrenProps;
+
+function NewReleasesPage(): JSX.Element {
   const { data, error } = useSWR<NewReleasesData>('/v1/browse/new-releases');
 
   if (error) {
@@ -76,6 +78,6 @@ const NewReleasesPage: FC<RouteChildrenProps> = () => {
       <Albums items={albums.items} />
     </>
   );
-};
+}
 
 export default NewReleasesPage;

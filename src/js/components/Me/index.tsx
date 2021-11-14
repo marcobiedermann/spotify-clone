@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Image from '../Image';
 import styles from './style.module.css';
@@ -17,7 +17,7 @@ export interface MeProps {
   images: Image[];
 }
 
-const Me: FC<MeProps> = (props) => {
+function Me(props: MeProps): JSX.Element {
   const { className, display_name, id, images } = props;
 
   return (
@@ -28,6 +28,6 @@ const Me: FC<MeProps> = (props) => {
       <Link to={`/users/${id}`}>{display_name}</Link>
     </div>
   );
-};
+}
 
 export default Me;

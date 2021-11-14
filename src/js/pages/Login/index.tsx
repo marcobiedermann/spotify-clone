@@ -1,9 +1,11 @@
 import { stringify } from 'qs';
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteChildrenProps } from 'react-router-dom';
 
-const LoginPage: FC<RouteChildrenProps> = () => {
+export type LoginPageProps = RouteChildrenProps;
+
+function LoginPage(): JSX.Element {
   const query = stringify({
     client_id: import.meta.env.SPOTIFY_CLIENT_ID,
     redirect_uri: import.meta.env.SPOTIFY_REDIRECT_URI,
@@ -19,6 +21,6 @@ const LoginPage: FC<RouteChildrenProps> = () => {
       <a href={`https://accounts.spotify.com/authorize?${query}`}>Login</a>
     </>
   );
-};
+}
 
 export default LoginPage;

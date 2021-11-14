@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteChildrenProps } from 'react-router-dom';
 import useSWR from 'swr';
@@ -61,7 +61,9 @@ interface FeaturedPlaylistsData {
   playlists: Playlists;
 }
 
-const FeaturedPlaylistsPage: FC<RouteChildrenProps> = () => {
+export type FeaturedPlaylistsPageProps = RouteChildrenProps;
+
+function FeaturedPlaylistsPage(): JSX.Element {
   const { data, error } = useSWR<FeaturedPlaylistsData>('/v1/browse/featured-playlists');
 
   if (error) {
@@ -82,6 +84,6 @@ const FeaturedPlaylistsPage: FC<RouteChildrenProps> = () => {
       <Playlists items={playlists.items} />
     </>
   );
-};
+}
 
 export default FeaturedPlaylistsPage;

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteChildrenProps, useParams } from 'react-router-dom';
 import useSWR from 'swr';
@@ -72,7 +72,9 @@ interface TopTracksData {
   tracks: Track[];
 }
 
-const TopTracksPage: FC<RouteChildrenProps> = () => {
+export type TopTracksPageProps = RouteChildrenProps;
+
+function TopTracksPage(): JSX.Element {
   const { artistId } = useParams<Params>();
   const { data, error } = useSWR<TopTracksData>(`/v1/artists/${artistId}/top-tracks?market=DE`);
 
@@ -94,6 +96,6 @@ const TopTracksPage: FC<RouteChildrenProps> = () => {
       <Tracks items={tracks} />
     </>
   );
-};
+}
 
 export default TopTracksPage;
