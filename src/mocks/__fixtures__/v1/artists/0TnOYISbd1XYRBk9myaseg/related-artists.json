@@ -8,12 +8,7 @@
         "href": null,
         "total": 8286175
       },
-      "genres": [
-        "dance pop",
-        "miami hip hop",
-        "pop",
-        "pop rap"
-      ],
+      "genres": ["dance pop", "miami hip hop", "pop", "pop rap"],
       "href": "https://api.spotify.com/v1/artists/0jnsk9HBra6NMjO2oANoPY",
       "id": "0jnsk9HBra6NMjO2oANoPY",
       "images": [
@@ -46,11 +41,7 @@
         "href": null,
         "total": 2012303
       },
-      "genres": [
-        "dance pop",
-        "pop",
-        "pop rap"
-      ],
+      "genres": ["dance pop", "pop", "pop rap"],
       "href": "https://api.spotify.com/v1/artists/6MF9fzBmfXghAz953czmBC",
       "id": "6MF9fzBmfXghAz953czmBC",
       "images": [
@@ -83,11 +74,7 @@
         "href": null,
         "total": 3577720
       },
-      "genres": [
-        "dance pop",
-        "pop",
-        "pop rap"
-      ],
+      "genres": ["dance pop", "pop", "pop rap"],
       "href": "https://api.spotify.com/v1/artists/085pc2PYOi8bGKj0PNjekA",
       "id": "085pc2PYOi8bGKj0PNjekA",
       "images": [
@@ -120,10 +107,7 @@
         "href": null,
         "total": 3847454
       },
-      "genres": [
-        "dance pop",
-        "pop rap"
-      ],
+      "genres": ["dance pop", "pop rap"],
       "href": "https://api.spotify.com/v1/artists/3sgFRtyBnxXD5ESfmbK4dl",
       "id": "3sgFRtyBnxXD5ESfmbK4dl",
       "images": [
@@ -161,13 +145,7 @@
         "href": null,
         "total": 2347310
       },
-      "genres": [
-        "dance pop",
-        "miami hip hop",
-        "pop",
-        "post-teen pop",
-        "urban contemporary"
-      ],
+      "genres": ["dance pop", "miami hip hop", "pop", "post-teen pop", "urban contemporary"],
       "href": "https://api.spotify.com/v1/artists/6S0dmVVn4udvppDhZIWxCr",
       "id": "6S0dmVVn4udvppDhZIWxCr",
       "images": [
@@ -200,12 +178,7 @@
         "href": null,
         "total": 10276632
       },
-      "genres": [
-        "dance pop",
-        "pop",
-        "pop rap",
-        "post-teen pop"
-      ],
+      "genres": ["dance pop", "pop", "pop rap", "post-teen pop"],
       "href": "https://api.spotify.com/v1/artists/07YZf4WDAMNwqr4jfgOZ8y",
       "id": "07YZf4WDAMNwqr4jfgOZ8y",
       "images": [
@@ -238,12 +211,7 @@
         "href": null,
         "total": 1065404
       },
-      "genres": [
-        "asian american hip hop",
-        "dance pop",
-        "edm",
-        "pop rap"
-      ],
+      "genres": ["asian american hip hop", "dance pop", "edm", "pop rap"],
       "href": "https://api.spotify.com/v1/artists/698hF4vcwHwPy8ltmXermq",
       "id": "698hF4vcwHwPy8ltmXermq",
       "images": [
@@ -317,12 +285,7 @@
         "href": null,
         "total": 3644411
       },
-      "genres": [
-        "dance pop",
-        "dancehall",
-        "pop",
-        "pop rap"
-      ],
+      "genres": ["dance pop", "dancehall", "pop", "pop rap"],
       "href": "https://api.spotify.com/v1/artists/3Isy6kedDrgPYoTS1dazA9",
       "id": "3Isy6kedDrgPYoTS1dazA9",
       "images": [
@@ -355,14 +318,7 @@
         "href": null,
         "total": 2089872
       },
-      "genres": [
-        "dance pop",
-        "hip hop",
-        "hip pop",
-        "pop",
-        "pop rap",
-        "urban contemporary"
-      ],
+      "genres": ["dance pop", "hip hop", "hip pop", "pop", "pop rap", "urban contemporary"],
       "href": "https://api.spotify.com/v1/artists/5Y5TRrQiqgUO4S36tzjIRZ",
       "id": "5Y5TRrQiqgUO4S36tzjIRZ",
       "images": [
@@ -395,11 +351,7 @@
         "href": null,
         "total": 514944
       },
-      "genres": [
-        "dance pop",
-        "pop dance",
-        "pop rap"
-      ],
+      "genres": ["dance pop", "pop dance", "pop rap"],
       "href": "https://api.spotify.com/v1/artists/6yTYR09WCvsgdnurDW4WQo",
       "id": "6yTYR09WCvsgdnurDW4WQo",
       "images": [
@@ -432,11 +384,7 @@
         "href": null,
         "total": 6191322
       },
-      "genres": [
-        "dance pop",
-        "pop",
-        "pop rap"
-      ],
+      "genres": ["dance pop", "pop", "pop rap"],
       "href": "https://api.spotify.com/v1/artists/1yxSLGMDHlW21z4YXirZDS",
       "id": "1yxSLGMDHlW21z4YXirZDS",
       "images": [
@@ -469,12 +417,7 @@
         "href": null,
         "total": 6742002
       },
-      "genres": [
-        "dance pop",
-        "electropop",
-        "pop",
-        "post-teen pop"
-      ],
+      "genres": ["dance pop", "electropop", "pop", "post-teen pop"],
       "href": "https://api.spotify.com/v1/artists/6LqNN22kT3074XbTVUrhzX",
       "id": "6LqNN22kT3074XbTVUrhzX",
       "images": [
@@ -507,14 +450,7 @@
         "href": null,
         "total": 248849
       },
-      "genres": [
-        "dance pop",
-        "german dance",
-        "partyschlager",
-        "pop dance",
-        "pop house",
-        "pop rap"
-      ],
+      "genres": ["dance pop", "german dance", "partyschlager", "pop dance", "pop house", "pop rap"],
       "href": "https://api.spotify.com/v1/artists/0Ol3Jol2T3lZZVLNNzWPhj",
       "id": "0Ol3Jol2T3lZZVLNNzWPhj",
       "images": [
@@ -547,13 +483,7 @@
         "href": null,
         "total": 1195549
       },
-      "genres": [
-        "dance pop",
-        "edm",
-        "pop",
-        "pop rap",
-        "rap"
-      ],
+      "genres": ["dance pop", "edm", "pop", "pop rap", "rap"],
       "href": "https://api.spotify.com/v1/artists/2KsP6tYLJlTBvSUxnwlVWa",
       "id": "2KsP6tYLJlTBvSUxnwlVWa",
       "images": [
@@ -586,11 +516,7 @@
         "href": null,
         "total": 398489
       },
-      "genres": [
-        "dance pop",
-        "norwegian hip hop",
-        "pop rap"
-      ],
+      "genres": ["dance pop", "norwegian hip hop", "pop rap"],
       "href": "https://api.spotify.com/v1/artists/6c4sUNBgdonFJz8Kx2VsGz",
       "id": "6c4sUNBgdonFJz8Kx2VsGz",
       "images": [
@@ -623,12 +549,7 @@
         "href": null,
         "total": 4696900
       },
-      "genres": [
-        "dance pop",
-        "pop",
-        "post-teen pop",
-        "urban contemporary"
-      ],
+      "genres": ["dance pop", "pop", "post-teen pop", "urban contemporary"],
       "href": "https://api.spotify.com/v1/artists/3r17AfJCCUqC9Lf0OAc73G",
       "id": "3r17AfJCCUqC9Lf0OAc73G",
       "images": [
@@ -702,12 +623,7 @@
         "href": null,
         "total": 10897532
       },
-      "genres": [
-        "dance pop",
-        "pop",
-        "pop rap",
-        "urban contemporary"
-      ],
+      "genres": ["dance pop", "pop", "pop rap", "urban contemporary"],
       "href": "https://api.spotify.com/v1/artists/2DlGxzQSjYe5N6G9nkYghR",
       "id": "2DlGxzQSjYe5N6G9nkYghR",
       "images": [
@@ -740,13 +656,7 @@
         "href": null,
         "total": 1612652
       },
-      "genres": [
-        "dance pop",
-        "electro latino",
-        "latin",
-        "latin pop",
-        "reggaeton"
-      ],
+      "genres": ["dance pop", "electro latino", "latin", "latin pop", "reggaeton"],
       "href": "https://api.spotify.com/v1/artists/1ackd5XprZEkH3McKbQD51",
       "id": "1ackd5XprZEkH3McKbQD51",
       "images": [
