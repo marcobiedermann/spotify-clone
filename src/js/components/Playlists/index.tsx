@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React from 'react';
 import Playlist from '../Playlist';
 import styles from './style.module.css';
@@ -24,7 +24,7 @@ function Playlists(props: PlaylistsProps): JSX.Element {
   const { className, items = [] } = props;
 
   return (
-    <ul className={classNames(className, styles.playlists)}>
+    <ul className={clsx(className, styles.playlists)}>
       {items.map((playlist) => (
         <li key={playlist.id}>
           <Playlist {...playlist} />

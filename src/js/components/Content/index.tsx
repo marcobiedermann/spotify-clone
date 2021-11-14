@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 import styles from './style.module.css';
 
@@ -10,7 +10,7 @@ export interface ContentProps {
 function Content(props: ContentProps): JSX.Element {
   const { className, ...otherProps } = props;
 
-  return <div className={classNames(className, styles.content)} {...otherProps} />;
+  return <div className={clsx(className, styles.content)} {...otherProps} />;
 }
 
 export default Content;

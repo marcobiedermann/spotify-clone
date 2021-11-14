@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 import styles from './style.module.css';
 
@@ -10,7 +10,7 @@ export interface MediaBodyProps {
 export function MediaBody(props: MediaBodyProps): JSX.Element {
   const { className, ...otherProps } = props;
 
-  return <div className={classNames(className, styles.media__body)} {...otherProps} />;
+  return <div className={clsx(className, styles.media__body)} {...otherProps} />;
 }
 
 export interface MediaObjectProps {
@@ -24,7 +24,7 @@ export function MediaObject(props: MediaObjectProps): JSX.Element {
 
   return (
     <div
-      className={classNames(className, styles.media__object, {
+      className={clsx(className, styles.media__object, {
         [`media__object--${direction}`]: direction,
       })}
       {...otherProps}
@@ -40,7 +40,7 @@ export interface MediaProps {
 function Media(props: MediaProps): JSX.Element {
   const { className, ...otherProps } = props;
 
-  return <div className={classNames(className, styles.media)} {...otherProps} />;
+  return <div className={clsx(className, styles.media)} {...otherProps} />;
 }
 
 export default Media;
