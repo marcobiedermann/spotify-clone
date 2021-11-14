@@ -1,10 +1,10 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Search from '.';
 import searchFixtures from './__fixtures__';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<Search {...searchFixtures} />).toJSON();
+  const { container } = render(<Search {...searchFixtures} />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

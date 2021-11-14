@@ -2,6 +2,6 @@
 
 exports[`Albums component renders correctly 1`] = `
 <ul
-  className="albums"
+  class="albums"
 />
 `;

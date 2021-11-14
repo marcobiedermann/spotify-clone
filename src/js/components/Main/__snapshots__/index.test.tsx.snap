@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <main
-  className="main"
+  class="main"
 >
   Main
 </main>

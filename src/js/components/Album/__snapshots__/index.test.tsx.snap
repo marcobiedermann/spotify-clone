@@ -7,18 +7,12 @@ exports[`Album component renders correctly 1`] = `
       <h3>
         <a
           href="/albums/"
-          onClick={[Function]}
-        >
-          
-        </a>
+        />
       </h3>
       <h4>
         <a
           href="/artists/"
-          onClick={[Function]}
-        >
-          
-        </a>
+        />
       </h4>
     </figcaption>
   </figure>
@@ -28,9 +22,7 @@ exports[`Album component renders correctly 1`] = `
         <td>
           100
         </td>
-        <td>
-          
-        </td>
+        <td />
         <td>
           00:00
         </td>

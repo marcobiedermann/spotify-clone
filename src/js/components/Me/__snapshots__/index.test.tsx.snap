@@ -2,23 +2,20 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="me"
+  class="me"
 >
   <figure
-    className="me__image"
+    class="me__image"
   >
     <img
       alt=""
-      height={32}
+      height="32"
       src=""
-      width={32}
+      width="32"
     />
   </figure>
   <a
     href="/users/"
-    onClick={[Function]}
-  >
-    
-  </a>
+  />
 </div>
 `;

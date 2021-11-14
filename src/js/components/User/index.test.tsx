@@ -1,10 +1,10 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import User from '.';
 import userFixtures from './__fixtures__';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<User {...userFixtures} />).toJSON();
+  const { container } = render(<User {...userFixtures} />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

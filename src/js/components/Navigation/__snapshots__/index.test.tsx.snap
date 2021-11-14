@@ -6,7 +6,6 @@ exports[`renders correctly 1`] = `
     <li>
       <a
         href="/"
-        onClick={[Function]}
       >
         Home
       </a>
@@ -14,7 +13,6 @@ exports[`renders correctly 1`] = `
     <li>
       <a
         href="/browse"
-        onClick={[Function]}
       >
         Browse
       </a>

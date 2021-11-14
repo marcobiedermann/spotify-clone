@@ -1,10 +1,10 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Track from '.';
 import trackFixtures from './__fixtures__';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<Track {...trackFixtures} />).toJSON();
+  const { container } = render(<Track {...trackFixtures} />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

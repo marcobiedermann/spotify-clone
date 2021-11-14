@@ -1,9 +1,9 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Playlists from '.';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<Playlists />).toJSON();
+  const { container } = render(<Playlists />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

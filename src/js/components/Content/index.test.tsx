@@ -1,9 +1,9 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Content from '.';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<Content>Content</Content>).toJSON();
+  const { container } = render(<Content>Content</Content>);
 
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
