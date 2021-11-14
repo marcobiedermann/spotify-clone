@@ -1,9 +1,9 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Error from '.';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<Error>Error</Error>).toJSON();
+  const { container } = render(<Error>Error</Error>);
 
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

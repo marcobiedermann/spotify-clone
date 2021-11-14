@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="content"
+  class="content"
 >
   Content
 </div>

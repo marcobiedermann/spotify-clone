@@ -5,9 +5,7 @@ exports[`renders correctly 1`] = `
   <td>
     100
   </td>
-  <td>
-    
-  </td>
+  <td />
   <td>
     00:00
   </td>

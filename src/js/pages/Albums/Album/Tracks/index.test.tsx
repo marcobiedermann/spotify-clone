@@ -1,16 +1,14 @@
+import { render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter, Route } from 'react-router-dom';
-import renderer from 'react-test-renderer';
 import TracksPage from '.';
 
 it('renders correctly', () => {
-  const tree = renderer
-    .create(
-      <MemoryRouter>
-        <Route component={TracksPage} />
-      </MemoryRouter>,
-    )
-    .toJSON();
+  const { container } = render(
+    <MemoryRouter>
+      <Route component={TracksPage} />
+    </MemoryRouter>,
+  );
 
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

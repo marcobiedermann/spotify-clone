@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <aside
-  className="aside aside--left"
+  class="aside aside--left"
 >
   Aside
 </aside>

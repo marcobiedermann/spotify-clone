@@ -1,9 +1,9 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Button from '.';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<Button>Button</Button>).toJSON();
+  const { container } = render(<Button>Button</Button>);
 
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

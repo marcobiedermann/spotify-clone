@@ -1,12 +1,12 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Artist from '.';
 import artistFixtures from './__fixtures__';
 
 describe('Artist component', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<Artist {...artistFixtures} />).toJSON();
+    const { container } = render(<Artist {...artistFixtures} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

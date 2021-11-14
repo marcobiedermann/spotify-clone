@@ -1,9 +1,9 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Artists from '.';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<Artists />).toJSON();
+  const { container } = render(<Artists />);
 
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

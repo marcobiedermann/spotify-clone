@@ -1,9 +1,9 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Header from '.';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<Header>Header</Header>).toJSON();
+  const { container } = render(<Header>Header</Header>);
 
-  expect(tree).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
