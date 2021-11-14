@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React from 'react';
 import Album, { AlbumProps } from '../Album';
 import styles from './style.module.css';
@@ -12,7 +12,7 @@ function Albums(props: AlbumsProps): JSX.Element {
   const { className, items = [] } = props;
 
   return (
-    <ul className={classNames(className, styles.albums)}>
+    <ul className={clsx(className, styles.albums)}>
       {items.map((album) => (
         <li key={album.id}>
           <Album {...album} />

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React from 'react';
 import Artist, { ArtistProps } from '../Artist';
 import styles from './style.module.css';
@@ -12,7 +12,7 @@ function Artists(props: ArtistsProps): JSX.Element {
   const { artists = [], className } = props;
 
   return (
-    <ul className={classNames(className, styles.artists)}>
+    <ul className={clsx(className, styles.artists)}>
       {artists.map((artist) => (
         <li key={artist.id}>
           <Artist {...artist} />
