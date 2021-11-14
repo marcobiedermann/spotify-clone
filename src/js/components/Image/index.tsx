@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 
-import React, { FC } from 'react';
+import React from 'react';
 
 export interface ImageProps {
   alt: string;
@@ -9,10 +9,10 @@ export interface ImageProps {
   width?: number;
 }
 
-const Image: FC<ImageProps> = (props) => {
+function Image(props: ImageProps): JSX.Element {
   const { url, ...otherProps } = props;
 
   return <img src={url} {...otherProps} />;
-};
+}
 
 export default Image;

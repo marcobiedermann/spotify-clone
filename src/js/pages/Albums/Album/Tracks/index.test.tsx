@@ -7,7 +7,7 @@ it('renders correctly', () => {
   const tree = renderer
     .create(
       <MemoryRouter>
-        <Route render={(props) => <TracksPage {...props} />} />
+        <Route component={TracksPage} />
       </MemoryRouter>,
     )
     .toJSON();

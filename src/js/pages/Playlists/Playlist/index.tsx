@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, RouteChildrenProps, useParams } from 'react-router-dom';
 import useSWR from 'swr';
@@ -121,7 +121,9 @@ interface PlaylistData {
   uri: string;
 }
 
-const PlaylistPage: FC<RouteChildrenProps> = () => {
+export type PlaylistsPageProps = RouteChildrenProps;
+
+function PlaylistPage(): JSX.Element {
   const { playlistId } = useParams<Params>();
   const { data, error } = useSWR<PlaylistData>(`/v1/playlists/${playlistId}`);
 
@@ -167,6 +169,6 @@ const PlaylistPage: FC<RouteChildrenProps> = () => {
       </div>
     </>
   );
-};
+}
 
 export default PlaylistPage;

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Image from '../Image';
 
 interface Image {
@@ -13,7 +13,7 @@ export interface ArtistProps {
   images: Image[];
 }
 
-const Artist: FC<ArtistProps> = (props) => {
+function Artist(props: ArtistProps): JSX.Element {
   const { images, name } = props;
 
   return (
@@ -24,6 +24,6 @@ const Artist: FC<ArtistProps> = (props) => {
       </figcaption>
     </figure>
   );
-};
+}
 
 export default Artist;

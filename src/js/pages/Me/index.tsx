@@ -1,8 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteChildrenProps } from 'react-router-dom';
 
-const MePage: FC<RouteChildrenProps> = () => {
+export type MePageProps = RouteChildrenProps;
+
+function MePage(): JSX.Element {
   return (
     <>
       <Helmet>
@@ -11,6 +13,6 @@ const MePage: FC<RouteChildrenProps> = () => {
       Me
     </>
   );
-};
+}
 
 export default MePage;

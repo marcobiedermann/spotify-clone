@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC } from 'react';
+import React from 'react';
 import Category, { CategoryProps } from '../Category';
 import styles from './style.module.css';
 
@@ -8,7 +8,7 @@ export interface CategoriesProps {
   items?: CategoryProps[];
 }
 
-const Categories: FC<CategoriesProps> = (props) => {
+function Categories(props: CategoriesProps): JSX.Element {
   const { className, items = [] } = props;
 
   return (
@@ -20,6 +20,6 @@ const Categories: FC<CategoriesProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
 export default Categories;

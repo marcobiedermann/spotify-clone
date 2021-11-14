@@ -3,5 +3,7 @@
 exports[`renders correctly 1`] = `
 <main
   className="main"
-/>
+>
+  Main
+</main>
 `;

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteChildrenProps, useParams } from 'react-router-dom';
 import useSWR from 'swr';
@@ -65,7 +65,9 @@ interface PlaylistsData {
   playlists: Playlists;
 }
 
-const PlaylistsPage: FC<RouteChildrenProps> = () => {
+export type PlaylistsPageProps = RouteChildrenProps;
+
+function PlaylistsPage(): JSX.Element {
   const { categoryId } = useParams<Params>();
   const { data, error } = useSWR<PlaylistsData>(`/v1/browse/categories/${categoryId}/playlists`);
 
@@ -87,6 +89,6 @@ const PlaylistsPage: FC<RouteChildrenProps> = () => {
       <Playlists items={playlists.items} />
     </>
   );
-};
+}
 
 export default PlaylistsPage;

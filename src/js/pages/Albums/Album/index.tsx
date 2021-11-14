@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteChildrenProps, useParams } from 'react-router-dom';
 import useSWR from 'swr';
@@ -87,7 +87,9 @@ interface AlbumData {
   uri: string;
 }
 
-const AlbumPage: FC<RouteChildrenProps> = () => {
+export type AlbumPageProps = RouteChildrenProps;
+
+function AlbumPage(): JSX.Element {
   const { albumId } = useParams<Params>();
   const { data, error } = useSWR<AlbumData>(`/v1/albums/${albumId}`);
 
@@ -109,6 +111,6 @@ const AlbumPage: FC<RouteChildrenProps> = () => {
       <Album {...data} />
     </>
   );
-};
+}
 
 export default AlbumPage;

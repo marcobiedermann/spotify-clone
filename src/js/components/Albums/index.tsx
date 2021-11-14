@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { FC } from 'react';
+import React from 'react';
 import Album, { AlbumProps } from '../Album';
 import styles from './style.module.css';
 
@@ -8,7 +8,7 @@ export interface AlbumsProps {
   items?: AlbumProps[];
 }
 
-const Albums: FC<AlbumsProps> = (props) => {
+function Albums(props: AlbumsProps): JSX.Element {
   const { className, items = [] } = props;
 
   return (
@@ -20,6 +20,6 @@ const Albums: FC<AlbumsProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
 export default Albums;

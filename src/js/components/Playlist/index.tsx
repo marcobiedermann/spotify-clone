@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Image from '../Image';
 
@@ -14,7 +14,7 @@ export interface PlaylistProps {
   name: string;
 }
 
-const Playlist: FC<PlaylistProps> = (props) => {
+function Playlist(props: PlaylistProps): JSX.Element {
   const { id, images, name } = props;
 
   return (
@@ -29,6 +29,6 @@ const Playlist: FC<PlaylistProps> = (props) => {
       </figcaption>
     </figure>
   );
-};
+}
 
 export default Playlist;

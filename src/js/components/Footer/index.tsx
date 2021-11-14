@@ -1,7 +1,11 @@
-import React, { FC } from 'react';
+import React, { ReactNode } from 'react';
 
-const Footer: FC = (props) => {
+export interface FooterProps {
+  children: ReactNode;
+}
+
+function Footer(props: FooterProps): JSX.Element {
   return <footer {...props} />;
-};
+}
 
 export default Footer;

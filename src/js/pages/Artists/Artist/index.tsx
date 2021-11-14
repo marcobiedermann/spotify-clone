@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, RouteChildrenProps, useLocation, useParams } from 'react-router-dom';
 import useSWR from 'swr';
@@ -38,7 +38,9 @@ export interface ArtistData {
   uri: string;
 }
 
-const ArtistPage: FC<RouteChildrenProps> = () => {
+export type ArtistPageProps = RouteChildrenProps;
+
+function ArtistPage(): JSX.Element {
   const { pathname } = useLocation();
   const { artistId } = useParams<Params>();
   const { data, error } = useSWR<ArtistData>(`/v1/artists/${artistId}`);
@@ -72,6 +74,6 @@ const ArtistPage: FC<RouteChildrenProps> = () => {
       </ul>
     </>
   );
-};
+}
 
 export default ArtistPage;

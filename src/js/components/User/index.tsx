@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Image from '../Image';
 
 interface Followers {
@@ -17,7 +17,7 @@ export interface UserProps {
   images?: Image[];
 }
 
-const User: FC<UserProps> = (props) => {
+function User(props: UserProps): JSX.Element {
   const { display_name, followers, images } = props;
 
   return (
@@ -31,6 +31,6 @@ const User: FC<UserProps> = (props) => {
       {followers && <p>{followers.total} Followers</p>}
     </div>
   );
-};
+}
 
 export default User;

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteChildrenProps, useParams } from 'react-router-dom';
 import useSWR from 'swr';
@@ -36,7 +36,9 @@ interface UserData {
   uri: string;
 }
 
-const UserPage: FC<RouteChildrenProps> = () => {
+export type UserPageProps = RouteChildrenProps;
+
+function UserPage(): JSX.Element {
   const { userId } = useParams<Params>();
   const { data, error } = useSWR<UserData>(`/v1/users/${userId}`);
 
@@ -58,6 +60,6 @@ const UserPage: FC<RouteChildrenProps> = () => {
       <User {...data} />
     </>
   );
-};
+}
 
 export default UserPage;

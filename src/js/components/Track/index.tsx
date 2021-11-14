@@ -1,5 +1,5 @@
 import format from 'date-fns/format';
-import React, { FC } from 'react';
+import React from 'react';
 
 export interface TrackProps {
   duration_ms: number;
@@ -8,7 +8,7 @@ export interface TrackProps {
   track_number: number;
 }
 
-const Track: FC<TrackProps> = (props) => {
+function Track(props: TrackProps): JSX.Element {
   const { duration_ms, name, track_number } = props;
 
   return (
@@ -18,6 +18,6 @@ const Track: FC<TrackProps> = (props) => {
       <td>{format(duration_ms, 'mm:ss')}</td>
     </tr>
   );
-};
+}
 
 export default Track;

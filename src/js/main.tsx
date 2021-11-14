@@ -30,15 +30,17 @@ async function fetcher(url: string) {
   return response.json();
 }
 
-const Root = () => (
-  <SWRConfig
-    value={{
-      fetcher,
-    }}
-  >
-    <Router routes={ROUTES} />
-  </SWRConfig>
-);
+function Root(): JSX.Element {
+  return (
+    <SWRConfig
+      value={{
+        fetcher,
+      }}
+    >
+      <Router routes={ROUTES} />
+    </SWRConfig>
+  );
+}
 
 if (import.meta.env.DEV) {
   worker.start();

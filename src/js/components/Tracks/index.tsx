@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Track, { TrackProps } from '../Track';
 
 export interface TracksProps {
   items?: TrackProps[];
 }
 
-const Tracks: FC<TracksProps> = (props) => {
+function Tracks(props: TracksProps): JSX.Element {
   const { items = [] } = props;
 
   return (
@@ -17,6 +17,6 @@ const Tracks: FC<TracksProps> = (props) => {
       </tbody>
     </table>
   );
-};
+}
 
 export default Tracks;
