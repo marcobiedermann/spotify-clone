@@ -1,14 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { RouteChildrenProps, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import AlbumTracks from '../../../../components/AlbumTracks';
 import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
-
-interface Params {
-  artistId: string;
-}
 
 interface Album {
   album_type: string;
@@ -72,10 +68,8 @@ interface TopTracksData {
   tracks: Track[];
 }
 
-export type TopTracksPageProps = RouteChildrenProps;
-
 function TopTracksPage(): JSX.Element {
-  const { artistId } = useParams<Params>();
+  const { artistId } = useParams();
   const { data, error } = useSWR<TopTracksData>(`/v1/artists/${artistId}/top-tracks?market=DE`);
 
   if (error) {

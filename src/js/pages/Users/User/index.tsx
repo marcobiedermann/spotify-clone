@@ -1,14 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { RouteChildrenProps, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 import User from '../../../components/User';
-
-interface Params {
-  userId: string;
-}
 
 interface ExternalUrls {
   spotify: string;
@@ -36,10 +32,8 @@ interface UserData {
   uri: string;
 }
 
-export type UserPageProps = RouteChildrenProps;
-
 function UserPage(): JSX.Element {
-  const { userId } = useParams<Params>();
+  const { userId } = useParams();
   const { data, error } = useSWR<UserData>(`/v1/users/${userId}`);
 
   if (error) {

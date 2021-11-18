@@ -1,9 +1,6 @@
 import { stringify } from 'qs';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { RouteChildrenProps } from 'react-router-dom';
-
-export type LoginPageProps = RouteChildrenProps;
 
 function LoginPage(): JSX.Element {
   const query = stringify({

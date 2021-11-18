@@ -1,14 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { RouteChildrenProps, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import Album from '../../../components/Album';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
-
-interface Params {
-  albumId: string;
-}
 
 interface Artist {
   external_urls: ExternalUrls;
@@ -87,10 +83,8 @@ interface AlbumData {
   uri: string;
 }
 
-export type AlbumPageProps = RouteChildrenProps;
-
 function AlbumPage(): JSX.Element {
-  const { albumId } = useParams<Params>();
+  const { albumId } = useParams();
   const { data, error } = useSWR<AlbumData>(`/v1/albums/${albumId}`);
 
   if (error) {

@@ -1,14 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { RouteChildrenProps, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import Category from '../../../../components/Category';
 import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
-
-interface Params {
-  categoryId: string;
-}
 
 interface Icon {
   height: number;
@@ -23,10 +19,8 @@ interface PlaylistData {
   name: string;
 }
 
-export type CategoryPageProps = RouteChildrenProps;
-
 function CategoryPage(): JSX.Element {
-  const { categoryId } = useParams<Params>();
+  const { categoryId } = useParams();
   const { data, error } = useSWR<PlaylistData>(`/v1/browse/categories/${categoryId}`);
 
   if (error) {

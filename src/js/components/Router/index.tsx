@@ -1,23 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
-import AppRoute, { AppRouteProps } from '../AppRoute';
+import { BrowserRouter } from 'react-router-dom';
 import Layout from '../Layout';
+import Routes from '../Routes';
 
-export interface RouterProps {
-  routes: AppRouteProps[];
-}
-
-function Router(props: RouterProps): JSX.Element {
-  const { routes } = props;
-
+function Router(): JSX.Element {
   return (
     <BrowserRouter>
       <Layout>
-        <Switch>
-          {routes.map((route) => (
-            <AppRoute key={route.path.toString()} {...route} />
-          ))}
-        </Switch>
+        <Routes />
       </Layout>
     </BrowserRouter>
   );
