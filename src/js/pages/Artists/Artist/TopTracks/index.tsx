@@ -2,9 +2,9 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { RouteChildrenProps, useParams } from 'react-router-dom';
 import useSWR from 'swr';
+import AlbumTracks from '../../../../components/AlbumTracks';
 import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
-import Tracks from '../../../../components/Tracks';
 
 interface Params {
   artistId: string;
@@ -93,7 +93,7 @@ function TopTracksPage(): JSX.Element {
       <Helmet>
         <title>Top Tracks</title>
       </Helmet>
-      <Tracks items={tracks} />
+      <AlbumTracks items={tracks} />
     </>
   );
 }

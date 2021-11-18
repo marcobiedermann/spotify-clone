@@ -6,25 +6,59 @@ exports[`Album component renders correctly 1`] = `
     <figcaption>
       <h3>
         <a
-          href="/albums/"
-        />
+          href="/albums/4aawyAB9vmqN3uQ7FjRGTy"
+        >
+          Global Warming
+        </a>
       </h3>
       <h4>
         <a
-          href="/artists/"
-        />
+          href="/artists/0TnOYISbd1XYRBk9myaseg"
+        >
+          Pitbull
+        </a>
       </h4>
     </figcaption>
   </figure>
   <table>
+    <thead>
+      <tr>
+        <th>
+          #
+        </th>
+        <th>
+          Title
+        </th>
+        <th
+          align="right"
+        >
+          Duration
+        </th>
+      </tr>
+    </thead>
     <tbody>
       <tr>
         <td>
-          100
+          1
         </td>
-        <td />
         <td>
-          00:00
+          <div
+            class="track__name"
+          >
+            Global Warming (feat. Sensato)
+          </div>
+          <div>
+            <a
+              href="/artists/0TnOYISbd1XYRBk9myaseg"
+            >
+              Pitbull
+            </a>
+          </div>
+        </td>
+        <td
+          align="right"
+        >
+          1:25
         </td>
       </tr>
     </tbody>

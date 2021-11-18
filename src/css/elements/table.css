@@ -5,3 +5,21 @@ table {
   margin-top: 0.5em;
   width: 100%;
 }
+
+thead {
+  border-bottom: 1px solid #b3b3b3;
+}
+
+tr {
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.25em 0.5em;
+}
+
+th {
+  font-weight: 400;
+  text-transform: uppercase;
+}
