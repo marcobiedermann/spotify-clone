@@ -1,14 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { RouteChildrenProps, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import Artists from '../../../../components/Artists';
 import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
-
-interface Params {
-  artistId: string;
-}
 
 interface Artist {
   external_urls: ExternalUrls;
@@ -42,10 +38,8 @@ interface RelatedArtistsData {
   artists: Artist[];
 }
 
-export type RelatedArtistsPageProps = RouteChildrenProps;
-
 function RelatedArtistsPage(): JSX.Element {
-  const { artistId } = useParams<Params>();
+  const { artistId } = useParams();
   const { data, error } = useSWR<RelatedArtistsData>(`/v1/artists/${artistId}/related-artists`);
 
   if (error) {

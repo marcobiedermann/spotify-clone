@@ -1,14 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { RouteChildrenProps, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import Error from '../../../../../components/Error';
 import Loader from '../../../../../components/Loader';
 import Playlists from '../../../../../components/Playlists';
-
-interface Params {
-  categoryId: string;
-}
 
 interface ExternalUrls {
   spotify: string;
@@ -65,10 +61,8 @@ interface PlaylistsData {
   playlists: Playlists;
 }
 
-export type PlaylistsPageProps = RouteChildrenProps;
-
 function PlaylistsPage(): JSX.Element {
-  const { categoryId } = useParams<Params>();
+  const { categoryId } = useParams();
   const { data, error } = useSWR<PlaylistsData>(`/v1/browse/categories/${categoryId}/playlists`);
 
   if (error) {

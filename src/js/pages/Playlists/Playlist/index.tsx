@@ -1,7 +1,7 @@
 import { formatDistance } from 'date-fns';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, RouteChildrenProps, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import Button from '../../../components/Button';
 import Error from '../../../components/Error';
@@ -9,10 +9,6 @@ import Image from '../../../components/Image';
 import Loader from '../../../components/Loader';
 import Media, { MediaBody, MediaObject } from '../../../components/Media';
 import PlaylistTracks from '../../../components/PlaylistTracks';
-
-interface Params {
-  playlistId: string;
-}
 
 interface Album {
   album_type: string;
@@ -122,10 +118,8 @@ interface PlaylistData {
   uri: string;
 }
 
-export type PlaylistsPageProps = RouteChildrenProps;
-
 function PlaylistPage(): JSX.Element {
-  const { playlistId } = useParams<Params>();
+  const { playlistId } = useParams();
   const { data, error } = useSWR<PlaylistData>(`/v1/playlists/${playlistId}`);
 
   if (error) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { RouteChildrenProps } from 'react-router-dom';
 import useSWR from 'swr';
 import Categories from '../../../components/Categories';
 import Error from '../../../components/Error';
@@ -32,8 +31,6 @@ interface Item {
 interface CategoriesData {
   categories: Categories;
 }
-
-export type CategoriesPageProps = RouteChildrenProps;
 
 function CategoriesPage(): JSX.Element {
   const { data, error } = useSWR<CategoriesData>('/v1/browse/categories');

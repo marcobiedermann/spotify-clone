@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { RouteChildrenProps } from 'react-router-dom';
 import useSWR from 'swr';
 import Albums from '../../../components/Albums';
 import Error from '../../../components/Error';
@@ -54,8 +53,6 @@ interface Item {
 interface NewReleasesData {
   albums: Albums;
 }
-
-export type NewReleasesPageProps = RouteChildrenProps;
 
 function NewReleasesPage(): JSX.Element {
   const { data, error } = useSWR<NewReleasesData>('/v1/browse/new-releases');

@@ -1,9 +1,7 @@
 import { parse } from 'qs';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Redirect, RouteChildrenProps, useLocation } from 'react-router-dom';
-
-export type CallbackPageProps = RouteChildrenProps;
+import { Navigate, useLocation } from 'react-router-dom';
 
 function CallbackPage(): JSX.Element {
   const { search } = useLocation();
@@ -19,7 +17,7 @@ function CallbackPage(): JSX.Element {
       <Helmet>
         <title>Callback</title>
       </Helmet>
-      <Redirect to="/" />
+      <Navigate to="/" />
     </>
   );
 }

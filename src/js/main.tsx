@@ -12,7 +12,6 @@ import '../css/elements/table.css';
 import '../css/layout/base.css';
 import { worker } from '../mocks/browser';
 import Router from './components/Router';
-import ROUTES from './constants/routes';
 
 const ACCESS_TOKEN = import.meta.env.SPOTIFY_ACCESS_TOKEN || '';
 
@@ -37,7 +36,7 @@ function Root(): JSX.Element {
         fetcher,
       }}
     >
-      <Router routes={ROUTES} />
+      <Router />
     </SWRConfig>
   );
 }

@@ -1,14 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, RouteChildrenProps, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import Artist from '../../../components/Artist';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
-
-interface Params {
-  artistId: string;
-}
 
 interface ExternalUrls {
   spotify: string;
@@ -38,11 +34,9 @@ export interface ArtistData {
   uri: string;
 }
 
-export type ArtistPageProps = RouteChildrenProps;
-
 function ArtistPage(): JSX.Element {
   const { pathname } = useLocation();
-  const { artistId } = useParams<Params>();
+  const { artistId } = useParams();
   const { data, error } = useSWR<ArtistData>(`/v1/artists/${artistId}`);
 
   if (error) {
