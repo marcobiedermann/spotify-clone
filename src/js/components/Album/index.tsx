@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AlbumTracks from '../AlbumTracks';
 import Image from '../Image';
-import Tracks from '../Tracks';
 
-interface Artist {
+interface Owner {
   id: string;
-  name: string;
+  name?: string;
 }
 
 interface Image {
@@ -15,6 +15,7 @@ interface Image {
 }
 
 interface Item {
+  artists: Owner[];
   duration_ms: number;
   id: string;
   name: string;
@@ -26,7 +27,7 @@ interface Tracks {
 }
 
 export interface AlbumProps {
-  artists: Artist[];
+  artists: Owner[];
   id: string;
   images: Image[];
   name: string;
@@ -55,7 +56,7 @@ function Album(props: AlbumProps): JSX.Element {
           )}
         </figcaption>
       </figure>
-      {tracks && <Tracks items={tracks.items} />}
+      {tracks && <AlbumTracks items={tracks.items} />}
     </div>
   );
 }

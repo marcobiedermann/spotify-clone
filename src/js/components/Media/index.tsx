@@ -25,7 +25,7 @@ export function MediaObject(props: MediaObjectProps): JSX.Element {
   return (
     <div
       className={clsx(className, styles.media__object, {
-        [`media__object--${direction}`]: direction,
+        [styles[`media__object--${direction}`]]: direction,
       })}
       {...otherProps}
     />

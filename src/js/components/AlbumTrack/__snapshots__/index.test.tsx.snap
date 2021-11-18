@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<tr>
+  <td>
+    2
+  </td>
+  <td>
+    <div
+      class="track__name"
+    >
+      Is
+    </div>
+    <div>
+      <a
+        href="/artists/5VQE4WOzPu9h3HnGLuBoA6"
+      >
+        Vlasta Marek
+      </a>
+    </div>
+  </td>
+  <td
+    align="right"
+  >
+    12:10
+  </td>
+</tr>
+`;

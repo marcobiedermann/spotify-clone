@@ -1,3 +1,4 @@
+import { formatDistance } from 'date-fns';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, RouteChildrenProps, useParams } from 'react-router-dom';
@@ -7,7 +8,7 @@ import Error from '../../../components/Error';
 import Image from '../../../components/Image';
 import Loader from '../../../components/Loader';
 import Media, { MediaBody, MediaObject } from '../../../components/Media';
-import Track from '../../../components/Track';
+import PlaylistTracks from '../../../components/PlaylistTracks';
 
 interface Params {
   playlistId: string;
@@ -137,6 +138,11 @@ function PlaylistPage(): JSX.Element {
 
   const { description, images, name, owner, tracks } = data;
 
+  const totalDuration = tracks.items.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.track.duration_ms,
+    0,
+  );
+
   return (
     <>
       <Helmet>
@@ -151,21 +157,15 @@ function PlaylistPage(): JSX.Element {
             <h1>{name}</h1>
             <p>{description}</p>
             <p>
-              Created by <Link to={`/users/${owner.id}`}>{owner.display_name}</Link> ·{' '}
-              {tracks.total} songs
+              <Link to={`/users/${owner.id}`}>{owner.display_name}</Link> · {tracks.total} songs,{' '}
+              {formatDistance(0, totalDuration)}
             </p>
             <p>
               <Button>Play</Button>
             </p>
           </MediaBody>
         </Media>
-        <table>
-          <tbody>
-            {tracks.items.map((track) => (
-              <Track key={track.track.id} {...track.track} />
-            ))}
-          </tbody>
-        </table>
+        <PlaylistTracks items={tracks.items} />
       </div>
     </>
   );

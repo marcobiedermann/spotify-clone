@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import Tracks from '.';
+import PlaylistTracks from '.';
 
 it('renders correctly', () => {
-  const { container } = render(<Tracks />);
+  const { container } = render(<PlaylistTracks />);
 
   expect(container.firstChild).toMatchSnapshot();
 });

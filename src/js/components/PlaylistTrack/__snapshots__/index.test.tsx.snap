@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<tr>
+  <td>
+    2
+  </td>
+  <td>
+    <div
+      class="media"
+    >
+      <div
+        class="media__object media__object--left"
+      >
+        <img
+          alt="Tibetan Bowls"
+          height="48"
+          src="https://i.scdn.co/image/ab67616d0000b273ce6d0eef0c1ce77e5f95bbbc"
+          width="48"
+        />
+      </div>
+      <div
+        class="media__body"
+      >
+        <div
+          class="track__name"
+        >
+          Is
+        </div>
+        <div>
+          <a
+            href="/artists/5VQE4WOzPu9h3HnGLuBoA6"
+          >
+            Vlasta Marek
+          </a>
+        </div>
+      </div>
+    </div>
+  </td>
+  <td>
+    <a
+      href="/albums/5Opp8ursJ6XoTTcqElvAJG"
+    >
+      Tibetan Bowls
+    </a>
+  </td>
+  <td>
+    Jan 15, 2015
+  </td>
+  <td
+    align="right"
+  >
+    12:10
+  </td>
+</tr>
+`;

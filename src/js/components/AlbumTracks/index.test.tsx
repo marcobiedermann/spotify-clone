@@ -1,10 +1,9 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import Track from '.';
-import trackFixtures from './__fixtures__';
+import AlbumTracks from '.';
 
 it('renders correctly', () => {
-  const { container } = render(<Track {...trackFixtures} />);
+  const { container } = render(<AlbumTracks />);
 
   expect(container.firstChild).toMatchSnapshot();
 });
