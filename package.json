@@ -36,9 +36,8 @@
   },
   "homepage": "https://github.com/marcobiedermann/spotify-clone#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.16.0",
-    "@babel/preset-react": "^7.16.0",
-    "@babel/preset-typescript": "^7.16.0",
+    "@swc/core": "^1.2.111",
+    "@swc/jest": "^0.2.5",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^26.0.24",
     "@types/node": "^16.4.8",
