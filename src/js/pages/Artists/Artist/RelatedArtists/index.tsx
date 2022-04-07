@@ -1,46 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
-import useSWR from 'swr';
 import Artists from '../../../../components/Artists';
 import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
-
-interface Artist {
-  external_urls: ExternalUrls;
-  followers: Followers;
-  genres: string[];
-  href: string;
-  id: string;
-  images: Image[];
-  name: string;
-  popularity: number;
-  type: string;
-  uri: string;
-}
-
-interface ExternalUrls {
-  spotify: string;
-}
-
-interface Followers {
-  href: null;
-  total: number;
-}
-
-interface Image {
-  height: number;
-  url: string;
-  width: number;
-}
-
-interface RelatedArtistsData {
-  artists: Artist[];
-}
+import { useArtistRelatedArtists } from '../../../../hooks/artists';
 
 function RelatedArtistsPage(): JSX.Element {
   const { artistId } = useParams();
-  const { data, error } = useSWR<RelatedArtistsData>(`/v1/artists/${artistId}/related-artists`);
+  const { data, error } = useArtistRelatedArtists(artistId);
 
   if (error) {
     return <Error>{error.message}</Error>;

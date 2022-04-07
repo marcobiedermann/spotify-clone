@@ -1,39 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import useSWR from 'swr';
 import Categories from '../../../components/Categories';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
-
-interface Categories {
-  href: string;
-  items: Item[];
-  limit: number;
-  next: string;
-  offset: number;
-  previous: null;
-  total: number;
-}
-
-interface Icon {
-  height: number;
-  url: string;
-  width: number;
-}
-
-interface Item {
-  href: string;
-  icons: Icon[];
-  id: string;
-  name: string;
-}
-
-interface CategoriesData {
-  categories: Categories;
-}
+import { useBrowseCategories } from '../../../hooks/browse/categories';
 
 function CategoriesPage(): JSX.Element {
-  const { data, error } = useSWR<CategoriesData>('/v1/browse/categories');
+  const { data, error } = useBrowseCategories();
 
   if (error) {
     return <Error>{error.message}</Error>;

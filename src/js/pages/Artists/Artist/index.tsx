@@ -1,43 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useLocation, useParams } from 'react-router-dom';
-import useSWR from 'swr';
 import Artist from '../../../components/Artist';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
-
-interface ExternalUrls {
-  spotify: string;
-}
-
-interface Followers {
-  href: null;
-  total: number;
-}
-
-interface Image {
-  height: number;
-  url: string;
-  width: number;
-}
-
-export interface ArtistData {
-  external_urls: ExternalUrls;
-  followers: Followers;
-  genres: string[];
-  href: string;
-  id: string;
-  images: Image[];
-  name: string;
-  popularity: number;
-  type: string;
-  uri: string;
-}
+import { useArtist } from '../../../hooks/artists';
 
 function ArtistPage(): JSX.Element {
   const { pathname } = useLocation();
   const { artistId } = useParams();
-  const { data, error } = useSWR<ArtistData>(`/v1/artists/${artistId}`);
+  const { data, error } = useArtist(artistId);
 
   if (error) {
     return <Error>{error.message}</Error>;
