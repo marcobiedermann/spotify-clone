@@ -2,24 +2,41 @@
 
 exports[`Album component renders correctly 1`] = `
 <div>
-  <figure>
-    <figcaption>
+  <div
+    class="media"
+  >
+    <div
+      class="media__object media__object--left"
+    >
+      <figure />
+    </div>
+    <div
+      class="media__body"
+    >
+      <h2>
+        Album
+      </h2>
+      <h1>
+        Global Warming
+      </h1>
       <h3>
-        <a
-          href="/albums/4aawyAB9vmqN3uQ7FjRGTy"
-        >
-          Global Warming
-        </a>
-      </h3>
-      <h4>
         <a
           href="/artists/0TnOYISbd1XYRBk9myaseg"
         >
           Pitbull
         </a>
-      </h4>
-    </figcaption>
-  </figure>
+         •
+         
+        <span>
+          NaN
+        </span>
+         • 
+        <span>
+           songs
+        </span>
+      </h3>
+    </div>
+  </div>
   <table>
     <thead>
       <tr>

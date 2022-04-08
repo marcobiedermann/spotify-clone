@@ -1,0 +1,17 @@
+.mePlaylists {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mePlaylists__item {
+  display: flex;
+}
+
+.mePlaylists__link {
+  display: inline-block;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

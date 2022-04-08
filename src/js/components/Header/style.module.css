@@ -1,4 +1,8 @@
 .header {
+  background-color: #121212;
   display: flex;
   justify-content: space-between;
+  padding: 1em 2em;
+  position: sticky;
+  top: 0;
 }

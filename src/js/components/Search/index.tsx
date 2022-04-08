@@ -12,7 +12,11 @@ function Search(props: SearchProps): JSX.Element {
 
   return (
     <form className={clsx(className, styles.search)} onSubmit={onSubmit}>
-      <input className={styles.search__input} type="search" />
+      <input
+        className={styles.search__input}
+        placeholder="Artists, songs or podcasts"
+        type="search"
+      />
     </form>
   );
 }

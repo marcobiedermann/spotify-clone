@@ -6,6 +6,7 @@ exports[`renders correctly 1`] = `
 >
   <input
     class="search__input"
+    placeholder="Artists, songs or podcasts"
     type="search"
   />
 </form>
