@@ -9,6 +9,7 @@ import Header from '../Header';
 import Loader from '../Loader';
 import Main from '../Main';
 import Navigation from '../Navigation';
+import Player from '../Player';
 import Search from '../Search';
 import styles from './style.module.css';
 
@@ -49,7 +50,7 @@ function Layout(props: LayoutProps): JSX.Element {
           </ul>
         </Aside>
       </Content>
-      <Footer>Footer</Footer>
+      <Player />
     </div>
   );
 }
