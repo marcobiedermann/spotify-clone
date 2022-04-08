@@ -1,0 +1,13 @@
+.player {
+  background-color: #181818;
+  border-top: 1px solid #282828;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  position: sticky;
+}
+
+.player__controls {
+  display: flex;
+}
