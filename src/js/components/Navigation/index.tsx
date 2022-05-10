@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { navigation__list } from './style.module.css';
 
 function Navigation(): JSX.Element {
   return (
     <nav>
-      <ul>
+      <ul className={navigation__list}>
         <li>
           <Link to="/">Home</Link>
         </li>

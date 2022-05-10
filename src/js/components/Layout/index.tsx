@@ -8,6 +8,7 @@ import Footer from '../Footer';
 import Header from '../Header';
 import Loader from '../Loader';
 import Main from '../Main';
+import MePlaylists from '../MePlaylists';
 import Navigation from '../Navigation';
 import Player from '../Player';
 import Search from '../Search';
@@ -41,13 +42,7 @@ function Layout(props: LayoutProps): JSX.Element {
         <Main>{children}</Main>
         <Aside>
           <Navigation />
-          <ul>
-            {items.map((item) => (
-              <li key={item.id}>
-                <Link to={`/playlists/${item.id}`}>{item.name}</Link>
-              </li>
-            ))}
-          </ul>
+          <MePlaylists playlists={items} />
         </Aside>
       </Content>
       <Player />
