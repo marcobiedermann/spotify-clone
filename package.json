@@ -14,8 +14,8 @@
     "lint:js": "eslint --ignore-path .gitignore .",
     "lint": "npm-run-all --parallel lint:css lint:js",
     "serve": "vite preview",
-    "test": "jest --maxWorkers=50% --watch",
-    "test:ci": "jest --ci --coverage --runInBand"
+    "test": "vitest",
+    "test:ci": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
@@ -36,11 +36,7 @@
   },
   "homepage": "https://github.com/marcobiedermann/spotify-clone#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.21.4",
-    "@babel/preset-react": "^7.18.6",
-    "@babel/preset-typescript": "^7.21.4",
     "@testing-library/react": "^12.1.5",
-    "@types/jest": "^27.5.2",
     "@types/qs": "^6.9.7",
     "@types/react": "^17.0.56",
     "@types/react-dom": "^17.0.19",
@@ -49,6 +45,7 @@
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react": "^1.3.2",
+    "@vitest/coverage-c8": "^0.29.8",
     "eslint": "^8.38.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
@@ -57,8 +54,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.5.1",
+    "happy-dom": "^9.1.9",
     "msw": "^0.49.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.7",
@@ -70,7 +66,8 @@
     "ts-node": "^10.9.1",
     "typed-css-modules": "^0.7.2",
     "typescript": "^4.9.5",
-    "vite": "^2.9.15"
+    "vite": "^2.9.15",
+    "vitest": "^0.29.8"
   },
   "dependencies": {
     "clsx": "^1.2.1",
