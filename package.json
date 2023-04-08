@@ -37,7 +37,6 @@
   "homepage": "https://github.com/marcobiedermann/spotify-clone#readme",
   "devDependencies": {
     "@testing-library/react": "^12.1.5",
-    "@types/qs": "^6.9.7",
     "@types/react": "^17.0.56",
     "@types/react-dom": "^17.0.19",
     "@types/react-helmet": "^6.1.6",
