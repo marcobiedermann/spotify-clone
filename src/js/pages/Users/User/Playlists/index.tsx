@@ -8,7 +8,7 @@ import { useUserPlaylists } from '../../../../hooks/users';
 
 function PlaylistsPage(): JSX.Element {
   const { userId } = useParams();
-  const { data, error } = useUserPlaylists(userId);
+  const { data, error } = useUserPlaylists(userId!);
 
   if (error) {
     return <Error>{error.message}</Error>;

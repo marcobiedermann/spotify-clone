@@ -100,7 +100,7 @@ const routes = [
 ];
 
 function Routes(): JSX.Element {
-  const element = useRoutes(routes);
+  const element = useRoutes(routes)!;
 
   return element;
 }

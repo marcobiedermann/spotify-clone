@@ -57,9 +57,9 @@ interface ExternalUrls {
 }
 
 interface Image {
-  height: null;
+  height: number;
   url: string;
-  width: null;
+  width: number;
 }
 
 interface Item {

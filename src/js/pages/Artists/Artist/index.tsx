@@ -9,7 +9,7 @@ import { useArtist } from '../../../hooks/artists';
 function ArtistPage(): JSX.Element {
   const { pathname } = useLocation();
   const { artistId } = useParams();
-  const { data, error } = useArtist(artistId);
+  const { data, error } = useArtist(artistId!);
 
   if (error) {
     return <Error>{error.message}</Error>;

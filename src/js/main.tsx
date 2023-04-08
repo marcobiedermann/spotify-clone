@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import { render } from 'react-dom';
 import { SWRConfig } from 'swr';
 import '../css/elements/anchor.css';
@@ -45,4 +45,9 @@ if (import.meta.env.DEV) {
   worker.start();
 }
 
-render(<Root />, document.getElementById('root'));
+render(
+  <StrictMode>
+    <Root />
+  </StrictMode>,
+  document.getElementById('root'),
+);

@@ -8,7 +8,7 @@ import { useArtistAlbums } from '../../../../hooks/artists';
 
 function AlbumsPage(): JSX.Element {
   const { artistId } = useParams();
-  const { data, error } = useArtistAlbums(artistId);
+  const { data, error } = useArtistAlbums(artistId!);
 
   if (error) {
     return <Error>{error.message}</Error>;

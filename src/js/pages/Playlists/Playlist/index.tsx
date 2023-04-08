@@ -12,7 +12,7 @@ import { usePlaylist } from '../../../hooks/playlists';
 
 function PlaylistPage(): JSX.Element {
   const { playlistId } = useParams();
-  const { data, error } = usePlaylist(playlistId);
+  const { data, error } = usePlaylist(playlistId!);
 
   if (error) {
     return <Error>{error.message}</Error>;
