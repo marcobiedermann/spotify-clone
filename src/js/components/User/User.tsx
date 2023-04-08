@@ -18,7 +18,7 @@ export interface UserProps {
 }
 
 function User(props: UserProps): JSX.Element {
-  const { display_name, followers, images } = props;
+  const { display_name, followers, images = [] } = props;
 
   return (
     <div>

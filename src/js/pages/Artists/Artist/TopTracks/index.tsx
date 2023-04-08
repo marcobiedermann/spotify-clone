@@ -8,7 +8,7 @@ import { useArtistTopTracks } from '../../../../hooks/artists';
 
 function TopTracksPage(): JSX.Element {
   const { artistId } = useParams();
-  const { data, error } = useArtistTopTracks(artistId);
+  const { data, error } = useArtistTopTracks(artistId!);
 
   if (error) {
     return <Error>{error.message}</Error>;

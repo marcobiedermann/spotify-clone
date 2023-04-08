@@ -15,7 +15,7 @@ import category from './__fixtures__/v1/browse/categories/dinner.json';
 import categoryPlaylists from './__fixtures__/v1/browse/categories/dinner/playlists.json';
 import featuredPlaylists from './__fixtures__/v1/browse/featured-playlists.json';
 import newReleases from './__fixtures__/v1/browse/new-releases.json';
-import me from './__fixtures__/v1/me';
+import me from './__fixtures__/v1/me.json';
 import myFollowing from './__fixtures__/v1/me/following.json';
 import myPlaylists from './__fixtures__/v1/me/playlists.json';
 import playlist from './__fixtures__/v1/playlists/3cEYpjA9oz9GiPac4AsH4n.json';

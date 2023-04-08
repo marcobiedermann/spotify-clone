@@ -8,7 +8,7 @@ import { useAlbum } from '../../../hooks/albums';
 
 function AlbumPage(): JSX.Element {
   const { albumId } = useParams();
-  const { data, error } = useAlbum(albumId);
+  const { data, error } = useAlbum(albumId!);
 
   if (error) {
     return <Error>{error.message}</Error>;

@@ -8,7 +8,7 @@ import { useUser } from '../../../hooks/users';
 
 function UserPage(): JSX.Element {
   const { userId } = useParams();
-  const { data, error } = useUser(userId);
+  const { data, error } = useUser(userId!);
 
   if (error) {
     return <Error>{error.message}</Error>;

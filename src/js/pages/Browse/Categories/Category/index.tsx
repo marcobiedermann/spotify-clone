@@ -8,7 +8,7 @@ import { useBrowseCategory } from '../../../../hooks/browse/categories';
 
 function CategoryPage(): JSX.Element {
   const { categoryId } = useParams();
-  const { data, error } = useBrowseCategory(categoryId);
+  const { data, error } = useBrowseCategory(categoryId!);
 
   if (error) {
     return <Error>{error.message}</Error>;

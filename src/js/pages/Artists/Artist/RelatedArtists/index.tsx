@@ -8,7 +8,7 @@ import { useArtistRelatedArtists } from '../../../../hooks/artists';
 
 function RelatedArtistsPage(): JSX.Element {
   const { artistId } = useParams();
-  const { data, error } = useArtistRelatedArtists(artistId);
+  const { data, error } = useArtistRelatedArtists(artistId!);
 
   if (error) {
     return <Error>{error.message}</Error>;
