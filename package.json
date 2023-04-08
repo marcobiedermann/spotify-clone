@@ -62,7 +62,6 @@
     "stylelint-config-standard": "^25.0.0",
     "stylelint-order": "^5.0.0",
     "stylelint-selector-bem-pattern": "^2.1.1",
-    "ts-node": "^10.9.1",
     "typed-css-modules": "^0.7.2",
     "typescript": "^4.9.5",
     "vite": "^2.9.15",
