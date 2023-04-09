@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { useRoutes } from 'react-router-dom';
-import AlbumPage from '../../pages/Albums/Album';
-import TracksPage from '../../pages/Albums/Album/Tracks';
-import ArtistPage from '../../pages/Artists/Artist';
-import ArtistAlbumsPage from '../../pages/Artists/Artist/Albums';
-import ArtistRelatedArtistsPage from '../../pages/Artists/Artist/RelatedArtists';
-import ArtistTopTracksPage from '../../pages/Artists/Artist/TopTracks';
-import BrowsePage from '../../pages/Browse';
-import CategoriesPage from '../../pages/Browse/Categories';
-import CategoryPage from '../../pages/Browse/Categories/Category';
-import CategoryPlaylistsPage from '../../pages/Browse/Categories/Category/Playlists';
-import FeaturedPlaylistsPage from '../../pages/Browse/FeaturedPlaylists';
-import NewReleasesPage from '../../pages/Browse/NewReleases';
-import CallbackPage from '../../pages/Callback';
-import LoginPage from '../../pages/Login';
-import MePage from '../../pages/Me';
-import PlaylistsPage from '../../pages/Me/Playlists';
-import PlaylistPage from '../../pages/Playlists/Playlist';
-import UserPage from '../../pages/Users/User';
-import UserPlaylistsPage from '../../pages/Users/User/Playlists';
+
+const AlbumPage = lazy(() => import('../../pages/Albums/Album'));
+const TracksPage = lazy(() => import('../../pages/Albums/Album/Tracks'));
+const ArtistPage = lazy(() => import('../../pages/Artists/Artist'));
+const ArtistAlbumsPage = lazy(() => import('../../pages/Artists/Artist/Albums'));
+const ArtistRelatedArtistsPage = lazy(() => import('../../pages/Artists/Artist/RelatedArtists'));
+const ArtistTopTracksPage = lazy(() => import('../../pages/Artists/Artist/TopTracks'));
+const BrowsePage = lazy(() => import('../../pages/Browse'));
+const CategoriesPage = lazy(() => import('../../pages/Browse/Categories'));
+const CategoryPage = lazy(() => import('../../pages/Browse/Categories/Category'));
+const CategoryPlaylistsPage = lazy(
+  () => import('../../pages/Browse/Categories/Category/Playlists'),
+);
+const FeaturedPlaylistsPage = lazy(() => import('../../pages/Browse/FeaturedPlaylists'));
+const NewReleasesPage = lazy(() => import('../../pages/Browse/NewReleases'));
+const CallbackPage = lazy(() => import('../../pages/Callback'));
+const LoginPage = lazy(() => import('../../pages/Login'));
+const MePage = lazy(() => import('../../pages/Me'));
+const PlaylistsPage = lazy(() => import('../../pages/Me/Playlists'));
+const PlaylistPage = lazy(() => import('../../pages/Playlists/Playlist'));
+const UserPage = lazy(() => import('../../pages/Users/User'));
+const UserPlaylistsPage = lazy(() => import('../../pages/Users/User/Playlists'));
 
 const routes = [
   {
