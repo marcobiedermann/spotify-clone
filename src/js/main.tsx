@@ -1,5 +1,5 @@
 import React, { StrictMode } from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { SWRConfig } from 'swr';
 import '../css/elements/anchor.css';
 import '../css/elements/button.css';
@@ -45,9 +45,8 @@ if (import.meta.env.DEV) {
   worker.start();
 }
 
-render(
+createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
     <Root />
   </StrictMode>,
-  document.getElementById('root'),
 );
