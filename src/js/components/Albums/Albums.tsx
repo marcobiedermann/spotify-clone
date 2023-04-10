@@ -5,11 +5,11 @@ import styles from './Albums.module.css';
 
 export interface AlbumsProps {
   className?: string;
-  items?: AlbumProps[];
+  items: AlbumProps[];
 }
 
 function Albums(props: AlbumsProps): JSX.Element {
-  const { className, items = [] } = props;
+  const { className, items } = props;
 
   return (
     <ul className={clsx(className, styles.albums)}>

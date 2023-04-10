@@ -4,11 +4,11 @@ import { useParams } from 'react-router-dom';
 import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
 import Playlists from '../../../../components/Playlists';
-import { useUserPlaylists } from '../../../../hooks/users';
+import { useUsersPlaylists } from '../../../../hooks/users';
 
 function PlaylistsPage(): JSX.Element {
   const { userId } = useParams();
-  const { data, error } = useUserPlaylists(userId!);
+  const { data, error } = useUsersPlaylists(userId!);
 
   if (error) {
     return <Error>{error.message}</Error>;

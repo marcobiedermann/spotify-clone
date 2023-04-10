@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom';
 import AlbumTracks from '../AlbumTracks';
 import Image from '../Image';
 
+const defaultImageSize = 100;
+
 interface Owner {
   id: string;
   name?: string;
 }
 
 interface Image {
-  height: number;
+  height: number | null;
   url: string;
-  width: number;
+  width: number | null;
 }
 
 interface Item {
@@ -36,13 +38,19 @@ export interface AlbumProps {
 
 function Album(props: AlbumProps): JSX.Element {
   const { artists, id, images, name, tracks } = props;
+  const image = images[0];
 
   return (
     <div>
       <figure>
-        {images[1] && (
+        {image && (
           <Link to={`/albums/${id}`}>
-            <Image {...images[1]} alt={name} />
+            <Image
+              {...image}
+              alt={name}
+              width={image.width || defaultImageSize}
+              height={image.height || defaultImageSize}
+            />
           </Link>
         )}
         <figcaption>

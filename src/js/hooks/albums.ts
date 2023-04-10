@@ -1,90 +1,61 @@
 /* eslint-disable import/prefer-default-export */
 
 import useSWR, { SWRResponse } from 'swr';
+import { z } from 'zod';
+import {
+  Error,
+  artistObjectSchema,
+  copyrightObjectSchema,
+  imageObjectSchema,
+  simplifiedTrackObject,
+} from './common';
 
-interface Artist {
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  name: string;
-  type: string;
-  uri: string;
-}
+const albumSchema = z.object({
+  album_type: z.enum(['album', 'single', 'compilation']),
+  total_tracks: z.number().int(),
+  available_markets: z.array(z.string()),
+  external_urls: z.object({
+    spotify: z.string(),
+  }),
+  href: z.string().url(),
+  id: z.string(),
+  images: z.array(imageObjectSchema),
+  name: z.string(),
+  release_date: z.string(),
+  release_date_precision: z.enum(['year', 'month', 'day']),
+  restrictions: z.object({
+    reason: z.enum(['market', 'product', 'explicit']),
+  }),
+  type: z.literal('album'),
+  uri: z.string(),
+  copyrights: z.array(copyrightObjectSchema),
+  external_ids: z.object({
+    isrc: z.string(),
+    ean: z.string(),
+    upc: z.string(),
+  }),
+  genres: z.array(z.string()),
+  label: z.string(),
+  popularity: z.number().int(),
+  artists: z.array(artistObjectSchema),
+  tracks: z.object({
+    href: z.string().url(),
+    limit: z.number().int(),
+    next: z.string().nullable(),
+    offset: z.number().int(),
+    previous: z.string().nullable(),
+    total: z.number().int(),
+    items: z.array(simplifiedTrackObject),
+  }),
+});
 
-interface Copyright {
-  text: string;
-  type: string;
-}
+type Album = z.infer<typeof albumSchema>;
 
-interface ExternalIds {
-  upc: string;
-}
-
-interface ExternalUrls {
-  spotify: string;
-}
-
-interface Image {
-  height: number;
-  url: string;
-  width: number;
-}
-
-interface Item {
-  artists: Artist[];
-  available_markets: string[];
-  disc_number: number;
-  duration_ms: number;
-  explicit: boolean;
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  is_local: boolean;
-  name: string;
-  preview_url: string;
-  track_number: number;
-  type: string;
-  uri: string;
-}
-
-interface Tracks {
-  href: string;
-  items: Item[];
-  limit: number;
-  next: null;
-  offset: number;
-  previous: null;
-  total: number;
-}
-
-interface AlbumData {
-  album_type: string;
-  artists: Artist[];
-  available_markets: string[];
-  copyrights: Copyright[];
-  external_ids: ExternalIds;
-  external_urls: ExternalUrls;
-  genres: any[];
-  href: string;
-  id: string;
-  images: Image[];
-  label: string;
-  name: string;
-  popularity: number;
-  release_date: Date;
-  release_date_precision: string;
-  total_tracks: number;
-  tracks: Tracks;
-  type: string;
-  uri: string;
-}
-
-interface Error {
-  message: string;
-}
-
-function useAlbum(albumId: string): SWRResponse<AlbumData, Error> {
-  return useSWR<AlbumData, Error>(`/v1/albums/${albumId}`);
+/**
+ * @link https://developer.spotify.com/documentation/web-api/reference/get-an-album
+ */
+function useAlbum(albumId: string): SWRResponse<Album, Error> {
+  return useSWR<Album, Error>(`/v1/albums/${albumId}`);
 }
 
 export { useAlbum };

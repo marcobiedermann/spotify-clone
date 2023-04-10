@@ -4,7 +4,7 @@ import { expect, it } from 'vitest';
 import Categories from '..';
 
 it('renders correctly', () => {
-  const { container } = render(<Categories />);
+  const { container } = render(<Categories items={[]} />);
 
   expect(container.firstChild).toMatchSnapshot();
 });

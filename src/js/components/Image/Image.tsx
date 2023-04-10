@@ -4,9 +4,9 @@ import React from 'react';
 
 export interface ImageProps {
   alt: string;
-  height?: number;
+  height: number;
   url: string;
-  width?: number;
+  width: number;
 }
 
 function Image(props: ImageProps): JSX.Element {

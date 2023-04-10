@@ -23,6 +23,7 @@ function PlaylistPage(): JSX.Element {
   }
 
   const { description, images, name, owner, tracks } = data;
+  const image = images[0];
 
   const totalDuration = tracks.items.reduce(
     (accumulator, currentValue) => accumulator + currentValue.track.duration_ms,
@@ -37,7 +38,7 @@ function PlaylistPage(): JSX.Element {
       <div>
         <Media>
           <MediaObject>
-            <Image url={images[0].url} alt={name} width={240} height={240} />
+            <Image {...image} alt={name} width={240} height={240} />
           </MediaObject>
           <MediaBody>
             <h1>{name}</h1>

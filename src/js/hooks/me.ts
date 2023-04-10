@@ -1,63 +1,26 @@
 /* eslint-disable import/prefer-default-export */
 
 import useSWR, { SWRResponse } from 'swr';
+import { z } from 'zod';
+import { simplifiedPlaylistObjectSchema, Error } from './common';
 
-interface ExternalUrls {
-  spotify: string;
-}
+const mePlaylistsSchema = z.object({
+  href: z.string().url(),
+  limit: z.number().int(),
+  next: z.string().nullable(),
+  offset: z.number().int(),
+  previous: z.string().nullable(),
+  total: z.number().int(),
+  items: z.array(simplifiedPlaylistObjectSchema),
+});
 
-interface Image {
-  height: number;
-  url: string;
-  width: number;
-}
+type MePlaylists = z.infer<typeof mePlaylistsSchema>;
 
-interface Item {
-  collaborative: boolean;
-  description: string;
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  images: Image[];
-  name: string;
-  owner: Owner;
-  primary_color: null;
-  public: boolean;
-  snapshot_id: string;
-  tracks: Tracks;
-  type: string;
-  uri: string;
-}
-interface Owner {
-  display_name: string;
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  type: string;
-  uri: string;
-}
-
-interface Tracks {
-  href: string;
-  total: number;
-}
-
-interface PlaylistsData {
-  href: string;
-  items: Item[];
-  limit: number;
-  next: string;
-  offset: number;
-  previous: null;
-  total: number;
-}
-
-interface Error {
-  message: string;
-}
-
-function useMePlaylists(): SWRResponse<PlaylistsData, Error> {
-  return useSWR<PlaylistsData, Error>('/v1/me/playlists');
+/**
+ * @link https://developer.spotify.com/documentation/web-api/reference/get-a-list-of-current-users-playlists
+ */
+function useMePlaylists(): SWRResponse<MePlaylists, Error> {
+  return useSWR<MePlaylists, Error>('/v1/me/playlists');
 }
 
 export { useMePlaylists };

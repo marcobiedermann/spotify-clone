@@ -2,11 +2,11 @@ import React from 'react';
 import AlbumTrack, { AlbumTrackProps } from '../AlbumTrack';
 
 export interface AlbumTracksProps {
-  items?: AlbumTrackProps[];
+  items: AlbumTrackProps[];
 }
 
 function AlbumTracks(props: AlbumTracksProps): JSX.Element {
-  const { items = [] } = props;
+  const { items } = props;
 
   return (
     <table>

@@ -4,7 +4,7 @@ import { expect, it } from 'vitest';
 import Artists from '..';
 
 it('renders correctly', () => {
-  const { container } = render(<Artists />);
+  const { container } = render(<Artists artists={[]} />);
 
   expect(container.firstChild).toMatchSnapshot();
 });

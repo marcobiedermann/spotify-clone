@@ -1,68 +1,29 @@
 /* eslint-disable import/prefer-default-export */
 
 import useSWR, { SWRResponse } from 'swr';
+import { z } from 'zod';
+import { Error, simplifiedPlaylistObjectSchema } from '../common';
 
-interface ExternalUrls {
-  spotify: string;
-}
+const featuredPlaylistsSchema = z.object({
+  message: z.string(),
+  playlists: z.object({
+    href: z.string().url(),
+    limit: z.number().int(),
+    next: z.string().nullable(),
+    offset: z.number().int(),
+    previous: z.string().nullable(),
+    total: z.number().int(),
+    items: z.array(simplifiedPlaylistObjectSchema),
+  }),
+});
 
-interface Image {
-  height: number;
-  url: string;
-  width: number;
-}
+type FeaturedPlaylists = z.infer<typeof featuredPlaylistsSchema>;
 
-interface Item {
-  collaborative: boolean;
-  description: string;
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  images: Image[];
-  name: string;
-  owner: Owner;
-  primary_color: null;
-  public: null;
-  snapshot_id: string;
-  tracks: Tracks;
-  type: string;
-  uri: string;
-}
-
-interface Owner {
-  display_name: string;
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  type: string;
-  uri: string;
-}
-
-interface Playlists {
-  href: string;
-  items: Item[];
-  limit: number;
-  next: null;
-  offset: number;
-  previous: null;
-  total: number;
-}
-
-interface Tracks {
-  href: string;
-  total: number;
-}
-interface FeaturedPlaylistsData {
-  message: string;
-  playlists: Playlists;
-}
-
-interface Error {
-  message: string;
-}
-
-function useBrowseFeaturedPlaylists(): SWRResponse<FeaturedPlaylistsData, Error> {
-  return useSWR<FeaturedPlaylistsData, Error>('/v1/browse/featured-playlists');
+/**
+ * @link https://developer.spotify.com/documentation/web-api/reference/get-featured-playlists
+ */
+function useBrowseFeaturedPlaylists(): SWRResponse<FeaturedPlaylists, Error> {
+  return useSWR<FeaturedPlaylists, Error>('/v1/browse/featured-playlists');
 }
 
 export { useBrowseFeaturedPlaylists };

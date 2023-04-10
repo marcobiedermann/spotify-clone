@@ -8,7 +8,7 @@ describe('Albums component', () => {
   it('renders correctly', () => {
     const { container } = render(
       <MemoryRouter>
-        <Albums />
+        <Albums items={[]} />
       </MemoryRouter>,
     );
 
