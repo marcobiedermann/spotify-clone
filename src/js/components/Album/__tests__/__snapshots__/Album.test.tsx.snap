@@ -3,6 +3,16 @@
 exports[`Album component > renders correctly 1`] = `
 <div>
   <figure>
+    <a
+      href="/albums/4aawyAB9vmqN3uQ7FjRGTy"
+    >
+      <img
+        alt="Global Warming"
+        height="640"
+        src="https://i.scdn.co/image/ab67616d0000b2732c5b24ecfa39523a75c993c4"
+        width="640"
+      />
+    </a>
     <figcaption>
       <h3>
         <a

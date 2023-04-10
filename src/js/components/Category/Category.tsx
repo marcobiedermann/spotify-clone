@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Image from '../Image';
 
+const defaultIconSize = 100;
+
 interface Icon {
-  height: number;
+  height: number | null;
   url: string;
-  width: number;
+  width: number | null;
 }
 
 export interface CategoryProps {
@@ -16,12 +18,18 @@ export interface CategoryProps {
 
 function Category(props: CategoryProps): JSX.Element {
   const { id, icons, name } = props;
+  const icon = icons[0];
 
   return (
     <figure>
       {icons[0] && (
         <Link to={`/browse/categories/${id}/playlists`}>
-          <Image {...icons[0]} alt={name} />
+          <Image
+            {...icon}
+            alt={name}
+            width={icon.width || defaultIconSize}
+            height={icon.height || defaultIconSize}
+          />
         </Link>
       )}
       <figcaption>

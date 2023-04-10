@@ -1,121 +1,59 @@
 /* eslint-disable import/prefer-default-export */
 
 import useSWR, { SWRResponse } from 'swr';
+import { z } from 'zod';
+import { Error, imageObjectSchema, playlistTrackObjectSchema } from './common';
 
-interface Album {
-  album_type: string;
-  artists: Owner[];
-  available_markets: string[];
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  images: Image[];
-  name: string;
-  release_date: string;
-  release_date_precision: string;
-  total_tracks: number;
-  type: string;
-  uri: string;
-}
+const playlistSchema = z.object({
+  collaborative: z.boolean(),
+  description: z.string().nullable(),
+  external_urls: z.object({
+    spotify: z.string(),
+  }),
+  followers: z.object({
+    href: z.string().nullable(),
+    total: z.number().int(),
+  }),
+  href: z.string().url(),
+  id: z.string(),
+  images: z.array(imageObjectSchema),
+  name: z.string(),
+  owner: z.object({
+    external_urls: z.object({
+      spotify: z.string(),
+    }),
+    followers: z.object({
+      href: z.string().nullable(),
+      total: z.number().int(),
+    }),
+    href: z.string().url(),
+    id: z.string(),
+    type: z.literal('user'),
+    uri: z.string(),
+    display_name: z.string(),
+  }),
+  public: z.boolean(),
+  snapshot_id: z.string(),
+  tracks: z.object({
+    href: z.string().url(),
+    limit: z.number().int(),
+    next: z.string().nullable(),
+    offset: z.number().int(),
+    previous: z.string().nullable(),
+    total: z.number().int(),
+    items: z.array(playlistTrackObjectSchema),
+  }),
+  type: z.literal('playlist'),
+  uri: z.string(),
+});
 
-interface ExternalIds {
-  isrc: string;
-}
+type Playlist = z.infer<typeof playlistSchema>;
 
-interface ExternalUrls {
-  spotify: string;
-}
-
-interface Followers {
-  href: null;
-  total: number;
-}
-
-interface Image {
-  height: number;
-  url: string;
-  width: number;
-}
-
-interface Item {
-  added_at: string;
-  added_by: Owner;
-  is_local: boolean;
-  primary_color: null;
-  track: Track;
-  video_thumbnail: VideoThumbnail;
-}
-
-interface Owner {
-  display_name?: string;
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  type: string;
-  uri: string;
-  name?: string;
-}
-
-interface Track {
-  album: Album;
-  artists: Owner[];
-  available_markets: string[];
-  disc_number: number;
-  duration_ms: number;
-  episode: boolean;
-  explicit: boolean;
-  external_ids: ExternalIds;
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  is_local: boolean;
-  name: string;
-  popularity: number;
-  preview_url: null | string;
-  track: boolean;
-  track_number: number;
-  type: string;
-  uri: string;
-}
-
-interface Tracks {
-  href: string;
-  items: Item[];
-  limit: number;
-  next: null;
-  offset: number;
-  previous: null;
-  total: number;
-}
-
-interface VideoThumbnail {
-  url: null;
-}
-
-interface PlaylistData {
-  collaborative: boolean;
-  description: string;
-  external_urls: ExternalUrls;
-  followers: Followers;
-  href: string;
-  id: string;
-  images: Image[];
-  name: string;
-  owner: Owner;
-  primary_color: null;
-  public: boolean;
-  snapshot_id: string;
-  tracks: Tracks;
-  type: string;
-  uri: string;
-}
-
-interface Error {
-  message: string;
-}
-
-function usePlaylist(playlistId: string): SWRResponse<PlaylistData, Error> {
-  return useSWR<PlaylistData, Error>(`/v1/playlists/${playlistId}`);
+/**
+ * @link https://developer.spotify.com/documentation/web-api/reference/get-playlist
+ */
+function usePlaylist(playlistId: string): SWRResponse<Playlist, Error> {
+  return useSWR<Playlist, Error>(`/v1/playlists/${playlistId}`);
 }
 
 export { usePlaylist };

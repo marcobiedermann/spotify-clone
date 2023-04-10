@@ -1,114 +1,71 @@
 import useSWR, { SWRResponse } from 'swr';
+import { z } from 'zod';
+import {
+  Error,
+  imageObjectSchema,
+  simplifiedCategoryObjectSchema,
+  simplifiedPlaylistObjectSchema,
+} from '../common';
 
-interface Categories {
-  href: string;
-  items: Item[];
-  limit: number;
-  next: string;
-  offset: number;
-  previous: null;
-  total: number;
+const browseCategoriesSchema = z.object({
+  categories: z.object({
+    href: z.string().url(),
+    limit: z.number().int(),
+    next: z.string().nullable(),
+    offset: z.number().int(),
+    previous: z.string().nullable(),
+    total: z.number().int(),
+    items: z.array(simplifiedCategoryObjectSchema),
+  }),
+});
+
+type BrowseCategories = z.infer<typeof browseCategoriesSchema>;
+
+/**
+ * @link https://developer.spotify.com/documentation/web-api/reference/get-categories
+ */
+function useBrowseCategories(): SWRResponse<BrowseCategories, Error> {
+  return useSWR<BrowseCategories, Error>('/v1/browse/categories');
 }
 
-interface Icon {
-  height: number;
-  url: string;
-  width: number;
+const browseCategorySchema = z.object({
+  href: z.string().url(),
+  icons: z.array(imageObjectSchema),
+  id: z.string(),
+  name: z.string(),
+});
+
+type BrowseCategory = z.infer<typeof browseCategorySchema>;
+
+/**
+ * @https://developer.spotify.com/documentation/web-api/reference/get-a-category
+ */
+function useBrowseCategory(categoryId: string): SWRResponse<BrowseCategory, Error> {
+  return useSWR<BrowseCategory, Error>(`/v1/browse/categories/${categoryId}`);
 }
 
-interface Item {
-  href: string;
-  icons: Icon[];
-  id: string;
-  name: string;
-}
+const browseCategoryPlaylistsSchema = z.object({
+  message: z.string(),
+  playlists: z.object({
+    href: z.string().url(),
+    limit: z.number().int(),
+    next: z.string().nullable(),
+    offset: z.number().int(),
+    previous: z.string().nullable(),
+    total: z.number().int(),
+    items: z.array(simplifiedPlaylistObjectSchema),
+  }),
+});
 
-interface CategoriesData {
-  categories: Categories;
-}
+type BrowseCategoryPlaylists = z.infer<typeof browseCategoryPlaylistsSchema>;
 
-interface Error {
-  message: string;
-}
-
-function useBrowseCategories(): SWRResponse<CategoriesData, Error> {
-  return useSWR<CategoriesData, Error>('/v1/browse/categories');
-}
-
-interface Icon {
-  height: number;
-  url: string;
-  width: number;
-}
-
-interface CategoryData {
-  href: string;
-  icons: Icon[];
-  id: string;
-  name: string;
-}
-
-function useBrowseCategory(categoryId: string): SWRResponse<CategoryData, Error> {
-  return useSWR<CategoryData, Error>(`/v1/browse/categories/${categoryId}`);
-}
-
-interface ExternalUrls {
-  spotify: string;
-}
-
-interface Image {
-  height: number;
-  url: string;
-  width: number;
-}
-
-interface Item {
-  collaborative: boolean;
-  description: string;
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  images: Image[];
-  name: string;
-  owner: Owner;
-  primary_color: null;
-  public: null;
-  snapshot_id: string;
-  tracks: Tracks;
-  type: string;
-  uri: string;
-}
-
-interface Owner {
-  display_name: string;
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  type: string;
-  uri: string;
-}
-
-interface Playlists {
-  href: string;
-  items: Item[];
-  limit: number;
-  next: null;
-  offset: number;
-  previous: null;
-  total: number;
-}
-
-interface Tracks {
-  href: string;
-  total: number;
-}
-
-interface PlaylistsData {
-  playlists: Playlists;
-}
-
-function useBrowseCategoryPlaylists(categoryId: string): SWRResponse<PlaylistsData, Error> {
-  return useSWR<PlaylistsData, Error>(`/v1/browse/categories/${categoryId}/playlists`);
+/**
+ * @link https://developer.spotify.com/documentation/web-api/reference/get-a-categories-playlists
+ */
+function useBrowseCategoryPlaylists(
+  categoryId: string,
+): SWRResponse<BrowseCategoryPlaylists, Error> {
+  return useSWR<BrowseCategoryPlaylists, Error>(`/v1/browse/categories/${categoryId}/playlists`);
 }
 
 export { useBrowseCategories, useBrowseCategory, useBrowseCategoryPlaylists };

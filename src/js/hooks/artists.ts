@@ -1,191 +1,83 @@
 import useSWR, { SWRResponse } from 'swr';
+import { z } from 'zod';
+import {
+  Error,
+  artistObjectSchema,
+  imageObjectSchema,
+  simplifiedAlbumObjectSchema,
+  trackObjectSchema,
+} from './common';
 
-interface ExternalUrls {
-  spotify: string;
+const artistSchema = z.object({
+  external_urls: z.object({
+    spotify: z.string(),
+  }),
+  followers: z.object({
+    href: z.string().url(),
+    total: z.number().int(),
+  }),
+  genres: z.array(z.string()),
+  href: z.string().url(),
+  id: z.string(),
+  images: z.array(imageObjectSchema),
+  name: z.string(),
+  popularity: z.number().int(),
+  type: z.literal('artist'),
+  uri: z.string(),
+});
+
+type Artist = z.infer<typeof artistSchema>;
+
+/**
+ * @link https://developer.spotify.com/documentation/web-api/reference/get-an-artist
+ */
+function useArtist(artistId: string): SWRResponse<Artist, Error> {
+  return useSWR<Artist, Error>(`/v1/artists/${artistId}`);
 }
 
-interface Followers {
-  href: null;
-  total: number;
+const artistsAlbumsSchema = z.object({
+  href: z.string().url(),
+  limit: z.number().int(),
+  next: z.string().nullable(),
+  offset: z.number().int(),
+  previous: z.string().nullable(),
+  total: z.number().int(),
+  items: z.array(simplifiedAlbumObjectSchema),
+});
+
+type ArtistsAlbums = z.infer<typeof artistsAlbumsSchema>;
+
+/**
+ * @link https://developer.spotify.com/documentation/web-api/reference/get-an-artists-albums
+ */
+function useArtistAlbums(artistId: string): SWRResponse<ArtistsAlbums, Error> {
+  return useSWR<ArtistsAlbums, Error>(`/v1/artists/${artistId}/albums`);
 }
 
-interface Image {
-  height: number;
-  url: string;
-  width: number;
+const artistsRelatedArtistsSchema = z.object({
+  artists: z.array(artistObjectSchema),
+});
+
+type ArtistsRelatedArtists = z.infer<typeof artistsRelatedArtistsSchema>;
+
+/**
+ * @link https://developer.spotify.com/documentation/web-api/reference/get-an-artists-related-artists
+ */
+function useArtistRelatedArtists(artistId: string): SWRResponse<ArtistsRelatedArtists, Error> {
+  return useSWR<ArtistsRelatedArtists, Error>(`/v1/artists/${artistId}/related-artists`);
 }
 
-interface ArtistData {
-  external_urls: ExternalUrls;
-  followers: Followers;
-  genres: string[];
-  href: string;
-  id: string;
-  images: Image[];
-  name: string;
-  popularity: number;
-  type: string;
-  uri: string;
-}
+const artistsTopTracksSchema = z.object({
+  tracks: z.array(trackObjectSchema),
+});
 
-interface Error {
-  message: string;
-}
+type ArtistsTopTracks = z.infer<typeof artistsTopTracksSchema>;
 
-function useArtist(artistId: string): SWRResponse<ArtistData, Error> {
-  return useSWR<ArtistData, Error>(`/v1/artists/${artistId}`);
-}
-
-interface Artist {
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  name: string;
-  type: string;
-  uri: string;
-}
-
-interface ExternalUrls {
-  spotify: string;
-}
-
-interface Image {
-  height: number;
-  url: string;
-  width: number;
-}
-
-interface Item {
-  album_group: string;
-  album_type: string;
-  artists: Artist[];
-  available_markets: string[];
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  images: Image[];
-  name: string;
-  release_date: string;
-  release_date_precision: string;
-  total_tracks: number;
-  type: string;
-  uri: string;
-}
-
-interface AlbumsData {
-  href: string;
-  items: Item[];
-  limit: number;
-  next: string;
-  offset: number;
-  previous: null;
-  total: number;
-}
-
-function useArtistAlbums(artistId: string): SWRResponse<AlbumsData, Error> {
-  return useSWR<AlbumsData, Error>(`/v1/artists/${artistId}/albums`);
-}
-
-interface Artist {
-  external_urls: ExternalUrls;
-  followers: Followers;
-  genres: string[];
-  href: string;
-  id: string;
-  images: Image[];
-  name: string;
-  popularity: number;
-  type: string;
-  uri: string;
-}
-
-interface ExternalUrls {
-  spotify: string;
-}
-
-interface Followers {
-  href: null;
-  total: number;
-}
-
-interface Image {
-  height: number;
-  url: string;
-  width: number;
-}
-
-interface RelatedArtistsData {
-  artists: Artist[];
-}
-
-function useArtistRelatedArtists(artistId: string): SWRResponse<RelatedArtistsData, Error> {
-  return useSWR<RelatedArtistsData, Error>(`/v1/artists/${artistId}/related-artists`);
-}
-
-interface Album {
-  album_type: string;
-  artists: Artist[];
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  images: Image[];
-  name: string;
-  release_date: string;
-  release_date_precision: string;
-  total_tracks: number;
-  type: string;
-  uri: string;
-}
-
-interface Artist {
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  name: string;
-  type: string;
-  uri: string;
-}
-
-interface ExternalUrls {
-  spotify: string;
-}
-
-interface Image {
-  height: number;
-  url: string;
-  width: number;
-}
-
-interface ExternalIds {
-  isrc: string;
-}
-
-interface Track {
-  album: Album;
-  artists: Artist[];
-  disc_number: number;
-  duration_ms: number;
-  explicit: boolean;
-  external_ids: ExternalIds;
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  is_local: boolean;
-  is_playable: boolean;
-  name: string;
-  popularity: number;
-  preview_url: string;
-  track_number: number;
-  type: string;
-  uri: string;
-}
-
-interface TopTracksData {
-  tracks: Track[];
-}
-
-function useArtistTopTracks(artistId: string): SWRResponse<TopTracksData, Error> {
-  return useSWR<TopTracksData, Error>(`/v1/artists/${artistId}/top-tracks`);
+/**
+ * @link https://developer.spotify.com/documentation/web-api/reference/get-an-artists-top-tracks
+ */
+function useArtistTopTracks(artistId: string): SWRResponse<ArtistsTopTracks, Error> {
+  return useSWR<ArtistsTopTracks, Error>(`/v1/artists/${artistId}/top-tracks`);
 }
 
 export { useArtist, useArtistAlbums, useArtistRelatedArtists, useArtistTopTracks };

@@ -5,11 +5,12 @@ import Image from '../Image';
 import Media, { MediaBody, MediaObject } from '../Media';
 import styles from './PlaylistTrack.module.css';
 
+const defaultImageSize = 48;
+
 interface Image {
-  alt?: string;
-  height: number;
+  height: number | null;
   url: string;
-  width: number;
+  width: number | null;
 }
 interface Album {
   images: Image[];
@@ -43,7 +44,12 @@ function PlaylistTrack(props: PlaylistTrackProps): JSX.Element {
       <td>
         <Media>
           <MediaObject>
-            <Image url={track.album.images[0].url} width={48} height={48} alt={track.album.name} />
+            <Image
+              url={track.album.images[0].url}
+              width={defaultImageSize}
+              height={defaultImageSize}
+              alt={track.album.name}
+            />
           </MediaObject>
           <MediaBody>
             <div className={styles.track__name}>{track.name}</div>

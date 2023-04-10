@@ -4,9 +4,9 @@ import Playlist from '../Playlist';
 import styles from './Playlists.module.css';
 
 interface Image {
-  height: number;
+  height: number | null;
   url: string;
-  width: number;
+  width: number | null;
 }
 
 interface Item {
@@ -17,11 +17,11 @@ interface Item {
 
 export interface PlaylistsProps {
   className?: string;
-  items?: Item[];
+  items: Item[];
 }
 
 function Playlists(props: PlaylistsProps): JSX.Element {
-  const { className, items = [] } = props;
+  const { className, items } = props;
 
   return (
     <ul className={clsx(className, styles.playlists)}>

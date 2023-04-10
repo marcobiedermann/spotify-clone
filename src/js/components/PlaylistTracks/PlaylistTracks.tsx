@@ -2,11 +2,11 @@ import React from 'react';
 import PlaylistTrack, { PlaylistTrackProps } from '../PlaylistTrack';
 
 export interface PlaylistTracksProps {
-  items?: PlaylistTrackProps[];
+  items: PlaylistTrackProps[];
 }
 
 function PlaylistTracks(props: PlaylistTracksProps): JSX.Element {
-  const { items = [] } = props;
+  const { items } = props;
 
   return (
     <table>

@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Image from '../Image';
 
+const defaultImageSize = 100;
+
 interface Image {
-  height: number;
+  height: number | null;
   url: string;
-  width: number;
+  width: number | null;
 }
 
 export interface PlaylistProps {
@@ -16,12 +18,18 @@ export interface PlaylistProps {
 
 function Playlist(props: PlaylistProps): JSX.Element {
   const { id, images, name } = props;
+  const image = images[0];
 
   return (
     <figure>
-      {images[0] && (
+      {image && (
         <Link to={`/playlists/${id}`}>
-          <Image {...images[0]} alt={name} />
+          <Image
+            {...image}
+            alt={name}
+            width={image.width || defaultImageSize}
+            height={image.height || defaultImageSize}
+          />
         </Link>
       )}
       <figcaption>

@@ -5,11 +5,11 @@ import styles from './Categories.module.css';
 
 export interface CategoriesProps {
   className?: string;
-  items?: CategoryProps[];
+  items: CategoryProps[];
 }
 
 function Categories(props: CategoriesProps): JSX.Element {
-  const { className, items = [] } = props;
+  const { className, items } = props;
 
   return (
     <ul className={clsx(className, styles.categories)}>

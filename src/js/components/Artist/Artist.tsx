@@ -1,10 +1,12 @@
 import React from 'react';
 import Image from '../Image';
 
+const defaultImageSize = 100;
+
 interface Image {
-  height: number;
+  height: number | null;
   url: string;
-  width: number;
+  width: number | null;
 }
 
 export interface ArtistProps {
@@ -15,10 +17,18 @@ export interface ArtistProps {
 
 function Artist(props: ArtistProps): JSX.Element {
   const { images, name } = props;
+  const image = images[0];
 
   return (
     <figure>
-      {images[0] && <Image {...images[0]} alt={name} />}
+      {image && (
+        <Image
+          {...image}
+          alt={name}
+          width={image.width || defaultImageSize}
+          height={image.height || defaultImageSize}
+        />
+      )}
       <figcaption>
         <h2>{name}</h2>
       </figcaption>

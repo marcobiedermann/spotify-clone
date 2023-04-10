@@ -1,92 +1,49 @@
 import useSWR, { SWRResponse } from 'swr';
+import { z } from 'zod';
+import { imageObjectSchema, simplifiedPlaylistObjectSchema, Error } from './common';
 
-interface ExternalUrls {
-  spotify: string;
+const usersProfileSchema = z.object({
+  display_name: z.string(),
+  external_urls: z.object({
+    spotify: z.string(),
+  }),
+  followers: z.object({
+    href: z.string().nullable(),
+    total: z.number().int(),
+  }),
+  href: z.string().url(),
+  id: z.string(),
+  images: z.array(imageObjectSchema),
+  type: z.literal('user'),
+  uri: z.string(),
+});
+
+type UsersProfile = z.infer<typeof usersProfileSchema>;
+
+/**
+ * @link https://developer.spotify.com/documentation/web-api/reference/get-users-profile
+ */
+function useUsersProfile(userId: string): SWRResponse<UsersProfile, Error> {
+  return useSWR<UsersProfile, Error>(`/v1/users/${userId}`);
 }
 
-interface Followers {
-  href: null;
-  total: number;
+const usersPlaylistsSchema = z.object({
+  href: z.string().url(),
+  limit: z.number().int(),
+  next: z.string().nullable(),
+  offset: z.number().int(),
+  previous: z.string().nullable(),
+  total: z.number().int(),
+  items: z.array(simplifiedPlaylistObjectSchema),
+});
+
+type UsersPlaylists = z.infer<typeof usersPlaylistsSchema>;
+
+/**
+ * @link https://developer.spotify.com/documentation/web-api/reference/get-list-users-playlists
+ */
+function useUsersPlaylists(userId: string): SWRResponse<UsersPlaylists, Error> {
+  return useSWR<UsersPlaylists, Error>(`/v1/users/${userId}/playlists`);
 }
 
-interface Image {
-  height: number;
-  url: string;
-  width: number;
-}
-
-interface UserData {
-  display_name: string;
-  external_urls: ExternalUrls;
-  followers: Followers;
-  href: string;
-  id: string;
-  images: Image[];
-  type: string;
-  uri: string;
-}
-
-interface Error {
-  message: string;
-}
-
-function useUser(userId: string): SWRResponse<UserData, Error> {
-  return useSWR<UserData, Error>(`/v1/users/${userId}`);
-}
-
-interface ExternalUrls {
-  spotify: string;
-}
-
-interface Image {
-  height: number;
-  url: string;
-  width: number;
-}
-
-interface Item {
-  collaborative: boolean;
-  description: string;
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  images: Image[];
-  name: string;
-  owner: Owner;
-  primary_color: null;
-  public: boolean;
-  snapshot_id: string;
-  tracks: Tracks;
-  type: string;
-  uri: string;
-}
-
-interface Owner {
-  display_name: string;
-  external_urls: ExternalUrls;
-  href: string;
-  id: string;
-  type: string;
-  uri: string;
-}
-
-interface Tracks {
-  href: string;
-  total: number;
-}
-
-interface PlaylistsData {
-  href: string;
-  items: Item[];
-  limit: number;
-  next: string;
-  offset: number;
-  previous: null;
-  total: number;
-}
-
-function useUserPlaylists(userId: string): SWRResponse<PlaylistsData, Error> {
-  return useSWR<PlaylistsData, Error>(`/v1/users/${userId}/playlists`);
-}
-
-export { useUser, useUserPlaylists };
+export { useUsersProfile, useUsersPlaylists };

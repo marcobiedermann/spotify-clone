@@ -4,12 +4,12 @@ import Artist, { ArtistProps } from '../Artist';
 import styles from './Artists.module.css';
 
 export interface ArtistsProps {
-  artists?: ArtistProps[];
+  artists: ArtistProps[];
   className?: string;
 }
 
 function Artists(props: ArtistsProps): JSX.Element {
-  const { artists = [], className } = props;
+  const { artists, className } = props;
 
   return (
     <ul className={clsx(className, styles.artists)}>

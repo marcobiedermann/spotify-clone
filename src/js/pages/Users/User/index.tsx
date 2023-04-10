@@ -4,11 +4,11 @@ import { useParams } from 'react-router-dom';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 import User from '../../../components/User';
-import { useUser } from '../../../hooks/users';
+import { useUsersProfile } from '../../../hooks/users';
 
 function UserPage(): JSX.Element {
   const { userId } = useParams();
-  const { data, error } = useUser(userId!);
+  const { data, error } = useUsersProfile(userId!);
 
   if (error) {
     return <Error>{error.message}</Error>;

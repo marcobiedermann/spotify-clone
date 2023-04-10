@@ -6,7 +6,9 @@ exports[`renders correctly 1`] = `
   <figure>
     <img
       alt=""
+      height="100"
       src=""
+      width="100"
     />
   </figure>
   <p>
