@@ -1,6 +1,6 @@
 import useSWR, { SWRResponse } from 'swr';
 import { z } from 'zod';
-import { imageObjectSchema, simplifiedPlaylistObjectSchema, Error } from './common';
+import { Error, imageObjectSchema, instance, simplifiedPlaylistObjectSchema } from '.';
 
 const usersProfileSchema = z.object({
   display_name: z.string(),
@@ -23,6 +23,12 @@ type UsersProfile = z.infer<typeof usersProfileSchema>;
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-users-profile
  */
+async function getUsersProfile(userId: string): Promise<UsersProfile> {
+  const { data } = await instance.get(`/v1/users/${userId}`);
+
+  return usersProfileSchema.parse(data);
+}
+
 function useUsersProfile(userId: string): SWRResponse<UsersProfile, Error> {
   return useSWR<UsersProfile, Error>(`/v1/users/${userId}`);
 }
@@ -42,6 +48,12 @@ type UsersPlaylists = z.infer<typeof usersPlaylistsSchema>;
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-list-users-playlists
  */
+async function getUsersPlaylists(userId: string): Promise<UsersPlaylists> {
+  const { data } = await instance.get(`/v1/users/${userId}/playlists`);
+
+  return usersPlaylistsSchema.parse(data);
+}
+
 function useUsersPlaylists(userId: string): SWRResponse<UsersPlaylists, Error> {
   return useSWR<UsersPlaylists, Error>(`/v1/users/${userId}/playlists`);
 }

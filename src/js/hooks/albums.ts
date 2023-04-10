@@ -7,8 +7,9 @@ import {
   artistObjectSchema,
   copyrightObjectSchema,
   imageObjectSchema,
+  instance,
   simplifiedTrackObject,
-} from './common';
+} from '.';
 
 const albumSchema = z.object({
   album_type: z.enum(['album', 'single', 'compilation']),
@@ -54,6 +55,12 @@ type Album = z.infer<typeof albumSchema>;
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-an-album
  */
+async function getAlbum(albumId: string): Promise<Album> {
+  const { data } = await instance.get(`/v1/albums/${albumId}`);
+
+  return albumSchema.parse(data);
+}
+
 function useAlbum(albumId: string): SWRResponse<Album, Error> {
   return useSWR<Album, Error>(`/v1/albums/${albumId}`);
 }

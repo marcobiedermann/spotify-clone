@@ -4,9 +4,10 @@ import {
   Error,
   artistObjectSchema,
   imageObjectSchema,
+  instance,
   simplifiedAlbumObjectSchema,
   trackObjectSchema,
-} from './common';
+} from '.';
 
 const artistSchema = z.object({
   external_urls: z.object({
@@ -31,6 +32,12 @@ type Artist = z.infer<typeof artistSchema>;
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-an-artist
  */
+async function getArtist(artistId: string): Promise<Artist> {
+  const { data } = await instance.get(`/v1/artists/${artistId}`);
+
+  return artistSchema.parse(data);
+}
+
 function useArtist(artistId: string): SWRResponse<Artist, Error> {
   return useSWR<Artist, Error>(`/v1/artists/${artistId}`);
 }
@@ -50,6 +57,12 @@ type ArtistsAlbums = z.infer<typeof artistsAlbumsSchema>;
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-an-artists-albums
  */
+async function getArtistAlbums(artistId: string): Promise<ArtistsAlbums> {
+  const { data } = await instance.get(`/v1/artists/${artistId}/albums`);
+
+  return artistsAlbumsSchema.parse(data);
+}
+
 function useArtistAlbums(artistId: string): SWRResponse<ArtistsAlbums, Error> {
   return useSWR<ArtistsAlbums, Error>(`/v1/artists/${artistId}/albums`);
 }
@@ -63,6 +76,12 @@ type ArtistsRelatedArtists = z.infer<typeof artistsRelatedArtistsSchema>;
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-an-artists-related-artists
  */
+async function getArtistRelatedArtists(artistId: string): Promise<ArtistsRelatedArtists> {
+  const { data } = await instance.get(`/v1/artists/${artistId}/related-artists`);
+
+  return artistsRelatedArtistsSchema.parse(data);
+}
+
 function useArtistRelatedArtists(artistId: string): SWRResponse<ArtistsRelatedArtists, Error> {
   return useSWR<ArtistsRelatedArtists, Error>(`/v1/artists/${artistId}/related-artists`);
 }
@@ -76,6 +95,12 @@ type ArtistsTopTracks = z.infer<typeof artistsTopTracksSchema>;
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-an-artists-top-tracks
  */
+async function getArtistTopTracks(artistId: string): Promise<ArtistsTopTracks> {
+  const { data } = await instance.get(`/v1/artists/${artistId}/top-tracks`);
+
+  return artistsTopTracksSchema.parse(data);
+}
+
 function useArtistTopTracks(artistId: string): SWRResponse<ArtistsTopTracks, Error> {
   return useSWR<ArtistsTopTracks, Error>(`/v1/artists/${artistId}/top-tracks`);
 }

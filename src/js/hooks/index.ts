@@ -1,4 +1,9 @@
+import axios from 'axios';
 import { z } from 'zod';
+
+const instance = axios.create({
+  baseURL: 'https://api.spotify.com',
+});
 
 interface Error {
   message: string;
@@ -258,10 +263,11 @@ export {
   artistObjectSchema,
   copyrightObjectSchema,
   imageObjectSchema,
+  instance,
   playlistTrackObjectSchema,
-  simplifiedPlaylistObjectSchema,
   simplifiedAlbumObjectSchema,
   simplifiedCategoryObjectSchema,
+  simplifiedPlaylistObjectSchema,
   simplifiedTrackObject,
   trackObjectSchema,
 };
