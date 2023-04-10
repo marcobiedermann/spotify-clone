@@ -2,7 +2,7 @@
 
 import useSWR, { SWRResponse } from 'swr';
 import { z } from 'zod';
-import { simplifiedPlaylistObjectSchema, Error } from './common';
+import { Error, instance, simplifiedPlaylistObjectSchema } from '.';
 
 const mePlaylistsSchema = z.object({
   href: z.string().url(),
@@ -19,6 +19,12 @@ type MePlaylists = z.infer<typeof mePlaylistsSchema>;
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-a-list-of-current-users-playlists
  */
+async function getMePlaylists(): Promise<MePlaylists> {
+  const { data } = await instance.get('/v1/me/playlists');
+
+  return mePlaylistsSchema.parse(data);
+}
+
 function useMePlaylists(): SWRResponse<MePlaylists, Error> {
   return useSWR<MePlaylists, Error>('/v1/me/playlists');
 }

@@ -2,7 +2,7 @@
 
 import useSWR, { SWRResponse } from 'swr';
 import { z } from 'zod';
-import { Error, simplifiedPlaylistObjectSchema } from '../common';
+import { Error, instance, simplifiedPlaylistObjectSchema } from '..';
 
 const featuredPlaylistsSchema = z.object({
   message: z.string(),
@@ -22,6 +22,12 @@ type FeaturedPlaylists = z.infer<typeof featuredPlaylistsSchema>;
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-featured-playlists
  */
+async function getBrowseFeaturedPlaylists(): Promise<FeaturedPlaylists> {
+  const { data } = await instance.get('/v1/browse/featured-playlists');
+
+  return featuredPlaylistsSchema.parse(data);
+}
+
 function useBrowseFeaturedPlaylists(): SWRResponse<FeaturedPlaylists, Error> {
   return useSWR<FeaturedPlaylists, Error>('/v1/browse/featured-playlists');
 }

@@ -2,7 +2,7 @@
 
 import useSWR, { SWRResponse } from 'swr';
 import { z } from 'zod';
-import { Error, imageObjectSchema, playlistTrackObjectSchema } from './common';
+import { Error, imageObjectSchema, instance, playlistTrackObjectSchema } from '.';
 
 const playlistSchema = z.object({
   collaborative: z.boolean(),
@@ -52,6 +52,12 @@ type Playlist = z.infer<typeof playlistSchema>;
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-playlist
  */
+async function getPlaylist(playlistId: string): Promise<Playlist> {
+  const { data } = await instance.get(`/v1/playlists/${playlistId}`);
+
+  return playlistSchema.parse(data);
+}
+
 function usePlaylist(playlistId: string): SWRResponse<Playlist, Error> {
   return useSWR<Playlist, Error>(`/v1/playlists/${playlistId}`);
 }

@@ -2,7 +2,7 @@
 
 import useSWR, { SWRResponse } from 'swr';
 import { z } from 'zod';
-import { Error, simplifiedAlbumObjectSchema } from '../common';
+import { Error, instance, simplifiedAlbumObjectSchema } from '..';
 
 const newReleasesSchema = z.object({
   albums: z.object({
@@ -21,6 +21,12 @@ type NewReleases = z.infer<typeof newReleasesSchema>;
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-new-releases
  */
+async function getBrowseNewReleases(): Promise<NewReleases> {
+  const { data } = await instance.get('/v1/browse/new-releases');
+
+  return newReleasesSchema.parse(data);
+}
+
 function useBrowseNewReleases(): SWRResponse<NewReleases, Error> {
   return useSWR<NewReleases, Error>('/v1/browse/new-releases');
 }
