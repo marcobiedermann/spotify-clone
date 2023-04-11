@@ -17,6 +17,31 @@ exports[`renders correctly 1`] = `
       </th>
     </tr>
   </thead>
-  <tbody />
+  <tbody>
+    <tr>
+      <td>
+        0
+      </td>
+      <td>
+        <div
+          class="track__name"
+        >
+          string
+        </div>
+        <div>
+          <a
+            href="/artists/string"
+          >
+            string
+          </a>
+        </div>
+      </td>
+      <td
+        align="right"
+      >
+        0:00
+      </td>
+    </tr>
+  </tbody>
 </table>
 `;

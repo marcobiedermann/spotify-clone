@@ -1,27 +1,29 @@
-const playlistTrack = {
-  added_at: '2015-01-15T12:39:22Z',
+import { PlaylistTrackProps } from '..';
+
+const playlistTrack: PlaylistTrackProps = {
+  added_at: '1970-01-01',
   track: {
     album: {
+      id: '2up3OPMp9Tb4dAKM2erWXQ',
       images: [
         {
-          height: 640,
-          url: 'https://i.scdn.co/image/ab67616d0000b273ce6d0eef0c1ce77e5f95bbbc',
-          width: 640,
+          url: 'https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228',
+          height: 300,
+          width: 300,
         },
       ],
-      id: '5Opp8ursJ6XoTTcqElvAJG',
-      name: 'Tibetan Bowls',
+      name: 'string',
     },
     artists: [
       {
-        id: '5VQE4WOzPu9h3HnGLuBoA6',
-        name: 'Vlasta Marek',
+        id: 'string',
+        name: 'string',
       },
     ],
-    duration_ms: 730066,
-    id: '64IL0ZrOV7F6BDPm5fhfUa',
-    name: 'Is',
-    track_number: 2,
+    duration_ms: 0,
+    id: 'string',
+    name: 'string',
+    track_number: 0,
   },
 };
 

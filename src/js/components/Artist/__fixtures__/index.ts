@@ -1,13 +1,10 @@
-const image = {
-  height: 100,
-  url: '',
-  width: 100,
-};
+import { ArtistProps } from '../Artist';
+import imageFixtures from '../../Image/__fixtures__';
 
-const artist = {
-  name: '',
-  id: '',
-  images: [image],
+const artist: ArtistProps = {
+  id: 'string',
+  images: [imageFixtures],
+  name: 'string',
 };
 
 export default artist;

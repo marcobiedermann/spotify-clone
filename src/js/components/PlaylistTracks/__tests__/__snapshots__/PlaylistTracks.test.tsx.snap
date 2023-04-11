@@ -23,6 +23,59 @@ exports[`renders correctly 1`] = `
       </th>
     </tr>
   </thead>
-  <tbody />
+  <tbody>
+    <tr>
+      <td>
+        0
+      </td>
+      <td>
+        <div
+          class="media"
+        >
+          <div
+            class="media__object media__object--left"
+          >
+            <img
+              alt="string"
+              height="48"
+              src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228"
+              width="48"
+            />
+          </div>
+          <div
+            class="media__body"
+          >
+            <div
+              class="track__name"
+            >
+              string
+            </div>
+            <div>
+              <a
+                href="/artists/string"
+              >
+                string
+              </a>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <a
+          href="/albums/2up3OPMp9Tb4dAKM2erWXQ"
+        >
+          string
+        </a>
+      </td>
+      <td>
+        Jan 1, 1970
+      </td>
+      <td
+        align="right"
+      >
+        0:00
+      </td>
+    </tr>
+  </tbody>
 </table>
 `;

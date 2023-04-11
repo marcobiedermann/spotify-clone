@@ -1,10 +1,15 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
+import { composeStories } from '@storybook/react';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { expect, it } from 'vitest';
-import Header from '..';
+import * as stories from '../Header.stories';
+
+const { Default } = composeStories(stories);
 
 it('renders correctly', () => {
-  const { container } = render(<Header>Header</Header>);
+  const { container } = render(<Default />);
 
   expect(container.firstChild).toMatchSnapshot();
 });

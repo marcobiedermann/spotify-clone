@@ -3,5 +3,81 @@
 exports[`Albums component > renders correctly 1`] = `
 <ul
   class="albums"
-/>
+>
+  <li>
+    <div>
+      <figure>
+        <a
+          href="/albums/2up3OPMp9Tb4dAKM2erWXQ"
+        >
+          <img
+            alt="string"
+            height="300"
+            src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228"
+            width="300"
+          />
+        </a>
+        <figcaption>
+          <h3>
+            <a
+              href="/albums/2up3OPMp9Tb4dAKM2erWXQ"
+            >
+              string
+            </a>
+          </h3>
+          <h4>
+            <a
+              href="/artists/string"
+            >
+              string
+            </a>
+          </h4>
+        </figcaption>
+      </figure>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              #
+            </th>
+            <th>
+              Title
+            </th>
+            <th
+              align="right"
+            >
+              Duration
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              0
+            </td>
+            <td>
+              <div
+                class="track__name"
+              >
+                string
+              </div>
+              <div>
+                <a
+                  href="/artists/string"
+                >
+                  string
+                </a>
+              </div>
+            </td>
+            <td
+              align="right"
+            >
+              0:00
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </li>
+</ul>
 `;

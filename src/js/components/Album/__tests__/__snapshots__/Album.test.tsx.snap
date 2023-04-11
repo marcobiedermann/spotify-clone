@@ -4,28 +4,28 @@ exports[`Album component > renders correctly 1`] = `
 <div>
   <figure>
     <a
-      href="/albums/4aawyAB9vmqN3uQ7FjRGTy"
+      href="/albums/2up3OPMp9Tb4dAKM2erWXQ"
     >
       <img
-        alt="Global Warming"
-        height="640"
-        src="https://i.scdn.co/image/ab67616d0000b2732c5b24ecfa39523a75c993c4"
-        width="640"
+        alt="string"
+        height="300"
+        src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228"
+        width="300"
       />
     </a>
     <figcaption>
       <h3>
         <a
-          href="/albums/4aawyAB9vmqN3uQ7FjRGTy"
+          href="/albums/2up3OPMp9Tb4dAKM2erWXQ"
         >
-          Global Warming
+          string
         </a>
       </h3>
       <h4>
         <a
-          href="/artists/0TnOYISbd1XYRBk9myaseg"
+          href="/artists/string"
         >
-          Pitbull
+          string
         </a>
       </h4>
     </figcaption>
@@ -49,26 +49,26 @@ exports[`Album component > renders correctly 1`] = `
     <tbody>
       <tr>
         <td>
-          1
+          0
         </td>
         <td>
           <div
             class="track__name"
           >
-            Global Warming (feat. Sensato)
+            string
           </div>
           <div>
             <a
-              href="/artists/0TnOYISbd1XYRBk9myaseg"
+              href="/artists/string"
             >
-              Pitbull
+              string
             </a>
           </div>
         </td>
         <td
           align="right"
         >
-          1:25
+          0:00
         </td>
       </tr>
     </tbody>

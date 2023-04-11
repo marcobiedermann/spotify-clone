@@ -1,0 +1,52 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Media Component > should render MediaObject with default direction correctly 1`] = `
+<div
+  class="media"
+>
+  <div
+    class="media__object media__object--left"
+  >
+    Media Object
+  </div>
+  <div
+    class="media__body"
+  >
+    Media Body
+  </div>
+</div>
+`;
+
+exports[`Media Component > should render MediaObject with direction \`left\` correctly 1`] = `
+<div
+  class="media"
+>
+  <div
+    class="media__object media__object--left"
+  >
+    Media Object
+  </div>
+  <div
+    class="media__body"
+  >
+    Media Body
+  </div>
+</div>
+`;
+
+exports[`Media Component > should render MediaObject with direction \`right\` correctly 1`] = `
+<div
+  class="media"
+>
+  <div
+    class="media__object media__object--right"
+  >
+    Media Object
+  </div>
+  <div
+    class="media__body"
+  >
+    Media Body
+  </div>
+</div>
+`;

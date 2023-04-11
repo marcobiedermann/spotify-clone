@@ -1,16 +1,16 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
+import { composeStories } from '@storybook/react';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
-import Albums from '..';
+import * as stories from '../Albums.stories';
+
+const { Default } = composeStories(stories);
 
 describe('Albums component', () => {
   it('renders correctly', () => {
-    const { container } = render(
-      <MemoryRouter>
-        <Albums items={[]} />
-      </MemoryRouter>,
-    );
+    const { container } = render(<Default />);
 
     expect(container.firstChild).toMatchSnapshot();
   });

@@ -1,15 +1,15 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
+import { composeStories } from '@storybook/react';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { expect, it } from 'vitest';
-import { MemoryRouter } from 'react-router-dom';
-import Navigation from '..';
+import * as stories from '../Navigation.stories';
+
+const { Default } = composeStories(stories);
 
 it('renders correctly', () => {
-  const { container } = render(
-    <MemoryRouter>
-      <Navigation />
-    </MemoryRouter>,
-  );
+  const { container } = render(<Default />);
 
   expect(container.firstChild).toMatchSnapshot();
 });
