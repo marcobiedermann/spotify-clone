@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 
-import useSWR, { SWRResponse } from 'swr';
+import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import { z } from 'zod';
 import { Error, instance, simplifiedPlaylistObjectSchema } from '..';
 
@@ -28,8 +28,11 @@ async function getBrowseFeaturedPlaylists(): Promise<FeaturedPlaylists> {
   return featuredPlaylistsSchema.parse(data);
 }
 
-function useBrowseFeaturedPlaylists(): SWRResponse<FeaturedPlaylists, Error> {
-  return useSWR<FeaturedPlaylists, Error>('/v1/browse/featured-playlists');
+function useBrowseFeaturedPlaylists(): UseQueryResult<FeaturedPlaylists, Error> {
+  return useQuery<FeaturedPlaylists, Error>({
+    queryKey: ['browse', 'featured-playlists'],
+    queryFn: () => getBrowseFeaturedPlaylists(),
+  });
 }
 
 export { useBrowseFeaturedPlaylists };

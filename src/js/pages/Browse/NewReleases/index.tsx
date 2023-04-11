@@ -6,13 +6,13 @@ import Loader from '../../../components/Loader';
 import { useBrowseNewReleases } from '../../../hooks/browse/new-releases';
 
 function NewReleasesPage(): JSX.Element {
-  const { data, error } = useBrowseNewReleases();
+  const { data, error, isError, isLoading } = useBrowseNewReleases();
 
-  if (error) {
+  if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (!data) {
+  if (isLoading) {
     return <Loader />;
   }
 

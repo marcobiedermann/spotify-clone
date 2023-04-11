@@ -8,13 +8,13 @@ import { useBrowseCategoryPlaylists } from '../../../../../hooks/browse/categori
 
 function PlaylistsPage(): JSX.Element {
   const { categoryId } = useParams();
-  const { data, error } = useBrowseCategoryPlaylists(categoryId!);
+  const { data, error, isError, isLoading } = useBrowseCategoryPlaylists(categoryId!);
 
-  if (error) {
+  if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (!data) {
+  if (isLoading) {
     return <Loader />;
   }
 

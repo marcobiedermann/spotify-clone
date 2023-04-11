@@ -1,4 +1,4 @@
-import useSWR, { SWRResponse } from 'swr';
+import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import { z } from 'zod';
 import {
   Error,
@@ -31,8 +31,11 @@ async function getBrowseCategories(): Promise<BrowseCategories> {
   return browseCategoriesSchema.parse(data);
 }
 
-function useBrowseCategories(): SWRResponse<BrowseCategories, Error> {
-  return useSWR<BrowseCategories, Error>('/v1/browse/categories');
+function useBrowseCategories(): UseQueryResult<BrowseCategories, Error> {
+  return useQuery<BrowseCategories, Error>({
+    queryKey: ['browse', 'categories'],
+    queryFn: () => getBrowseCategories(),
+  });
 }
 
 const browseCategorySchema = z.object({
@@ -53,8 +56,11 @@ async function getBrowseCategory(categoryId: string): Promise<BrowseCategory> {
   return browseCategorySchema.parse(data);
 }
 
-function useBrowseCategory(categoryId: string): SWRResponse<BrowseCategory, Error> {
-  return useSWR<BrowseCategory, Error>(`/v1/browse/categories/${categoryId}`);
+function useBrowseCategory(categoryId: string): UseQueryResult<BrowseCategory, Error> {
+  return useQuery<BrowseCategory, Error>({
+    queryKey: ['browse', 'categories', categoryId],
+    queryFn: () => getBrowseCategory(categoryId),
+  });
 }
 
 const browseCategoryPlaylistsSchema = z.object({
@@ -83,8 +89,11 @@ async function getBrowseCategoryPlaylists(categoryId: string): Promise<BrowseCat
 
 function useBrowseCategoryPlaylists(
   categoryId: string,
-): SWRResponse<BrowseCategoryPlaylists, Error> {
-  return useSWR<BrowseCategoryPlaylists, Error>(`/v1/browse/categories/${categoryId}/playlists`);
+): UseQueryResult<BrowseCategoryPlaylists, Error> {
+  return useQuery<BrowseCategoryPlaylists, Error>({
+    queryKey: ['browse', 'categories', categoryId, 'playlists'],
+    queryFn: () => getBrowseCategoryPlaylists(categoryId),
+  });
 }
 
 export { useBrowseCategories, useBrowseCategory, useBrowseCategoryPlaylists };

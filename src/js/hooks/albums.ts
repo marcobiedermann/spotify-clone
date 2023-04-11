@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 
-import useSWR, { SWRResponse } from 'swr';
+import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import { z } from 'zod';
 import {
   Error,
@@ -61,8 +61,11 @@ async function getAlbum(albumId: string): Promise<Album> {
   return albumSchema.parse(data);
 }
 
-function useAlbum(albumId: string): SWRResponse<Album, Error> {
-  return useSWR<Album, Error>(`/v1/albums/${albumId}`);
+function useAlbum(albumId: string): UseQueryResult<Album, Error> {
+  return useQuery<Album, Error>({
+    queryKey: ['albums', albumId],
+    queryFn: () => getAlbum(albumId),
+  });
 }
 
 export { useAlbum };

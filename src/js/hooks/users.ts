@@ -1,4 +1,4 @@
-import useSWR, { SWRResponse } from 'swr';
+import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import { z } from 'zod';
 import { Error, imageObjectSchema, instance, simplifiedPlaylistObjectSchema } from '.';
 
@@ -29,8 +29,11 @@ async function getUsersProfile(userId: string): Promise<UsersProfile> {
   return usersProfileSchema.parse(data);
 }
 
-function useUsersProfile(userId: string): SWRResponse<UsersProfile, Error> {
-  return useSWR<UsersProfile, Error>(`/v1/users/${userId}`);
+function useUsersProfile(userId: string): UseQueryResult<UsersProfile, Error> {
+  return useQuery<UsersProfile, Error>({
+    queryKey: ['users', userId],
+    queryFn: () => getUsersProfile(userId),
+  });
 }
 
 const usersPlaylistsSchema = z.object({
@@ -54,8 +57,11 @@ async function getUsersPlaylists(userId: string): Promise<UsersPlaylists> {
   return usersPlaylistsSchema.parse(data);
 }
 
-function useUsersPlaylists(userId: string): SWRResponse<UsersPlaylists, Error> {
-  return useSWR<UsersPlaylists, Error>(`/v1/users/${userId}/playlists`);
+function useUsersPlaylists(userId: string): UseQueryResult<UsersPlaylists, Error> {
+  return useQuery<UsersPlaylists, Error>({
+    queryKey: ['users', userId, 'playlists'],
+    queryFn: () => getUsersPlaylists(userId),
+  });
 }
 
 export { useUsersProfile, useUsersPlaylists };

@@ -8,13 +8,13 @@ import { useUsersProfile } from '../../../hooks/users';
 
 function UserPage(): JSX.Element {
   const { userId } = useParams();
-  const { data, error } = useUsersProfile(userId!);
+  const { data, error, isError, isLoading } = useUsersProfile(userId!);
 
-  if (error) {
+  if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (!data) {
+  if (isLoading) {
     return <Loader />;
   }
 

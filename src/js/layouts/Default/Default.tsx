@@ -13,13 +13,13 @@ import Search from '../../components/Search';
 import styles from './Default.module.css';
 
 function DefaultLayout(): JSX.Element {
-  const { data, error } = useMePlaylists();
+  const { data, error, isError, isLoading } = useMePlaylists();
 
-  if (error) {
+  if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (!data) {
+  if (isLoading) {
     return <Loader />;
   }
 

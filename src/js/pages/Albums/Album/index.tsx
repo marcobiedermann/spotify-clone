@@ -8,13 +8,13 @@ import { useAlbum } from '../../../hooks/albums';
 
 function AlbumPage(): JSX.Element {
   const { albumId } = useParams();
-  const { data, error } = useAlbum(albumId!);
+  const { data, error, isError, isLoading } = useAlbum(albumId!);
 
-  if (error) {
+  if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (!data) {
+  if (isLoading) {
     return <Loader />;
   }
 

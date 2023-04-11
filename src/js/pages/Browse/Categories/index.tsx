@@ -6,13 +6,13 @@ import Loader from '../../../components/Loader';
 import { useBrowseCategories } from '../../../hooks/browse/categories';
 
 function CategoriesPage(): JSX.Element {
-  const { data, error } = useBrowseCategories();
+  const { data, error, isError, isLoading } = useBrowseCategories();
 
-  if (error) {
+  if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (!data) {
+  if (isLoading) {
     return <Loader />;
   }
 
