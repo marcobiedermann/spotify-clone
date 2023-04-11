@@ -1,16 +1,15 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
+import { composeStories } from '@storybook/react';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
 import { expect, it } from 'vitest';
-import Me from '..';
-import meFixtures from '../__fixtures__';
+import * as stories from '../Me.stories';
+
+const { Default } = composeStories(stories);
 
 it('renders correctly', () => {
-  const { container } = render(
-    <MemoryRouter>
-      <Me {...meFixtures} />
-    </MemoryRouter>,
-  );
+  const { container } = render(<Default />);
 
   expect(container.firstChild).toMatchSnapshot();
 });

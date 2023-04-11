@@ -1,0 +1,53 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Player component > should render correctly 1`] = `
+<div>
+  <div>
+    <div>
+      Album Name
+    </div>
+    <div>
+      Artist
+    </div>
+  </div>
+  <div>
+    <button
+      type="button"
+    >
+      Shuffle
+    </button>
+    <div>
+      <button
+        type="button"
+      >
+        Previous
+      </button>
+      <button
+        type="button"
+      >
+        Play
+      </button>
+      <button
+        type="button"
+      >
+        Pause
+      </button>
+      <button
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+    <button
+      type="button"
+    >
+      Repeat
+    </button>
+  </div>
+  <div>
+    <div>
+      Volume
+    </div>
+  </div>
+</div>
+`;

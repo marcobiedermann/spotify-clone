@@ -3,5 +3,27 @@
 exports[`renders correctly 1`] = `
 <ul
   class="playlists"
-/>
+>
+  <li>
+    <figure>
+      <a
+        href="/playlists/string"
+      >
+        <img
+          alt="string"
+          height="300"
+          src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228"
+          width="300"
+        />
+      </a>
+      <figcaption>
+        <a
+          href="/playlists/string"
+        >
+          string
+        </a>
+      </figcaption>
+    </figure>
+  </li>
+</ul>
 `;

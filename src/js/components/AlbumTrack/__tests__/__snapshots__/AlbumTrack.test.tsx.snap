@@ -1,28 +1,32 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders correctly 1`] = `
-<tr>
-  <td>
-    2
-  </td>
-  <td>
-    <div
-      class="track__name"
-    >
-      Is
-    </div>
-    <div>
-      <a
-        href="/artists/5VQE4WOzPu9h3HnGLuBoA6"
+<table>
+  <tbody>
+    <tr>
+      <td>
+        0
+      </td>
+      <td>
+        <div
+          class="track__name"
+        >
+          string
+        </div>
+        <div>
+          <a
+            href="/artists/string"
+          >
+            string
+          </a>
+        </div>
+      </td>
+      <td
+        align="right"
       >
-        Vlasta Marek
-      </a>
-    </div>
-  </td>
-  <td
-    align="right"
-  >
-    12:10
-  </td>
-</tr>
+        0:00
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;

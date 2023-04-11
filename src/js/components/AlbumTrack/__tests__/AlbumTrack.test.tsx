@@ -1,16 +1,15 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
+import { composeStories } from '@storybook/react';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
 import { expect, it } from 'vitest';
-import AlbumTrack from '..';
-import albumTrackFixtures from '../__fixtures__';
+import * as stories from '../AlbumTrack.stories';
+
+const { Default } = composeStories(stories);
 
 it('renders correctly', () => {
-  const { container } = render(
-    <MemoryRouter>
-      <AlbumTrack {...albumTrackFixtures} />
-    </MemoryRouter>,
-  );
+  const { container } = render(<Default />);
 
   expect(container.firstChild).toMatchSnapshot();
 });

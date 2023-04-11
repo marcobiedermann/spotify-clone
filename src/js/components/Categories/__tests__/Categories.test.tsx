@@ -1,10 +1,15 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
+import { composeStories } from '@storybook/react';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { expect, it } from 'vitest';
-import Categories from '..';
+import * as stories from '../Categories.stories';
+
+const { Default } = composeStories(stories);
 
 it('renders correctly', () => {
-  const { container } = render(<Categories items={[]} />);
+  const { container } = render(<Default />);
 
   expect(container.firstChild).toMatchSnapshot();
 });

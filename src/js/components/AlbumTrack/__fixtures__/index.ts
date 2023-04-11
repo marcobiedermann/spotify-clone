@@ -1,14 +1,16 @@
-const albumTrack = {
+import { AlbumTrackProps } from '..';
+
+const albumTrack: AlbumTrackProps = {
   artists: [
     {
-      id: '5VQE4WOzPu9h3HnGLuBoA6',
-      name: 'Vlasta Marek',
+      id: 'string',
+      name: 'string',
     },
   ],
-  duration_ms: 730066,
-  id: '64IL0ZrOV7F6BDPm5fhfUa',
-  name: 'Is',
-  track_number: 2,
+  duration_ms: 0,
+  id: 'string',
+  name: 'string',
+  track_number: 0,
 };
 
 export default albumTrack;
