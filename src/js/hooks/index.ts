@@ -1,8 +1,13 @@
 import axios from 'axios';
 import { z } from 'zod';
 
+const token = import.meta.env.SPOTIFY_ACCESS_TOKEN;
+
 const instance = axios.create({
   baseURL: 'https://api.spotify.com',
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
 });
 
 interface Error {

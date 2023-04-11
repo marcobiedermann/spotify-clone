@@ -1,4 +1,4 @@
-import useSWR, { SWRResponse } from 'swr';
+import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import { z } from 'zod';
 import {
   Error,
@@ -38,8 +38,11 @@ async function getArtist(artistId: string): Promise<Artist> {
   return artistSchema.parse(data);
 }
 
-function useArtist(artistId: string): SWRResponse<Artist, Error> {
-  return useSWR<Artist, Error>(`/v1/artists/${artistId}`);
+function useArtist(artistId: string): UseQueryResult<Artist, Error> {
+  return useQuery<Artist, Error>({
+    queryKey: ['artists', artistId],
+    queryFn: () => getArtist(artistId),
+  });
 }
 
 const artistsAlbumsSchema = z.object({
@@ -63,8 +66,11 @@ async function getArtistAlbums(artistId: string): Promise<ArtistsAlbums> {
   return artistsAlbumsSchema.parse(data);
 }
 
-function useArtistAlbums(artistId: string): SWRResponse<ArtistsAlbums, Error> {
-  return useSWR<ArtistsAlbums, Error>(`/v1/artists/${artistId}/albums`);
+function useArtistAlbums(artistId: string): UseQueryResult<ArtistsAlbums, Error> {
+  return useQuery<ArtistsAlbums, Error>({
+    queryKey: ['artists', artistId, 'albums'],
+    queryFn: () => getArtistAlbums(artistId),
+  });
 }
 
 const artistsRelatedArtistsSchema = z.object({
@@ -82,8 +88,11 @@ async function getArtistRelatedArtists(artistId: string): Promise<ArtistsRelated
   return artistsRelatedArtistsSchema.parse(data);
 }
 
-function useArtistRelatedArtists(artistId: string): SWRResponse<ArtistsRelatedArtists, Error> {
-  return useSWR<ArtistsRelatedArtists, Error>(`/v1/artists/${artistId}/related-artists`);
+function useArtistRelatedArtists(artistId: string): UseQueryResult<ArtistsRelatedArtists, Error> {
+  return useQuery<ArtistsRelatedArtists, Error>({
+    queryKey: ['artists', artistId, 'related-artists'],
+    queryFn: () => getArtistRelatedArtists(artistId),
+  });
 }
 
 const artistsTopTracksSchema = z.object({
@@ -101,8 +110,11 @@ async function getArtistTopTracks(artistId: string): Promise<ArtistsTopTracks> {
   return artistsTopTracksSchema.parse(data);
 }
 
-function useArtistTopTracks(artistId: string): SWRResponse<ArtistsTopTracks, Error> {
-  return useSWR<ArtistsTopTracks, Error>(`/v1/artists/${artistId}/top-tracks`);
+function useArtistTopTracks(artistId: string): UseQueryResult<ArtistsTopTracks, Error> {
+  return useQuery<ArtistsTopTracks, Error>({
+    queryKey: ['artists', artistId, 'top-tracks'],
+    queryFn: () => getArtistTopTracks(artistId),
+  });
 }
 
 export { useArtist, useArtistAlbums, useArtistRelatedArtists, useArtistTopTracks };

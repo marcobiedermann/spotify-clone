@@ -6,13 +6,13 @@ import Playlists from '../../../components/Playlists';
 import { useBrowseFeaturedPlaylists } from '../../../hooks/browse/featured-playlists';
 
 function FeaturedPlaylistsPage(): JSX.Element {
-  const { data, error } = useBrowseFeaturedPlaylists();
+  const { data, error, isError, isLoading } = useBrowseFeaturedPlaylists();
 
-  if (error) {
+  if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (!data) {
+  if (isLoading) {
     return <Loader />;
   }
 

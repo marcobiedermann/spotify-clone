@@ -12,13 +12,13 @@ import { usePlaylist } from '../../../hooks/playlists';
 
 function PlaylistPage(): JSX.Element {
   const { playlistId } = useParams();
-  const { data, error } = usePlaylist(playlistId!);
+  const { data, error, isError, isLoading } = usePlaylist(playlistId!);
 
-  if (error) {
+  if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (!data) {
+  if (isLoading) {
     return <Loader />;
   }
 

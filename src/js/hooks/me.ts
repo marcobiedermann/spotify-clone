@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 
-import useSWR, { SWRResponse } from 'swr';
+import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import { z } from 'zod';
 import { Error, instance, simplifiedPlaylistObjectSchema } from '.';
 
@@ -25,8 +25,11 @@ async function getMePlaylists(): Promise<MePlaylists> {
   return mePlaylistsSchema.parse(data);
 }
 
-function useMePlaylists(): SWRResponse<MePlaylists, Error> {
-  return useSWR<MePlaylists, Error>('/v1/me/playlists');
+function useMePlaylists(): UseQueryResult<MePlaylists, Error> {
+  return useQuery<MePlaylists, Error>({
+    queryKey: ['me', 'playlists'],
+    queryFn: () => getMePlaylists(),
+  });
 }
 
 export { useMePlaylists };

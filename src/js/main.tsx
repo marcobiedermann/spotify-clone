@@ -1,6 +1,6 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { SWRConfig } from 'swr';
 import '../css/elements/anchor.css';
 import '../css/elements/button.css';
 import '../css/elements/figure.css';
@@ -13,31 +13,13 @@ import '../css/layout/base.css';
 import { worker } from '../mocks/browser';
 import Router from './components/Router';
 
-const ACCESS_TOKEN = import.meta.env.SPOTIFY_ACCESS_TOKEN || '';
-
-async function fetcher(url: string) {
-  const response = await fetch(`https://api.spotify.com${url}`, {
-    headers: {
-      Authorization: `Bearer ${ACCESS_TOKEN}`,
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-
-  return response.json();
-}
+const queryClient = new QueryClient();
 
 function Root(): JSX.Element {
   return (
-    <SWRConfig
-      value={{
-        fetcher,
-      }}
-    >
+    <QueryClientProvider client={queryClient}>
       <Router />
-    </SWRConfig>
+    </QueryClientProvider>
   );
 }
 

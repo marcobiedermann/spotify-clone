@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 
-import useSWR, { SWRResponse } from 'swr';
+import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import { z } from 'zod';
 import { Error, instance, simplifiedAlbumObjectSchema } from '..';
 
@@ -27,8 +27,11 @@ async function getBrowseNewReleases(): Promise<NewReleases> {
   return newReleasesSchema.parse(data);
 }
 
-function useBrowseNewReleases(): SWRResponse<NewReleases, Error> {
-  return useSWR<NewReleases, Error>('/v1/browse/new-releases');
+function useBrowseNewReleases(): UseQueryResult<NewReleases, Error> {
+  return useQuery<NewReleases, Error>({
+    queryKey: ['browse', 'new-releases'],
+    queryFn: () => getBrowseNewReleases(),
+  });
 }
 
 export { useBrowseNewReleases };

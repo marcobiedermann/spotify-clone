@@ -9,13 +9,13 @@ import { useArtist } from '../../../hooks/artists';
 function ArtistPage(): JSX.Element {
   const { pathname } = useLocation();
   const { artistId } = useParams();
-  const { data, error } = useArtist(artistId!);
+  const { data, error, isError, isLoading } = useArtist(artistId!);
 
-  if (error) {
+  if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (!data) {
+  if (isLoading) {
     return <Loader />;
   }
 
