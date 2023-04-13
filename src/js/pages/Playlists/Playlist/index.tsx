@@ -2,12 +2,16 @@ import { formatDistance } from 'date-fns';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useParams } from 'react-router-dom';
-import Button from '../../../components/Button';
-import Error from '../../../components/Error';
-import Image from '../../../components/Image';
-import Loader from '../../../components/Loader';
-import Media, { MediaBody, MediaObject } from '../../../components/Media';
-import PlaylistTracks from '../../../components/PlaylistTracks';
+import {
+  Button,
+  Error,
+  Image,
+  Loader,
+  Media,
+  MediaBody,
+  MediaObject,
+  PlaylistTracks,
+} from '../../../components';
 import { usePlaylist } from '../../../hooks/playlists';
 
 const defaultImageSize = 240;

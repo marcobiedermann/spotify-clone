@@ -1,9 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
-import Album from '../../../components/Album';
-import Error from '../../../components/Error';
-import Loader from '../../../components/Loader';
+import { Album, Error, Loader } from '../../../components';
 import { useAlbum } from '../../../hooks/albums';
 
 function AlbumPage(): JSX.Element {

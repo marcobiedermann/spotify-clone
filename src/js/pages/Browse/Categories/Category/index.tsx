@@ -1,9 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
-import Category from '../../../../components/Category';
-import Error from '../../../../components/Error';
-import Loader from '../../../../components/Loader';
+import { Category, Error, Loader } from '../../../../components';
 import { useBrowseCategory } from '../../../../hooks/browse/categories';
 
 function CategoryPage(): JSX.Element {

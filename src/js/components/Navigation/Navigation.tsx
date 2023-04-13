@@ -45,4 +45,5 @@ function Navigation(props: NavigationProps): JSX.Element {
   );
 }
 
+export type { NavigationProps };
 export default Navigation;

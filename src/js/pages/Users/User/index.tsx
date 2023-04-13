@@ -1,9 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
-import Error from '../../../components/Error';
-import Loader from '../../../components/Loader';
-import User from '../../../components/User';
+import { Error, Loader, User } from '../../../components';
 import { useUsersProfile } from '../../../hooks/users';
 
 function UserPage(): JSX.Element {
