@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { z } from 'zod';
+import { apiBaseUrl } from '../constants/spotify';
 
-const token = import.meta.env.SPOTIFY_ACCESS_TOKEN;
+const accessToken = localStorage.getItem('access-token');
 
 const instance = axios.create({
-  baseURL: 'https://api.spotify.com',
+  baseURL: apiBaseUrl,
   headers: {
-    Authorization: `Bearer ${token}`,
+    Authorization: `Bearer ${accessToken}`,
   },
 });
 

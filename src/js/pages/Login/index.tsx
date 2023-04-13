@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { accountsBaseUrl, clientId, redirectUri } from '../../constants/spotify';
 
 const urlSearchParams = new URLSearchParams({
-  client_id: import.meta.env.SPOTIFY_CLIENT_ID,
-  redirect_uri: import.meta.env.SPOTIFY_REDIRECT_URI,
+  client_id: clientId,
+  redirect_uri: redirectUri,
   response_type: 'code',
   scope: ['user-read-private', 'user-read-email'].join(' '),
 });
@@ -16,7 +17,7 @@ function LoginPage(): JSX.Element {
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <a href={`https://accounts.spotify.com/authorize?${query}`}>Login</a>
+      <a href={`${accountsBaseUrl}/authorize?${query}`}>Login</a>
     </>
   );
 }
