@@ -16,7 +16,7 @@ const albumSchema = z.object({
   total_tracks: z.number().int(),
   available_markets: z.array(z.string()),
   external_urls: z.object({
-    spotify: z.string(),
+    spotify: z.string().optional(),
   }),
   href: z.string().url(),
   id: z.string(),
@@ -24,30 +24,36 @@ const albumSchema = z.object({
   name: z.string(),
   release_date: z.string(),
   release_date_precision: z.enum(['year', 'month', 'day']),
-  restrictions: z.object({
-    reason: z.enum(['market', 'product', 'explicit']),
-  }),
+  restrictions: z
+    .object({
+      reason: z.enum(['market', 'product', 'explicit']).optional(),
+    })
+    .optional(),
   type: z.literal('album'),
   uri: z.string(),
-  copyrights: z.array(copyrightObjectSchema),
-  external_ids: z.object({
-    isrc: z.string(),
-    ean: z.string(),
-    upc: z.string(),
-  }),
-  genres: z.array(z.string()),
-  label: z.string(),
-  popularity: z.number().int(),
-  artists: z.array(artistObjectSchema),
-  tracks: z.object({
-    href: z.string().url(),
-    limit: z.number().int(),
-    next: z.string().nullable(),
-    offset: z.number().int(),
-    previous: z.string().nullable(),
-    total: z.number().int(),
-    items: z.array(simplifiedTrackObject),
-  }),
+  copyrights: z.array(copyrightObjectSchema).optional(),
+  external_ids: z
+    .object({
+      isrc: z.string().optional(),
+      ean: z.string().optional(),
+      upc: z.string().optional(),
+    })
+    .optional(),
+  genres: z.array(z.string()).optional(),
+  label: z.string().optional(),
+  popularity: z.number().int().optional(),
+  artists: z.array(artistObjectSchema).optional(),
+  tracks: z
+    .object({
+      href: z.string().url(),
+      limit: z.number().int(),
+      next: z.string().nullable(),
+      offset: z.number().int(),
+      previous: z.string().nullable(),
+      total: z.number().int(),
+      items: z.array(simplifiedTrackObject),
+    })
+    .optional(),
 });
 
 type Album = z.infer<typeof albumSchema>;

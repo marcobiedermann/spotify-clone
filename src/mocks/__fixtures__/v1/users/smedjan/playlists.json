@@ -1,6 +1,226 @@
 {
-  "href": "https://api.spotify.com/v1/users/smedjan/playlists?offset=5&limit=10",
+  "href": "https://api.spotify.com/v1/users/smedjan/playlists?offset=0&limit=20",
   "items": [
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/1CBGDKGM8kekBPfAG5jPZt"
+      },
+      "href": "https://api.spotify.com/v1/playlists/1CBGDKGM8kekBPfAG5jPZt",
+      "id": "1CBGDKGM8kekBPfAG5jPZt",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b2732910c6fc625b0d5ae2eed26aab67616d0000b273b42bb39529620f443fc95ec6ab67616d0000b273d272c37389bd3d9c20564166ab67616d0000b273d5bb99cd52da195675b2f2cd",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b2732910c6fc625b0d5ae2eed26aab67616d0000b273b42bb39529620f443fc95ec6ab67616d0000b273d272c37389bd3d9c20564166ab67616d0000b273d5bb99cd52da195675b2f2cd",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b2732910c6fc625b0d5ae2eed26aab67616d0000b273b42bb39529620f443fc95ec6ab67616d0000b273d272c37389bd3d9c20564166ab67616d0000b273d5bb99cd52da195675b2f2cd",
+          "width": 60
+        }
+      ],
+      "name": "Starred",
+      "owner": {
+        "display_name": "smedjan",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/smedjan"
+        },
+        "href": "https://api.spotify.com/v1/users/smedjan",
+        "id": "smedjan",
+        "type": "user",
+        "uri": "spotify:user:smedjan"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "NCw0M2Y1OTk3NzYxM2RmYTE2OTljMzM1MmZlMTljNGYwYzQxZjFjYWUx",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/1CBGDKGM8kekBPfAG5jPZt/tracks",
+        "total": 118
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:1CBGDKGM8kekBPfAG5jPZt"
+    },
+    {
+      "collaborative": false,
+      "description": "Exhilarating fusion of mainstream and indie dance tracks, from disco to trance, pop and house. Curated by <a href=\"https://twitter.com/nicktoumpelis\">Nick Toumpelis</a>. Photography by <a href=\"https://unsplash.com/chrisjoelcampbell\">Christopher Campbell</a>. ",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/3tT3E3Q4u5Xd0v3ySPLR1O"
+      },
+      "href": "https://api.spotify.com/v1/playlists/3tT3E3Q4u5Xd0v3ySPLR1O",
+      "id": "3tT3E3Q4u5Xd0v3ySPLR1O",
+      "images": [
+        {
+          "height": null,
+          "url": "https://i.scdn.co/image/ab67706c0000bebb5e937351a83b4014b68a09a0",
+          "width": null
+        }
+      ],
+      "name": "dance fusion",
+      "owner": {
+        "display_name": "Nick Toumpelis",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/1226836970"
+        },
+        "href": "https://api.spotify.com/v1/users/1226836970",
+        "id": "1226836970",
+        "type": "user",
+        "uri": "spotify:user:1226836970"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "MzQwOSw4YWI2OGYzOTRhNTA5NDM4YmJiYjhhZmMyZDhiYWFkYWI0N2U1MDYx",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/3tT3E3Q4u5Xd0v3ySPLR1O/tracks",
+        "total": 70
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:3tT3E3Q4u5Xd0v3ySPLR1O"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/41R1UENL6yUDiRR2riptb7"
+      },
+      "href": "https://api.spotify.com/v1/playlists/41R1UENL6yUDiRR2riptb7",
+      "id": "41R1UENL6yUDiRR2riptb7",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b273087ae01edc17b3fbe0f44b28ab67616d0000b273722ee6054732c347e335cb35ab67616d0000b2737d4287bed60bfc5f13d96644ab67616d0000b273bef76218c65153abaed75e6e",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b273087ae01edc17b3fbe0f44b28ab67616d0000b273722ee6054732c347e335cb35ab67616d0000b2737d4287bed60bfc5f13d96644ab67616d0000b273bef76218c65153abaed75e6e",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b273087ae01edc17b3fbe0f44b28ab67616d0000b273722ee6054732c347e335cb35ab67616d0000b2737d4287bed60bfc5f13d96644ab67616d0000b273bef76218c65153abaed75e6e",
+          "width": 60
+        }
+      ],
+      "name": "covers and under covers",
+      "owner": {
+        "display_name": "migo",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/migo"
+        },
+        "href": "https://api.spotify.com/v1/users/migo",
+        "id": "migo",
+        "type": "user",
+        "uri": "spotify:user:migo"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "MzQsYjJmMzEyOTQxNWVhOGZjOGI3MTBhN2U3MjAyYzgwNWFmZTdkZTgwNw==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/41R1UENL6yUDiRR2riptb7/tracks",
+        "total": 21
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:41R1UENL6yUDiRR2riptb7"
+    },
+    {
+      "collaborative": false,
+      "description": "Bombastic tunes -- in some way or another",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/6dSh5StaaE1XbIF5s7Lxng"
+      },
+      "href": "https://api.spotify.com/v1/playlists/6dSh5StaaE1XbIF5s7Lxng",
+      "id": "6dSh5StaaE1XbIF5s7Lxng",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b273341b1e5f0395b17821491c7dab67616d0000b2734ccb64f022a53d3e8ec84a20ab67616d0000b2735a335126b1854bd315d1fd4fab67616d0000b273e477610ef54781d751a9e319",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b273341b1e5f0395b17821491c7dab67616d0000b2734ccb64f022a53d3e8ec84a20ab67616d0000b2735a335126b1854bd315d1fd4fab67616d0000b273e477610ef54781d751a9e319",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b273341b1e5f0395b17821491c7dab67616d0000b2734ccb64f022a53d3e8ec84a20ab67616d0000b2735a335126b1854bd315d1fd4fab67616d0000b273e477610ef54781d751a9e319",
+          "width": 60
+        }
+      ],
+      "name": "Fläskiga låtar",
+      "owner": {
+        "display_name": "migo",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/migo"
+        },
+        "href": "https://api.spotify.com/v1/users/migo",
+        "id": "migo",
+        "type": "user",
+        "uri": "spotify:user:migo"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "MjY5LDFmOWM4YTBmMjU2NjE2NDIwY2NjODQ3NjE1ZmNiZmNiN2MzZGJlYWI=",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/6dSh5StaaE1XbIF5s7Lxng/tracks",
+        "total": 44
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:6dSh5StaaE1XbIF5s7Lxng"
+    },
+    {
+      "collaborative": false,
+      "description": "Migo",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/6hBpet9cW4cVgn96xBJ5Ay"
+      },
+      "href": "https://api.spotify.com/v1/playlists/6hBpet9cW4cVgn96xBJ5Ay",
+      "id": "6hBpet9cW4cVgn96xBJ5Ay",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b2731a0e01b6cd607bbc41c3ff4bab67616d0000b273578f1ac435ac326e48334f66ab67616d0000b273722ee6054732c347e335cb35ab67616d0000b273e477610ef54781d751a9e319",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b2731a0e01b6cd607bbc41c3ff4bab67616d0000b273578f1ac435ac326e48334f66ab67616d0000b273722ee6054732c347e335cb35ab67616d0000b273e477610ef54781d751a9e319",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b2731a0e01b6cd607bbc41c3ff4bab67616d0000b273578f1ac435ac326e48334f66ab67616d0000b273722ee6054732c347e335cb35ab67616d0000b273e477610ef54781d751a9e319",
+          "width": 60
+        }
+      ],
+      "name": "migo1",
+      "owner": {
+        "display_name": "migo",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/migo"
+        },
+        "href": "https://api.spotify.com/v1/users/migo",
+        "id": "migo",
+        "type": "user",
+        "uri": "spotify:user:migo"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "MTA5LDQ1ODU3MzNjNDI2ZmJjNTZhZDc0ZTA0NGNkZDc1OWRmY2I2NTcwNzI=",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/6hBpet9cW4cVgn96xBJ5Ay/tracks",
+        "total": 66
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:6hBpet9cW4cVgn96xBJ5Ay"
+    },
     {
       "collaborative": false,
       "description": "",
@@ -12,17 +232,17 @@
       "images": [
         {
           "height": 640,
-          "url": "https://mosaic.scdn.co/640/ab67616d0000b27364fbadbf3ae43c4c47ac4fddab67616d0000b273b3ed0d541b9c8508d3b6f729ab67616d0000b273ba4c798ab356b8adb64bb2fcab67616d0000b273dbe9c4609ec382dcc0391e62",
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b2733a2d2b9621ef645380c63c16ab67616d0000b273b3ed0d541b9c8508d3b6f729ab67616d0000b273ba4c798ab356b8adb64bb2fcab67616d0000b273dbe9c4609ec382dcc0391e62",
           "width": 640
         },
         {
           "height": 300,
-          "url": "https://mosaic.scdn.co/300/ab67616d0000b27364fbadbf3ae43c4c47ac4fddab67616d0000b273b3ed0d541b9c8508d3b6f729ab67616d0000b273ba4c798ab356b8adb64bb2fcab67616d0000b273dbe9c4609ec382dcc0391e62",
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b2733a2d2b9621ef645380c63c16ab67616d0000b273b3ed0d541b9c8508d3b6f729ab67616d0000b273ba4c798ab356b8adb64bb2fcab67616d0000b273dbe9c4609ec382dcc0391e62",
           "width": 300
         },
         {
           "height": 60,
-          "url": "https://mosaic.scdn.co/60/ab67616d0000b27364fbadbf3ae43c4c47ac4fddab67616d0000b273b3ed0d541b9c8508d3b6f729ab67616d0000b273ba4c798ab356b8adb64bb2fcab67616d0000b273dbe9c4609ec382dcc0391e62",
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b2733a2d2b9621ef645380c63c16ab67616d0000b273b3ed0d541b9c8508d3b6f729ab67616d0000b273ba4c798ab356b8adb64bb2fcab67616d0000b273dbe9c4609ec382dcc0391e62",
           "width": 60
         }
       ],
@@ -85,10 +305,10 @@
       },
       "primary_color": null,
       "public": true,
-      "snapshot_id": "NzksYmQ4OGVjZTY1NzRlNTFlMzBlMGYxOTZjNGEwMzg2M2VjYWQ5MmJiMA==",
+      "snapshot_id": "ODEsNjI5MzNiZmM3MTg3Mjk0NjVkOTg5NmMxN2ZmYjc5MjI0MDI1NGVlZQ==",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/13XT3kKAKOuhKV1IdgQxzf/tracks",
-        "total": 48
+        "total": 50
       },
       "type": "playlist",
       "uri": "spotify:playlist:13XT3kKAKOuhKV1IdgQxzf"
@@ -134,17 +354,17 @@
       "images": [
         {
           "height": 640,
-          "url": "https://mosaic.scdn.co/640/ab67616d0000b27310a9b88453d9d4a3aeb55a18ab67616d0000b2732585adb721eb321c4deb7530ab67616d0000b27366c35697a32e5437811bb5ffab67616d0000b273a0ef2b3fa19f6d2a03149dca",
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b27310a9b88453d9d4a3aeb55a18ab67616d0000b2731643ddadb5ae034cdab6ea90ab67616d0000b27366c35697a32e5437811bb5ffab67616d0000b273a0ef2b3fa19f6d2a03149dca",
           "width": 640
         },
         {
           "height": 300,
-          "url": "https://mosaic.scdn.co/300/ab67616d0000b27310a9b88453d9d4a3aeb55a18ab67616d0000b2732585adb721eb321c4deb7530ab67616d0000b27366c35697a32e5437811bb5ffab67616d0000b273a0ef2b3fa19f6d2a03149dca",
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b27310a9b88453d9d4a3aeb55a18ab67616d0000b2731643ddadb5ae034cdab6ea90ab67616d0000b27366c35697a32e5437811bb5ffab67616d0000b273a0ef2b3fa19f6d2a03149dca",
           "width": 300
         },
         {
           "height": 60,
-          "url": "https://mosaic.scdn.co/60/ab67616d0000b27310a9b88453d9d4a3aeb55a18ab67616d0000b2732585adb721eb321c4deb7530ab67616d0000b27366c35697a32e5437811bb5ffab67616d0000b273a0ef2b3fa19f6d2a03149dca",
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b27310a9b88453d9d4a3aeb55a18ab67616d0000b2731643ddadb5ae034cdab6ea90ab67616d0000b27366c35697a32e5437811bb5ffab67616d0000b273a0ef2b3fa19f6d2a03149dca",
           "width": 60
         }
       ],
@@ -222,7 +442,7 @@
       ],
       "name": "07:42",
       "owner": {
-        "display_name": "Tom Robin Karlsson",
+        "display_name": "robin",
         "external_urls": {
           "spotify": "https://open.spotify.com/user/robbanrapp"
         },
@@ -252,17 +472,17 @@
       "images": [
         {
           "height": 640,
-          "url": "https://mosaic.scdn.co/640/ab67616d0000b2732228ecb422a27ec68cd281edab67616d0000b2735760710a48f0f595f5814dc1ab67616d0000b273aa7d2641af0fa4c1f76fafbfab67616d0000b273ccdb9c22f07f24a773110a87",
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b2735760710a48f0f595f5814dc1ab67616d0000b2736880235a103031a13ff8c902ab67616d0000b273aa7d2641af0fa4c1f76fafbfab67616d0000b273ccdb9c22f07f24a773110a87",
           "width": 640
         },
         {
           "height": 300,
-          "url": "https://mosaic.scdn.co/300/ab67616d0000b2732228ecb422a27ec68cd281edab67616d0000b2735760710a48f0f595f5814dc1ab67616d0000b273aa7d2641af0fa4c1f76fafbfab67616d0000b273ccdb9c22f07f24a773110a87",
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b2735760710a48f0f595f5814dc1ab67616d0000b2736880235a103031a13ff8c902ab67616d0000b273aa7d2641af0fa4c1f76fafbfab67616d0000b273ccdb9c22f07f24a773110a87",
           "width": 300
         },
         {
           "height": 60,
-          "url": "https://mosaic.scdn.co/60/ab67616d0000b2732228ecb422a27ec68cd281edab67616d0000b2735760710a48f0f595f5814dc1ab67616d0000b273aa7d2641af0fa4c1f76fafbfab67616d0000b273ccdb9c22f07f24a773110a87",
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b2735760710a48f0f595f5814dc1ab67616d0000b2736880235a103031a13ff8c902ab67616d0000b273aa7d2641af0fa4c1f76fafbfab67616d0000b273ccdb9c22f07f24a773110a87",
           "width": 60
         }
       ],
@@ -315,10 +535,10 @@
       },
       "primary_color": null,
       "public": true,
-      "snapshot_id": "MjcxLGYxN2E3MjJiOTdlYTRlMjUyYzE4NzEyODUzMmNmZTg2YjI1MDg2ZmQ=",
+      "snapshot_id": "MjgwLDIzZDkyZTk5MGE3YTljNjg3MmI2YWVmY2YxZGFmZGY2MTIwNjI1OGM=",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/6sjcAKwplYdvNVmXuVWqYK/tracks",
-        "total": 144
+        "total": 145
       },
       "type": "playlist",
       "uri": "spotify:playlist:6sjcAKwplYdvNVmXuVWqYK"
@@ -351,7 +571,7 @@
       },
       "primary_color": null,
       "public": true,
-      "snapshot_id": "MTIzNjIsNmMyNjY4Nzc0MThkZmI0NTcwYWRlYjhkYTcwNWM2NmYzYjVkM2U2Nw==",
+      "snapshot_id": "MTMzNTMsZTY3OGI0MzFlM2FmMmQzN2ZjOThmMTU0NTE5OTczZWIzNzgzNTA5Nw==",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/6UeSakyzhiEt4NB3UAd6NQ/tracks",
         "total": 100
@@ -361,7 +581,7 @@
     },
     {
       "collaborative": false,
-      "description": "Det senaste inom hiphop och R&amp;B från Skandinavien.",
+      "description": "Ta det lugnt &amp; koppla av till vårmysiga &amp; behagliga låtar. Kärlekssånger, sköna hits, svenska klassiker, akustiska låtar &amp; vackra ballader.",
       "external_urls": {
         "spotify": "https://open.spotify.com/playlist/4tIypOcGSBi4GPlXbbNBmf"
       },
@@ -370,11 +590,11 @@
       "images": [
         {
           "height": null,
-          "url": "https://i.scdn.co/image/ab67706c0000bebbf1ef352931da29584c905a3d",
+          "url": "https://i.scdn.co/image/ab67706c0000bebbbd5af3266f629da301350735",
           "width": null
         }
       ],
-      "name": "plusfyrasex",
+      "name": "lugna låtar 2023 ☕️ lugn & mysig musik",
       "owner": {
         "display_name": "Filtr Sweden",
         "external_urls": {
@@ -387,18 +607,218 @@
       },
       "primary_color": null,
       "public": true,
-      "snapshot_id": "NjEyNCw1YThkNmI0NDM3Nzc4NWMxZjNiOTA2MDU4MmRhNzMwYTliYWE0ZTM2",
+      "snapshot_id": "Nzk3MSxiYjhjNTE5YjNjMmY0NTU1NDEzMjk0NjM3NWI4NGZhNzk0MzM2NTRk",
       "tracks": {
         "href": "https://api.spotify.com/v1/playlists/4tIypOcGSBi4GPlXbbNBmf/tracks",
-        "total": 104
+        "total": 233
       },
       "type": "playlist",
       "uri": "spotify:playlist:4tIypOcGSBi4GPlXbbNBmf"
+    },
+    {
+      "collaborative": false,
+      "description": "Sveriges största och bästa svenska klassiker, sånger och hits genom tiderna. Sommarhits och klassiska favoriter – svensk musik sommaren 2021.",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/26uqIdWqPakRB3c6Lw8I7C"
+      },
+      "href": "https://api.spotify.com/v1/playlists/26uqIdWqPakRB3c6Lw8I7C",
+      "id": "26uqIdWqPakRB3c6Lw8I7C",
+      "images": [
+        {
+          "height": null,
+          "url": "https://i.scdn.co/image/ab67706c0000bebbc0a382b72ca42dc2663137c7",
+          "width": null
+        }
+      ],
+      "name": "Svenska låtar alla kan! 🇸🇪",
+      "owner": {
+        "display_name": "Filtr Sweden",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/sonymusicentertainment"
+        },
+        "href": "https://api.spotify.com/v1/users/sonymusicentertainment",
+        "id": "sonymusicentertainment",
+        "type": "user",
+        "uri": "spotify:user:sonymusicentertainment"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "MTAwMDEsNDkwNDFjNmVkNjI1OTViZTlkZjc5MWU2NTg2MjFkZDA5MjgwYmViZg==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/26uqIdWqPakRB3c6Lw8I7C/tracks",
+        "total": 430
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:26uqIdWqPakRB3c6Lw8I7C"
+    },
+    {
+      "collaborative": false,
+      "description": "Världens bästa och mest tidlösa rockmusik i en mix av klassiska &amp; nya rockhits från Måneskin, Ozzy Osbourne, AC/DC, Judas Priest, Bruce Springsteen med flera.",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/1sNULKBP0MR5SCDhoTUGT1"
+      },
+      "href": "https://api.spotify.com/v1/playlists/1sNULKBP0MR5SCDhoTUGT1",
+      "id": "1sNULKBP0MR5SCDhoTUGT1",
+      "images": [
+        {
+          "height": null,
+          "url": "https://i.scdn.co/image/ab67706c0000bebbe4f6db61977bf17a3de7e8dc",
+          "width": null
+        }
+      ],
+      "name": "Rock Hits ⚡️",
+      "owner": {
+        "display_name": "Filtr Legacy Sweden",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/legacysweden"
+        },
+        "href": "https://api.spotify.com/v1/users/legacysweden",
+        "id": "legacysweden",
+        "type": "user",
+        "uri": "spotify:user:legacysweden"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "MjM4NSxlODU4M2RmY2ZkYWUwNTA1Y2FkZjlmZjRmZjI4NGJkNjIxMzBjZGI2",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/1sNULKBP0MR5SCDhoTUGT1/tracks",
+        "total": 233
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:1sNULKBP0MR5SCDhoTUGT1"
+    },
+    {
+      "collaborative": false,
+      "description": "Summer beach chill playlist all genres 2000s - 2023.",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/4u4WSPyfvZ4RrpWWnmjIYY"
+      },
+      "href": "https://api.spotify.com/v1/playlists/4u4WSPyfvZ4RrpWWnmjIYY",
+      "id": "4u4WSPyfvZ4RrpWWnmjIYY",
+      "images": [
+        {
+          "height": null,
+          "url": "https://i.scdn.co/image/ab67706c0000bebb59e76846e27ba7f51db46ae5",
+          "width": null
+        }
+      ],
+      "name": "Beach Vibes 🌴 Summertime Hits 2023",
+      "owner": {
+        "display_name": "Beach Vibes",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/jhsizemore"
+        },
+        "href": "https://api.spotify.com/v1/users/jhsizemore",
+        "id": "jhsizemore",
+        "type": "user",
+        "uri": "spotify:user:jhsizemore"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "NDg4OSw1ODQ4NDU2MzFlMTNhZWZiZTZkNzI3MmEzMWM0ZjMzYzkyN2VlZGJi",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/4u4WSPyfvZ4RrpWWnmjIYY/tracks",
+        "total": 177
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:4u4WSPyfvZ4RrpWWnmjIYY"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/1jiWNIRgT9whCQZMGDzsZU"
+      },
+      "href": "https://api.spotify.com/v1/playlists/1jiWNIRgT9whCQZMGDzsZU",
+      "id": "1jiWNIRgT9whCQZMGDzsZU",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b273396bcd4043a871d830c848a3ab67616d0000b273425de31e7c4091240c19e299ab67616d0000b273678bfbaf23b8dfa454017b0bab67616d0000b273e202fd7dbb4262a37b85a644",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b273396bcd4043a871d830c848a3ab67616d0000b273425de31e7c4091240c19e299ab67616d0000b273678bfbaf23b8dfa454017b0bab67616d0000b273e202fd7dbb4262a37b85a644",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b273396bcd4043a871d830c848a3ab67616d0000b273425de31e7c4091240c19e299ab67616d0000b273678bfbaf23b8dfa454017b0bab67616d0000b273e202fd7dbb4262a37b85a644",
+          "width": 60
+        }
+      ],
+      "name": "RS Playlist",
+      "owner": {
+        "display_name": "Rolling Stone",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/rsedit"
+        },
+        "href": "https://api.spotify.com/v1/users/rsedit",
+        "id": "rsedit",
+        "type": "user",
+        "uri": "spotify:user:rsedit"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "MzMwLDQ1YzdiMTM5MDc4OTk3OWRkY2VmYTMxNDRlOTZlNTBiOGRhNjU2ODI=",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/1jiWNIRgT9whCQZMGDzsZU/tracks",
+        "total": 38
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:1jiWNIRgT9whCQZMGDzsZU"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/7JbyZrk837zNSgRRzMZITA"
+      },
+      "href": "https://api.spotify.com/v1/playlists/7JbyZrk837zNSgRRzMZITA",
+      "id": "7JbyZrk837zNSgRRzMZITA",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b27313cbe3e4dfa81fe5b91f2f1cab67616d0000b2734b230178ff0f22cba27d7092ab67616d0000b2738b9d4820655b6bf032ed41f3ab67616d0000b273dac4efc0ebdfd9d92f127129",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b27313cbe3e4dfa81fe5b91f2f1cab67616d0000b2734b230178ff0f22cba27d7092ab67616d0000b2738b9d4820655b6bf032ed41f3ab67616d0000b273dac4efc0ebdfd9d92f127129",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b27313cbe3e4dfa81fe5b91f2f1cab67616d0000b2734b230178ff0f22cba27d7092ab67616d0000b2738b9d4820655b6bf032ed41f3ab67616d0000b273dac4efc0ebdfd9d92f127129",
+          "width": 60
+        }
+      ],
+      "name": "Eighties",
+      "owner": {
+        "display_name": "migo",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/migo"
+        },
+        "href": "https://api.spotify.com/v1/users/migo",
+        "id": "migo",
+        "type": "user",
+        "uri": "spotify:user:migo"
+      },
+      "primary_color": null,
+      "public": true,
+      "snapshot_id": "NzEsNjc2NjNlM2MyNDY4MTIwODNlODhiMTc1ODIwMjE2MmM4ZWU3NTEyYg==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/7JbyZrk837zNSgRRzMZITA/tracks",
+        "total": 46
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:7JbyZrk837zNSgRRzMZITA"
     }
   ],
-  "limit": 10,
-  "next": "https://api.spotify.com/v1/users/smedjan/playlists?offset=15&limit=10",
-  "offset": 5,
-  "previous": "https://api.spotify.com/v1/users/smedjan/playlists?offset=0&limit=10",
-  "total": 98
+  "limit": 20,
+  "next": "https://api.spotify.com/v1/users/smedjan/playlists?offset=20&limit=20",
+  "offset": 0,
+  "previous": null,
+  "total": 96
 }

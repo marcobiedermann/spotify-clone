@@ -11,13 +11,13 @@ interface Image {
 }
 
 export interface PlaylistProps {
-  id: string;
-  images: Image[];
-  name: string;
+  id?: string;
+  images?: Image[];
+  name?: string;
 }
 
 function Playlist(props: PlaylistProps): JSX.Element {
-  const { id, images, name } = props;
+  const { id, images = [], name } = props;
   const image = images[0];
 
   return (
@@ -26,7 +26,7 @@ function Playlist(props: PlaylistProps): JSX.Element {
         <Link to={`/playlists/${id}`}>
           <Image
             {...image}
-            alt={name}
+            alt={name || ''}
             width={image.width || defaultImageSize}
             height={image.height || defaultImageSize}
           />

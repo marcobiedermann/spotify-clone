@@ -10,9 +10,9 @@ interface Image {
 }
 
 interface Item {
-  id: string;
-  images: Image[];
-  name: string;
+  id?: string;
+  images?: Image[];
+  name?: string;
 }
 
 export interface PlaylistsProps {

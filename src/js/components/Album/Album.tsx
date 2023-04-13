@@ -5,8 +5,8 @@ import Image from '../Image';
 
 const defaultImageSize = 100;
 
-interface Owner {
-  id: string;
+interface Artist {
+  id?: string;
   name?: string;
 }
 
@@ -17,11 +17,11 @@ interface Image {
 }
 
 interface Item {
-  artists: Owner[];
-  duration_ms: number;
-  id: string;
-  name: string;
-  track_number: number;
+  artists?: Artist[];
+  duration_ms?: number;
+  id?: string;
+  name?: string;
+  track_number?: number;
 }
 
 interface Tracks {
@@ -29,7 +29,7 @@ interface Tracks {
 }
 
 export interface AlbumProps {
-  artists: Owner[];
+  artists?: Artist[];
   id: string;
   images: Image[];
   name: string;
@@ -37,7 +37,8 @@ export interface AlbumProps {
 }
 
 function Album(props: AlbumProps): JSX.Element {
-  const { artists, id, images, name, tracks } = props;
+  const { artists = [], id, images, name, tracks } = props;
+  const artist = artists[0];
   const image = images[0];
 
   return (
@@ -57,11 +58,9 @@ function Album(props: AlbumProps): JSX.Element {
           <h3>
             <Link to={`/albums/${id}`}>{name}</Link>
           </h3>
-          {artists[0] && (
-            <h4>
-              <Link to={`/artists/${artists[0].id}`}>{artists[0].name}</Link>
-            </h4>
-          )}
+          <h4>
+            <Link to={`/artists/${artist.id}`}>{artist.name}</Link>
+          </h4>
         </figcaption>
       </figure>
       {tracks && <AlbumTracks items={tracks.items} />}

@@ -20,42 +20,45 @@ interface Album {
 
 interface Owner {
   name?: string;
-  id: string;
+  id?: string;
 }
 
 export interface PlaylistTrackProps {
-  added_at: string;
-  track: {
-    album: Album;
-    artists: Owner[];
-    duration_ms: number;
-    id: string;
-    name: string;
-    track_number: number;
+  added_at?: string;
+  track?: {
+    album?: Album;
+    artists?: Owner[];
+    duration_ms?: number;
+    id?: string;
+    name?: string;
+    track_number?: number;
   };
 }
 
 function PlaylistTrack(props: PlaylistTrackProps): JSX.Element {
   const { added_at, track } = props;
+  const image = track?.album?.images[0];
 
   return (
     <tr>
-      <td>{track.track_number}</td>
+      <td>{track?.track_number}</td>
       <td>
         <Media>
-          <MediaObject>
-            <Image
-              url={track.album.images[0].url}
-              width={defaultImageSize}
-              height={defaultImageSize}
-              alt={track.album.name}
-            />
-          </MediaObject>
+          {image && (
+            <MediaObject>
+              <Image
+                url={image.url}
+                width={defaultImageSize}
+                height={defaultImageSize}
+                alt={track.album?.name || ''}
+              />
+            </MediaObject>
+          )}
           <MediaBody>
-            <div className={styles.track__name}>{track.name}</div>
+            <div className={styles.track__name}>{track?.name}</div>
             <div>
-              {track.artists
-                .map<React.ReactNode>((artist) => (
+              {track?.artists
+                ?.map<React.ReactNode>((artist: Owner) => (
                   <Link key={artist.id} to={`/artists/${artist.id}`}>
                     {artist.name}
                   </Link>
@@ -66,10 +69,10 @@ function PlaylistTrack(props: PlaylistTrackProps): JSX.Element {
         </Media>
       </td>
       <td>
-        <Link to={`/albums/${track.album.id}`}>{track.album.name}</Link>
+        <Link to={`/albums/${track?.album?.id}`}>{track?.album?.name}</Link>
       </td>
-      <td>{format(new Date(added_at), 'MMM d, y')}</td>
-      <td align="right">{format(track.duration_ms, 'm:ss')}</td>
+      {added_at && <td>{format(new Date(added_at), 'MMM d, y')}</td>}
+      <td align="right">{format(track?.duration_ms || 0, 'm:ss')}</td>
     </tr>
   );
 }

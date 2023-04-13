@@ -64,7 +64,7 @@ function useBrowseCategory(categoryId: string): UseQueryResult<BrowseCategory, E
 }
 
 const browseCategoryPlaylistsSchema = z.object({
-  message: z.string(),
+  message: z.string().optional(),
   playlists: z.object({
     href: z.string().url(),
     limit: z.number().int(),

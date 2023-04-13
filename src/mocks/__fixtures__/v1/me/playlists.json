@@ -1,114 +1,68 @@
 {
-  "href": "https://api.spotify.com/v1/users/11168662039/playlists?offset=5&limit=10",
+  "href": "https://api.spotify.com/v1/users/11168662039/playlists?offset=0&limit=20",
   "items": [
     {
       "collaborative": false,
-      "description": "Daily music, curated for you based on your listening history. If you don&#x27;t want to get this daily playlist anymore, you can unsubscribe at https:&#x2F;&#x2F;discoverifymusic.com",
+      "description": "",
       "external_urls": {
-        "spotify": "https://open.spotify.com/playlist/3KepkkxRrj3Oyog76Vkmc1"
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1E4ECDRM0sfyVd"
       },
-      "href": "https://api.spotify.com/v1/playlists/3KepkkxRrj3Oyog76Vkmc1",
-      "id": "3KepkkxRrj3Oyog76Vkmc1",
-      "images": [
-        {
-          "height": 640,
-          "url": "https://mosaic.scdn.co/640/ab67616d0000b2734350116b1085b346f79fc24aab67616d0000b273878e20064dd6bcbd95638756ab67616d0000b2738fcfedea64e1c78cd3d55001ab67616d0000b273ad1d03aad2b433b063d858e9",
-          "width": 640
-        },
-        {
-          "height": 300,
-          "url": "https://mosaic.scdn.co/300/ab67616d0000b2734350116b1085b346f79fc24aab67616d0000b273878e20064dd6bcbd95638756ab67616d0000b2738fcfedea64e1c78cd3d55001ab67616d0000b273ad1d03aad2b433b063d858e9",
-          "width": 300
-        },
-        {
-          "height": 60,
-          "url": "https://mosaic.scdn.co/60/ab67616d0000b2734350116b1085b346f79fc24aab67616d0000b273878e20064dd6bcbd95638756ab67616d0000b2738fcfedea64e1c78cd3d55001ab67616d0000b273ad1d03aad2b433b063d858e9",
-          "width": 60
-        }
-      ],
-      "name": "Discover Daily",
-      "owner": {
-        "display_name": "Marco Biedermann",
-        "external_urls": {
-          "spotify": "https://open.spotify.com/user/11168662039"
-        },
-        "href": "https://api.spotify.com/v1/users/11168662039",
-        "id": "11168662039",
-        "type": "user",
-        "uri": "spotify:user:11168662039"
-      },
-      "primary_color": null,
-      "public": false,
-      "snapshot_id": "MTg2LGUyZWUyYmUwNThjNDM0ODAzMGMxN2IzYmM5YzY4M2Q4YTM2ZGYwOTU=",
-      "tracks": {
-        "href": "https://api.spotify.com/v1/playlists/3KepkkxRrj3Oyog76Vkmc1/tracks",
-        "total": 30
-      },
-      "type": "playlist",
-      "uri": "spotify:playlist:3KepkkxRrj3Oyog76Vkmc1"
-    },
-    {
-      "collaborative": false,
-      "description": "Mix of Soft-House - Low-Key-Techno - Deep House &amp; Chilly Vibes",
-      "external_urls": {
-        "spotify": "https://open.spotify.com/playlist/7LS2grTMmboABdGoy1Nbf4"
-      },
-      "href": "https://api.spotify.com/v1/playlists/7LS2grTMmboABdGoy1Nbf4",
-      "id": "7LS2grTMmboABdGoy1Nbf4",
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4ECDRM0sfyVd",
+      "id": "37i9dQZF1E4ECDRM0sfyVd",
       "images": [
         {
           "height": null,
-          "url": "https://i.scdn.co/image/ab67706c0000bebbb59f1cd0e2c84f760d86ca9a",
+          "url": "https://seeded-session-images.scdn.co/v1/img/artist/3tQzzidoPfVifoURnDfgmD/en",
           "width": null
         }
       ],
-      "name": "Chill Techno",
+      "name": "t-low Radio",
       "owner": {
-        "display_name": "Lena Bojko",
+        "display_name": "Spotify",
         "external_urls": {
-          "spotify": "https://open.spotify.com/user/lena.bojko"
+          "spotify": "https://open.spotify.com/user/spotify"
         },
-        "href": "https://api.spotify.com/v1/users/lena.bojko",
-        "id": "lena.bojko",
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
         "type": "user",
-        "uri": "spotify:user:lena.bojko"
+        "uri": "spotify:user:spotify"
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTk1MCxhNDJlMjJhMmVmNzE0MTMzNGI3NDRlMTA0N2UyOTFkNTZlMDkwMTA5",
+      "snapshot_id": "MTY4MTM3MjU3NSwwMDAwMDAwMDA1MWZiODk2MjE1NWVhMDI1NGQ2YTZlNDEyNTU2Y2I0",
       "tracks": {
-        "href": "https://api.spotify.com/v1/playlists/7LS2grTMmboABdGoy1Nbf4/tracks",
-        "total": 166
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4ECDRM0sfyVd/tracks",
+        "total": 50
       },
       "type": "playlist",
-      "uri": "spotify:playlist:7LS2grTMmboABdGoy1Nbf4"
+      "uri": "spotify:playlist:37i9dQZF1E4ECDRM0sfyVd"
     },
     {
       "collaborative": false,
       "description": "",
       "external_urls": {
-        "spotify": "https://open.spotify.com/playlist/5hKeofAxecz614mH433mPH"
+        "spotify": "https://open.spotify.com/playlist/5r0oeJSPmUVHg1ytxLIXBY"
       },
-      "href": "https://api.spotify.com/v1/playlists/5hKeofAxecz614mH433mPH",
-      "id": "5hKeofAxecz614mH433mPH",
+      "href": "https://api.spotify.com/v1/playlists/5r0oeJSPmUVHg1ytxLIXBY",
+      "id": "5r0oeJSPmUVHg1ytxLIXBY",
       "images": [
         {
           "height": 640,
-          "url": "https://mosaic.scdn.co/640/ab67616d0000b2732bc699cca1173c5fcbd1e70fab67616d0000b2737238a0ac4ceb5bb52bbdaacdab67616d0000b273b2594160bea519edbe43cb52ab67616d0000b273f458bada33f03c83ebf57172",
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b2731e340d1480e7bb29a45e3bd7ab67616d0000b273365b3fb800c19f7ff72602daab67616d0000b273699a422d25adc550dc5aa11cab67616d0000b2738a6a328ced07af494400584b",
           "width": 640
         },
         {
           "height": 300,
-          "url": "https://mosaic.scdn.co/300/ab67616d0000b2732bc699cca1173c5fcbd1e70fab67616d0000b2737238a0ac4ceb5bb52bbdaacdab67616d0000b273b2594160bea519edbe43cb52ab67616d0000b273f458bada33f03c83ebf57172",
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b2731e340d1480e7bb29a45e3bd7ab67616d0000b273365b3fb800c19f7ff72602daab67616d0000b273699a422d25adc550dc5aa11cab67616d0000b2738a6a328ced07af494400584b",
           "width": 300
         },
         {
           "height": 60,
-          "url": "https://mosaic.scdn.co/60/ab67616d0000b2732bc699cca1173c5fcbd1e70fab67616d0000b2737238a0ac4ceb5bb52bbdaacdab67616d0000b273b2594160bea519edbe43cb52ab67616d0000b273f458bada33f03c83ebf57172",
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b2731e340d1480e7bb29a45e3bd7ab67616d0000b273365b3fb800c19f7ff72602daab67616d0000b273699a422d25adc550dc5aa11cab67616d0000b2738a6a328ced07af494400584b",
           "width": 60
         }
       ],
-      "name": "Chill",
+      "name": "Pick Up",
       "owner": {
         "display_name": "Marco Biedermann",
         "external_urls": {
@@ -121,30 +75,30 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MjgsZGU5YTI4MTRhYWQ4NTM2MmU0NDU2YjY0ZDk4ZGEyNWU5N2YxYTIzYQ==",
+      "snapshot_id": "MTEsNWMxY2ZiNGQ4M2Y4ZTA1MTZmYzNhZDY4NWJlOTg2NTU0ZWE5NWM1OQ==",
       "tracks": {
-        "href": "https://api.spotify.com/v1/playlists/5hKeofAxecz614mH433mPH/tracks",
-        "total": 22
+        "href": "https://api.spotify.com/v1/playlists/5r0oeJSPmUVHg1ytxLIXBY/tracks",
+        "total": 8
       },
       "type": "playlist",
-      "uri": "spotify:playlist:5hKeofAxecz614mH433mPH"
+      "uri": "spotify:playlist:5r0oeJSPmUVHg1ytxLIXBY"
     },
     {
       "collaborative": false,
-      "description": "it's just chill vibes, respectfully ",
+      "description": "New Wave Vibes. Cover: Whitey en vogue",
       "external_urls": {
-        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX2yvmlOdMYzV"
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX1zpUaiwr15A"
       },
-      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX2yvmlOdMYzV",
-      "id": "37i9dQZF1DX2yvmlOdMYzV",
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX1zpUaiwr15A",
+      "id": "37i9dQZF1DX1zpUaiwr15A",
       "images": [
         {
           "height": null,
-          "url": "https://i.scdn.co/image/ab67706f00000003c0c5bb00461fd08b95f9b9da",
+          "url": "https://i.scdn.co/image/ab67706f000000038a5731aa22386d9b4b388f5a",
           "width": null
         }
       ],
-      "name": "Low-Key",
+      "name": "Deutschrap Untergrund",
       "owner": {
         "display_name": "Spotify",
         "external_urls": {
@@ -157,30 +111,30 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTYzNjcyNjI3MywwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+      "snapshot_id": "MTY4MDgxODQwMCwwMDAwMDAwMDBmMmQ3ZGM5NmEyMWIxOWQxYTI2NDA1ZWExMDA2MmEx",
       "tracks": {
-        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX2yvmlOdMYzV/tracks",
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX1zpUaiwr15A/tracks",
         "total": 100
       },
       "type": "playlist",
-      "uri": "spotify:playlist:37i9dQZF1DX2yvmlOdMYzV"
+      "uri": "spotify:playlist:37i9dQZF1DX1zpUaiwr15A"
     },
     {
       "collaborative": false,
-      "description": "Beats to relax, study, and focus...",
+      "description": "",
       "external_urls": {
-        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWWQRwui0ExPn"
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1E4rX5wld5KEkP"
       },
-      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWQRwui0ExPn",
-      "id": "37i9dQZF1DWWQRwui0ExPn",
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4rX5wld5KEkP",
+      "id": "37i9dQZF1E4rX5wld5KEkP",
       "images": [
         {
           "height": null,
-          "url": "https://i.scdn.co/image/ab67706f00000003e4793b7b7a06c3cc64341790",
+          "url": "https://seeded-session-images.scdn.co/v1/img/artist/5R9d1YP5jtBw2IrQItGzQI/en",
           "width": null
         }
       ],
-      "name": "lofi beats",
+      "name": "Michael Mayer Radio",
       "owner": {
         "display_name": "Spotify",
         "external_urls": {
@@ -193,102 +147,30 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTYzNjcyNjI3MywwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+      "snapshot_id": "MTY4MTM3MjU3NSwwMDAwMDAwMDZlMjZmMDdkZTNlMjNiMjAyOGU1OWRlZDM4NGFmZGVh",
       "tracks": {
-        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWQRwui0ExPn/tracks",
-        "total": 650
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4rX5wld5KEkP/tracks",
+        "total": 50
       },
       "type": "playlist",
-      "uri": "spotify:playlist:37i9dQZF1DWWQRwui0ExPn"
+      "uri": "spotify:playlist:37i9dQZF1E4rX5wld5KEkP"
     },
     {
       "collaborative": false,
-      "description": "Chillhop for studying / relaxing / gaming / working. Instrumental lofi hip hop beats from around the globe. Check out our  24/7 YouTube livestream <a href=\"https://youtu.be/5yx6BWlEVcY\">here</a> or listen on other platforms <a href=\"https://chillhop.lnk.to/listenWE\">here</a>.",
+      "description": "",
       "external_urls": {
-        "spotify": "https://open.spotify.com/playlist/0CFuMybe6s77w6QQrJjW7d"
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1E4rYTLMsQlNyX"
       },
-      "href": "https://api.spotify.com/v1/playlists/0CFuMybe6s77w6QQrJjW7d",
-      "id": "0CFuMybe6s77w6QQrJjW7d",
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4rYTLMsQlNyX",
+      "id": "37i9dQZF1E4rYTLMsQlNyX",
       "images": [
         {
           "height": null,
-          "url": "https://i.scdn.co/image/ab67706c0000bebb2a897a84b50d325c2082c7dc",
+          "url": "https://seeded-session-images.scdn.co/v1/img/artist/062qvlhIYOrATqRTHet3D3/en",
           "width": null
         }
       ],
-      "name": "Chillhop Radio 🐾 jazzy/lofi hip hop beats to study/relax to | Study Music | Chillhop Music 2021 ",
-      "owner": {
-        "display_name": "Chillhop Music",
-        "external_urls": {
-          "spotify": "https://open.spotify.com/user/chillhopmusic"
-        },
-        "href": "https://api.spotify.com/v1/users/chillhopmusic",
-        "id": "chillhopmusic",
-        "type": "user",
-        "uri": "spotify:user:chillhopmusic"
-      },
-      "primary_color": null,
-      "public": false,
-      "snapshot_id": "MTU2MywxYjUyN2U1NGIzYzNhMmYxNDA1Yzg4N2FhMjg0ZDg3MDQ0MzNmNDc3",
-      "tracks": {
-        "href": "https://api.spotify.com/v1/playlists/0CFuMybe6s77w6QQrJjW7d/tracks",
-        "total": 300
-      },
-      "type": "playlist",
-      "uri": "spotify:playlist:0CFuMybe6s77w6QQrJjW7d"
-    },
-    {
-      "collaborative": false,
-      "description": "Beats to focus &amp; get work done!",
-      "external_urls": {
-        "spotify": "https://open.spotify.com/playlist/1ZdrZenSKvkrZB85BKrnK2"
-      },
-      "href": "https://api.spotify.com/v1/playlists/1ZdrZenSKvkrZB85BKrnK2",
-      "id": "1ZdrZenSKvkrZB85BKrnK2",
-      "images": [
-        {
-          "height": null,
-          "url": "https://i.scdn.co/image/ab67706c0000bebbc4c8edbf78eaa3dd071cd2e6",
-          "width": null
-        }
-      ],
-      "name": "work/focus lofi ",
-      "owner": {
-        "display_name": "Chill Music",
-        "external_urls": {
-          "spotify": "https://open.spotify.com/user/9godcu30vi3mmxek5a35lgqjd"
-        },
-        "href": "https://api.spotify.com/v1/users/9godcu30vi3mmxek5a35lgqjd",
-        "id": "9godcu30vi3mmxek5a35lgqjd",
-        "type": "user",
-        "uri": "spotify:user:9godcu30vi3mmxek5a35lgqjd"
-      },
-      "primary_color": null,
-      "public": false,
-      "snapshot_id": "MTk5Miw1ZGM1NDQ2OGI4MDg0OTFjNjA1MTFlY2MwZWZjMjliM2VlY2Q4MGU2",
-      "tracks": {
-        "href": "https://api.spotify.com/v1/playlists/1ZdrZenSKvkrZB85BKrnK2/tracks",
-        "total": 316
-      },
-      "type": "playlist",
-      "uri": "spotify:playlist:1ZdrZenSKvkrZB85BKrnK2"
-    },
-    {
-      "collaborative": false,
-      "description": "Just lean back and enjoy relaxed beats.",
-      "external_urls": {
-        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWTvNyxOwkztu"
-      },
-      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWTvNyxOwkztu",
-      "id": "37i9dQZF1DWTvNyxOwkztu",
-      "images": [
-        {
-          "height": null,
-          "url": "https://i.scdn.co/image/ab67706f00000003d6b79e5fcec64b502dd292b9",
-          "width": null
-        }
-      ],
-      "name": "Chillout Lounge",
+      "name": "Rowli Radio",
       "owner": {
         "display_name": "Spotify",
         "external_urls": {
@@ -301,30 +183,168 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTYzNjcyNjI3MywwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+      "snapshot_id": "MTY4MTM3MjU3NSwwMDAwMDAwMGQ3NzM2OTY3MjJjYjc2NmQwYTVlZjFhNTI0NTk1NDJk",
       "tracks": {
-        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWTvNyxOwkztu/tracks",
-        "total": 100
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4rYTLMsQlNyX/tracks",
+        "total": 50
       },
       "type": "playlist",
-      "uri": "spotify:playlist:37i9dQZF1DWTvNyxOwkztu"
+      "uri": "spotify:playlist:37i9dQZF1E4rYTLMsQlNyX"
     },
     {
       "collaborative": false,
-      "description": "This is a deep tribal sound, combining electronic elements and organic instrumentation, stemming from the folk music of Africa, Latin America, and the Middle East.",
+      "description": "",
       "external_urls": {
-        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX2pprEpa9URZ"
+        "spotify": "https://open.spotify.com/playlist/51GHsj6T3Ab39S1siXr5d0"
       },
-      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX2pprEpa9URZ",
-      "id": "37i9dQZF1DX2pprEpa9URZ",
+      "href": "https://api.spotify.com/v1/playlists/51GHsj6T3Ab39S1siXr5d0",
+      "id": "51GHsj6T3Ab39S1siXr5d0",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b27375bc4fcc9e0f8f825dc763edab67616d0000b2739de37f163654fd620d0b3f67ab67616d0000b273bc15bbd8d6bd6f8181b3a6b2ab67616d0000b273cc6ee47d2f866ebb85a05a07",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b27375bc4fcc9e0f8f825dc763edab67616d0000b2739de37f163654fd620d0b3f67ab67616d0000b273bc15bbd8d6bd6f8181b3a6b2ab67616d0000b273cc6ee47d2f866ebb85a05a07",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b27375bc4fcc9e0f8f825dc763edab67616d0000b2739de37f163654fd620d0b3f67ab67616d0000b273bc15bbd8d6bd6f8181b3a6b2ab67616d0000b273cc6ee47d2f866ebb85a05a07",
+          "width": 60
+        }
+      ],
+      "name": "Trap",
+      "owner": {
+        "display_name": "Marco Biedermann",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/11168662039"
+        },
+        "href": "https://api.spotify.com/v1/users/11168662039",
+        "id": "11168662039",
+        "type": "user",
+        "uri": "spotify:user:11168662039"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTIsMTk0NGY3NzBlNmFkMmE0MzBjOTUyNzUzMjQ1NjgyMGEyOTdhYzc5OA==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/51GHsj6T3Ab39S1siXr5d0/tracks",
+        "total": 10
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:51GHsj6T3Ab39S1siXr5d0"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/5W0S6iTX8lg1E7VTd34nCd"
+      },
+      "href": "https://api.spotify.com/v1/playlists/5W0S6iTX8lg1E7VTd34nCd",
+      "id": "5W0S6iTX8lg1E7VTd34nCd",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b273173425dee34481c587debaf6ab67616d0000b27335e55c4eaa7b538775bc9b6eab67616d0000b273813458d8064185ec1d33f525ab67616d0000b273c84422ae15ff83f2737d7073",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b273173425dee34481c587debaf6ab67616d0000b27335e55c4eaa7b538775bc9b6eab67616d0000b273813458d8064185ec1d33f525ab67616d0000b273c84422ae15ff83f2737d7073",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b273173425dee34481c587debaf6ab67616d0000b27335e55c4eaa7b538775bc9b6eab67616d0000b273813458d8064185ec1d33f525ab67616d0000b273c84422ae15ff83f2737d7073",
+          "width": 60
+        }
+      ],
+      "name": "Good vibes",
+      "owner": {
+        "display_name": "Marco Biedermann",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/11168662039"
+        },
+        "href": "https://api.spotify.com/v1/users/11168662039",
+        "id": "11168662039",
+        "type": "user",
+        "uri": "spotify:user:11168662039"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTcsNTI0NTU2Njc5NmU0NzYzODQ3MWNmNzMwY2NhOWFjZWNlNmNmMzNhMg==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/5W0S6iTX8lg1E7VTd34nCd/tracks",
+        "total": 15
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:5W0S6iTX8lg1E7VTd34nCd"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/3X2PuwoE6fkt8wKZZqTzot"
+      },
+      "href": "https://api.spotify.com/v1/playlists/3X2PuwoE6fkt8wKZZqTzot",
+      "id": "3X2PuwoE6fkt8wKZZqTzot",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b27320beb61f61fcbeb33b10a9abab67616d0000b2732753d9786604e09ebdbf0244ab67616d0000b273ba5db46f4b838ef6027e6f96ab67616d0000b273eda9478c39a21e1cdc6609ca",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b27320beb61f61fcbeb33b10a9abab67616d0000b2732753d9786604e09ebdbf0244ab67616d0000b273ba5db46f4b838ef6027e6f96ab67616d0000b273eda9478c39a21e1cdc6609ca",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b27320beb61f61fcbeb33b10a9abab67616d0000b2732753d9786604e09ebdbf0244ab67616d0000b273ba5db46f4b838ef6027e6f96ab67616d0000b273eda9478c39a21e1cdc6609ca",
+          "width": 60
+        }
+      ],
+      "name": "Calm",
+      "owner": {
+        "display_name": "Marco Biedermann",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/11168662039"
+        },
+        "href": "https://api.spotify.com/v1/users/11168662039",
+        "id": "11168662039",
+        "type": "user",
+        "uri": "spotify:user:11168662039"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "NSwxM2JhZjdmNzliMjRiM2NmZGNlYjJiZWM4MTg0YjliNWI3YmYxNjk2",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/3X2PuwoE6fkt8wKZZqTzot/tracks",
+        "total": 4
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:3X2PuwoE6fkt8wKZZqTzot"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1E4t2vuNaWHxre"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4t2vuNaWHxre",
+      "id": "37i9dQZF1E4t2vuNaWHxre",
       "images": [
         {
           "height": null,
-          "url": "https://i.scdn.co/image/ab67706f0000000389114dc85925a55cc46e4e6e",
+          "url": "https://seeded-session-images.scdn.co/v1/img/artist/1kR99O4MgSTasyeJh8UFCg/en",
           "width": null
         }
       ],
-      "name": "Orgánica",
+      "name": "DJ Koze Radio",
       "owner": {
         "display_name": "Spotify",
         "external_urls": {
@@ -337,30 +357,76 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTYzNjcyNjI3MywwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl",
+      "snapshot_id": "MTY4MTM3MjU3NSwwMDAwMDAwMDk5NTAwY2NjYzczYzA2Y2I4YjU1NGQ0MzlhMDBkZmU3",
       "tracks": {
-        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX2pprEpa9URZ/tracks",
-        "total": 60
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4t2vuNaWHxre/tracks",
+        "total": 50
       },
       "type": "playlist",
-      "uri": "spotify:playlist:37i9dQZF1DX2pprEpa9URZ"
+      "uri": "spotify:playlist:37i9dQZF1E4t2vuNaWHxre"
     },
     {
       "collaborative": false,
-      "description": "Let's flow to the beats of downtempo deep house.",
+      "description": "",
       "external_urls": {
-        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWYUYYlhkTuEn"
+        "spotify": "https://open.spotify.com/playlist/1qDhL5QdhyxLwmiH9LWlIw"
       },
-      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWYUYYlhkTuEn",
-      "id": "37i9dQZF1DWYUYYlhkTuEn",
+      "href": "https://api.spotify.com/v1/playlists/1qDhL5QdhyxLwmiH9LWlIw",
+      "id": "1qDhL5QdhyxLwmiH9LWlIw",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b27351adf6c40da8c3e2635893e9ab67616d0000b273737c534dee320650a8f8f850ab67616d0000b27392a0bd0a8d499f158c0a33a6ab67616d0000b273e6ec01cc4fcabd24ba57f1ac",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b27351adf6c40da8c3e2635893e9ab67616d0000b273737c534dee320650a8f8f850ab67616d0000b27392a0bd0a8d499f158c0a33a6ab67616d0000b273e6ec01cc4fcabd24ba57f1ac",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b27351adf6c40da8c3e2635893e9ab67616d0000b273737c534dee320650a8f8f850ab67616d0000b27392a0bd0a8d499f158c0a33a6ab67616d0000b273e6ec01cc4fcabd24ba57f1ac",
+          "width": 60
+        }
+      ],
+      "name": "Fun",
+      "owner": {
+        "display_name": "Marco Biedermann",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/11168662039"
+        },
+        "href": "https://api.spotify.com/v1/users/11168662039",
+        "id": "11168662039",
+        "type": "user",
+        "uri": "spotify:user:11168662039"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTMsNzUwYzUxM2Y3MzkxYmIzOWExMjQwNDk2NjM1MmNiNWYxZWIxOWU3OA==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/1qDhL5QdhyxLwmiH9LWlIw/tracks",
+        "total": 10
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:1qDhL5QdhyxLwmiH9LWlIw"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1E4nqiV4Ee2viC"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4nqiV4Ee2viC",
+      "id": "37i9dQZF1E4nqiV4Ee2viC",
       "images": [
         {
           "height": null,
-          "url": "https://i.scdn.co/image/ab67706f000000032362023a094e7c01005685a7",
+          "url": "https://seeded-session-images.scdn.co/v1/img/artist/5Sjj30aHCmKcM9SdVX7PBK/en",
           "width": null
         }
       ],
-      "name": "Yoga Electronica",
+      "name": "GRiNGO Radio",
       "owner": {
         "display_name": "Spotify",
         "external_urls": {
@@ -373,18 +439,372 @@
       },
       "primary_color": null,
       "public": false,
-      "snapshot_id": "MTYzNTIzMjYyMCwwMDAwMDAzYTAwMDAwMTdjYmI3NTllM2EwMDAwMDE3MGM0Y2U0MTll",
+      "snapshot_id": "MTY4MTM3MjU3NSwwMDAwMDAwMGQ3NmY2M2U0OTcyYzAyMmMyYzg3NWY4ZTVlNTlkNzA5",
       "tracks": {
-        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWYUYYlhkTuEn/tracks",
-        "total": 68
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4nqiV4Ee2viC/tracks",
+        "total": 50
       },
       "type": "playlist",
-      "uri": "spotify:playlist:37i9dQZF1DWYUYYlhkTuEn"
+      "uri": "spotify:playlist:37i9dQZF1E4nqiV4Ee2viC"
+    },
+    {
+      "collaborative": false,
+      "description": "Spotify Wrapped presents the songs that you loved most this year.",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1F0sijgNaJdgit"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1F0sijgNaJdgit",
+      "id": "37i9dQZF1F0sijgNaJdgit",
+      "images": [
+        {
+          "height": null,
+          "url": "https://wrapped-images.spotifycdn.com/image/yts-2022/large/your-top-songs-2022_large_en.jpg",
+          "width": null
+        }
+      ],
+      "name": "Your Top Songs 2022",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTY2OTkwODk2MiwwMDAwMDAwMGExMjYwYjE4NmU4YjYyOWU1MWRjOTdiMDQ3M2NhYjI1",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1F0sijgNaJdgit/tracks",
+        "total": 101
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:37i9dQZF1F0sijgNaJdgit"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/7M2LknmW3dNEb3u3ydq2LG"
+      },
+      "href": "https://api.spotify.com/v1/playlists/7M2LknmW3dNEb3u3ydq2LG",
+      "id": "7M2LknmW3dNEb3u3ydq2LG",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b27326728844521ede75ac662aa2ab67616d0000b2736836bd13b1aaf59d06f75169ab67616d0000b2739d88845b5e09a786633a8dcfab67616d0000b2739e05c63d14845089414e086e",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b27326728844521ede75ac662aa2ab67616d0000b2736836bd13b1aaf59d06f75169ab67616d0000b2739d88845b5e09a786633a8dcfab67616d0000b2739e05c63d14845089414e086e",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b27326728844521ede75ac662aa2ab67616d0000b2736836bd13b1aaf59d06f75169ab67616d0000b2739d88845b5e09a786633a8dcfab67616d0000b2739e05c63d14845089414e086e",
+          "width": 60
+        }
+      ],
+      "name": "Rap-Pop",
+      "owner": {
+        "display_name": "Marco Biedermann",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/11168662039"
+        },
+        "href": "https://api.spotify.com/v1/users/11168662039",
+        "id": "11168662039",
+        "type": "user",
+        "uri": "spotify:user:11168662039"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTAsZjhmNTU2Mzc0ODdhZTkwZTJhMTVlYmUwM2IxNjAwOWQ4ZjY5Y2RiNg==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/7M2LknmW3dNEb3u3ydq2LG/tracks",
+        "total": 8
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:7M2LknmW3dNEb3u3ydq2LG"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1E4zLdpeXDuSkD"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4zLdpeXDuSkD",
+      "id": "37i9dQZF1E4zLdpeXDuSkD",
+      "images": [
+        {
+          "height": null,
+          "url": "https://seeded-session-images.scdn.co/v1/img/artist/6CP5wWvO8oIxedESJNCN4H/en",
+          "width": null
+        }
+      ],
+      "name": "Ski Aggu Radio",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTY4MTM3MjU3NSwwMDAwMDAwMDNjMDJiYzRlN2VmNTQ1MzVkMWM3MTBlMzc3YTYwNjYw",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4zLdpeXDuSkD/tracks",
+        "total": 50
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:37i9dQZF1E4zLdpeXDuSkD"
+    },
+    {
+      "collaborative": false,
+      "description": "This is KALIM. The essential tracks, all in one playlist.",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DZ06evO1C3VdI"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DZ06evO1C3VdI",
+      "id": "37i9dQZF1DZ06evO1C3VdI",
+      "images": [
+        {
+          "height": null,
+          "url": "https://thisis-images.scdn.co/37i9dQZF1DZ06evO1C3VdI-large.jpg",
+          "width": null
+        }
+      ],
+      "name": "This Is KALIM",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MjgwMjE2OTQsMDAwMDAwMDAzOWRjNTI1MDIxMjJiNmU0ZDM3ZTI4NTQxNGRlYTE4OQ==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DZ06evO1C3VdI/tracks",
+        "total": 50
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:37i9dQZF1DZ06evO1C3VdI"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1E4zXJGIEWtqts"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4zXJGIEWtqts",
+      "id": "37i9dQZF1E4zXJGIEWtqts",
+      "images": [
+        {
+          "height": null,
+          "url": "https://seeded-session-images.scdn.co/v1/img/artist/4P3RXClUWZnQAO6BfrEQXb/en",
+          "width": null
+        }
+      ],
+      "name": "ART Radio",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTY4MTM3MjU3NSwwMDAwMDAwMDFhNmNhYzcwYTJiZDkzNjFmMmJmOGZhOWI0NGU0MTZm",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1E4zXJGIEWtqts/tracks",
+        "total": 50
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:37i9dQZF1E4zXJGIEWtqts"
+    },
+    {
+      "collaborative": false,
+      "description": "This is Niconé. The essential tracks, all in one playlist.",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DZ06evO48W3nD"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DZ06evO48W3nD",
+      "id": "37i9dQZF1DZ06evO48W3nD",
+      "images": [
+        {
+          "height": null,
+          "url": "https://thisis-images.scdn.co/37i9dQZF1DZ06evO48W3nD-large.jpg",
+          "width": null
+        }
+      ],
+      "name": "This Is Niconé",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MjgwMjE2OTQsMDAwMDAwMDA5Yzc1ZjUxODhlNWE5OGQzODQwMWZkOGJmMmMzNzkxYw==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DZ06evO48W3nD/tracks",
+        "total": 50
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:37i9dQZF1DZ06evO48W3nD"
+    },
+    {
+      "collaborative": false,
+      "description": "This is Chris Webby. The essential tracks, all in one playlist.",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DZ06evO2abUtj"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DZ06evO2abUtj",
+      "id": "37i9dQZF1DZ06evO2abUtj",
+      "images": [
+        {
+          "height": null,
+          "url": "https://thisis-images.scdn.co/37i9dQZF1DZ06evO2abUtj-large.jpg",
+          "width": null
+        }
+      ],
+      "name": "This Is Chris Webby",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MjgwMjE2OTQsMDAwMDAwMDA3ODdkOWNkMTU4NjNjYjQ3OWI4ZGQ2M2I3OTE0ZDJkZQ==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DZ06evO2abUtj/tracks",
+        "total": 50
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:37i9dQZF1DZ06evO2abUtj"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/0eF6KSeiW95m7KkExduBJa"
+      },
+      "href": "https://api.spotify.com/v1/playlists/0eF6KSeiW95m7KkExduBJa",
+      "id": "0eF6KSeiW95m7KkExduBJa",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b2730fe9b2460c75e9318582dd43ab67616d0000b273462c4902c2825cb9bfe37ecdab67616d0000b273a3d5d45924d9617980af3955ab67616d0000b273aa8825df1784eb789372e992",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b2730fe9b2460c75e9318582dd43ab67616d0000b273462c4902c2825cb9bfe37ecdab67616d0000b273a3d5d45924d9617980af3955ab67616d0000b273aa8825df1784eb789372e992",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b2730fe9b2460c75e9318582dd43ab67616d0000b273462c4902c2825cb9bfe37ecdab67616d0000b273a3d5d45924d9617980af3955ab67616d0000b273aa8825df1784eb789372e992",
+          "width": 60
+        }
+      ],
+      "name": "Gym",
+      "owner": {
+        "display_name": "Marco Biedermann",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/11168662039"
+        },
+        "href": "https://api.spotify.com/v1/users/11168662039",
+        "id": "11168662039",
+        "type": "user",
+        "uri": "spotify:user:11168662039"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTUsM2I1MjMzMDdjOTY1MjMxNjc0MTI2N2M3NmM4MmI0OTA0ODkyMjc5ZQ==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/0eF6KSeiW95m7KkExduBJa/tracks",
+        "total": 14
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:0eF6KSeiW95m7KkExduBJa"
+    },
+    {
+      "collaborative": false,
+      "description": "",
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/7oYCwLYUpd36vvrTrH3Hfh"
+      },
+      "href": "https://api.spotify.com/v1/playlists/7oYCwLYUpd36vvrTrH3Hfh",
+      "id": "7oYCwLYUpd36vvrTrH3Hfh",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/ab67616d0000b2738c414c398d75f2c54a991a62ab67616d0000b27392ecd1b11261fc9a1eb12383ab67616d0000b273bd6f8ac82dc5fe1028c14f7dab67616d0000b273c9117eac1d0f463900c1395e",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/ab67616d0000b2738c414c398d75f2c54a991a62ab67616d0000b27392ecd1b11261fc9a1eb12383ab67616d0000b273bd6f8ac82dc5fe1028c14f7dab67616d0000b273c9117eac1d0f463900c1395e",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/ab67616d0000b2738c414c398d75f2c54a991a62ab67616d0000b27392ecd1b11261fc9a1eb12383ab67616d0000b273bd6f8ac82dc5fe1028c14f7dab67616d0000b273c9117eac1d0f463900c1395e",
+          "width": 60
+        }
+      ],
+      "name": "Workout 2",
+      "owner": {
+        "display_name": "Marco Biedermann",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/11168662039"
+        },
+        "href": "https://api.spotify.com/v1/users/11168662039",
+        "id": "11168662039",
+        "type": "user",
+        "uri": "spotify:user:11168662039"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MzYsMTU4MzM0NjcwODE4NzU4ZGE4ZWRjYmM0NTNhNTk1OTg3YzIwNWU1OQ==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/7oYCwLYUpd36vvrTrH3Hfh/tracks",
+        "total": 33
+      },
+      "type": "playlist",
+      "uri": "spotify:playlist:7oYCwLYUpd36vvrTrH3Hfh"
     }
   ],
-  "limit": 10,
-  "next": "https://api.spotify.com/v1/users/11168662039/playlists?offset=15&limit=10",
-  "offset": 5,
-  "previous": "https://api.spotify.com/v1/users/11168662039/playlists?offset=0&limit=10",
-  "total": 153
+  "limit": 20,
+  "next": "https://api.spotify.com/v1/users/11168662039/playlists?offset=20&limit=20",
+  "offset": 0,
+  "previous": null,
+  "total": 176
 }

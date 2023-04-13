@@ -10,6 +10,8 @@ import Media, { MediaBody, MediaObject } from '../../../components/Media';
 import PlaylistTracks from '../../../components/PlaylistTracks';
 import { usePlaylist } from '../../../hooks/playlists';
 
+const defaultImageSize = 240;
+
 function PlaylistPage(): JSX.Element {
   const { playlistId } = useParams();
   const { data, error, isError, isLoading } = usePlaylist(playlistId!);
@@ -22,13 +24,14 @@ function PlaylistPage(): JSX.Element {
     return <Loader />;
   }
 
-  const { description, images, name, owner, tracks } = data;
+  const { description, images = [], name, owner, tracks } = data;
   const image = images[0];
 
-  const totalDuration = tracks.items.reduce(
-    (accumulator, currentValue) => accumulator + currentValue.track.duration_ms,
-    0,
-  );
+  const totalDuration =
+    tracks?.items.reduce(
+      (accumulator, currentValue) => accumulator + (currentValue.track?.duration_ms || 0),
+      0,
+    ) || 0;
 
   return (
     <>
@@ -38,13 +41,13 @@ function PlaylistPage(): JSX.Element {
       <div>
         <Media>
           <MediaObject>
-            <Image {...image} alt={name} width={240} height={240} />
+            <Image {...image} alt={name || ''} width={defaultImageSize} height={defaultImageSize} />
           </MediaObject>
           <MediaBody>
             <h1>{name}</h1>
             <p>{description}</p>
             <p>
-              <Link to={`/users/${owner.id}`}>{owner.display_name}</Link> · {tracks.total} songs,{' '}
+              <Link to={`/users/${owner?.id}`}>{owner?.display_name}</Link> · {tracks?.total} songs,{' '}
               {formatDistance(0, totalDuration)}
             </p>
             <p>
@@ -52,7 +55,7 @@ function PlaylistPage(): JSX.Element {
             </p>
           </MediaBody>
         </Media>
-        <PlaylistTracks items={tracks.items} />
+        {tracks && <PlaylistTracks items={tracks.items} />}
       </div>
     </>
   );
