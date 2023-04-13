@@ -10,7 +10,6 @@ import '../css/elements/list.css';
 import '../css/elements/paragraph.css';
 import '../css/elements/table.css';
 import '../css/layout/base.css';
-import { worker } from '../mocks/browser';
 import Router from './components/Router';
 
 const queryClient = new QueryClient();
@@ -24,6 +23,8 @@ function Root(): JSX.Element {
 }
 
 if (import.meta.env.DEV) {
+  const { worker } = await import('../mocks/browser');
+
   worker.start();
 }
 
