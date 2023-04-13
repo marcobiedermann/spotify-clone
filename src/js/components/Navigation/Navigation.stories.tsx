@@ -5,6 +5,20 @@ import Navigation from '.';
 
 const meta: Meta<typeof Navigation> = {
   component: Navigation,
+  args: {
+    items: [
+      {
+        id: 'home',
+        name: 'Home',
+        path: '/',
+      },
+      {
+        id: 'browse',
+        name: 'Browse',
+        path: '/browse',
+      },
+    ],
+  },
   decorators: [
     (Story) => (
       <MemoryRouter>
