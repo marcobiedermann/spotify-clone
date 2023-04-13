@@ -52,6 +52,11 @@ function DefaultLayout(): JSX.Element {
                 name: 'Browse',
                 path: '/browse',
               },
+              {
+                id: 'search',
+                name: 'Search',
+                path: '/search',
+              },
             ]}
           />
           <Navigation

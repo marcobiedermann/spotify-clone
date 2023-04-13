@@ -21,6 +21,7 @@ const LoginPage = lazy(() => import('../../pages/Login'));
 const MePage = lazy(() => import('../../pages/Me'));
 const PlaylistsPage = lazy(() => import('../../pages/Me/Playlists'));
 const PlaylistPage = lazy(() => import('../../pages/Playlists/Playlist'));
+const SearchPage = lazy(() => import('../../pages/Search'));
 const UserPage = lazy(() => import('../../pages/Users/User'));
 const UserPlaylistsPage = lazy(() => import('../../pages/Users/User/Playlists'));
 
@@ -99,6 +100,10 @@ const routes = [
       {
         element: <PlaylistPage />,
         path: '/playlists/:playlistId',
+      },
+      {
+        element: <SearchPage />,
+        path: '/search',
       },
       {
         element: <UserPage />,
