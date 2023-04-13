@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import Artist from '../../../components/Artist';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
+import Navigation from '../../../components/Navigation';
 import { useArtist } from '../../../hooks/artists';
 
 function ArtistPage(): JSX.Element {
@@ -27,17 +28,25 @@ function ArtistPage(): JSX.Element {
         <title>{name}</title>
       </Helmet>
       <Artist {...data} />
-      <ul>
-        <li>
-          <Link to={`${pathname}/albums`}>Albums</Link>
-        </li>
-        <li>
-          <Link to={`${pathname}/related-artists`}>Related Artists</Link>
-        </li>
-        <li>
-          <Link to={`${pathname}/top-tracks`}>Top Tracks</Link>
-        </li>
-      </ul>
+      <Navigation
+        items={[
+          {
+            id: 'albums',
+            name: 'Albums',
+            path: `${pathname}/albums`,
+          },
+          {
+            id: 'related-artists',
+            name: 'Related Artists',
+            path: `${pathname}/related-artists`,
+          },
+          {
+            id: 'top-tracks',
+            name: 'Top Tracks',
+            path: `${pathname}/top-tracks`,
+          },
+        ]}
+      />
     </>
   );
 }

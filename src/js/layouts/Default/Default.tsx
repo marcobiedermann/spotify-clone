@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useMePlaylists } from '../../hooks/me';
 import Aside from '../../components/Aside';
 import Content from '../../components/Content';
@@ -38,14 +38,31 @@ function DefaultLayout(): JSX.Element {
           </Suspense>
         </Main>
         <Aside>
-          <Navigation />
-          <ul>
-            {items.map((item) => (
-              <li key={item.id}>
-                <Link to={`/playlists/${item.id}`}>{item.name}</Link>
-              </li>
-            ))}
-          </ul>
+          <Navigation
+            items={[
+              {
+                id: 'home',
+                name: 'Home',
+                path: '/',
+              },
+              {
+                id: 'browse',
+                name: 'Browse',
+                path: '/browse',
+              },
+            ]}
+          />
+          <Navigation
+            items={items.map((item) => {
+              const { id = '', name = '' } = item;
+
+              return {
+                id,
+                name,
+                path: `/playlists/${item.id}`,
+              };
+            })}
+          />
         </Aside>
       </Content>
       <Player />

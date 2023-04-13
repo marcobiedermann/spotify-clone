@@ -1,24 +1,35 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import Navigation from '../../components/Navigation';
 
 function BrowsePage(): JSX.Element {
+  const { pathname } = useLocation();
+
   return (
     <>
       <Helmet>
         <title>Browse</title>
       </Helmet>
-      <ul>
-        <li>
-          <Link to="/browse/categories">Genres & Moods</Link>
-        </li>
-        <li>
-          <Link to="/browse/featured-playlists">Featured Playlists</Link>
-        </li>
-        <li>
-          <Link to="/browse/new-releases">New Releases</Link>
-        </li>
-      </ul>
+      <Navigation
+        items={[
+          {
+            id: 'categories',
+            name: 'Genres & Moods',
+            path: `${pathname}/categories`,
+          },
+          {
+            id: 'featured-playlists',
+            name: 'Featured Playlists',
+            path: `${pathname}/featured-playlists`,
+          },
+          {
+            id: 'new-releases',
+            name: 'New Releases',
+            path: `${pathname}/new-releases`,
+          },
+        ]}
+      />
     </>
   );
 }
