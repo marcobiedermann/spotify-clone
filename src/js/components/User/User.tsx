@@ -4,7 +4,7 @@ import Image from '../Image';
 const defaultImageSize = 100;
 
 interface Followers {
-  total: number;
+  total?: number;
 }
 
 interface Image {
@@ -14,13 +14,13 @@ interface Image {
 }
 
 export interface UserProps {
-  display_name: string;
-  followers: Followers;
-  images: Image[];
+  display_name?: string | null;
+  followers?: Followers;
+  images?: Image[];
 }
 
 function User(props: UserProps): JSX.Element {
-  const { display_name, followers, images } = props;
+  const { display_name, followers, images = [] } = props;
   const image = images[0];
 
   return (
@@ -32,11 +32,11 @@ function User(props: UserProps): JSX.Element {
             {...image}
             width={image.width || defaultImageSize}
             height={image.height || defaultImageSize}
-            alt={display_name}
+            alt={display_name || ''}
           />
         </figure>
       )}
-      <p>{followers.total} Followers</p>
+      <p>{followers?.total} Followers</p>
     </div>
   );
 }

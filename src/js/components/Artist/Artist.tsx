@@ -10,13 +10,13 @@ interface Image {
 }
 
 export interface ArtistProps {
-  name: string;
-  id: string;
-  images: Image[];
+  name?: string;
+  id?: string;
+  images?: Image[];
 }
 
 function Artist(props: ArtistProps): JSX.Element {
-  const { images, name } = props;
+  const { images = [], name } = props;
   const image = images[0];
 
   return (
@@ -24,7 +24,7 @@ function Artist(props: ArtistProps): JSX.Element {
       {image && (
         <Image
           {...image}
-          alt={name}
+          alt={name || ''}
           width={image.width || defaultImageSize}
           height={image.height || defaultImageSize}
         />

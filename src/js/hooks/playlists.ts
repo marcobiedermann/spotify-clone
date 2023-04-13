@@ -5,46 +5,58 @@ import { z } from 'zod';
 import { Error, imageObjectSchema, instance, playlistTrackObjectSchema } from '.';
 
 const playlistSchema = z.object({
-  collaborative: z.boolean(),
-  description: z.string().nullable(),
-  external_urls: z.object({
-    spotify: z.string(),
-  }),
-  followers: z.object({
-    href: z.string().nullable(),
-    total: z.number().int(),
-  }),
-  href: z.string().url(),
-  id: z.string(),
-  images: z.array(imageObjectSchema),
-  name: z.string(),
-  owner: z.object({
-    external_urls: z.object({
-      spotify: z.string(),
-    }),
-    followers: z.object({
-      href: z.string().nullable(),
+  collaborative: z.boolean().optional(),
+  description: z.string().nullable().optional(),
+  external_urls: z
+    .object({
+      spotify: z.string().optional(),
+    })
+    .optional(),
+  followers: z
+    .object({
+      href: z.string().nullable().optional(),
+      total: z.number().int().optional(),
+    })
+    .optional(),
+  href: z.string().url().optional(),
+  id: z.string().optional(),
+  images: z.array(imageObjectSchema).optional(),
+  name: z.string().optional(),
+  owner: z
+    .object({
+      external_urls: z
+        .object({
+          spotify: z.string().optional(),
+        })
+        .optional(),
+      followers: z
+        .object({
+          href: z.string().nullable().optional(),
+          total: z.number().int().optional(),
+        })
+        .optional(),
+      href: z.string().url().optional(),
+      id: z.string().optional(),
+      type: z.literal('user').optional(),
+      uri: z.string().optional(),
+      display_name: z.string().nullable().optional(),
+    })
+    .optional(),
+  public: z.boolean().optional(),
+  snapshot_id: z.string().optional(),
+  tracks: z
+    .object({
+      href: z.string().url(),
+      limit: z.number().int(),
+      next: z.string().nullable(),
+      offset: z.number().int(),
+      previous: z.string().nullable(),
       total: z.number().int(),
-    }),
-    href: z.string().url(),
-    id: z.string(),
-    type: z.literal('user'),
-    uri: z.string(),
-    display_name: z.string(),
-  }),
-  public: z.boolean(),
-  snapshot_id: z.string(),
-  tracks: z.object({
-    href: z.string().url(),
-    limit: z.number().int(),
-    next: z.string().nullable(),
-    offset: z.number().int(),
-    previous: z.string().nullable(),
-    total: z.number().int(),
-    items: z.array(playlistTrackObjectSchema),
-  }),
-  type: z.literal('playlist'),
-  uri: z.string(),
+      items: z.array(playlistTrackObjectSchema),
+    })
+    .optional(),
+  type: z.literal('playlist').optional(),
+  uri: z.string().optional(),
 });
 
 type Playlist = z.infer<typeof playlistSchema>;

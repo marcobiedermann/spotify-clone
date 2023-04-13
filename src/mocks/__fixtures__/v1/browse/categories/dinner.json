@@ -1,5 +1,5 @@
 {
-  "href": "https://api.spotify.com/v1/browse/categories/dinner",
+  "href": "https://api.spotify.com/v1/browse/categories/0JQ5DAqbMKFRY5ok2pxXJ0",
   "icons": [
     {
       "height": 274,
@@ -7,6 +7,6 @@
       "width": 274
     }
   ],
-  "id": "dinner",
-  "name": "Matlagning och middag"
+  "id": "0JQ5DAqbMKFRY5ok2pxXJ0",
+  "name": "Cooking & Dining"
 }

@@ -3,22 +3,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './AlbumTrack.module.css';
 
-interface Owner {
+interface Artist {
   name?: string;
-  id: string;
+  id?: string;
 }
 
 export interface AlbumTrackProps {
-  artists: Owner[];
-  duration_ms: number;
+  artists?: Artist[];
+  duration_ms?: number;
   /* eslint-disable-next-line react/no-unused-prop-types */
-  id: string;
-  name: string;
-  track_number: number;
+  id?: string;
+  name?: string;
+  track_number?: number;
 }
 
 function AlbumTrack(props: AlbumTrackProps): JSX.Element {
-  const { artists, duration_ms, name, track_number } = props;
+  const { artists = [], duration_ms = 0, name, track_number } = props;
 
   return (
     <tr>

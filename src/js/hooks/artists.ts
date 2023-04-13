@@ -10,21 +10,25 @@ import {
 } from '.';
 
 const artistSchema = z.object({
-  external_urls: z.object({
-    spotify: z.string(),
-  }),
-  followers: z.object({
-    href: z.string().url(),
-    total: z.number().int(),
-  }),
-  genres: z.array(z.string()),
-  href: z.string().url(),
-  id: z.string(),
-  images: z.array(imageObjectSchema),
-  name: z.string(),
-  popularity: z.number().int(),
-  type: z.literal('artist'),
-  uri: z.string(),
+  external_urls: z
+    .object({
+      spotify: z.string().optional(),
+    })
+    .optional(),
+  followers: z
+    .object({
+      href: z.string().url().nullable().optional(),
+      total: z.number().int().optional(),
+    })
+    .optional(),
+  genres: z.array(z.string()).optional(),
+  href: z.string().url().optional(),
+  id: z.string().optional(),
+  images: z.array(imageObjectSchema).optional(),
+  name: z.string().optional(),
+  popularity: z.number().int().optional(),
+  type: z.literal('artist').optional(),
+  uri: z.string().optional(),
 });
 
 type Artist = z.infer<typeof artistSchema>;

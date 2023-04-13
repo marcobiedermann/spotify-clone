@@ -3,19 +3,23 @@ import { z } from 'zod';
 import { Error, imageObjectSchema, instance, simplifiedPlaylistObjectSchema } from '.';
 
 const usersProfileSchema = z.object({
-  display_name: z.string(),
-  external_urls: z.object({
-    spotify: z.string(),
-  }),
-  followers: z.object({
-    href: z.string().nullable(),
-    total: z.number().int(),
-  }),
-  href: z.string().url(),
-  id: z.string(),
-  images: z.array(imageObjectSchema),
-  type: z.literal('user'),
-  uri: z.string(),
+  display_name: z.string().nullable().optional(),
+  external_urls: z
+    .object({
+      spotify: z.string().optional(),
+    })
+    .optional(),
+  followers: z
+    .object({
+      href: z.string().nullable().optional(),
+      total: z.number().int().optional(),
+    })
+    .optional(),
+  href: z.string().url().optional(),
+  id: z.string().optional(),
+  images: z.array(imageObjectSchema).optional(),
+  type: z.literal('user').optional(),
+  uri: z.string().optional(),
 });
 
 type UsersProfile = z.infer<typeof usersProfileSchema>;

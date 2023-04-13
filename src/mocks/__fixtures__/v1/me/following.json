@@ -1,12 +1,46 @@
 {
   "artists": {
-    "items": [],
+    "items": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0qkv17MEPM2BFfThWyYcMe"
+        },
+        "followers": {
+          "href": null,
+          "total": 319
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/0qkv17MEPM2BFfThWyYcMe",
+        "id": "0qkv17MEPM2BFfThWyYcMe",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b27328fb40b9b36468f1f7d8f88d",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e0228fb40b9b36468f1f7d8f88d",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d0000485128fb40b9b36468f1f7d8f88d",
+            "width": 64
+          }
+        ],
+        "name": "Gouden Verhalen",
+        "popularity": 13,
+        "type": "artist",
+        "uri": "spotify:artist:0qkv17MEPM2BFfThWyYcMe"
+      }
+    ],
     "next": null,
-    "total": 0,
+    "total": 1,
     "cursors": {
       "after": null
     },
-    "limit": 10,
-    "href": "https://api.spotify.com/v1/me/following?type=artist&after=0I2XqVXqHScXjHhk6AYYRe&limit=10"
+    "limit": 20,
+    "href": "https://api.spotify.com/v1/me/following?type=artist&limit=20&locale=en,de;q=0.9"
   }
 }

@@ -1,6 +1,7 @@
 {
   "albums": [
     {
+      "album_group": "album",
       "album_type": "album",
       "artists": [
         {
@@ -50,14 +51,15 @@
           "width": 64
         }
       ],
+      "is_playable": true,
       "label": "Walt Disney Records",
       "name": "TRON: Legacy Reconfigured",
-      "popularity": 54,
+      "popularity": 53,
       "release_date": "2011-01-01",
       "release_date_precision": "day",
       "total_tracks": 15,
       "tracks": {
-        "href": "https://api.spotify.com/v1/albums/382ObEPsp2rxGrnsizN5TX/tracks?offset=0&limit=50&market=ES",
+        "href": "https://api.spotify.com/v1/albums/382ObEPsp2rxGrnsizN5TX/tracks?offset=0&limit=50&market=US&locale=en,de;q=0.9",
         "items": [
           {
             "artists": [
@@ -93,7 +95,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Derezzed - Remixed by The Glitch Mob",
-            "preview_url": "https://p.scdn.co/mp3-preview/52b8ecc26e581a29a9d0abb2853e3ad92df1dec7?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/529f09c6af4e23ee90f7a42ee984c93ec49f7320?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 1,
             "type": "track",
             "uri": "spotify:track:4lteJuSjb9Jt9W1W7PIU2U"
@@ -152,7 +154,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Fall - Remixed by M83 VS Big Black Delta",
-            "preview_url": "https://p.scdn.co/mp3-preview/917d6fc635a25ba334f030af6d1869b7c9306ac4?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/cfd848c24ba2d30f75c55322b844327464d4c9a1?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 2,
             "type": "track",
             "uri": "spotify:track:66uVqkmHAc0MBUzoPhIypN"
@@ -191,7 +193,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "The Grid - Remixed by The Crystal Method",
-            "preview_url": "https://p.scdn.co/mp3-preview/3a6af8840fbb38e9da07de28106679265dc6e607?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/1df018c5eb972b58b0eff592bd621ef187c9a567?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 3,
             "type": "track",
             "uri": "spotify:track:4OEnpg5ubhg6OQ4M2ZjtsL"
@@ -230,7 +232,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Adagio for TRON - Remixed by Teddybears",
-            "preview_url": "https://p.scdn.co/mp3-preview/70c45a9cdad0abff2442aa1ce2c6c554a35df06b?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/53b2f31c4c7cbf028b780125fbac172628b3995f?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 4,
             "type": "track",
             "uri": "spotify:track:2EyK6JBWqftJlxAuqd0Dsq"
@@ -269,7 +271,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "The Son of Flynn - Remixed by Ki:Theory",
-            "preview_url": "https://p.scdn.co/mp3-preview/3d4e64482176a85efe3c8f89cd46729421e181b0?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/096dc1d604ec2fa226415dc4bd3b259e7d568434?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 5,
             "type": "track",
             "uri": "spotify:track:1TT6gRprLQ5vSWgoWpyKfR"
@@ -308,7 +310,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "C.L.U. - Remixed by Paul Oakenfold",
-            "preview_url": "https://p.scdn.co/mp3-preview/e2c2f753919a5c4a74f853a282f93f4be6845625?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/effa3c4efe9947ff395f1a0fe59ce2f05e83de52?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 6,
             "type": "track",
             "uri": "spotify:track:6hEvTmmvby9ZTkSdfmPW3m"
@@ -347,7 +349,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "The Son of Flynn - Remixed by Moby",
-            "preview_url": "https://p.scdn.co/mp3-preview/1e15df72ee793a9518ba8ebe2c0084e6178f44dd?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/dc1d709acf558f8ae819bdb7f5913f18403aae8d?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 7,
             "type": "track",
             "uri": "spotify:track:03uOJUuuTgaFFI1Efal1no"
@@ -386,7 +388,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "End of Line - Remixed by Boys Noize",
-            "preview_url": "https://p.scdn.co/mp3-preview/99fa132e8144b5f2b98aa645bab486e1ac5f05c6?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/f4d7c051a9e36fde28d16fb4a84078a6c7ca1d34?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 8,
             "type": "track",
             "uri": "spotify:track:3YYnfKM02WkygOwg6ozfrL"
@@ -425,7 +427,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Rinzler - Remixed by Kaskade",
-            "preview_url": "https://p.scdn.co/mp3-preview/df72260fab3a0295963fbeb0f5a2d1188cc55ea5?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/70e573ebd2f8f2557c579ba5b8d5fd3b433ad0b1?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 9,
             "type": "track",
             "uri": "spotify:track:2jFLd9OdNcLsblpv4fDTRn"
@@ -464,7 +466,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Encom Part 2 - Remixed by Com Truise",
-            "preview_url": "https://p.scdn.co/mp3-preview/f4bd801542363624df4ac46d9dec2ccfd861e8c5?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/46f4b0dd4ba9b666791c97f9f7dceadab37aa4f9?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 10,
             "type": "track",
             "uri": "spotify:track:3SL3UavpjRKNMM9UVlE9Bx"
@@ -503,7 +505,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "End of Line - Remixed by Photek",
-            "preview_url": "https://p.scdn.co/mp3-preview/806995b8ea71ec8adf6124d6c0c156fc7d5f8dc0?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/b9f7b2815e68bc087cc03923ef67891c852fd8fb?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 11,
             "type": "track",
             "uri": "spotify:track:2UBYw2qf9PkvoKQ610ocft"
@@ -542,7 +544,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Arena - Remixed by The Japanese Popstars",
-            "preview_url": "https://p.scdn.co/mp3-preview/d2727e7b8f43cb643bbf7dfff6512a8459edfa5f?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/348f0ab902ecaa097b4bd7e4ad139efdcdf205bd?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 12,
             "type": "track",
             "uri": "spotify:track:7irNlzUSPNgCDtEyQuS3lm"
@@ -581,7 +583,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Derezzed - Remixed by Avicii",
-            "preview_url": "https://p.scdn.co/mp3-preview/aba2dbd7a6eb6ae8d20622a49b1cc46ccbeffc3e?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/1712ba0d3694379568db10cbf38eab40b4749f1b?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 13,
             "type": "track",
             "uri": "spotify:track:1rn6JIHBuBZiwvA57jeoOB"
@@ -620,7 +622,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Solar Sailer - Remixed by Pretty Lights",
-            "preview_url": "https://p.scdn.co/mp3-preview/551ff2c449e19c07a5109f54c25480c12cd81722?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/f1bff4a14c2b009603f60fc371078a8e5cd880be?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 14,
             "type": "track",
             "uri": "spotify:track:4OgB6TRmIGBRT4NoFxxIQd"
@@ -659,7 +661,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "TRON Legacy (End Titles) - Remixed by Sander Kleinenberg",
-            "preview_url": "https://p.scdn.co/mp3-preview/979fd77c38283cddcd1350fa7a8fd32ac22ab7ef?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/10804f401eaf2bfd127fe210dd825ffc20341fe4?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 15,
             "type": "track",
             "uri": "spotify:track:1Nv1h7ANN9E4rAjLP4OfgA"
@@ -675,6 +677,7 @@
       "uri": "spotify:album:382ObEPsp2rxGrnsizN5TX"
     },
     {
+      "album_group": "album",
       "album_type": "album",
       "artists": [
         {
@@ -724,6 +727,7 @@
           "width": 64
         }
       ],
+      "is_playable": true,
       "label": "Daft Life Ltd./ADA France",
       "name": "Human After All",
       "popularity": 55,
@@ -731,7 +735,7 @@
       "release_date_precision": "day",
       "total_tracks": 10,
       "tracks": {
-        "href": "https://api.spotify.com/v1/albums/1A2GTWGtFfWp7KSQTwWOyo/tracks?offset=0&limit=50&market=ES",
+        "href": "https://api.spotify.com/v1/albums/1A2GTWGtFfWp7KSQTwWOyo/tracks?offset=0&limit=50&market=US&locale=en,de;q=0.9",
         "items": [
           {
             "artists": [
@@ -766,7 +770,7 @@
               "uri": "spotify:track:3aByRUC2BVL6Fs1zI723sd"
             },
             "name": "Human After All",
-            "preview_url": "https://p.scdn.co/mp3-preview/d52d1c91b90f8815af6fc2c9fb7d29c6c19164c7?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/c4640d45ffd9f45875df3ddfc360f5d6cfc33430?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 1,
             "type": "track",
             "uri": "spotify:track:3aCKAkMx3yfaj3AO5Gz47e"
@@ -804,7 +808,7 @@
               "uri": "spotify:track:2ABpuao3ZbTjP2cSiX9KZc"
             },
             "name": "The Prime Time of Your Life",
-            "preview_url": "https://p.scdn.co/mp3-preview/6fcd729b0f4f5caae23796fba083f71e9565490b?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/c7cf4974addc9d3300034b7ead88eb24086ff538?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 2,
             "type": "track",
             "uri": "spotify:track:0UZRFYMoz9xmeE2AQUhTDl"
@@ -842,7 +846,7 @@
               "uri": "spotify:track:4zu9wo2FXoBSsKjO6tRB3R"
             },
             "name": "Robot Rock",
-            "preview_url": "https://p.scdn.co/mp3-preview/9ec3a52390ff23aeb2ce125591839ef16be18abb?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/b2c4b594e86720ca71c59d6f2681a43c38b3fd06?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 3,
             "type": "track",
             "uri": "spotify:track:7LL40F6YdZgeiQ6en1c7Lk"
@@ -880,7 +884,7 @@
               "uri": "spotify:track:07KtTNn0wZndtN5NOYdBWR"
             },
             "name": "Steam Machine",
-            "preview_url": "https://p.scdn.co/mp3-preview/2e87f9f17db837e0dd91eb5ce410e6d0a4cac624?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/c34498d7e21992f7da5aefb0c5d32776ccbcefea?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 4,
             "type": "track",
             "uri": "spotify:track:60HSQkYSlJVtdRdHgzRsXz"
@@ -918,7 +922,7 @@
               "uri": "spotify:track:1WnXCfO6oIxG0TbJj29MqR"
             },
             "name": "Make Love",
-            "preview_url": "https://p.scdn.co/mp3-preview/bde6c79c759bd1ec25f5fc2b9d84c1e73d81d2e8?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/c23e57fe786c75e53f76f3e62855cbabe7879594?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 5,
             "type": "track",
             "uri": "spotify:track:4ABWPP59ItFKykdaDF09K5"
@@ -956,7 +960,7 @@
               "uri": "spotify:track:61qwHnU8dyMqPemGzopDcp"
             },
             "name": "The Brainwasher",
-            "preview_url": "https://p.scdn.co/mp3-preview/d04ded0ccf12ae632a990d53c8faf44bbaa0f36f?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/a419922329501fa9ec75475d179d8886288bd9a2?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 6,
             "type": "track",
             "uri": "spotify:track:73MAeHX5sqLYfuYclsrvHc"
@@ -994,7 +998,7 @@
               "uri": "spotify:track:0cV1dl2k19YoGbxTKDb0rH"
             },
             "name": "On / Off",
-            "preview_url": null,
+            "preview_url": "https://p.scdn.co/mp3-preview/0d0c02b96d20b5a297007d4afa156213a7bb546c?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 7,
             "type": "track",
             "uri": "spotify:track:3dWxT7lAv6lmXEW2AEZyPQ"
@@ -1032,7 +1036,7 @@
               "uri": "spotify:track:73mTIDCNKGfUF4MiFfR3b5"
             },
             "name": "Television Rules the Nation",
-            "preview_url": "https://p.scdn.co/mp3-preview/7d4f28d771a4db5712cd448079d65f2f9f876bbc?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/14656ff6f43fe87d31a293024f1bb25922e67596?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 8,
             "type": "track",
             "uri": "spotify:track:37M8nuFfSrlKfTR0AAp7gK"
@@ -1070,7 +1074,7 @@
               "uri": "spotify:track:0LSLM0zuWRkEYemF7JcfEE"
             },
             "name": "Technologic",
-            "preview_url": "https://p.scdn.co/mp3-preview/98082cb0bca21980e3c1d851c33a5e7ffd914c37?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/4e68f73933a203aec3e11fb5df3898d70f98d68a?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 9,
             "type": "track",
             "uri": "spotify:track:1iNeZGJsoC0D7ZyJTdIbDS"
@@ -1108,7 +1112,7 @@
               "uri": "spotify:track:3PsJ6zisndTa3F9eOjBfCc"
             },
             "name": "Emotion",
-            "preview_url": "https://p.scdn.co/mp3-preview/caa306be77396b8a9df1e7ae407247c3f00d48f8?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/ac672d14bde8e6d159a66d1ff2b7b05936b46dd4?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 10,
             "type": "track",
             "uri": "spotify:track:0Dezmoeb373GNcYBjLVAMH"
@@ -1124,6 +1128,7 @@
       "uri": "spotify:album:1A2GTWGtFfWp7KSQTwWOyo"
     },
     {
+      "album_group": "album",
       "album_type": "album",
       "artists": [
         {
@@ -1173,14 +1178,15 @@
           "width": 64
         }
       ],
+      "is_playable": true,
       "label": "Daft Life Ltd./ADA France",
       "name": "Discovery",
-      "popularity": 79,
+      "popularity": 78,
       "release_date": "2001-03-12",
       "release_date_precision": "day",
       "total_tracks": 14,
       "tracks": {
-        "href": "https://api.spotify.com/v1/albums/2noRn2Aes5aoNVsU6iWThc/tracks?offset=0&limit=50&market=ES",
+        "href": "https://api.spotify.com/v1/albums/2noRn2Aes5aoNVsU6iWThc/tracks?offset=0&limit=50&market=US&locale=en,de;q=0.9",
         "items": [
           {
             "artists": [
@@ -1206,7 +1212,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "One More Time",
-            "preview_url": "https://p.scdn.co/mp3-preview/3ecb663d7dc9123a847a000e6febd6c852eeb994?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/5e7d7e1faefc00e347d0a1c958d4b7f52baa3a44?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 1,
             "type": "track",
             "uri": "spotify:track:0DiWol3AO6WpXZgp0goxAV"
@@ -1235,7 +1241,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Aerodynamic",
-            "preview_url": "https://p.scdn.co/mp3-preview/60f498858dd25f6a8c6fbb9dcdc58341656b5cce?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/084468bc8b4d33ece2742182d92ef780a8188daa?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 2,
             "type": "track",
             "uri": "spotify:track:3H3cOQ6LBLSvmcaV7QkZEu"
@@ -1264,7 +1270,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Digital Love",
-            "preview_url": "https://p.scdn.co/mp3-preview/40e47a6f3d812dfb5133af9484e95f4f468d98b1?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/1975b7202f835305dc2e8b44995bea0e1dc9b557?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 3,
             "type": "track",
             "uri": "spotify:track:2VEZx7NWsZ1D0eJ4uv5Fym"
@@ -1293,7 +1299,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Harder, Better, Faster, Stronger",
-            "preview_url": "https://p.scdn.co/mp3-preview/a742fa1962d60094bf86dbcbf6b66d463f67fea9?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/18372aae97b8d78de63f3fa200cc36a6eef5e98e?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 4,
             "type": "track",
             "uri": "spotify:track:5W3cjX2J3tjhG8zb6u0qHn"
@@ -1322,7 +1328,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Crescendolls",
-            "preview_url": "https://p.scdn.co/mp3-preview/96641d6cb305de273edf2e5ef36ebebcd5e87dac?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/9fa487146712b9c4f737dfcb7c9c0197c525c693?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 5,
             "type": "track",
             "uri": "spotify:track:6vuPZX9fWESg5js2JFTQRJ"
@@ -1351,7 +1357,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Nightvision",
-            "preview_url": "https://p.scdn.co/mp3-preview/02a892f23e783ea50a34bce42237ed906b81e5ac?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/d07c36ccac66ab987d4e97772daec794d977ccb6?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 6,
             "type": "track",
             "uri": "spotify:track:63JXZZRbmzooashakb0zbu"
@@ -1380,7 +1386,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Superheroes",
-            "preview_url": "https://p.scdn.co/mp3-preview/6167b1e236c56a1c187ee790ae2be3a70e9e4026?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/8f384b1b7800a027a11fddcf51c33d03ca33992f?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 7,
             "type": "track",
             "uri": "spotify:track:186hvCTyrni4KT9nwIQ7zS"
@@ -1409,7 +1415,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "High Life",
-            "preview_url": "https://p.scdn.co/mp3-preview/b0bdb44751ab4c8016836744951f081adf523781?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/3a80fbcdf70685141a7171f96c991e86ca32aae7?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 8,
             "type": "track",
             "uri": "spotify:track:098ttCNmncrO4YvqWUNMvn"
@@ -1438,7 +1444,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Something About Us",
-            "preview_url": "https://p.scdn.co/mp3-preview/4c607f5ed3cf96c10569b256f8656f8b82d2b4d8?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/ebdd8168dd86d03fce7d10837b00a50d33914ff0?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 9,
             "type": "track",
             "uri": "spotify:track:1NeLwFETswx8Fzxl2AFl91"
@@ -1467,7 +1473,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Voyager",
-            "preview_url": "https://p.scdn.co/mp3-preview/7d029a8cb197448f6a8558728f6116a51ea2d3b1?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/b85ab3e7d4485db692d1e054493c0a1aa2773665?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 10,
             "type": "track",
             "uri": "spotify:track:7cMFjxhbXBpOlais7KMF3j"
@@ -1496,7 +1502,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Veridis Quo",
-            "preview_url": "https://p.scdn.co/mp3-preview/aca5701db1bec743d36215c7a8b4fc5a43699b77?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/9ce7b8a64cb0f8a87e6822e78ae825ecd3a9ec71?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 11,
             "type": "track",
             "uri": "spotify:track:2LD2gT7gwAurzdQDQtILds"
@@ -1525,7 +1531,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Short Circuit",
-            "preview_url": "https://p.scdn.co/mp3-preview/9ceb3492b792a98c0dbe82df348fc3a3586074e5?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/923a4bf949ee16336068929e2e3ad2a7c8d460cc?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 12,
             "type": "track",
             "uri": "spotify:track:4npMbTuxrUA3Wd7edACZ2L"
@@ -1554,7 +1560,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Face to Face",
-            "preview_url": "https://p.scdn.co/mp3-preview/9a93bc92a5b898eeeb80bfa222946cb9d6336c5c?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/1e1ac914d240a6b0c3e0b53febdbe3f1267f53af?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 13,
             "type": "track",
             "uri": "spotify:track:7v9Q0dAb9t7h8gJOkcJHay"
@@ -1583,7 +1589,7 @@
             "is_local": false,
             "is_playable": true,
             "name": "Too Long",
-            "preview_url": "https://p.scdn.co/mp3-preview/73751bb62aebb38a832a66b695c05bc2cf4957ab?cid=774b29d4f13844c495f206cafdad9c86",
+            "preview_url": "https://p.scdn.co/mp3-preview/5563cb6542b0ad239a11d414061a780a22de9dff?cid=cfe923b2d660439caf2b557b21f31221",
             "track_number": 14,
             "type": "track",
             "uri": "spotify:track:3zMvotMEQK3xvH01vA9wAP"

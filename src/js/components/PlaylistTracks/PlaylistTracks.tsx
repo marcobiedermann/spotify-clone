@@ -6,7 +6,7 @@ export interface PlaylistTracksProps {
 }
 
 function PlaylistTracks(props: PlaylistTracksProps): JSX.Element {
-  const { items } = props;
+  const { items = [] } = props;
 
   return (
     <table>
@@ -21,7 +21,7 @@ function PlaylistTracks(props: PlaylistTracksProps): JSX.Element {
       </thead>
       <tbody>
         {items.map((item) => (
-          <PlaylistTrack key={item.track.id} {...item} />
+          <PlaylistTrack key={item.track?.id} {...item} />
         ))}
       </tbody>
     </table>

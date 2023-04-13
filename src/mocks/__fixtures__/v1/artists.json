@@ -6,9 +6,16 @@
       },
       "followers": {
         "href": null,
-        "total": 2657956
+        "total": 2793459
       },
-      "genres": ["canadian electronic", "edm", "electro house", "pop dance", "progressive house"],
+      "genres": [
+        "canadian electronic",
+        "complextro",
+        "edm",
+        "electro house",
+        "pop dance",
+        "progressive house"
+      ],
       "href": "https://api.spotify.com/v1/artists/2CIMQHirSU0MQqyYHq0eOx",
       "id": "2CIMQHirSU0MQqyYHq0eOx",
       "images": [
@@ -29,7 +36,7 @@
         }
       ],
       "name": "deadmau5",
-      "popularity": 71,
+      "popularity": 70,
       "type": "artist",
       "uri": "spotify:artist:2CIMQHirSU0MQqyYHq0eOx"
     },
@@ -39,9 +46,9 @@
       },
       "followers": {
         "href": null,
-        "total": 556770
+        "total": 587820
       },
-      "genres": ["alternative dance", "indietronica", "new rave"],
+      "genres": ["indietronica"],
       "href": "https://api.spotify.com/v1/artists/57dN52uHvrHOxijzpIgu3E",
       "id": "57dN52uHvrHOxijzpIgu3E",
       "images": [
@@ -67,7 +74,7 @@
         }
       ],
       "name": "Ratatat",
-      "popularity": 72,
+      "popularity": 67,
       "type": "artist",
       "uri": "spotify:artist:57dN52uHvrHOxijzpIgu3E"
     },
@@ -77,7 +84,7 @@
       },
       "followers": {
         "href": null,
-        "total": 20858369
+        "total": 22736333
       },
       "genres": ["dance pop", "edm", "pop", "pop dance"],
       "href": "https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6",
@@ -100,7 +107,7 @@
         }
       ],
       "name": "Avicii",
-      "popularity": 85,
+      "popularity": 82,
       "type": "artist",
       "uri": "spotify:artist:1vCWHaC5f2uS3yhpwWbIA6"
     }
