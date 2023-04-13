@@ -1,9 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
-import Artists from '../../../../components/Artists';
-import Error from '../../../../components/Error';
-import Loader from '../../../../components/Loader';
+import { Artists, Error, Loader } from '../../../../components';
 import { useArtistRelatedArtists } from '../../../../hooks/artists';
 
 function RelatedArtistsPage(): JSX.Element {

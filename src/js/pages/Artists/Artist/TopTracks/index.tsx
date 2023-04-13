@@ -1,9 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
-import AlbumTracks from '../../../../components/AlbumTracks';
-import Error from '../../../../components/Error';
-import Loader from '../../../../components/Loader';
+import { AlbumTracks, Error, Loader } from '../../../../components';
 import { useArtistTopTracks } from '../../../../hooks/artists';
 
 function TopTracksPage(): JSX.Element {

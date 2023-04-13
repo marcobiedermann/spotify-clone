@@ -1,9 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
-import Error from '../../../../components/Error';
-import Loader from '../../../../components/Loader';
-import Playlists from '../../../../components/Playlists';
+import { Error, Loader, Playlists } from '../../../../components';
 import { useUsersPlaylists } from '../../../../hooks/users';
 
 function PlaylistsPage(): JSX.Element {

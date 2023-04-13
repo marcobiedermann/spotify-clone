@@ -1,8 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Albums from '../../../components/Albums';
-import Error from '../../../components/Error';
-import Loader from '../../../components/Loader';
+import { Albums, Error, Loader } from '../../../components';
 import { useBrowseNewReleases } from '../../../hooks/browse/new-releases';
 
 function NewReleasesPage(): JSX.Element {

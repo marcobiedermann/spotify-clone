@@ -1,10 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useLocation, useParams } from 'react-router-dom';
-import Artist from '../../../components/Artist';
-import Error from '../../../components/Error';
-import Loader from '../../../components/Loader';
-import Navigation from '../../../components/Navigation';
+import { Artist, Error, Loader, Navigation } from '../../../components';
 import { useArtist } from '../../../hooks/artists';
 
 function ArtistPage(): JSX.Element {

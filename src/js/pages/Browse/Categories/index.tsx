@@ -1,8 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Categories from '../../../components/Categories';
-import Error from '../../../components/Error';
-import Loader from '../../../components/Loader';
+import { Categories, Error, Loader } from '../../../components';
 import { useBrowseCategories } from '../../../hooks/browse/categories';
 
 function CategoriesPage(): JSX.Element {
