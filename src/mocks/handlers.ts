@@ -19,6 +19,7 @@ import me from './__fixtures__/v1/me.json';
 import myFollowing from './__fixtures__/v1/me/following.json';
 import myPlaylists from './__fixtures__/v1/me/playlists.json';
 import playlist from './__fixtures__/v1/playlists/3cEYpjA9oz9GiPac4AsH4n.json';
+import search from './__fixtures__/v1/search.json';
 import user from './__fixtures__/v1/users/smedjan.json';
 import userPlaylists from './__fixtures__/v1/users/smedjan/playlists.json';
 
@@ -88,6 +89,9 @@ const handlers = [
   }),
   rest.get('https://api.spotify.com/v1/playlists/:playlistId', (_request, response, context) => {
     return response(context.status(200), context.json(playlist));
+  }),
+  rest.get('https://api.spotify.com/v1/search', (_request, response, context) => {
+    return response(context.status(200), context.json(search));
   }),
   rest.get('https://api.spotify.com/v1/users/:userId', (_request, response, context) => {
     return response(context.status(200), context.json(user));
