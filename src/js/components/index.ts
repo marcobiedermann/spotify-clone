@@ -46,5 +46,7 @@ export * from './Playlists';
 export { default as Playlists } from './Playlists';
 export * from './Search';
 export { default as Search } from './Search';
+export * from './Section';
+export { default as Section } from './Section';
 export * from './User';
 export { default as User } from './User';
