@@ -11,6 +11,7 @@ import {
   MediaBody,
   MediaObject,
   PlaylistTracks,
+  Section,
 } from '../../../components';
 import { usePlaylist } from '../../../hooks/playlists';
 
@@ -43,23 +44,40 @@ function PlaylistPage(): JSX.Element {
         <title>Playlist</title>
       </Helmet>
       <div>
-        <Media>
-          <MediaObject>
-            <Image {...image} alt={name || ''} width={defaultImageSize} height={defaultImageSize} />
-          </MediaObject>
-          <MediaBody>
-            <h1>{name}</h1>
-            <p>{description}</p>
-            <p>
-              <Link to={`/users/${owner?.id}`}>{owner?.display_name}</Link> · {tracks?.total} songs,{' '}
-              {formatDistance(0, totalDuration)}
-            </p>
-            <p>
-              <Button>Play</Button>
-            </p>
-          </MediaBody>
-        </Media>
-        {tracks && <PlaylistTracks items={tracks.items} />}
+        <header>
+          <Media>
+            <MediaObject>
+              <Image
+                {...image}
+                alt={name || ''}
+                width={defaultImageSize}
+                height={defaultImageSize}
+              />
+            </MediaObject>
+            <MediaBody>
+              <h3>Playlist</h3>
+              <h1>{name}</h1>
+              {description && <p>{description}</p>}
+              <p>
+                <strong>
+                  <Link to={`/users/${owner?.id}`}>{owner?.display_name}</Link> · {tracks?.total}{' '}
+                  songs,
+                </strong>{' '}
+                {formatDistance(0, totalDuration)}
+              </p>
+            </MediaBody>
+          </Media>
+        </header>
+        <Section>
+          <p>
+            <Button>Play</Button>
+          </p>
+        </Section>
+        {tracks && (
+          <Section>
+            <PlaylistTracks items={tracks.items} />
+          </Section>
+        )}
       </div>
     </>
   );

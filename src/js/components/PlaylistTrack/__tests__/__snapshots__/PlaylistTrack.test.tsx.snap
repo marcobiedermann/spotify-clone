@@ -16,9 +16,9 @@ exports[`renders correctly 1`] = `
           >
             <img
               alt="string"
-              height="48"
+              height="40"
               src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228"
-              width="48"
+              width="40"
             />
           </div>
           <div
@@ -27,7 +27,11 @@ exports[`renders correctly 1`] = `
             <div
               class="track__name"
             >
-              string
+              <a
+                href="/tracks/string"
+              >
+                string
+              </a>
             </div>
             <div>
               <a
