@@ -61,19 +61,32 @@ const artistsAlbumsSchema = z.object({
 
 type ArtistsAlbums = z.infer<typeof artistsAlbumsSchema>;
 
+interface ArtistsAlbumsParams {
+  limit?: number;
+  include_groups: string[];
+}
+
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-an-artists-albums
  */
-async function getArtistAlbums(artistId: string): Promise<ArtistsAlbums> {
-  const { data } = await instance.get(`/v1/artists/${artistId}/albums`);
+async function getArtistAlbums(
+  artistId: string,
+  params?: ArtistsAlbumsParams,
+): Promise<ArtistsAlbums> {
+  const { data } = await instance.get(`/v1/artists/${artistId}/albums`, {
+    params,
+  });
 
   return artistsAlbumsSchema.parse(data);
 }
 
-function useArtistAlbums(artistId: string): UseQueryResult<ArtistsAlbums, Error> {
+function useArtistAlbums(
+  artistId: string,
+  params?: ArtistsAlbumsParams,
+): UseQueryResult<ArtistsAlbums, Error> {
   return useQuery<ArtistsAlbums, Error>({
-    queryKey: ['artists', artistId, 'albums'],
-    queryFn: () => getArtistAlbums(artistId),
+    queryKey: ['artists', artistId, 'albums', params],
+    queryFn: () => getArtistAlbums(artistId, params),
   });
 }
 
@@ -83,19 +96,31 @@ const artistsRelatedArtistsSchema = z.object({
 
 type ArtistsRelatedArtists = z.infer<typeof artistsRelatedArtistsSchema>;
 
+interface ArtistRelatedArtistsParams {
+  limit?: number;
+}
+
 /**
  * @link https://developer.spotify.com/documentation/web-api/reference/get-an-artists-related-artists
  */
-async function getArtistRelatedArtists(artistId: string): Promise<ArtistsRelatedArtists> {
-  const { data } = await instance.get(`/v1/artists/${artistId}/related-artists`);
+async function getArtistRelatedArtists(
+  artistId: string,
+  params?: ArtistRelatedArtistsParams,
+): Promise<ArtistsRelatedArtists> {
+  const { data } = await instance.get(`/v1/artists/${artistId}/related-artists`, {
+    params,
+  });
 
   return artistsRelatedArtistsSchema.parse(data);
 }
 
-function useArtistRelatedArtists(artistId: string): UseQueryResult<ArtistsRelatedArtists, Error> {
+function useArtistRelatedArtists(
+  artistId: string,
+  params?: ArtistRelatedArtistsParams,
+): UseQueryResult<ArtistsRelatedArtists, Error> {
   return useQuery<ArtistsRelatedArtists, Error>({
     queryKey: ['artists', artistId, 'related-artists'],
-    queryFn: () => getArtistRelatedArtists(artistId),
+    queryFn: () => getArtistRelatedArtists(artistId, params),
   });
 }
 

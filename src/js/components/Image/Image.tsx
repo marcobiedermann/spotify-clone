@@ -4,6 +4,7 @@ import React from 'react';
 
 export interface ImageProps {
   alt: string;
+  className?: string;
   height: number;
   url: string;
   width: number;
