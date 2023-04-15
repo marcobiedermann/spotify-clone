@@ -79,7 +79,7 @@ const trackObjectSchema = z.object({
     .object({
       album_type: z.enum(['album', 'single', 'compilation']),
       total_tracks: z.number().int(),
-      available_markets: z.array(z.string()),
+      available_markets: z.array(z.string()).optional(),
       external_urls: z.object({
         spotify: z.string().optional(),
       }),

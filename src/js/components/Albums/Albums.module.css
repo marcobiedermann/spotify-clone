@@ -1,8 +1,11 @@
 .albums {
+  column-gap: 1em;
   display: grid;
-  grid-gap: 1em;
+  grid-auto-rows: 0;
   grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+  grid-template-rows: 1fr;
   list-style: none;
   margin: 0;
+  overflow-y: hidden;
   padding: 0;
 }

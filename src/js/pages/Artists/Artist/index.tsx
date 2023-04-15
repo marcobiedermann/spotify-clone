@@ -1,8 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useLocation, useParams } from 'react-router-dom';
-import { Artist, Error, Loader, Navigation } from '../../../components';
+import { Link, useLocation, useParams } from 'react-router-dom';
+import { Button, Error, Image, Loader, Media, MediaBody, MediaObject } from '../../../components';
 import { useArtist } from '../../../hooks/artists';
+import styles from './Artist.style.module.css';
+import Albums from './Albums';
+import RelatedArtists from './RelatedArtists';
+import TopTracks from './TopTracks';
+
+const defaultImageSize = 140;
 
 function ArtistPage(): JSX.Element {
   const { pathname } = useLocation();
@@ -17,33 +23,38 @@ function ArtistPage(): JSX.Element {
     return <Loader />;
   }
 
-  const { name } = data;
+  const { images = [], name } = data;
+  const image = images[0];
 
   return (
     <>
       <Helmet>
         <title>{name}</title>
       </Helmet>
-      <Artist {...data} />
-      <Navigation
-        items={[
-          {
-            id: 'albums',
-            name: 'Albums',
-            path: `${pathname}/albums`,
-          },
-          {
-            id: 'related-artists',
-            name: 'Related Artists',
-            path: `${pathname}/related-artists`,
-          },
-          {
-            id: 'top-tracks',
-            name: 'Top Tracks',
-            path: `${pathname}/top-tracks`,
-          },
-        ]}
-      />
+      <header>
+        <Media>
+          <MediaObject>
+            <Image
+              {...image}
+              alt={name || ''}
+              width={defaultImageSize}
+              height={defaultImageSize}
+              className={styles.artist__image}
+            />
+          </MediaObject>
+          <MediaBody>
+            <h2>{name}</h2>
+          </MediaBody>
+        </Media>
+      </header>
+      <section>
+        <p>
+          <Button>Play</Button>
+        </p>
+      </section>
+      <TopTracks />
+      <Albums />
+      <RelatedArtists />
     </>
   );
 }
