@@ -5,7 +5,7 @@ import Image from '../Image';
 import Media, { MediaBody, MediaObject } from '../Media';
 import styles from './PlaylistTrack.module.css';
 
-const defaultImageSize = 48;
+const defaultImageSize = 40;
 
 interface Image {
   height: number | null;
@@ -55,10 +55,12 @@ function PlaylistTrack(props: PlaylistTrackProps): JSX.Element {
             </MediaObject>
           )}
           <MediaBody>
-            <div className={styles.track__name}>{track?.name}</div>
+            <div className={styles.track__name}>
+              <Link to={`/tracks/${track?.id}`}>{track?.name}</Link>
+            </div>
             <div>
               {track?.artists
-                ?.map<React.ReactNode>((artist: Owner) => (
+                ?.map<React.ReactNode>((artist) => (
                   <Link key={artist.id} to={`/artists/${artist.id}`}>
                     {artist.name}
                   </Link>
