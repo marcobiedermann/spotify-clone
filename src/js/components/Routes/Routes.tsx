@@ -1,6 +1,7 @@
 import React, { lazy } from 'react';
 import { useRoutes, Navigate } from 'react-router-dom';
-import DefaultLayout from '../../layouts/Default/Default';
+import DefaultLayout from '../../layouts/Default';
+import BlankLayout from '../../layouts/Blank';
 
 const AlbumPage = lazy(() => import('../../pages/Albums/Album'));
 const TracksPage = lazy(() => import('../../pages/Albums/Album/Tracks'));
@@ -82,14 +83,6 @@ const routes = [
         path: '/browse/new-releases',
       },
       {
-        element: <CallbackPage />,
-        path: '/callback',
-      },
-      {
-        element: <LoginPage />,
-        path: '/login',
-      },
-      {
         element: <MePage />,
         path: '/me',
       },
@@ -112,6 +105,19 @@ const routes = [
       {
         element: <UserPlaylistsPage />,
         path: '/users/:userId/playlists',
+      },
+    ],
+  },
+  {
+    element: <BlankLayout />,
+    children: [
+      {
+        element: <CallbackPage />,
+        path: '/callback',
+      },
+      {
+        element: <LoginPage />,
+        path: '/login',
       },
     ],
   },
