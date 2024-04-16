@@ -6,13 +6,13 @@ import { useArtistRelatedArtists } from '../../../../hooks/artists';
 
 function RelatedArtistsPage(): JSX.Element {
   const { artistId } = useParams();
-  const { data, error, isError, isLoading } = useArtistRelatedArtists(artistId!);
+  const { data, error, isError, isPending } = useArtistRelatedArtists(artistId!);
 
   if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

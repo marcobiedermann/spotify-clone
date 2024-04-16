@@ -8,13 +8,13 @@ import { AlbumTracks, Error, Loader, Section } from '../../../components';
 function TopTracks() {
   const { pathname } = useLocation();
   const { artistId } = useParams();
-  const { data, error, isError, isLoading } = useArtistTopTracks(artistId!);
+  const { data, error, isError, isPending } = useArtistTopTracks(artistId!);
 
   if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

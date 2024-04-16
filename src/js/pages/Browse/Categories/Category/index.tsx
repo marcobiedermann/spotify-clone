@@ -6,13 +6,13 @@ import { useBrowseCategory } from '../../../../hooks/browse/categories';
 
 function CategoryPage(): JSX.Element {
   const { categoryId } = useParams();
-  const { data, error, isError, isLoading } = useBrowseCategory(categoryId!);
+  const { data, error, isError, isPending } = useBrowseCategory(categoryId!);
 
   if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

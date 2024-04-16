@@ -4,13 +4,13 @@ import { Albums, Error, Loader } from '../../../components';
 import { useBrowseNewReleases } from '../../../hooks/browse/new-releases';
 
 function NewReleasesPage(): JSX.Element {
-  const { data, error, isError, isLoading } = useBrowseNewReleases();
+  const { data, error, isError, isPending } = useBrowseNewReleases();
 
   if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

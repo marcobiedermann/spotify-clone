@@ -15,13 +15,13 @@ import { useMePlaylists } from '../../hooks/me';
 import styles from './Default.module.css';
 
 function DefaultLayout(): JSX.Element {
-  const { data, error, isError, isLoading } = useMePlaylists();
+  const { data, error, isError, isPending } = useMePlaylists();
 
   if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

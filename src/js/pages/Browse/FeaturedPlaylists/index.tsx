@@ -4,13 +4,13 @@ import { Error, Loader, Playlists } from '../../../components';
 import { useBrowseFeaturedPlaylists } from '../../../hooks/browse/featured-playlists';
 
 function FeaturedPlaylistsPage(): JSX.Element {
-  const { data, error, isError, isLoading } = useBrowseFeaturedPlaylists();
+  const { data, error, isError, isPending } = useBrowseFeaturedPlaylists();
 
   if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 
