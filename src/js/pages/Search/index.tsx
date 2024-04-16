@@ -13,7 +13,7 @@ function SearchPage(): JSX.Element {
   const { register, handleSubmit } = useForm<FormData>({
     defaultValues,
   });
-  const { mutate, data, isLoading, isError, error } = useSearch();
+  const { mutate, data, error, isError, isPending } = useSearch();
 
   function onSubmit(formData: FormData) {
     const { q } = formData;
@@ -23,7 +23,7 @@ function SearchPage(): JSX.Element {
     mutate(formData);
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

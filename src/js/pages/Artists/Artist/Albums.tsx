@@ -19,7 +19,7 @@ function Discography() {
   const include_group = watch('include_group');
   const { pathname } = useLocation();
   const { artistId } = useParams();
-  const { data, error, isError, isLoading } = useArtistAlbums(artistId!, {
+  const { data, error, isError, isPending } = useArtistAlbums(artistId!, {
     include_groups: [include_group],
     limit: 9,
   });
@@ -28,7 +28,7 @@ function Discography() {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

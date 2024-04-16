@@ -6,13 +6,13 @@ import { useUsersPlaylists } from '../../../../hooks/users';
 
 function PlaylistsPage(): JSX.Element {
   const { userId } = useParams();
-  const { data, error, isError, isLoading } = useUsersPlaylists(userId!);
+  const { data, error, isError, isPending } = useUsersPlaylists(userId!);
 
   if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

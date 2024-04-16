@@ -6,13 +6,13 @@ import { useArtistAlbums } from '../../../../hooks/artists';
 
 function AlbumsPage(): JSX.Element {
   const { artistId } = useParams();
-  const { data, error, isError, isLoading } = useArtistAlbums(artistId!);
+  const { data, error, isError, isPending } = useArtistAlbums(artistId!);
 
   if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

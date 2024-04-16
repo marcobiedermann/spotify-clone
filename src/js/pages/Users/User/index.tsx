@@ -6,13 +6,13 @@ import { useUsersProfile } from '../../../hooks/users';
 
 function UserPage(): JSX.Element {
   const { userId } = useParams();
-  const { data, error, isError, isLoading } = useUsersProfile(userId!);
+  const { data, error, isError, isPending } = useUsersProfile(userId!);
 
   if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

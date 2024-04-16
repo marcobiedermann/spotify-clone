@@ -8,7 +8,7 @@ import { Artists, Error, Loader, Section } from '../../../components';
 function RelatedArtists() {
   const { pathname } = useLocation();
   const { artistId } = useParams();
-  const { data, error, isError, isLoading } = useArtistRelatedArtists(artistId!, {
+  const { data, error, isError, isPending } = useArtistRelatedArtists(artistId!, {
     limit: 9,
   });
 
@@ -16,7 +16,7 @@ function RelatedArtists() {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

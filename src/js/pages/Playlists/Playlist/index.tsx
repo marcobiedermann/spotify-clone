@@ -19,13 +19,13 @@ const defaultImageSize = 240;
 
 function PlaylistPage(): JSX.Element {
   const { playlistId } = useParams();
-  const { data, error, isError, isLoading } = usePlaylist(playlistId!);
+  const { data, error, isError, isPending } = usePlaylist(playlistId!);
 
   if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 

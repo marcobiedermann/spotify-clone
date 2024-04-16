@@ -13,13 +13,13 @@ const defaultImageSize = 140;
 function ArtistPage(): JSX.Element {
   const { pathname } = useLocation();
   const { artistId } = useParams();
-  const { data, error, isError, isLoading } = useArtist(artistId!);
+  const { data, error, isError, isPending } = useArtist(artistId!);
 
   if (isError) {
     return <Error>{error.message}</Error>;
   }
 
-  if (isLoading) {
+  if (isPending) {
     return <Loader />;
   }
 
