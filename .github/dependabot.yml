@@ -4,3 +4,21 @@ updates:
     directory: '/'
     schedule:
       interval: 'monthly'
+    groups:
+      eslint:
+        patterns:
+          - '@typescript-eslint/*'
+          - 'eslint*'
+      react:
+        patterns:
+          - '@types/react-dom'
+          - '@types/react'
+          - 'react-dom'
+          - 'react'
+      react-helmet:
+        patterns:
+          - '@types/react-helmet'
+          - 'react-gelmet'
+      stylelint:
+        patterns:
+          - 'stylelint*'
