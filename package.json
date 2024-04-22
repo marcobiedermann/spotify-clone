@@ -73,8 +73,8 @@
     "stylelint": "^15.4.0",
     "stylelint-config-standard": "^32.0.0",
     "stylelint-order": "^6.0.4",
-    "stylelint-selector-bem-pattern": "^2.1.1",
-    "typed-css-modules": "^0.7.2",
+    "stylelint-selector-bem-pattern": "^4.0.0",
+    "typed-css-modules": "^0.9.1",
     "typescript": "^5.4.5",
     "vite": "^5.2.9",
     "vitest": "^1.5.0"
