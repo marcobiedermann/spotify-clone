@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from './Navigation.module.css';
 
 interface Item {
   id: string;
@@ -16,13 +17,15 @@ function NavigationList(props: NavigationListProps): JSX.Element {
   const { items } = props;
 
   return (
-    <ul>
+    <ul className={styles.navigation__list}>
       {items.map((item) => {
         const { id, name, path } = item;
 
         return (
           <li key={id}>
-            <Link to={path}>{name}</Link>
+            <Link className={styles.navigation__link} to={path}>
+              {name}
+            </Link>
             {item.items && <NavigationList items={item.items} />}
           </li>
         );

@@ -1,10 +1,11 @@
 import React, { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import {
   Aside,
   Content,
   Error,
   Header,
+  Image,
   Loader,
   Main,
   Navigation,
@@ -13,6 +14,7 @@ import {
 } from '../../components';
 import { useMePlaylists } from '../../hooks/me';
 import styles from './Default.module.css';
+import Logo from '../../components/Logo';
 
 function DefaultLayout(): JSX.Element {
   const { data, error, isError, isPending } = useMePlaylists();
@@ -40,6 +42,7 @@ function DefaultLayout(): JSX.Element {
           </Suspense>
         </Main>
         <Aside>
+          <Logo />
           <Navigation
             items={[
               {
@@ -59,6 +62,13 @@ function DefaultLayout(): JSX.Element {
               },
             ]}
           />
+          <div
+            style={{
+              padding: '1em 1.5em',
+            }}
+          >
+            <hr />
+          </div>
           <Navigation
             items={items.map((item) => {
               const { id = '', name = '' } = item;

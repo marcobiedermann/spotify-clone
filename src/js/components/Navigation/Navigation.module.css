@@ -1,0 +1,16 @@
+.navigation__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__link {
+  display: inline-block;
+  font-size: 0.875rem;
+  padding: 0.35em 1.75em;
+}
+
+.navigation__link:focus,
+.navigation__link:hover {
+  text-decoration: none;
+}
