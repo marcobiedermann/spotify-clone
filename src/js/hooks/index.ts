@@ -48,31 +48,31 @@ const copyrightObjectSchema = z.object({
   type: z.string().optional(),
 });
 
-const episodeObjectSchema = z.object({
-  audio_preview_url: z.string(),
-  description: z.string(),
-  html_description: z.string(),
-  duration_ms: z.number().int(),
-  explicit: z.boolean(),
-  external_urls: z.object({
-    spotify: z.string(),
-  }),
-  href: z.string().url(),
-  id: z.string(),
-  images: z.array(imageObjectSchema),
-  is_externally_hosted: z.boolean(),
-  is_playable: z.string(),
-  languages: z.array(z.string()),
-  name: z.string(),
-  release_date: z.string(),
-  release_date_precision: z.enum(['year', 'month', 'day']),
-  resume_point: z.object({
-    fully_played: z.boolean(),
-    resume_position_ms: z.number().int(),
-  }),
-  type: z.literal('episode'),
-  uri: z.string(),
-});
+// const episodeObjectSchema = z.object({
+//   audio_preview_url: z.string(),
+//   description: z.string(),
+//   html_description: z.string(),
+//   duration_ms: z.number().int(),
+//   explicit: z.boolean(),
+//   external_urls: z.object({
+//     spotify: z.string(),
+//   }),
+//   href: z.string().url(),
+//   id: z.string(),
+//   images: z.array(imageObjectSchema),
+//   is_externally_hosted: z.boolean(),
+//   is_playable: z.string(),
+//   languages: z.array(z.string()),
+//   name: z.string(),
+//   release_date: z.string(),
+//   release_date_precision: z.enum(['year', 'month', 'day']),
+//   resume_point: z.object({
+//     fully_played: z.boolean(),
+//     resume_position_ms: z.number().int(),
+//   }),
+//   type: z.literal('episode'),
+//   uri: z.string(),
+// });
 
 const trackObjectSchema = z.object({
   album: z
@@ -310,7 +310,6 @@ const simplifiedTrackObject = z.object({
   is_local: z.boolean().optional(),
 });
 
-export type { Error };
 export {
   artistObjectSchema,
   copyrightObjectSchema,
@@ -323,3 +322,4 @@ export {
   simplifiedTrackObject,
   trackObjectSchema,
 };
+export type { Error };

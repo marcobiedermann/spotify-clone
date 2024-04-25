@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import React from 'react';
 import Artist, { ArtistProps } from '../Artist';
 import styles from './Artists.module.css';
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useLocalStorage } from 'react-use';
@@ -26,7 +26,7 @@ async function getAccessToken(code: string) {
 }
 
 function CallbackPage(): JSX.Element {
-  const [_, setAccessToken] = useLocalStorage('access-token');
+  const [, setAccessToken] = useLocalStorage('access-token');
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const code = searchParams.get('code')!;
@@ -40,7 +40,7 @@ function CallbackPage(): JSX.Element {
         replace: true,
       });
     })();
-  }, [code]);
+  }, [code, setAccessToken, navigate]);
 
   return (
     <Helmet>

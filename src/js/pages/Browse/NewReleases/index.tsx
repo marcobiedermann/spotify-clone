@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Albums, Error, Loader } from '../../../components';
 import { useBrowseNewReleases } from '../../../hooks/browse/new-releases';

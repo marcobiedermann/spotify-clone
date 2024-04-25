@@ -1,7 +1,5 @@
-/* eslint-disable react/button-has-type */
-
 import clsx from 'clsx';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import styles from './Button.module.css';
 
 export interface ButtonProps {

@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import React, { StrictMode } from 'react';
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import '../css/elements/anchor.css';
 import '../css/elements/button.css';
@@ -25,18 +25,12 @@ async function enableMocking(): Promise<ServiceWorkerRegistration | undefined> {
   return worker.start();
 }
 
-function Root(): JSX.Element {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Router />
-    </QueryClientProvider>
-  );
-}
-
 enableMocking().then(() => {
   createRoot(document.getElementById('root') as HTMLElement).render(
     <StrictMode>
-      <Root />
+      <QueryClientProvider client={queryClient}>
+        <Router />
+      </QueryClientProvider>
     </StrictMode>,
   );
 });

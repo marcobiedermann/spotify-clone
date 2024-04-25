@@ -1,9 +1,6 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-
-import React from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
-import { useArtistTopTracks } from '../../../hooks/artists';
 import { AlbumTracks, Error, Loader, Section } from '../../../components';
+import { useArtistTopTracks } from '../../../hooks/artists';
 
 function TopTracks() {
   const { pathname } = useLocation();

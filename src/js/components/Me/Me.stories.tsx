@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
-import React from 'react';
 import Me from '.';
 import meFixtures from './__fixtures__';
 

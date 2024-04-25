@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Categories, Error, Loader } from '../../../components';
 import { useBrowseCategories } from '../../../hooks/browse/categories';

@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Image from '../Image';
 import styles from './Me.module.css';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 import { accountsBaseUrl, clientId, redirectUri } from '../../constants/spotify';
 

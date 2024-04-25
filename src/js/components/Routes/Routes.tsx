@@ -1,7 +1,7 @@
-import React, { lazy } from 'react';
-import { useRoutes, Navigate } from 'react-router-dom';
-import DefaultLayout from '../../layouts/Default';
+import { lazy } from 'react';
+import { Navigate, useRoutes } from 'react-router-dom';
 import BlankLayout from '../../layouts/Blank';
+import DefaultLayout from '../../layouts/Default';
 
 const AlbumPage = lazy(() => import('../../pages/Albums/Album'));
 const TracksPage = lazy(() => import('../../pages/Albums/Album/Tracks'));
