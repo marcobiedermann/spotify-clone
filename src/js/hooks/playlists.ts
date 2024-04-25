@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 import { UseQueryResult, useQuery } from '@tanstack/react-query';
 import { z } from 'zod';
 import { Error, imageObjectSchema, instance, playlistTrackObjectSchema } from '.';

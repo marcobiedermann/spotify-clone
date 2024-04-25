@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import React from 'react';
 import Category, { CategoryProps } from '../Category';
 import styles from './Categories.module.css';
 

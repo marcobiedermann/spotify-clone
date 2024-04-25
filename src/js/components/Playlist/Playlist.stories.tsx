@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import Playlist from '.';
 import playlistFixtures from './__fixtures__';

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 import Media, { MediaBody, MediaObject } from '.';
 
 const meta: Meta<typeof Media> = {

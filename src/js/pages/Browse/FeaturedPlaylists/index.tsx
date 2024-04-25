@@ -1,4 +1,3 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Error, Loader, Playlists } from '../../../components';
 import { useBrowseFeaturedPlaylists } from '../../../hooks/browse/featured-playlists';

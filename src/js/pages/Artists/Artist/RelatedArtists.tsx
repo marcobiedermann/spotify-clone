@@ -1,9 +1,6 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-
-import React from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
-import { useArtistRelatedArtists } from '../../../hooks/artists';
 import { Artists, Error, Loader, Section } from '../../../components';
+import { useArtistRelatedArtists } from '../../../hooks/artists';
 
 function RelatedArtists() {
   const { pathname } = useLocation();

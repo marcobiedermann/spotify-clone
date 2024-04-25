@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import React from 'react';
 import Album, { AlbumProps } from '../Album';
 import styles from './Albums.module.css';
 

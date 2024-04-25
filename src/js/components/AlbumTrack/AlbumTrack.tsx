@@ -11,7 +11,6 @@ interface Artist {
 export interface AlbumTrackProps {
   artists?: Artist[];
   duration_ms?: number;
-  /* eslint-disable-next-line react/no-unused-prop-types */
   id?: string;
   name?: string;
   track_number?: number;

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import Category from '.';
 import categoryFixtures from './__fixtures__';

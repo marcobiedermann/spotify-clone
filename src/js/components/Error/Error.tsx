@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import styles from './Error.module.css';
 
 export interface ErrorProps {

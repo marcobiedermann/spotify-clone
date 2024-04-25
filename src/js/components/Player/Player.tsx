@@ -1,4 +1,3 @@
-import React from 'react';
 import { player, player__controls } from './Player.module.css';
 
 function Player(): JSX.Element {

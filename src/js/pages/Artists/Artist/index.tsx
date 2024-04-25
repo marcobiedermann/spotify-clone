@@ -1,17 +1,15 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Button, Error, Image, Loader, Media, MediaBody, MediaObject } from '../../../components';
 import { useArtist } from '../../../hooks/artists';
-import styles from './Artist.style.module.css';
 import Albums from './Albums';
+import styles from './Artist.style.module.css';
 import RelatedArtists from './RelatedArtists';
 import TopTracks from './TopTracks';
 
 const defaultImageSize = 140;
 
 function ArtistPage(): JSX.Element {
-  const { pathname } = useLocation();
   const { artistId } = useParams();
   const { data, error, isError, isPending } = useArtist(artistId!);
 

@@ -1,10 +1,7 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useParams } from 'react-router-dom';
-import { useArtistAlbums } from '../../../hooks/artists';
 import { Albums, Error, Loader, Section } from '../../../components';
+import { useArtistAlbums } from '../../../hooks/artists';
 
 interface FormData {
   include_group: 'album' | 'single';

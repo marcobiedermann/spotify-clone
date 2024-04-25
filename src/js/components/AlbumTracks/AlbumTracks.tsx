@@ -1,4 +1,3 @@
-import React from 'react';
 import AlbumTrack, { AlbumTrackProps } from '../AlbumTrack';
 
 export interface AlbumTracksProps {

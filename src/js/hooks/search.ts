@@ -1,6 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-
-import { UseMutationResult, UseQueryResult, useMutation, useQuery } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { z } from 'zod';
 import {
   Error,
@@ -98,5 +96,5 @@ function useSearch() {
   });
 }
 
-export type { FormData };
 export { useSearch };
+export type { FormData };
