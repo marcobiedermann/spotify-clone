@@ -16,7 +16,7 @@
     "lint:css": "stylelint --ignore-path .gitignore '**/*.css'",
     "lint:js": "eslint --ignore-path .gitignore .",
     "lint": "npm-run-all --parallel lint:css lint:js",
-    "prepare": "husky install",
+    "prepare": "husky",
     "serve": "vite preview",
     "storybook": "storybook dev -p 6006",
     "test": "vitest",
@@ -59,11 +59,11 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "happy-dom": "^14.7.1",
-    "husky": "^8.0.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "msw": "^2.2.14",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.8",
-    "pretty-quick": "^3.1.3",
+    "prettier": "^3.2.5",
     "storybook": "^7.0.24",
     "stylelint": "^16.4.0",
     "stylelint-config-standard": "^36.0.0",
@@ -86,6 +86,9 @@
     "react-router-dom": "^6.23.0",
     "react-use": "^17.5.0",
     "zod": "^3.23.4"
+  },
+  "lint-staged": {
+    "**/*": "npm run format"
   },
   "msw": {
     "workerDirectory": "public"
