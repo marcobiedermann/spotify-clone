@@ -12,7 +12,18 @@ import '../css/elements/table.css';
 import '../css/layout/base.css';
 import Router from './components/Router';
 
+const isDevelopment = import.meta.env.DEV;
 const queryClient = new QueryClient();
+
+async function enableMocking(): Promise<ServiceWorkerRegistration | undefined> {
+  if (!isDevelopment) {
+    return Promise.resolve(undefined);
+  }
+
+  const { worker } = await import('../mocks/browser');
+
+  return worker.start();
+}
 
 function Root(): JSX.Element {
   return (
@@ -22,14 +33,10 @@ function Root(): JSX.Element {
   );
 }
 
-if (import.meta.env.DEV) {
-  const { worker } = await import('../mocks/browser');
-
-  worker.start();
-}
-
-createRoot(document.getElementById('root') as HTMLElement).render(
-  <StrictMode>
-    <Root />
-  </StrictMode>,
-);
+enableMocking().then(() => {
+  createRoot(document.getElementById('root') as HTMLElement).render(
+    <StrictMode>
+      <Root />
+    </StrictMode>,
+  );
+});

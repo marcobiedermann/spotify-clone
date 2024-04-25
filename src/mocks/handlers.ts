@@ -1,7 +1,7 @@
 /* eslint-disable */
 /* tslint:disable */
 
-import { rest } from 'msw';
+import { HttpResponse, http } from 'msw';
 import albums from './__fixtures__/v1/albums.json';
 import album from './__fixtures__/v1/albums/4aawyAB9vmqN3uQ7FjRGTy.json';
 import albumTracks from './__fixtures__/v1/albums/4aawyAB9vmqN3uQ7FjRGTy/tracks.json';
@@ -23,82 +23,33 @@ import search from './__fixtures__/v1/search.json';
 import user from './__fixtures__/v1/users/smedjan.json';
 import userPlaylists from './__fixtures__/v1/users/smedjan/playlists.json';
 
+const BASE_URL = 'https://api.spotify.com/v1';
+
 const handlers = [
-  rest.get('https://api.spotify.com/v1/albums', (_request, response, context) => {
-    return response(context.status(200), context.json(albums));
-  }),
-  rest.get('https://api.spotify.com/v1/albums/:albumId', (_request, response, context) => {
-    return response(context.status(200), context.json(album));
-  }),
-  rest.get('https://api.spotify.com/v1/albums/:albumId/tracks', (_request, response, context) => {
-    return response(context.status(200), context.json(albumTracks));
-  }),
-  rest.get('https://api.spotify.com/v1/artists', (_request, response, context) => {
-    return response(context.status(200), context.json(artists));
-  }),
-  rest.get('https://api.spotify.com/v1/artists/:artistId', (_request, response, context) => {
-    return response(context.status(200), context.json(artist));
-  }),
-  rest.get('https://api.spotify.com/v1/artists/:artistId/albums', (_request, response, context) => {
-    return response(context.status(200), context.json(artistAlbums));
-  }),
-  rest.get(
-    'https://api.spotify.com/v1/artists/:artistId/related-artists',
-    (_request, response, context) => {
-      return response(context.status(200), context.json(relatedArtists));
-    },
+  http.get(`${BASE_URL}/albums`, () => HttpResponse.json(albums)),
+  http.get(`${BASE_URL}/albums/:albumId`, () => HttpResponse.json(album)),
+  http.get(`${BASE_URL}/albums/:albumId/tracks`, () => HttpResponse.json(albumTracks)),
+  http.get(`${BASE_URL}/artists`, () => HttpResponse.json(artists)),
+  http.get(`${BASE_URL}/artists/:artistId`, () => HttpResponse.json(artist)),
+  http.get(`${BASE_URL}/artists/:artistId/albums`, () => HttpResponse.json(artistAlbums)),
+  http.get(`${BASE_URL}/artists/:artistId/related-artists`, () =>
+    HttpResponse.json(relatedArtists),
   ),
-  rest.get(
-    'https://api.spotify.com/v1/artists/:artistId/top-tracks',
-    (_request, response, context) => {
-      return response(context.status(200), context.json(topTracks));
-    },
+  http.get(`${BASE_URL}/artists/:artistId/top-tracks`, () => HttpResponse.json(topTracks)),
+  http.get(`${BASE_URL}/browse/categories`, () => HttpResponse.json(categories)),
+  http.get(`${BASE_URL}/browse/categories/:categoryId`, () => HttpResponse.json(category)),
+  http.get(`${BASE_URL}/browse/categories/:categoryId/playlists`, () =>
+    HttpResponse.json(categoryPlaylists),
   ),
-  rest.get('https://api.spotify.com/v1/browse/categories', (_request, response, context) => {
-    return response(context.status(200), context.json(categories));
-  }),
-  rest.get(
-    'https://api.spotify.com/v1/browse/categories/:categoryId',
-    (_request, response, context) => {
-      return response(context.status(200), context.json(category));
-    },
-  ),
-  rest.get(
-    'https://api.spotify.com/v1/browse/categories/:categoryId/playlists',
-    (_request, response, context) => {
-      return response(context.status(200), context.json(categoryPlaylists));
-    },
-  ),
-  rest.get(
-    'https://api.spotify.com/v1/browse/featured-playlists',
-    (_request, response, context) => {
-      return response(context.status(200), context.json(featuredPlaylists));
-    },
-  ),
-  rest.get('https://api.spotify.com/v1/browse/new-releases', (_request, response, context) => {
-    return response(context.status(200), context.json(newReleases));
-  }),
-  rest.get('https://api.spotify.com/v1/me', (_request, response, context) => {
-    return response(context.status(200), context.json(me));
-  }),
-  rest.get('https://api.spotify.com/v1/me/following', (_request, response, context) => {
-    return response(context.status(200), context.json(myFollowing));
-  }),
-  rest.get('https://api.spotify.com/v1/me/playlists', (_request, response, context) => {
-    return response(context.status(200), context.json(myPlaylists));
-  }),
-  rest.get('https://api.spotify.com/v1/playlists/:playlistId', (_request, response, context) => {
-    return response(context.status(200), context.json(playlist));
-  }),
-  rest.get('https://api.spotify.com/v1/search', (_request, response, context) => {
-    return response(context.status(200), context.json(search));
-  }),
-  rest.get('https://api.spotify.com/v1/users/:userId', (_request, response, context) => {
-    return response(context.status(200), context.json(user));
-  }),
-  rest.get('https://api.spotify.com/v1/users/:userId/playlists', (_request, response, context) => {
-    return response(context.status(200), context.json(userPlaylists));
-  }),
+  http.get(`${BASE_URL}/browse/featured-playlists`, () => HttpResponse.json(featuredPlaylists)),
+  http.get(`${BASE_URL}/browse/new-releases`, () => HttpResponse.json(newReleases)),
+  http.get(`${BASE_URL}/me`, () => HttpResponse.json(me)),
+  http.get(`${BASE_URL}/me/following`, () => HttpResponse.json(myFollowing)),
+  http.get(`${BASE_URL}/me/playlists`, () => HttpResponse.json(myPlaylists)),
+  http.get(`${BASE_URL}/playlists/:playlistId`, () => HttpResponse.json(playlist)),
+  http.get(`${BASE_URL}/search`, () => HttpResponse.json(search)),
+  http.get(`${BASE_URL}/users/:userId`, () => HttpResponse.json(user)),
+  http.get(`${BASE_URL}/users/:userId/playlists`, () => HttpResponse.json(userPlaylists)),
 ];
 
 export { handlers };
