@@ -18,7 +18,7 @@ updates:
       react-helmet:
         patterns:
           - '@types/react-helmet'
-          - 'react-gelmet'
+          - 'react-helmet'
       stylelint:
         patterns:
           - 'stylelint*'
