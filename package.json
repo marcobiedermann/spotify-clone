@@ -70,7 +70,7 @@
     "stylelint-order": "^6.0.4",
     "stylelint-selector-bem-pattern": "^4.0.0",
     "typed-css-modules": "^0.9.1",
-    "typescript": "^5.4.5",
+    "typescript": "^5.5.2",
     "vite": "^5.2.10",
     "vitest": "^1.5.2"
   },
