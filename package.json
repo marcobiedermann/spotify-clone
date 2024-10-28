@@ -44,7 +44,7 @@
     "@babel/core": "^7.26.0",
     "@eslint/js": "^9.13.0",
     "@storybook/addon-essentials": "^7.0.4",
-    "@storybook/react": "^7.0.24",
+    "@storybook/react": "^8.3.6",
     "@storybook/react-vite": "^7.0.4",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.0.1",
