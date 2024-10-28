@@ -1,6 +1,3 @@
-/* eslint-disable */
-/* tslint:disable */
-
 import { HttpResponse, http } from 'msw';
 import albums from './__fixtures__/v1/albums.json';
 import album from './__fixtures__/v1/albums/4aawyAB9vmqN3uQ7FjRGTy.json';
