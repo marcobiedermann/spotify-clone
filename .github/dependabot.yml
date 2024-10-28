@@ -26,3 +26,7 @@ updates:
       stylelint:
         patterns:
           - 'stylelint*'
+      vitest:
+        patterns:
+          - '@vitest/coverage-v8'
+          - 'vitest'
