@@ -58,7 +58,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.13",
     "globals": "^15.11.0",
-    "happy-dom": "^15.7.4",
+    "happy-dom": "^15.10.1",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "msw": "^2.6.0",
