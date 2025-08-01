@@ -84,7 +84,7 @@
     "react-dom": "^19.1.1",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.61.1",
-    "react-router-dom": "^6.27.0",
+    "react-router-dom": "^7.7.1",
     "react-use": "^17.6.0",
     "zod": "^3.25.46"
   },
