@@ -86,7 +86,7 @@
     "react-hook-form": "^7.63.0",
     "react-router-dom": "^6.30.4",
     "react-use": "^17.6.0",
-    "zod": "^3.25.46"
+    "zod": "^4.6.6"
   },
   "lint-staged": {
     "**/*": "npm run format"
